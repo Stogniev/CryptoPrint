@@ -6,16 +6,16 @@ import { requireAuth, redirectIfAuth } from 'app/auth'
 import App from './wrapper'
 import AppWrap from './wrapper/app-wrap'
 
-import SectionIndex from 'safebit/sections/index'
+import SectionIndex from 'cryptoprint/sections/index'
 
-import SectionSignin from 'safebit/sections/signin'
-import SectionLogin from 'safebit/sections/signin/login'
-import SectioSignup from 'safebit/sections/signin/signup'
+import SectionSignin from 'cryptoprint/sections/signin'
+import SectionLogin from 'cryptoprint/sections/signin/login'
+import SectioSignup from 'cryptoprint/sections/signin/signup'
 
 const Route404 = props => <div className='404-not-found'>
   <h1>404 Not found</h1>
   <p>You've found something we don't have.</p>
-  <p>If you think we should have it, drop us a line at errors@safebit.io</p>
+  <p>If you think we should have it, drop us a line at errors@cryptoprint.io</p>
 
 </div>
 

@@ -2,8 +2,8 @@
  Adapted from https://github.com/pointbiz/bitaddress.org/blob/master/src/ninja.seeder.js
 */
 
-import Crypto from 'safebit/crypto'
-import SecureRandom from 'safebit/crypto/secure-random'
+import Crypto from 'cryptoprint/crypto'
+import SecureRandom from 'cryptoprint/crypto/secure-random'
 
 const getSeedLimit = (limit = 200) => limit + Math.floor(Crypto.util.randomBytes(12)[11])
 

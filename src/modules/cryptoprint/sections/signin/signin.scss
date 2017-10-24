@@ -1,4 +1,17 @@
-
+.soon {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7F7F7;
+  svg {
+    width: 128px;
+    path {
+      fill: #545456;
+    }
+  }
+}
 .signin {
   .content {
     aside {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import IconSVG from './safebit-logo.svg'
+import IconSVG from './cryptoprint-logo.svg'
 
 class Logo extends Component {
   render () {

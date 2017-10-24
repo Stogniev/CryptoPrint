@@ -8,7 +8,7 @@ import Button from 'react-md/lib/Buttons/Button'
 
 import SocialPerson from 'material-ui/svg-icons/social/person'
 
-import GoogleG from 'safebit/bits/custom-icons/google-g'
+import GoogleG from 'cryptoprint/bits/custom-icons/google-g'
 
 import { PendingSection, TextFieldWithFBError } from '../'
 

@@ -1,12 +1,8 @@
 {
-  "name": "safebit-client",
+  "name": "cryptoprint-client",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "bigi": "^1.4.2",
-    "bignumber.js": "^4.0.2",
-    "bitcoinjs-lib": "^3.2.0",
-    "crypto-js": "^3.1.9-1",
     "firebase": "^4.2.0",
     "keen-tracking": "^1.1.4",
     "localforage": "^1.5.0",

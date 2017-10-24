@@ -3,7 +3,7 @@ import { firebaseConnect } from 'react-redux-firebase'
 
 import TextField from 'react-md/lib/TextFields'
 
-import SafebitLogo from 'safebit/bits/safebit-logo'
+import Symbol from 'cryptoprint/bits/cryptoprint-icon'
 
 import './signin.css'
 
@@ -18,14 +18,18 @@ class SectionLogin extends Component {
   render () {
     const { children } = this.props
 
+    return <div className='soon'>
+      <Symbol />
+    </div>
+
     return <div className='signin'>
       <div className='wrap'>
         <div className='content'>
           <aside>
-            <header><SafebitLogo className='brand' /></header>
+            <header><Symbol className='brand' /></header>
             <div className='texts'>
-              <h1>Welcome to Safebit</h1>
-              <h4>Safebit is a secured bitcoin multi-crypto wallet.</h4>
+              <h1>Welcome to Cryptoprint</h1>
+              <h4>Cryptoprint is a secured bitcoin multi-crypto wallet.</h4>
 
             </div>
           </aside>

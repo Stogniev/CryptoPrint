@@ -11,7 +11,7 @@ import Button from 'react-md/lib/Buttons/Button'
 
 import FlatButton from 'material-ui/FlatButton'
 
-import SafebitIcon from 'safebit/bits/safebit-icon'
+import CryptoprintIcon from 'cryptoprint/bits/cryptoprint-icon'
 
 import ActionHome from 'material-ui/svg-icons/action/home'
 import ActionCardTravel from 'material-ui/svg-icons/action/card-travel'
@@ -122,7 +122,7 @@ class SideNavigation extends Component {
           }}
           className='brand'
           style={{padding: 3, margin: '10px'}}>
-          <SafebitIcon className='safebit-icon' />
+          <CryptoprintIcon className='cryptoprint-icon' />
         </FlatButton>
       </div>
     </Toolbar>

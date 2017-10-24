@@ -11,7 +11,7 @@ import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import Button from 'react-md/lib/Buttons'
 
-import SafebitIcon from 'safebit/bits/safebit-icon'
+import CryptoprintIcon from 'cryptoprint/bits/cryptoprint-icon'
 
 import UserMenu from './user-menu'
 
@@ -60,9 +60,9 @@ class AppHeader extends Component {
                 e.preventDefault()
                 browserHistory.push('/dashboard')
               }}
-              className='safebit'
+              className='cryptoprint'
             >
-              <SafebitIcon className='safebit-icon' />
+              <CryptoprintIcon className='cryptoprint-icon' />
             </Button>
           </ToolbarGroup>
           <ToolbarGroup className='content'>

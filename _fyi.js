@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 import { connect } from 'react-redux'
 import { firebaseConnect } from 'react-redux-firebase'
 
-import Page from 'safebit/components/page'
+import Page from 'cryptoprint/components/page'
 
 // SVG icon from material ui
 import ActionHome from 'material-ui/svg-icons/action/home'
