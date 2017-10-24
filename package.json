@@ -1,0 +1,71 @@
+{
+  "name": "safebit-client",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "bigi": "^1.4.2",
+    "bignumber.js": "^4.0.2",
+    "bitcoinjs-lib": "^3.2.0",
+    "crypto-js": "^3.1.9-1",
+    "firebase": "^4.2.0",
+    "keen-tracking": "^1.1.4",
+    "localforage": "^1.5.0",
+    "marked": "^0.3.6",
+    "material-ui": "^0.19.0",
+    "moment": "^2.18.1",
+    "node-sass": "^4.5.3",
+    "numeral": "^2.0.6",
+    "rc-progress": "^2.2.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-fontawesome": "^1.6.1",
+    "react-ga": "^2.2.0",
+    "react-highcharts": "^11.0.0",
+    "react-md": "^1.0.18",
+    "react-redux": "^5.0.6",
+    "react-redux-firebase": "^2.0.0-beta.8",
+    "react-router": "^3.0.0",
+    "react-scripts": "1.0.11",
+    "react-slick": "^0.15.0",
+    "reactour": "^1.4.1",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-immutable-state-invariant": "^2.0.0",
+    "redux-persist": "^4.8.3",
+    "redux-thunk": "^2.2.0",
+    "slick-carousel": "^1.7.1",
+    "sync-exec": "^0.6.2",
+    "webfontloader": "^1.6.28"
+  },
+  "scripts": {
+    "build-css": "NODE_PATH=src/modules/ node-sass src/ -o src/",
+    "watch-css": "NODE_PATH=src/modules/ npm run build-css && node-sass src/ -o src/ --watch --recursive",
+    "start-js": "NODE_PATH=src/modules/ react-scripts start",
+    "start": "node prebuild.js && NODE_PATH=src/modules/ npm-run-all -p watch-css start-js",
+    "build": "node prebuild.js && NODE_PATH=src/modules/ npm run build-css && react-scripts build",
+    "test": "NODE_PATH=src/modules/ react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "eslint-config-react-app": "^2.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "standard": "^10.0.3"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "standard",
+      "standard-react"
+    ],
+    "globals": {
+      "fetch": true
+    }
+  }
+}

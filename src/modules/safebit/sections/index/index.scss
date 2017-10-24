@@ -1,0 +1,11 @@
+.md-progress.pl {
+  background: #CCC;
+  > div {
+    background: red;
+  }
+  &.set {
+    > div {
+      background: green;
+    }
+  }
+}

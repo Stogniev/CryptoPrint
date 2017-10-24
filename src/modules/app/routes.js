@@ -1,0 +1,34 @@
+import React from 'react'
+import { Route, IndexRoute } from 'react-router'
+
+import { requireAuth, redirectIfAuth } from 'app/auth'
+
+import App from './wrapper'
+import AppWrap from './wrapper/app-wrap'
+
+import SectionIndex from 'safebit/sections/index'
+
+import SectionSignin from 'safebit/sections/signin'
+import SectionLogin from 'safebit/sections/signin/login'
+import SectioSignup from 'safebit/sections/signin/signup'
+
+const Route404 = props => <div className='404-not-found'>
+  <h1>404 Not found</h1>
+  <p>You've found something we don't have.</p>
+  <p>If you think we should have it, drop us a line at errors@safebit.io</p>
+
+</div>
+
+export default (
+  <Route path='/' component={AppWrap}>
+    <Route component={App} onEnter={requireAuth('/signin')}>
+      <IndexRoute path='' component={SectionIndex} />
+    </Route>
+
+    <Route path='/signin' component={SectionSignin} onEnter={redirectIfAuth('/')}>
+      <IndexRoute component={SectionLogin} />
+      <Route path='signup' component={SectioSignup} />
+    </Route>
+    <Route path='*' component={Route404} />
+  </Route>
+)

@@ -1,0 +1,21 @@
+// Can't use the nice '~react-md/src/scss/react-md' since this isn't being bundled with webpack
+@import '../node_modules/react-md/src/scss/react-md';
+
+$md-light-theme: true; // optional for light theme
+$md-primary-color: $md-green-500;
+$md-secondary-color: $md-deep-purple-a-100;
+
+@include react-md-everything;
+//
+// Or for a subsection
+@include react-md-theme-everything($md-green-500, $md-deep-purple-a-100, $md-light-theme, 'custom-theme');
+
+// @import '../node_modules/react-md/src/scss/react-md';
+
+body {
+  #root {
+    .app-wrap {
+      .App {}
+    }
+  }
+}

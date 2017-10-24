@@ -1,0 +1,15 @@
+{
+  "short_name": "Safebit",
+  "name": "Safebit",
+  "icons": [
+    {
+      "src": "/images/app-icon/icon-prod-alt.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#61227A",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,29 @@
+.page {
+  .page-header {
+    background: #FFF;
+    h2.md-title {
+      font-size: 20px;
+      font-family: Roboto;
+      color: #3454D1;
+      margin-left: 48px;
+    }
+    & + .page-tabs {
+      background: #FFF;
+      padding-left: 37px;
+      li {
+        width: auto;
+        max-width: none;
+        min-width: 0;
+        flex: 0 0 auto;
+        padding-bottom: 12px;
+        height: 32px;
+        .md-tab-label {
+          color: #3454D1;
+        }
+      }
+      .md-tab-indicator {
+        background: #3454D1;
+      }
+    }
+  }
+}

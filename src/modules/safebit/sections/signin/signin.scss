@@ -1,0 +1,214 @@
+
+.signin {
+  .content {
+    aside {
+      header {
+        padding: 2rem;
+      }
+      .texts {
+        padding: 2rem;
+      }
+    }
+
+    section {
+      padding: 2rem;
+      .user-avatar {
+        text-align: center;
+        margin-bottom: 50px;
+        .md-avatar {
+          width: 102px;
+          height: 102px;
+          background: #D8D8D8;
+          border: none;
+          box-shadow: 0 2px 9px rgba(#000, 0.23);
+          .md-avatar-content {
+            svg.none {
+              position: relative;
+              top: 14px;
+              transform: scale(1.4);
+              path {
+                fill: #B2B2B2;
+              }
+            }
+          }
+        }
+      }
+
+      h1 {
+        font-size: 2.2rem;
+        color: rgba(#000, 0.98);
+      }
+
+      form {
+        .md-text-field-container {
+          min-height: 76px;
+        }
+        .actions {
+          display: flex;
+          align-items: center;
+          margin: 2rem 0;
+          > *:not(:first-child) {
+            margin-left: 1rem;
+          }
+          a.md-btn {
+            text-transform: none;
+          }
+        }
+        .extra-actions {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .md-btn {
+            background: #FFF;
+            text-transform: none;
+            display: flex;
+            align-items: center;
+            svg {
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// PendingSection stuff
+.signin {
+  .content {
+    section {
+      transition: all 150ms ease-in-out;
+      &::after {
+        content: "Stand by...";
+        position: absolute;
+        opacity: 0;
+        top: 0; left: 0; right: 0; bottom: 0;
+        color: #FFF;
+        text-shadow: 1px 1px 1px rgba(#000, 0.777);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        pointer-events: none;
+      }
+      > * {
+        transition: all 150ms ease-in-out;
+      }
+      &.pending {
+        position: relative;
+        pointer-events: none;
+        &::after {
+          opacity: 1;
+        }
+        > * {
+          filter: blur(5px);
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Stuff
+.signin {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: url('/images/walls/a.png') 0 0 no-repeat;
+  background-size: cover;
+
+  .wrap {
+
+    $sectionWidth: 355px;
+    $asideWidth: 672px;
+    $totalWidth: $sectionWidth + $asideWidth;
+
+    $totalHeight: 400px;
+
+    width: $totalWidth;
+    @media (max-width: 1280px) {
+      $asideWidth: 473px;
+      $totalWidth: $sectionWidth + $asideWidth;
+      width: $totalWidth;
+    }
+    @media (max-width: 860px) {
+      $totalHeight: auto;
+      margin: auto 2rem;
+    }
+    height: $totalHeight;
+    overflow: hidden;
+    // border: 1px solid #F0F;
+
+    position: relative;
+
+    box-shadow: 0 2px 5px rgba(#444, 0.4);
+    border-radius: 4px;
+
+    &::before {
+      // opacity: 0.9;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      border: 3px solid #00F;
+      margin-left: calc((((100vw - 1027px) / 2)) * -1);
+      margin-top: calc(((100vh / 2) - (400px / 2)) * -1);
+
+      @media (max-width: 1280px) { // above 1024
+        margin-left: calc((((100vw - 1027px) / 2)) * -1);
+      }
+      @media (max-width: 1024px) { // above 860
+        margin-left: calc((((100vw - 828px) / 2)) * -1);
+        margin-top: calc(((100vh / 2) - (400px / 2)) * -1);
+      }
+
+      content: "";
+      display: block;
+      background: url('/images/walls/a.png') 0 0 no-repeat;
+      background-size: cover;
+      filter: blur(16px);
+      z-index: 1;
+
+
+      @media (max-width: 24px) {
+        display: none;
+      }
+    }
+
+    > .content {
+      z-index: 2;
+      position: relative;
+      display: flex;
+      @media (max-width: 860px) {
+        flex-direction: column;
+      }
+      align-items: stretch;
+      aside {
+        flex: 1 1 auto;
+        width: $asideWidth;
+        @media (max-width: 1024px) {
+          width: auto;
+        }
+        header {
+          .brand {
+            height: 28px;
+            opacity: 0.5;
+          }
+        }
+      }
+
+      section {
+        flex: 1 1 auto;
+        width: $sectionWidth;
+        @media (max-width: 1024px) {
+          width: auto;
+        }
+        background: rgba(#F7F7F7, 1);
+      }
+    }
+  }
+
+}

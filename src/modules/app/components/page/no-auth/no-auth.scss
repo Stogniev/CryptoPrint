@@ -1,0 +1,34 @@
+body, #root {
+  overflow: hidden;
+  background: url('/images/loginbg.png') 50% 50% no-repeat;
+  background-size: cover;
+  
+}
+body .app-wrap {
+  overflow-y: auto;
+}
+
+.page.page-component.no-auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.page.no-auth {
+  position: relative;
+  padding: 20px 0;
+  overflow: auto;
+  flex: 1 0 auto;
+}
+.page.no-auth > * {
+  z-index: 3;
+}
+
+.page.no-auth > .tbg {
+  position: fixed;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}

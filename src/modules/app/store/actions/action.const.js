@@ -1,0 +1,1 @@
+export const UI_TOGGLE_MENU = 'UI_TOGGLE_MENU'
