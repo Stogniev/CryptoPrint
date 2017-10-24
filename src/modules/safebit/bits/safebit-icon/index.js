@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import IconSVG from './safebit-icon.svg'
-import './icon.css'
+import './safebit-icon.css'
 
 class Logo extends Component {
   render () {
