@@ -8,7 +8,7 @@ export class TeamSection extends Component {
         <li>
           <img src='http://via.placeholder.com/150X150' alt='avatar' />
           <div>
-            <h3>Person</h3>
+            <h3>Eli</h3>
           </div>
           <div>
             <i className='fa fa-linkedin-square' aria-hidden='true' />
@@ -22,7 +22,7 @@ export class TeamSection extends Component {
         <li>
           <img src='http://via.placeholder.com/60X60' alt='avatar' />
           <div>
-            <h3>Person</h3>
+            <h3>Daniel</h3>
           </div>
           <div>
             <i className='fa fa-linkedin-square' aria-hidden='true' />
@@ -36,7 +36,7 @@ export class TeamSection extends Component {
         <li>
           <img src='http://via.placeholder.com/60X60' alt='avatar' />
           <div>
-            <h3>Person</h3>
+            <h3>Shimon</h3>
           </div>
           <div>
             <i className='fa fa-linkedin-square' aria-hidden='true' />
