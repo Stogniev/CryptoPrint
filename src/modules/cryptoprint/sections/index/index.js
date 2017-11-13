@@ -15,6 +15,11 @@ import ActionGrade from 'material-ui/svg-icons/action/grade'
 import Button from 'react-md/lib/Buttons'
 
 import Hero from './parts/hero'
+import Attributes from './parts/attributes'
+import Testimonials from './parts/testimonials'
+import Team from './parts/team'
+import AlternativeCTA from './parts/alt-cta'
+import Footer from './parts/footer'
 
 import './index.css'
 
@@ -37,7 +42,12 @@ class SectionIndex extends Component {
   render () {
     // console.log('this.props:', this.props)
     return <div className='index-section'>
-      <Hero></Hero>
+      <Hero />
+      <Attributes />
+      <Testimonials />
+      <Team />
+      <AlternativeCTA />
+      <Footer />
     </div>
   }
 }
