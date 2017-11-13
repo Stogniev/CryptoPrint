@@ -14,6 +14,8 @@ import ActionGrade from 'material-ui/svg-icons/action/grade'
 // Button
 import Button from 'react-md/lib/Buttons'
 
+import Hero from './parts/hero'
+
 import './index.css'
 
 class SectionIndex extends Component {
@@ -34,46 +36,9 @@ class SectionIndex extends Component {
 
   render () {
     // console.log('this.props:', this.props)
-    return <Page>
-      <sidenav>
-
-        <List className='page-sidenav'>
-          <Subheader primaryText='Folders' />
-          <ListItem
-            leftAvatar={<ActionHome />}
-            rightIcon={<ActionGrade />}
-            primaryText='Wallets'
-            secondaryText='Jan 9, 2014'
-          />
-        </List>
-
-      </sidenav>
-      <section><div>Welcome to Cryptoprint! <div onClick={e => this.registerMe()}>Click Me!</div></div></section>
-      <aside>
-
-        <Button raised primary onClick={e => this.encrypt()}>Encrypt</Button>
-        <Button raised secondary onClick={e => this.decrypt()}>Decrypt</Button>
-      </aside>
-      <section>
-        <legend>Your wallets</legend>
-        <p>You have 0 wallets</p>
-      </section>
-      <aside>
-        <Button raised primary>Create New Wallet</Button>
-      </aside>
-
-      <section>
-        <div>
-          <Button raised primary>Reset Seeder</Button>
-        </div>
-        <div className='scratchy'>
-          Scratch here
-        </div>
-      </section>
-      <section>A</section>
-      <aside>B</aside>
-
-    </Page>
+    return <div className='index-section'>
+      <Hero></Hero>
+    </div>
   }
 }
 

@@ -55,10 +55,10 @@ class AppHeader extends Component {
             </Button>
             <Button
               flat
-              href='/dashboard'
+              href='/'
               onClick={e => {
                 e.preventDefault()
-                browserHistory.push('/dashboard')
+                browserHistory.push('/')
               }}
               className='cryptoprint'
             >
@@ -66,9 +66,9 @@ class AppHeader extends Component {
             </Button>
           </ToolbarGroup>
           <ToolbarGroup className='content'>
-            <Button flat secondary>Wallet</Button>
-            <Button flat>Apps</Button>
-            <Button flat>Settings</Button>
+            <Button flat secondary>About</Button>
+            <Button flat>Team</Button>
+            <Button flat>Preorder</Button>
           </ToolbarGroup>
           <ToolbarGroup className='rights'>
             {loggedIn ? <UserMenu

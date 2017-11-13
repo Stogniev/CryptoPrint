@@ -21,8 +21,8 @@ const Route404 = props => <div className='404-not-found'>
 
 export default (
   <Route path='/' component={AppWrap}>
-    <Route component={App} onEnter={requireAuth('/soon')}>
-      <IndexRoute path='' component={SectionIndex} />
+    <Route component={App}>
+      <IndexRoute path='/' component={SectionIndex} />
     </Route>
 
     <Route path='/soon' component={SectionSignin} onEnter={redirectIfAuth('/')}>
