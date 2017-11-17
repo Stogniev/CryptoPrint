@@ -31,7 +31,7 @@ const makeUserProfile = profile => {
 export const newUserProfile = userData => {
   console.log('user data:', userData)
 
-  const { uid, email, displayName, photoURL } = userData
+  const { uid, email, displayName, photoURL } = userData.user
 
   let profile = {
     uid,
