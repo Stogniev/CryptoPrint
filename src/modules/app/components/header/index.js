@@ -12,6 +12,7 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import Button from 'react-md/lib/Buttons'
 
 import CryptoprintIcon from 'cryptoprint/bits/cryptoprint-icon'
+import GirlsHead from 'cryptoprint/bits/girls-head'
 
 import UserMenu from './user-menu'
 
@@ -33,7 +34,7 @@ class AppHeader extends Component {
     const { user, ui: { showMenu = false } } = this.props
     const { loggedIn } = user || {}
     return (
-      <Paper zDepth={1} className='header'>
+      <Paper zDepth={0} className='header'>
         <Toolbar
           style={{
             // background: headerBackground,
@@ -62,7 +63,7 @@ class AppHeader extends Component {
               }}
               className='cryptoprint'
             >
-              <CryptoprintIcon className='cryptoprint-icon' />
+              <GirlsHead className='cryptoprint-icon' />
             </Button>
           </ToolbarGroup>
           <ToolbarGroup className='content'>
