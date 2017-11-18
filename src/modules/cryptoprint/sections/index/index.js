@@ -20,6 +20,8 @@ import Testimonials from './parts/testimonials'
 import Team from './parts/team'
 import AlternativeCTA from './parts/alt-cta'
 import Footer from './parts/footer'
+import Signin from './parts/signin'
+import Preorder from './parts/preorder'
 
 import './index.css'
 
@@ -42,10 +44,12 @@ class SectionIndex extends Component {
   render () {
     // console.log('this.props:', this.props)
     return <div className='index-section'>
+      <Preorder />
       <Hero />
       <Attributes />
       <Testimonials />
       <Team />
+      <Signin />
       <AlternativeCTA />
       <Footer />
     </div>
