@@ -34,15 +34,16 @@
     "webfontloader": "^1.6.28"
   },
   "scripts": {
-    "build-css": "NODE_PATH=src/modules/ node-sass src/ -o src/",
-    "watch-css": "NODE_PATH=src/modules/ npm run build-css && node-sass src/ -o src/ --watch --recursive",
-    "start-js": "NODE_PATH=src/modules/ react-scripts start",
-    "start": "node prebuild.js && NODE_PATH=src/modules/ npm-run-all -p watch-css start-js",
-    "build": "node prebuild.js && NODE_PATH=src/modules/ npm run build-css && react-scripts build",
-    "test": "NODE_PATH=src/modules/ react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build-css": "cross-env NODE_PATH=src/modules/ node-sass src/ -o src/",
+    "watch-css": "cross-env NODE_PATH=src/modules/ npm run build-css && cross-env node-sass src/ -o src/ --watch --recursive",
+    "start-js": "cross-env NODE_PATH=src/modules/ react-scripts start",
+    "start": "cross-env node prebuild.js && cross-env NODE_PATH=src/modules/ npm-run-all -p watch-css start-js",
+    "build": "cross-env node prebuild.js && cross-env NODE_PATH=src/modules/ npm run build-css && react-scripts build",
+    "test": "cross-env NODE_PATH=src/modules/ react-scripts test --env=jsdom",
+    "eject": "cross-env react-scripts eject"
   },
   "devDependencies": {
+    "cross-env": "^5.1.1",
     "eslint": "^4.4.1",
     "eslint-config-react-app": "^2.0.0",
     "eslint-config-standard": "^10.2.1",
