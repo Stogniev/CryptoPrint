@@ -1,26 +1,15 @@
-import { chunk } from './lib'
+// import { chunk } from './lib'
 
-function generate() {
-  //var ecpair=BitcoinJSlib.createNewWallet();
-  // draw random dots
-  // public_key=ecpair.getAddress();//"1ApT4jNxkrxXhEDiDMUQYA9cM99P6wvg6y";
-  public_key = "1ApT4jNxkrxXhEDiDMUQYA9cM99P6wvg6y";
-  var t = chunk(public_key, 16).map(function(a) {
-    return chunk(a, 4).join("-")
-  });
-  var public_str = t[0] + "\n" + t[1] + "-" + t[2];
-  //private_key=ecpair.toWIF();//"L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG";
-  private_key = "L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG";
-  var private_str = chunk(private_key, 20).map(function(a) {
-    return chunk(a, 5).join("-")
-  }).join("\n");
+export function generate() {
+  const publicKey = '1ApT4jNxkrxXhEDiDMUQYA9cM99P6wvg6y'
+  const privateKey = 'L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG'
 
-  var private_key_split = getEvenFrequencyPad(private_key, 144, 1);
-  //    console.log(private_str,private_key_split.marking,private_key_split.padded)
-  var typeNumber = 0,
-    errorCorrectionLevel = 'L';
-  var qr = qrcode(typeNumber, errorCorrectionLevel);
-  qr.addData(private_key);
+  let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1)
+  //    console.log(private_str,privateKeySplit.marking,privateKeySplit.padded)
+  let typeNumber = 0
+  let errorCorrectionLevel = 'L'
+  let qr = qrcode(typeNumber, errorCorrectionLevel)
+  qr.addData(privateKey);
   qr.make();
   //console.log(qr)
   var qrmodulecount = qr.getModuleCount();
@@ -37,10 +26,10 @@ function generate() {
   var qr_pad = new s_QRCode();
   var qr_pad2 = new s_QRCode();
   qr_pad.setErrorCorrectLevel(s_ErrorCorrectLevel.L);
-  qr_pad.addData(private_key);
+  qr_pad.addData(privateKey);
   qr_pad2.setErrorCorrectLevel(s_ErrorCorrectLevel.L);
-  qr_pad2.addData(private_key);
-  for (var typeNumber = 1; typeNumber <= 40; typeNumber++) {
+  qr_pad2.addData(privateKey);
+  for (typeNumber = 1; typeNumber <= 40; typeNumber++) {
     try {
       qr_pad.setTypeNumber(typeNumber);
       qr_pad.make();
@@ -54,10 +43,10 @@ function generate() {
   ////////
 
   //console.log(qrmodulecount)
-  var typeNumber = 0,
-    errorCorrectionLevel = 'M';
+  typeNumber = 0
+  errorCorrectionLevel = 'M'
   var pqr = qrcode(typeNumber, errorCorrectionLevel);
-  pqr.addData(public_key);
+  pqr.addData(publicKey);
   pqr.make();
 
   //<canvas id="c1" width="146" height="80" style="border:1px solid blue"></canvas>
@@ -122,7 +111,7 @@ function generate() {
   drawqr1(imageData2, 0, 0, qr_pad2, 1)
   drawqr1(imageData3, 0, 0, pqr, 1)
   imageData = null;
-  //y=printlines(imageData,0,y,public_str)+(8*1.75|0)
+  //y=printlines(imageData,0,y,publicStr)+(8*1.75|0)
   //y=printlines(imageData4,0,0,private_str)
 
   // ctx_size=getsize(imageData);
@@ -146,7 +135,7 @@ function generate() {
   //  svgtemplate_back_on_transparent_data="";
   var span = document.createElement('span');
   span.addEventListener('click', function() {
-    save_svg(this, public_key + '_back');
+    save_svg(this, publicKey + '_back');
   }, false);
 
   var bill_id = 'T01-20170000000002'
@@ -158,7 +147,7 @@ function generate() {
   var artwork_front_content = svgtemplate_front_artwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
   artwork_front_content = '<g transform="scale(-1, 1) translate(-1600, 0)" >' + artwork_front_content + '</g>'
-  //private_key_split.marking,private_key_split.padded
+  //privateKeySplit.marking,privateKeySplit.padded
 
   span.innerHTML = createSvgTag(svgtemplate_front_data, [
 
@@ -166,12 +155,12 @@ function generate() {
       do : 'str',
         action: 'replacestr',
         search: /MMMMMM/,
-        str: public_key.substr(public_key.length - 6)
+        str: publicKey.substr(publicKey.length - 6)
     }, {
       do : 'str',
         action: 'replacestr',
         search: /MMMMMM/,
-        str: public_key.substr(0, 6)
+        str: publicKey.substr(0, 6)
     }, {
       do : 'str',
         action: 'replacestr',
@@ -217,13 +206,13 @@ function generate() {
                 var x2 = parseFloat(translate[2] || 0),
                   y2 = parseFloat(translate[4] || 0)
                 order.push({
-                  c: private_key_split.padded[letter_i],
+                  c: privateKeySplit.padded[letter_i],
                   i: letter_i,
                   x: x1 + x2,
                   y: y1 + y2
                 });
                 letter_i++
-                //return a1+private_key_split.padded[letter_i++]+a2
+                //return a1+privateKeySplit.padded[letter_i++]+a2
               })
             })
 
@@ -262,14 +251,14 @@ function generate() {
           str: artwork_front_content
       }
 
-      //    ,{do:'str'  ,action:'replacestr', search:/█+/g ,str:public_key }
-      //    ,{do:'str'  ,action:'replacestr', search:/1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,str:public_key }
+      //    ,{do:'str'  ,action:'replacestr', search:/█+/g ,str:publicKey }
+      //    ,{do:'str'  ,action:'replacestr', search:/1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,str:publicKey }
       //    ,{do:'str'  ,action:'replacestr', search:/<text id="__PRIVKEY__FULL__"[\s\S]+?\/text>/ ,str:'' }
       // {do:'pixels',action:'append',to_id:'', x:20                                          ,y:20 ,data:imageData3,cellsize:6,sizetype:'1'}
       //     {do:'pixels',action:'append',to_id:'', x:70                                            ,y:(70*8-(ctx1_size.h*11))/2,data:imageData1,cellsize:11,sizetype:'1'}
       //    ,{do:'pixels',action:'append',to_id:'', x:136*8-(ctx1_size.w*11)-70                     ,y:(70*8-(ctx1_size.h*11))/2,data:imageData2,cellsize:11,sizetype:'1'}
-      //    ,{do:'text'  ,action:'append',to_id:'', y:(-60)                                          ,x: -(   ((70*8))-30    )  ,text: chunk(public_key ,4).join('-') ,fontSize:19,fontFamily:'lucida console', style:'font-weight:bold', lineHeight:1.25, transform: "matrix(0,-1,-1,0,0,0)" }
-      //,{do:'text'  ,action:'append',to_id:'', y:(136*8-60)                                          ,x: -(   ((70*8))-30    )  ,text: chunk(public_key ,4).join('-') ,fontSize:19,fontFamily:'lucida console', style:'font-weight:bold', lineHeight:1.25, transform: "matrix(0,-1,1,0,0,0)" }
+      //    ,{do:'text'  ,action:'append',to_id:'', y:(-60)                                          ,x: -(   ((70*8))-30    )  ,text: chunk(publicKey ,4).join('-') ,fontSize:19,fontFamily:'lucida console', style:'font-weight:bold', lineHeight:1.25, transform: "matrix(0,-1,-1,0,0,0)" }
+      //,{do:'text'  ,action:'append',to_id:'', y:(136*8-60)                                          ,x: -(   ((70*8))-30    )  ,text: chunk(publicKey ,4).join('-') ,fontSize:19,fontFamily:'lucida console', style:'font-weight:bold', lineHeight:1.25, transform: "matrix(0,-1,1,0,0,0)" }
       //,{do:'pixels',action:'append',to_id:'', x:20+   (ctx1_size.w*11)+20                     ,y:220 ,data:imageData5,cellsize:3,sizetype:'1'}
       //,{do:'pixels',action:'append',to_id:'', x:136*8-(ctx1_size.w*11)-20-(ctx6_size.w*3)-20   ,y:220 ,data:imageData6,cellsize:3,sizetype:'1'}
     ], imageData1.height * 1, imageData1.width, 8, 0, imageData1.height * 2 * 1 * 1.5, imageData1.width * 2 * 1.5)
@@ -277,7 +266,7 @@ function generate() {
 
     var span = document.createElement('span');
     span.addEventListener('click', function() {
-      save_svg(this, public_key + '_back');
+      save_svg(this, publicKey + '_back');
     }, false);
 
     var artwork_back_defs = svgtemplate_back_artwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
@@ -289,17 +278,17 @@ function generate() {
         do : 'str',
           action: 'replacestr',
           search: /MMMMMM/,
-          str: public_key.substr(public_key.length - 6)
+          str: publicKey.substr(publicKey.length - 6)
       }, {
         do : 'str',
           action: 'replacestr',
           search: /MMMMMM/,
-          str: public_key.substr(0, 6)
+          str: publicKey.substr(0, 6)
       }, {
         do : 'str',
           action: 'replacestr',
           search: /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g,
-          str: public_key
+          str: publicKey
       }, {
         do : 'pixels',
           action: 'replacestr',
@@ -339,13 +328,13 @@ function generate() {
                   var x2 = parseFloat(translate[1] || 0),
                     y2 = parseFloat(translate[2] || 0)
                   order.push({
-                    c: private_key_split.marking[letter_i],
+                    c: privateKeySplit.marking[letter_i],
                     i: letter_i,
                     x: x1 + x2,
                     y: y1 + y2
                   });
                   letter_i++
-                  // return a;//''a1+(private_key_split.marking[letter_i++]==' '?'transparent':a2)+a3
+                  // return a;//''a1+(privateKeySplit.marking[letter_i++]==' '?'transparent':a2)+a3
                 })
                 // return a;
               })
@@ -387,15 +376,15 @@ function generate() {
             str: artwork_back_content
         }
 
-        //    {do:'str'  ,action:'replacestr', search:/█+/g ,str:public_key }
+        //    {do:'str'  ,action:'replacestr', search:/█+/g ,str:publicKey }
         //   ,{do:'pixels',action:'replacestr',search:/<path.+?__PUBKEY_QR__.+?\/path>/, x:250           ,y:245 ,data:imageData3,cellsize:12,sizetype:'1', fill:'#4A4A4A'}
-        //   ,{do:'str'  ,action:'replacestr', search:/1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,str:public_key }
-        //   ,{do:'str'  ,action:'replacestr', search:/1JuNUK/g ,str:public_key.substr(0,6) }
-        //   ,{do:'str'  ,action:'replacestr', search:/uQS2iR/g ,str:public_key.substr(public_key.length-6) }
+        //   ,{do:'str'  ,action:'replacestr', search:/1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,str:publicKey }
+        //   ,{do:'str'  ,action:'replacestr', search:/1JuNUK/g ,str:publicKey.substr(0,6) }
+        //   ,{do:'str'  ,action:'replacestr', search:/uQS2iR/g ,str:publicKey.substr(publicKey.length-6) }
         //   ,{do:'pixels',action:'replacestr',search:/<path.+?__FRONT_PRIVKEY_QR__.+?\/path>/, x: -1.00574713  ,y:185,data:imageData2,cellsize:12,sizetype:'-2centered', fill:'#4A4A4A'}
 
-        //     ,{do:'text'  ,action:'append',to_id:'', x:130+((ctx1_size.w)*11 - ctx3_size.w*8)/2                                          ,y: ((70*8-(ctx3_size.h*8))/2) + ctx3_size.h*8 +25  ,text: chunk(public_key.substr(0,16),4).join('-')+'\n' +chunk(public_key.substr(16),4).join('-') ,fontSize:22,fontFamily:'lucida console', style:'font-weight:bold', lineHeight:1.25}
-        //    ,{do:'text'  ,action:'append',to_id:'', y:(20)                                          ,x: -(   ((70*8))-30    )  ,text: chunk(public_key ,4).join('-') ,fontSize:19,fontFamily:'lucida console', style:'font-weight:bold', lineHeight:1.25, transform: "matrix(0,-1,1,0,0,0)" }
+        //     ,{do:'text'  ,action:'append',to_id:'', x:130+((ctx1_size.w)*11 - ctx3_size.w*8)/2                                          ,y: ((70*8-(ctx3_size.h*8))/2) + ctx3_size.h*8 +25  ,text: chunk(publicKey.substr(0,16),4).join('-')+'\n' +chunk(publicKey.substr(16),4).join('-') ,fontSize:22,fontFamily:'lucida console', style:'font-weight:bold', lineHeight:1.25}
+        //    ,{do:'text'  ,action:'append',to_id:'', y:(20)                                          ,x: -(   ((70*8))-30    )  ,text: chunk(publicKey ,4).join('-') ,fontSize:19,fontFamily:'lucida console', style:'font-weight:bold', lineHeight:1.25, transform: "matrix(0,-1,1,0,0,0)" }
         //
         //  ,{do:'pixels',action:'append',to_id:'', x:20                                          ,y:220,data:imageData1,cellsize:8,sizetype:'1'}
         //  ,{do:'pixels',action:'append',to_id:'', x:136*8-(ctx1_size.w*8)-20                     ,y:220,data:imageData2,cellsize:8,sizetype:'1'}
@@ -406,4 +395,73 @@ function generate() {
 
       document.getElementById('page_back_on_transparent_data').appendChild(span);
 
+    }
+
+    // the code tries to prevent frequency analysis
+    // by making even filed possible or by adding randomness on top of it
+
+    // the first char is version, to not throw away bits if all leters before are not L or K, i just put the first letter as is
+
+    // keys with too much repeating same letter are not too good for this. so they are rejected.
+
+    //var private_key="L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG";
+    //console.log(getEvenFrequencyPad(private_key,144,1))
+
+    function getEvenFrequencyPad(private_key, to_n_chars, seal_layers) {
+      var base58c = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+      var chars_arr = private_key.split('');
+      var o = "";
+      o += chars_arr.shift();
+      var has = base58c.split('').map(function() {
+        return 0;
+      });
+
+      if (seal_layers === undefined)
+        seal_layers = 1;
+      chars_arr.forEach(function(a) {
+        has[base58c.indexOf(a)]++;
+        //                          if(has[base58c.indexOf(a)]>4) throw new Error('bad private key');
+      })
+      var n = to_n_chars;
+      var charstoadd = ''
+
+      const randomBuffer = new Uint8Array(n); // short arrays only. less than 3000 in length, actually less than 255 in length as beccaus uint8
+      random(randomBuffer);
+      var ret = [],
+        randi = 0;
+      var sum = chars_arr.length;
+
+      //seal
+      for (var j = 0; j < seal_layers; j++) {
+        for (var i = 0; i < base58c.length && sum < n; i++) {
+          if (has[i] < 2) {
+            has[i]++;
+            sum++;
+            charstoadd += base58c[i];
+          }
+        }
+      }
+
+      //sparkle some randomness
+      for (var i = sum; i < n; i++) {
+        var rand = base58c[randomBuffer[i] % base58c.length]
+        has[base58c.indexOf(rand)]++;
+        charstoadd += rand;
+        sum++;
+      }
+
+      var charstoadd_arr = chars_arr.map(function() {
+        return "_";
+      }).concat(charstoadd.split('')); //.join('');
+
+      var pad = (shuffle(charstoadd_arr).join(''));
+      o += pad.replace(/_/g, function() {
+        return chars_arr.shift();
+      })
+      pad = ('_' + pad).split('').map(function(a) {
+        return a === '_'
+          ? ' '
+          : '\u2588';
+      }).join('');
+      return {padded: o, marking: pad};
     }
