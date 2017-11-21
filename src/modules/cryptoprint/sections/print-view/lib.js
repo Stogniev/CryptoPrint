@@ -1,3 +1,5 @@
+import { getPixel } from './canvastools'
+
 export function chunk (arr, len) {
   const chunks = []
   const n = arr.length

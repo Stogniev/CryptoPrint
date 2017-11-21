@@ -1,6 +1,6 @@
-import { createSvgTag } from './lib'
+import { createSvgTag, http_get_promise, save_svg } from './lib'
 import { getEvenFrequencyPad } from './crypto'
-import { drawqr_split,drawqr, createcanvas } from './canvastools'
+import { drawqr_split,drawqr, createcanvas,getsize,ctx_to_bitarr } from './canvastools'
 
 
 import qrcodesplitter from 'ext/qrcodesplitter-generator/ts/build/ts/QRCode'

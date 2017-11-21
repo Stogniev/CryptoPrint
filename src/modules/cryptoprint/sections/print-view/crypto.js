@@ -1,9 +1,9 @@
 
 var crypto= window.crypto ||  window.msCrypto;
 var random =crypto.getRandomValues.bind(crypto);
-export random
 
-function shuffle(arr) {
+
+export function shuffle(arr) {
     arr=arr.slice(0); // dont modify source arr
     const  randomBuffer = new Uint8Array(arr.length); // short arrays only. less than 3000 in length, actually less than 255 in length as beccaus uint8
     random(randomBuffer);
@@ -13,7 +13,7 @@ function shuffle(arr) {
     }
     return ret;
 }
-export shuffle;
+
 
 // the code tries to prevent frequency analysis
 // by making even filed possible or by adding randomness on top of it
@@ -25,7 +25,7 @@ export shuffle;
 //var private_key="L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG";
 //console.log(getEvenFrequencyPad(private_key,144,1))
 
-function getEvenFrequencyPad(private_key,to_n_chars,seal_layers)
+export function getEvenFrequencyPad(private_key,to_n_chars,seal_layers)
 {
  var base58c='123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
  var chars_arr=private_key.split('');
@@ -75,4 +75,4 @@ function getEvenFrequencyPad(private_key,to_n_chars,seal_layers)
  return {padded:o,marking:pad};
 }
 
-export getEvenFrequencyPad
+ 
