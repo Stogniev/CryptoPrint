@@ -2127,6 +2127,10 @@ var qrcode = function() {
 
 }();
 
+var qrcode_export=qrcode();
+export default qrcode_export;
+
+/*
 (function (factory) {
   if (typeof define === 'function' && define.amd) {
       define([], factory);
@@ -2136,3 +2140,4 @@ var qrcode = function() {
 }(function () {
     return qrcode;
 }));
+*/

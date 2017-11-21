@@ -1930,4 +1930,6 @@ var com;
         })(text = d_project.text || (d_project.text = {}));
     })(d_project = com.d_project || (com.d_project = {}));
 })(com || (com = {}));
-//# sourceMappingURL=QRCode.js.map
+//# sourceMappingURL=QRCode.js.map 
+
+export default com.d_project.qrcodesplitter;

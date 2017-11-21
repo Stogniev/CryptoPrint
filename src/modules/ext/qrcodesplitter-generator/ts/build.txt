@@ -2,9 +2,9 @@ to buld install typescript by
 
 npm install -g typescript
 
-run in this folder
+run in this folder:
 
-tsc -p .
+tsc -p . ; echo ' export default com.d_project.qrcodesplitter;' >>  ./build/ts/QRCode.js 
 
 it will create a file ./build/ts/QRCode.js
 
