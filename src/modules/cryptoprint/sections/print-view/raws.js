@@ -1,6 +1,10 @@
 // import { chunk } from './lib'
 
-export function generate() {
+import qrcode from 'ext/qrcodesplitter-generator/ts/build/ts/QRCode'
+
+console.log('qrcode:', qrcode);
+
+export function generate () {
   const publicKey = '1ApT4jNxkrxXhEDiDMUQYA9cM99P6wvg6y'
   const privateKey = 'L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG'
 
@@ -9,13 +13,13 @@ export function generate() {
   let typeNumber = 0
   let errorCorrectionLevel = 'L'
   let qr = qrcode(typeNumber, errorCorrectionLevel)
-  qr.addData(privateKey);
-  qr.make();
-  //console.log(qr)
-  var qrmodulecount = qr.getModuleCount();
-  /////
-  var s_QRCode = com.d_project.qrcodesplitter.QRCode;
-  var s_ErrorCorrectLevel = com.d_project.qrcodesplitter.ErrorCorrectLevel;
+  qr.addData(privateKey)
+  qr.make()
+  // console.log(qr)
+  // let qrmodulecount = qr.getModuleCount()
+  // ///
+  let sQRCode = com.d_project.qrcodesplitter.QRCode
+  var s_ErrorCorrectLevel = com.d_project.qrcodesplitter.ErrorCorrectLevel
   //    var s_QRNumber = com.d_project.qrcodesplitter.QRNumber;
   //    var s_QRAlphaNum = com.d_project.qrcodesplitter.QRAlphaNum;
   //    var s_QR8BitByte = com.d_project.qrcodesplitter.QR8BitByte;
@@ -23,8 +27,8 @@ export function generate() {
 
   // uncomment if UTF-8 support is required.
   //QRCode.stringToBytes = com.d_project.text.stringToBytes_UTF8;
-  var qr_pad = new s_QRCode();
-  var qr_pad2 = new s_QRCode();
+  var qr_pad = new sQRCode();
+  var qr_pad2 = new sQRCode();
   qr_pad.setErrorCorrectLevel(s_ErrorCorrectLevel.L);
   qr_pad.addData(privateKey);
   qr_pad2.setErrorCorrectLevel(s_ErrorCorrectLevel.L);
