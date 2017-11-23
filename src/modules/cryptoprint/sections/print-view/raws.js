@@ -263,6 +263,8 @@ function generate() {
 	svg=postfix(svg, /<\/defs>/, artwork_front_content )
 	
 	span.innerHTML = svg;
+	span.getElementsByTagName("svg")[0].setAttribute('height',100)
+	span.getElementsByTagName("svg")[0].setAttribute('width',200)
     
 	document.getElementById('page_front_data').appendChild(span);
 
@@ -334,7 +336,8 @@ function generate() {
     svg=postfix(svg, /<\/defs>/  , artwork_back_content  )
 	
 	span.innerHTML = svg;
-
+	span.getElementsByTagName("svg")[0].setAttribute('height',100)
+	span.getElementsByTagName("svg")[0].setAttribute('width',200)
       document.getElementById('page_back_on_transparent_data').appendChild(span);
 
     }
