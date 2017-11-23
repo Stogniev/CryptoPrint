@@ -14,7 +14,7 @@
 //  http://www.denso-wave.com/qrcode/faqpatent-e.html
 //
 //---------------------------------------------------------------------
-
+/*eslint-disable*/
 var qrcode = function() {
 
   //---------------------------------------------------------------------
@@ -2141,3 +2141,4 @@ export default qrcode_export;
     return qrcode;
 }));
 */
+/*eslint-enable*/

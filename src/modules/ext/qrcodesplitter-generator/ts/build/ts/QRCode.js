@@ -1,4 +1,4 @@
-'use strict';
+/*eslint-disable*/'use strict';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -1932,4 +1932,4 @@ var com;
 })(com || (com = {}));
 //# sourceMappingURL=QRCode.js.map 
 
-export default com.d_project.qrcodesplitter;
+export default com.d_project.qrcodesplitter;/*eslint-enable*/

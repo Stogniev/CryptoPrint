@@ -1,6 +1,12 @@
 
+export function createImageData(height, width) {
+     width=width||136;
+	 height=height||70;
+	 return {data:new Uint8ClampedArray(height*width*4),height,width}
+}
 
-export   function createcanvas() {
+   
+export function createcanvas() {
      //width="136" height="70" style="border:1px solid blue"
      var c = document.createElement('canvas');
      c.setAttribute('id', 'c');
@@ -87,15 +93,17 @@ export function setPixel(imageData, x, y, r, g, b, a) {
 export function drawqr_split(random_pad,imageData,imageData1, imageData2,x,y,qr,dotzize) {
   var rr=0,gg=0,bb=0
   var m=qr.getModuleCount();
-  var dotzizem=dotzize-1;
   var xx;
+  /*
+  var dotzizem=dotzize-1;
   var  lefttop_pixel,
        leftbottomp_pixel,
        righttopp_pixel,
        rightbottomp_pixel,
        has_left,has_right,has_above,has_below,
        has_above_left,has_below_left,has_above_right,has_below_right;
-
+  */
+  
   for (var r = 0; r < m; r += 1) {
     xx=x;
     for (var c = 0; c < m; c += 1) {
@@ -132,9 +140,9 @@ export function drawqr_split(random_pad,imageData,imageData1, imageData2,x,y,qr,
 
          }
          else*/
-         {
+         //{
            if(qr.isDark(r, c))setPixelAndSetPixelSplit(random_pad,imageData, imageData1, imageData2, xx+k  , y+j, rr, gg, bb, 255);
-         }
+         //}
         }
       }
       xx+=dotzize;
@@ -149,15 +157,16 @@ export function drawqr_split(random_pad,imageData,imageData1, imageData2,x,y,qr,
 export function drawqr(imageData,x,y,qr,dotzize) {
   var rr=0,gg=0,bb=0
   var m=qr.getModuleCount();
-  var dotzizem=dotzize-1;
   var xx;
+  /*
+  var dotzizem=dotzize-1;
   var lefttop_pixel,
       leftbottomp_pixel,
       righttopp_pixel,
       rightbottomp_pixel,
       has_left,has_right,has_above,has_below,
       has_above_left,has_below_left,has_above_right,has_below_right;
-
+*/
   for (var r = 0; r < m; r += 1) {
     xx=x;
     for (var c = 0; c < m; c += 1) {
@@ -194,9 +203,9 @@ export function drawqr(imageData,x,y,qr,dotzize) {
 
          }
          else*/
-         {
+         //{
            if(qr.isDark(r, c))setPixel(imageData, xx+k  , y+j, rr, gg, bb, 255);
-         }
+         //}
         }
       }
       xx+=dotzize;
@@ -214,7 +223,6 @@ export function bitarr_to_ctx(a,ctx)
     var data = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height),
         buffer = data.data,
         len = buffer.length,
-        threshold = 127,
         i = 0 ,
          b,x=0;
      for(; i < len; i += 4,x++) {
@@ -224,6 +232,38 @@ export function bitarr_to_ctx(a,ctx)
     }
    ctx.putImageData(data, 0, 0);
 }
+
+
+export function bitarr_to_imagedata(a,data)
+{
+        var buffer = data.data,
+        len = buffer.length,
+        i = 0 ,
+         b,x=0;
+     for(; i < len; i += 4,x++) {
+        b=a[x]!==0;
+        buffer[i] =  buffer[i+1] =  buffer[i+2] = b ? 0 : 255;
+        buffer[i+3] = b?255:0;
+    }
+}
+
+
+export function imagedata_to_bitarr(data )
+{
+        var buffer = data.data,
+        len = buffer.length,
+        threshold = 127,
+        i = 0,
+        lum;
+    var a= new Array(buffer.length/4)
+    var x=0;
+    for(; i < len; i += 4,x++) {
+        lum = buffer[i] * 0.3 + buffer[i+1] * 0.59 + buffer[i+2] * 0.11;
+        a[x]=lum < threshold && buffer[i+3]>127?1:0;
+    }
+    return a;
+}
+
 
 export function ctx_to_bitarr(ctx)
 {
@@ -244,20 +284,20 @@ export function ctx_to_bitarr(ctx)
 
 // not used:
 export function flip_pixels(imageData,width){
-  var p,x,y,ix,w=0,iw=imageData.width,r,g,b,a,r2,g2,b2,a2,widthm=width-1;
-  ;
+  var p,x,y,ix,w=0,iw=imageData.width,widthm=width-1;
+  var pixelPosition,pixelPosition2;
+  var part;
   for (y = 0; y < imageData.height; y++)
   {
-    var ar=[];
-    var pixelPosition =  (0     * 4) + (y * iw * 4);
-    var pixelPosition2 = (width * 4) + (y * iw * 4);
-    var part=imageData.data.slice(pixelPosition,pixelPosition2);
+    pixelPosition =  (0     * 4) + (y * iw * 4);
+    pixelPosition2 = (width * 4) + (y * iw * 4);
+    part=imageData.data.slice(pixelPosition,pixelPosition2);
 
     for (p=part.length-4,x = 0,ix=widthm; x < width; x++,ix--,p-=4)
     {
 
-        var pixelPosition =  (x  * 4) + (y * iw * 4);
-        var pixelPosition2 = (ix * 4) + (y * iw * 4);
+        pixelPosition =  (x  * 4) + (y * iw * 4);
+        ///pixelPosition2 = (ix * 4) + (y * iw * 4);
 
         imageData.data[pixelPosition  ] = part[p];
         imageData.data[pixelPosition+1] = part[p+1];

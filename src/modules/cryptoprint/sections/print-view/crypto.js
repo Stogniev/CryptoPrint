@@ -42,12 +42,13 @@ export function getEvenFrequencyPad(private_key,to_n_chars,seal_layers)
 
  const  randomBuffer = new Uint8Array(n); // short arrays only. less than 3000 in length, actually less than 255 in length as beccaus uint8
  random(randomBuffer);
- var ret=[],randi=0;
+
  var sum=chars_arr.length;
 
+ var i;
  //seal
  for(var j=0;j<seal_layers;j++){
-  for(var i=0;i<base58c.length&&sum <n;i++)
+  for(i=0;i<base58c.length&&sum <n;i++)
   {
    if(has[i]<2){
     has[i]++;
@@ -58,7 +59,7 @@ export function getEvenFrequencyPad(private_key,to_n_chars,seal_layers)
  }
 
  //sparkle some randomness
- for(var i=sum;i<n;i++)
+ for(i=sum;i<n;i++)
  {
   var rand=base58c[randomBuffer[i] % base58c.length]
   has[base58c.indexOf(rand)]++;

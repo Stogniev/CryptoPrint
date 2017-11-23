@@ -16,17 +16,19 @@ export function get (url) {
   return new Promise((ok, bad) => {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
-      try {
-        if (this.readyState == 4) {
-          if (this.status == 200) {
-            var fn = ok;
+      var fn;
+		
+	  try {
+        if (this.readyState === 4) {
+         if (this.status === 200) {
+            fn = ok;
             ok = false;
             bad = false;
             if (fn)
               fn(this.responseText);
             }
           else {
-            var fn = bad;
+            fn = bad;
             ok = false;
             bad = false;
             if (fn)
@@ -35,7 +37,7 @@ export function get (url) {
           }
 
       } catch (e) {
-        var fn = bad;
+        fn = bad;
         ok = false;
         bad = false;
         if (fn)
@@ -73,105 +75,129 @@ export function save_svg(svgelement, name) {
   downloadLink.click();
 }
 
-export function createSvgTag(qrSvg, parts, height, width, cellSize, margin, iheight, iwidth) {
 
-  cellSize = cellSize || 2;
-  margin = (typeof margin == 'undefined')
-    ? cellSize * 4
-    : margin;
-  var sizeheight = height * cellSize + margin * 2;
-  var sizewidth = width * cellSize + margin * 2;
-  var c,
-    mc,
-    r,
-    mr,
-    rect,
-    cellSize_rect;
+export function createEmptySVGstr(htmlwidth,htmlheight,viewboxwidth,videwboxheight){
+  var qrSvg=''
+  qrSvg += '<svg style="border:1px solid blue" version="1.1" xmlns="http://www.w3.org/2000/svg"';
+  qrSvg += ' width="' + htmlwidth + '"';
+  qrSvg += ' height="' + htmlheight + '"';
+  qrSvg += ' viewBox="0 0 ' + viewboxwidth + ' ' + videwboxheight + '" ';
+  qrSvg += ' preserveAspectRatio="xMinYMin meet">';
+  qrSvg += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>';
+  qrSvg += '</svg>';
+  return qrSvg;
+}
 
-  if (!qrSvg) {
-    qrSvg = ''
-    qrSvg += '<svg style="border:1px solid blue" version="1.1" xmlns="http://www.w3.org/2000/svg"';
-    qrSvg += ' width="' + iwidth + '"';
-    qrSvg += ' height="' + iheight + '"';
-    qrSvg += ' viewBox="0 0 ' + sizewidth + ' ' + sizeheight + '" ';
-    qrSvg += ' preserveAspectRatio="xMinYMin meet">';
-    qrSvg += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>';
-    qrSvg += '</svg>';
+export function text(options)
+{
+         var drawx=options.x||0;
+         var drawy=options.y||0;
+         var fontSize=options.fontSize||14; 
+         var lineHeight=options.lineHeight||1.25; 
+         var style=options.style||""; 
+         var fontFamily=options.fontFamily||"Arial"; 
+         var transform=options.transform||""; 
+         var text=options.text.split('\n').map(function(a,i){ return '<tspan x="'+drawx+'" y="'+(drawy+fontSize*lineHeight+i*fontSize*lineHeight)+'">'+a+'</tspan>' }).join('\n');
+
+         return '<text x="'+drawx+'" transform='+transform+' y="'+drawy+'" style="'+style+'" font-family="'+fontFamily+'" font-size="'+fontSize+'">'+text+'</text>'
+}
+
+export function imageData_to_path(options)
+{
+         var tqrSvg = '<path d="';
+
+
+         var imageData=options.data;
+         var cellSize=options.cellsize||2;
+         var drawx=options.x||0;
+         var drawy=options.y||0;
+         var margin=options.margin!==undefined?options.margin:cellSize*4;
+
+         var fill=options.fill||"black";
+         var offset=options.offset||0;
+
+        // the size will be:
+        //var sizeheight = height * cellSize + margin * 2;
+        //var sizewidth = width * cellSize + margin * 2;
+
+         var c, mc, r, mr, rect,cellSize_rect;
+         if(options.sizetype==='+1')
+         {
+              offset=-1;
+              cellSize_rect=cellSize+2;
+              rect = 'l' + cellSize_rect + ',0 0,'  + cellSize_rect +       // l is line
+                    ' -' + cellSize_rect + ',0 0,-' + cellSize_rect + 'z ';
+         }
+         else if(options.sizetype==='-2 centered')
+         {     
+              drawx-=1;
+              rect = 'l' + (cellSize) + ',0 0,'  + (cellSize) +         // l is line
+                    ' -' + (cellSize-2) + ',0 0,-' + (cellSize) + 'z ';
+         }
+         else
+         {     
+              rect = 'l' + cellSize + ',0 0,'  + cellSize +       // l is line
+                    ' -' + cellSize + ',0 0,-' + cellSize + 'z ';
+         }
+  
+         for (r = 0; r < imageData.height; r += 1) {
+            mr = r * cellSize + margin+offset+drawy;
+            for (c = 0; c < imageData.width; c += 1) {
+              if ( getPixel(imageData, c, r)[3]>127 ) { // is black then add rect path
+                mc = c*cellSize+margin+offset+drawx;
+                tqrSvg += 'M' + mc + ',' + mr + rect; // M is move to
+              }
+            }
+        }
+        tqrSvg += '" stroke="transparent" fill="'+fill+'"/>';
+        return tqrSvg;
+}
+
+
+export function postfix(qrSvg,search,value){
+  return qrSvg.replace(search,function(a){ return a+value } );
+}
+
+export function prefix(qrSvg,search,value){
+  return qrSvg.replace(search,function(a){ return value+a } );
+}
+
+export function replacestr(qrSvg,search,value){
+  return  qrSvg=qrSvg.replace(search,value);
+}
+ 
+export function createSvgTag(qrSvg,parts,height,width,iheight,iwidth) {
+
+  if(!qrSvg){
+     qrSvg +=createEmptySVGstr(iwidth,iheight,width,height);
+  } 
+  
+  for(var i=0;i<parts.length; i++)
+    {
+       var partsvg=''
+       var part =parts[i]
+       if(part.do==='xml')
+       {
+         partsvg+=part.xml
+       }
+       if(part.do==='str')
+       {
+         partsvg=part.str
+       }
+       if(part.do==='text')
+       {
+         partsvg +=text(part)
+       }
+       if(part.do==='pixels')
+       {
+         partsvg +=imageData_to_path(part);
+       }
+      //if append
+      if(part.action==='postfix')     qrSvg=postfix(qrSvg,part.search,partsvg);
+      if(part.action==='prefix')      qrSvg=prefix(qrSvg,part.search,partsvg);
+      if(part.action==='replacestr')  qrSvg=replacestr(qrSvg,part.search,partsvg);
   }
 
-  for (var i = 0; i < parts.length; i++) {
-    var tqrSvg = ''
-    var part = parts[i]
-    if (part.do == 'xml') {
-        tqrSvg += part.xml
-      }
-      if (part.do == 'str') {
-          tqrSvg = part.str
-        }
-        if (part.do == 'text') {
-            var drawx = part.x || 0;
-            var drawy = part.y || 0;
-            var fontSize = part.fontSize || 14;
-            var lineHeight = part.lineHeight || 1.25;
-            var style = part.style || "";
-            var fontFamily = part.fontFamily || "Arial";
-            var transform = part.transform || "";
-            var text = part.text.split('\n').map(function(a, i) {
-              return '<tspan x="' + drawx + '" y="' + (
-              drawy + fontSize * lineHeight + i * fontSize * lineHeight) + '">' + a + '</tspan>'
-            }).join('\n');
 
-            tqrSvg += '<text x="' + drawx + '" transform=' + transform + ' y="' + drawy + '" style="' + style + '" font-family="' + fontFamily + '" font-size="' + fontSize + '">' + text + '</text>'
-          }
-          if (part.do == 'pixels') {
-              tqrSvg += '<path d="';
-
-              var imageData = part.data;
-              cellSize = part.cellsize;
-              var drawx = part.x;
-              var drawy = part.y;
-              var fill = part.fill || "black";
-              var offset = 0;
-              if (part.sizetype == '+1') {
-                offset = -1;
-                cellSize_rect = cellSize + 2;
-                rect = 'l' + cellSize_rect + ',0 0,' + cellSize_rect + ' -' + cellSize_rect + ',0 0,-' + cellSize_rect + 'z ';
-              } else if (part.sizetype == '-2 centered') {
-                drawx -= 1;
-                rect = 'l' + (
-                cellSize) + ',0 0,' + (
-                cellSize) + ' -' + (
-                cellSize - 2) + ',0 0,-' + (
-                cellSize) + 'z ';
-              } else {
-                rect = 'l' + cellSize + ',0 0,' + cellSize + ' -' + cellSize + ',0 0,-' + cellSize + 'z ';
-              }
-
-              for (r = 0; r < imageData.height; r += 1) {
-                mr = r * cellSize + margin + offset + drawy;
-                for (c = 0; c < imageData.width; c += 1) {
-                  if (getPixel(imageData, c, r)[3] > 127) {
-                    mc = c * cellSize + margin + offset + drawx;
-                    tqrSvg += 'M' + mc + ',' + mr + rect;
-                  }
-                }
-              }
-              tqrSvg += '" stroke="transparent" fill="' + fill + '"/>';
-            }
-            //if append
-            if (part.action == 'append')
-              qrSvg = qrSvg.replace('</svg>', tqrSvg + '</svg>');
-            if (part.action == 'postfix')
-              qrSvg = qrSvg.replace(part.search, function(a) {
-                return a + tqrSvg
-              });
-            if (part.action == 'prefix')
-              qrSvg = qrSvg.replace(part.search, function(a) {
-                return tqrSvg + a
-              });
-            if (part.action == 'replacestr')
-              qrSvg = qrSvg.replace(part.search, tqrSvg);
-            }
-
-          return qrSvg;
-        }
+  return qrSvg;
+}
