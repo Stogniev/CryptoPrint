@@ -59,13 +59,13 @@ export function setPixelSplit( random_pad, imageData1,imageData2, x, y, r, g, b,
 
 
 
-export function setPixelAndSetPixelSplit(imageData,  imageData1, imageData2, x, y, r, g, b, a) {
+export function setPixelAndSetPixelSplit(random_pad, imageData,  imageData1, imageData2, x, y, r, g, b, a) {
     var index = (x + y * imageData.width) * 4;
     imageData.data[index+0] = r;
     imageData.data[index+1] = g;
     imageData.data[index+2] = b;
     imageData.data[index+3] = a;
-    setPixelSplit( imageData1, imageData2, x, y, r, g, b, a)
+    setPixelSplit( random_pad, imageData1, imageData2, x, y, r, g, b, a)
 }
 
 
