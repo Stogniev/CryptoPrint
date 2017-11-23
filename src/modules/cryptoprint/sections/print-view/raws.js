@@ -16,6 +16,9 @@ const templates = {
   backArtwork: 'https://shimon.doodkin.com/files/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg'
 }
 
+let sHeight = 300
+let sWidth = 400
+
 let svgtemplate_front_data = '',
   svgtemplate_front_artwork = '',
   svgtemplate_back_artwork = '',
@@ -70,7 +73,7 @@ function generate() {
   var imageData1
   var imageData2
   var imageData3
-  
+
   const publicKey = '1ApT4jNxkrxXhEDiDMUQYA9cM99P6wvg6y'
   const privateKey = 'L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG'
 
@@ -166,7 +169,7 @@ function generate() {
   /*var y = 0;
   y = */drawqr_split(random_pad, imageData, imageData1, imageData2, 0, 0, qr, 1) //+(8*1.75|0)
 
-  drawqr(imageData2, 0, 0, qr_pad2, 1)
+  // drawqr(imageData2, 0, 0, qr_pad2, 1)
   drawqr(imageData3, 0, 0, pqr, 1)
   imageData = null;
 
@@ -185,7 +188,7 @@ function generate() {
   //console.log(ctx1_width,ctx2_width,ctx3_width,ctx4_width,ctx5_width,ctx6_width)
 
   var span,svg;
-  
+
   //  svgtemplate_front_data="",
   //  svgtemplate_front_artwork="",
   //  svgtemplate_back_artwork="",
@@ -203,69 +206,69 @@ function generate() {
 
   var artwork_front_defs = svgtemplate_front_artwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
   var artwork_front_content = svgtemplate_front_artwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
- 
+
   artwork_front_content = '<g transform="scale(-1, 1) translate(-1600, 0)" >' + artwork_front_content + '</g>'
   //privateKeySplit.marking,privateKeySplit.padded
       //if(svg=='')
 	//svg=createEmptySVGstr(imageData1.width,imageData1.height,
 	//                          imageData1.width,imageData1.height);
-	
+
 	svg=svgtemplate_front_data;
-	
+
 	svg=replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length-6) )
 	svg=replacestr(svg, /MMMMMM/, publicKey.substr(0,6) )
 	svg=replacestr(svg, /T01-20170000000001/g, bill_id )
 	svg=replacestr(svg, /2017 — Tel Aviv, Israel/g, printhouse_id )
 	svg=replacestr(svg, /Single Private\/Public Key/g, bill_type )
 	svg=replacestr(svg, /Copy 01\/03/g, bill_type_subtext )
-    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageData_to_path( {x: 0, y:115, data:imageData1, margin:0, offset:0, cellsize:12,sizetype:'-2 centered', fill:'#E43DB0'} )  )	
-	
-	svg=replacestr(svg, /<g id="Privkey-Texts"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, 
+    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageData_to_path( {x: 0, y:115, data:imageData1, margin:0, offset:0, cellsize:12,sizetype:'-2 centered', fill:'#E43DB0'} )  )
+
+	svg=replacestr(svg, /<g id="Privkey-Texts"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g,
       function(a){
         var letter_i=0;
-        var order=[]; 
+        var order=[];
 		// search and replace just to collect x,y and order
-		a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?.+?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){ 
+		a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?.+?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){
           var x1=parseFloat(a2||0),y1=parseFloat(a3||0);
-           a.replace(/(<tspan.+?>).+?(<\/tspan>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){ 
+           a.replace(/(<tspan.+?>).+?(<\/tspan>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){
             var translate=a1.match(/<tspan.+?(x="(\S+)")?\s+(y="(\S+)")?.*?>/)
             var x2=parseFloat(translate[2]||0),  y2=parseFloat(translate[4]||0)
             order.push({c:privateKeySplit.padded[letter_i],i:letter_i,x:x1+x2,y:y1+y2});
             letter_i++
             //return a1+privateKeySplit.padded[letter_i++]+a2
-          }) 
+          })
         })
-         
+
         // console.log(order)
-        order.sort(function(a,b){ 
+        order.sort(function(a,b){
           if(a.y>b.y) return 1;
           if(a.y<b.y) return -1;
 
           if(a.x>b.x) return 1;
-          if(a.x<b.x) return -1;  
- 
+          if(a.x<b.x) return -1;
+
           return 0
         })
-		
+
         //console.log(order)
-		 
+
         // serch and replace again (same) but now replace in order
-        letter_i=0; 
-        return a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?.+?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){ 
-          return a.replace(/(<tspan.+?>).+?(<\/tspan>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){ 
+        letter_i=0;
+        return a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?.+?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){
+          return a.replace(/(<tspan.+?>).+?(<\/tspan>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){
             return a1+(order[letter_i++].c)+a2
-          }) 
+          })
         });
       }
 
 	)
 	svg=prefix(svg, /<\/defs>/, artwork_front_defs )
 	svg=postfix(svg, /<\/defs>/, artwork_front_content )
-	
+
 	span.innerHTML = svg;
-	span.getElementsByTagName("svg")[0].setAttribute('height',100)
-	span.getElementsByTagName("svg")[0].setAttribute('width',200)
-    
+	span.getElementsByTagName("svg")[0].setAttribute('height',sHeight)
+	span.getElementsByTagName("svg")[0].setAttribute('width',sWidth)
+
 	document.getElementById('page_front_data').appendChild(span);
 
     span = document.createElement('span');
@@ -276,29 +279,29 @@ function generate() {
     var artwork_back_defs=svgtemplate_back_artwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
     var artwork_back_content=svgtemplate_back_artwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-    
+
     svg=svgtemplate_back_on_transparent_data;
     svg=replacestr(svg, /MMMMMM/ , publicKey.substr(publicKey.length-6) )
     svg=replacestr(svg, /MMMMMM/  ,  publicKey.substr(0,6) )
     svg=replacestr(svg,  /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,  publicKey )
     svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageData_to_path( {x: 0, y:115, data:imageData2, margin:0, offset:0, cellsize:12, sizetype:'-2 centered', fill:'#E43DB0'} )  )
     svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageData_to_path( {x: 0, y:0, data:imageData3, margin:0, offset:0, cellsize:12, sizetype:'1', fill:'#E43DB0'}  ) )
-    svg=replacestr(svg, 
-	
+    svg=replacestr(svg,
+
 		/<g id="Privkey-Texts-Copy"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g  ,  // find the group that contains  the svg
 
 		function(a) { // replace parts in it
-			var letter_i=0; 
+			var letter_i=0;
 			var order=[];
-			
+
 			// search and replace just to collect x,y and order
-			
-			a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){ 
-			   //return "";   
+
+			a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){
+			   //return "";
 
 			   var x1=parseFloat(a2||0),y1=parseFloat(a3||0);
 				//console.log(x1,y1)
-				a.replace(/(<g.+?fill=")(.+?)(">\s+<rect.+?<\/rect>\s+<\/g>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){ 
+				a.replace(/(<g.+?fill=")(.+?)(">\s+<rect.+?<\/rect>\s+<\/g>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){
 				 var translate=a1.match(/translate\(\s*(\S+)\s*,\s*(\S+)\s*\)/)
 				 var x2=parseFloat(translate[1]||0),  y2=parseFloat(translate[2]||0)
 				 order.push({c:privateKeySplit.marking[letter_i],i:letter_i,x:x1+x2,y:y1+y2});
@@ -307,7 +310,7 @@ function generate() {
 			  })
 			   // return a;
 			})
-			
+
 			// sort by x, y
 			order.sort(function(a,b){
 			  if(a.y>b.y) return 1;
@@ -315,29 +318,29 @@ function generate() {
 
 			  if(a.x>b.x) return 1;
 			  if(a.x<b.x) return -1;
-	 
+
 			  return 0
 			})
-			 
+
 			// serch and replace again (same) but now replace in order
-			letter_i=0; 
-			return a.replace(/<g id="parts\/privkey-text-blocks"( transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){ 
-			   //return "";   
-			   return a.replace(/(<g.+?fill=")(.+?)(">\s+<rect.+?<\/rect>\s+<\/g>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){ 
+			letter_i=0;
+			return a.replace(/<g id="parts\/privkey-text-blocks"( transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){
+			   //return "";
+			   return a.replace(/(<g.+?fill=")(.+?)(">\s+<rect.+?<\/rect>\s+<\/g>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){
 				  return a1+(order[letter_i++].c===' '?'transparent':a2)+a3
-			  }) 
+			  })
 			});
 		  }
 
 	)
-	
-	
+
+
     svg=prefix(svg,  /<\/defs>/  , artwork_back_defs  )
     svg=postfix(svg, /<\/defs>/  , artwork_back_content  )
-	
+
 	span.innerHTML = svg;
-	span.getElementsByTagName("svg")[0].setAttribute('height',100)
-	span.getElementsByTagName("svg")[0].setAttribute('width',200)
+	span.getElementsByTagName("svg")[0].setAttribute('height', sHeight)
+	span.getElementsByTagName("svg")[0].setAttribute('width', sWidth)
       document.getElementById('page_back_on_transparent_data').appendChild(span);
 
     }
