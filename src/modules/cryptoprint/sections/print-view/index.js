@@ -14,6 +14,8 @@ export class PrintViewSection extends Component {
       <h2>Welcome to PrintView PRV</h2>
       <Button raised onClick={e => this.doGenerate()} label='Generate' />
       <div id='page_back_on_transparent_data' />
+      <div id='page_front_data' />
+
     </div>
   }
 }
