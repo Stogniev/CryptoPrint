@@ -48,7 +48,7 @@ get('https://shimon.doodkin.com/files/Layer%201%20-%20On%20Transparent%20Placeho
   console.log(e)
 });
 
-get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg').then(function(data) {
+get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg').then(function(data) {
   svgtemplate_back_artwork = data;
   console.log('svgtemplate_back_artwork done');
   get_done();
@@ -56,7 +56,7 @@ get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%201%20-%20Back%20Art
   console.log(e)
 });
 
-get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg').then(function(data) {
+get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg').then(function(data) {
   svgtemplate_front_artwork = data;
   console.log('svgtemplate_front_artwork done');
   get_done();
@@ -204,7 +204,7 @@ function generate() {
   var artwork_front_defs = svgtemplate_front_artwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
   var artwork_front_content = svgtemplate_front_artwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
  
-  artwork_front_content = '<g transform="scale(-1, 1) translate(-1600, 0)" >' + artwork_front_content + '</g>'
+  //artwork_front_content = '<g transform="scale(-1, 1) translate(-1600, 0)" >' + artwork_front_content + '</g>'
   //privateKeySplit.marking,privateKeySplit.padded
       //if(svg=='')
 	//svg=createEmptySVGstr(imageData1.width,imageData1.height,
@@ -263,8 +263,8 @@ function generate() {
 	svg=postfix(svg, /<\/defs>/, artwork_front_content )
 	
 	span.innerHTML = svg;
-	span.getElementsByTagName("svg")[0].setAttribute('height',100)
-	span.getElementsByTagName("svg")[0].setAttribute('width',200)
+	span.getElementsByTagName("svg")[0].setAttribute('height',400)
+	span.getElementsByTagName("svg")[0].setAttribute('width',800)
     
 	document.getElementById('page_front_data').appendChild(span);
 
@@ -278,6 +278,10 @@ function generate() {
 
     
     svg=svgtemplate_back_on_transparent_data;
+	
+	svg=postfix(svg, /<g id="Print-Layouts" / , ' transform="scale(-1, 1) translate(-1600, 0)" ' )
+    
+	
     svg=replacestr(svg, /MMMMMM/ , publicKey.substr(publicKey.length-6) )
     svg=replacestr(svg, /MMMMMM/  ,  publicKey.substr(0,6) )
     svg=replacestr(svg,  /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,  publicKey )
@@ -336,8 +340,8 @@ function generate() {
     svg=postfix(svg, /<\/defs>/  , artwork_back_content  )
 	
 	span.innerHTML = svg;
-	span.getElementsByTagName("svg")[0].setAttribute('height',100)
-	span.getElementsByTagName("svg")[0].setAttribute('width',200)
+	span.getElementsByTagName("svg")[0].setAttribute('height',400)
+	span.getElementsByTagName("svg")[0].setAttribute('width',800)
       document.getElementById('page_back_on_transparent_data').appendChild(span);
 
     }
