@@ -442,7 +442,7 @@ var qrcode = function() {
           }
 
           if (buffer.getLengthInBits() <= totalDataCount * 8) {
-			  
+
             break;
           }
         }
@@ -2127,7 +2127,7 @@ var qrcode = function() {
 
 }();
 
-var qrcode_export=qrcode();
+var qrcode_export=qrcode;
 export default qrcode_export;
 
 /*
