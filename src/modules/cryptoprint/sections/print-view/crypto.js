@@ -1,19 +1,17 @@
+var crypto = window.crypto || window.msCrypto
+var random = crypto.getRandomValues.bind(crypto)
 
-var crypto= window.crypto ||  window.msCrypto;
-var random =crypto.getRandomValues.bind(crypto);
-
-
-export function shuffle(arr) {
-    arr=arr.slice(0); // dont modify source arr
-    const  randomBuffer = new Uint8Array(arr.length); // short arrays only. less than 3000 in length, actually less than 255 in length as beccaus uint8
-    random(randomBuffer);
-    var ret=[],randi=0;
-    while(arr.length){
-     ret.push(arr.splice(randomBuffer[randi++]%arr.length,1)[0])
-    }
-    return ret;
+export function shuffle (arr) {
+  arr = arr.slice(0) // dont modify source arr
+  const randomBuffer = new Uint8Array(arr.length) // short arrays only. less than 3000 in length, actually less than 255 in length as beccaus uint8
+  random(randomBuffer)
+  let ret = []
+  let randi = 0
+  while (arr.length) {
+    ret.push(arr.splice(randomBuffer[randi++] % arr.length, 1)[0])
+  }
+  return ret
 }
-
 
 // the code tries to prevent frequency analysis
 // by making even filed possible or by adding randomness on top of it
@@ -22,58 +20,48 @@ export function shuffle(arr) {
 
 // keys with too much repeating same letter are not too good for this. so they are rejected.
 
-//var private_key="L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG";
-//console.log(getEvenFrequencyPad(private_key,144,1))
+// var privKey="L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG"
+// console.log(getEvenFrequencyPad(privKey,144,1))
 
-export function getEvenFrequencyPad(private_key,to_n_chars,seal_layers)
-{
- var base58c='123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
- var chars_arr=private_key.split('');
- var o="";
- o+=chars_arr.shift();
- var has=base58c.split('').map(function(){ return 0; });
+export function getEvenFrequencyPad (privKey, toNChars, sealLayers = 1) {
+  const base58c = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
+  let charsArr = privKey.split('')
+  let o = charsArr.shift()
+  let has = base58c.split('').map(() => 0)
+  let len = charsArr.length
+  let i
 
- if(seal_layers===undefined)seal_layers=1;
- chars_arr.forEach(function(a){ has[base58c.indexOf(a)]++;
-     //                          if(has[base58c.indexOf(a)]>4) throw new Error('bad private key');
- })
- var n=to_n_chars;
- var charstoadd=''
+  var n = toNChars
+  var charstoadd = ''
 
- const  randomBuffer = new Uint8Array(n); // short arrays only. less than 3000 in length, actually less than 255 in length as beccaus uint8
- random(randomBuffer);
+  const randomBuffer = new Uint8Array(n) // short arrays only. less than 3000 in length, actually less than 255 in length as beccaus uint8
+  random(randomBuffer)
 
- var sum=chars_arr.length;
-
- var i;
- //seal
- for(var j=0;j<seal_layers;j++){
-  for(i=0;i<base58c.length&&sum <n;i++)
-  {
-   if(has[i]<2){
-    has[i]++;
-    sum++;
-    charstoadd+=base58c[i];
-   }
+  // seal
+  for (var j = 0; j < sealLayers; j++) {
+    for (i = 0; i < base58c.length && len < n; i++) {
+      if (has[i] < 2) {
+        has[i]++
+        len++
+        charstoadd += base58c[i]
+      }
+    }
   }
- }
 
- //sparkle some randomness
- for(i=sum;i<n;i++)
- {
-  var rand=base58c[randomBuffer[i] % base58c.length]
-  has[base58c.indexOf(rand)]++;
-  charstoadd+=rand;
-  sum++;
- }
+  // sparkle some randomness
+  for (i = len; i < n; i++) {
+    var rand = base58c[randomBuffer[i] % base58c.length]
+    has[base58c.indexOf(rand)]++
+    charstoadd += rand
+    len++
+  }
 
-  var charstoadd_arr=chars_arr.map(function(){return "_";}).concat(charstoadd.split(''));//.join('');
+  var charsToAddArr = charsArr.map(() => '_').concat(charstoadd.split(''))
 
+  var pad = (shuffle(charsToAddArr).join(''))
+  o += pad.replace(/_/g, () => charsArr.shift())
 
- var pad=(shuffle(charstoadd_arr).join(''));
- o+=pad.replace(/_/g,function(){return chars_arr.shift();})
- pad=('_'+pad).split('').map(function(a){return a==='_'?' ':'\u2588';}).join('');
- return {padded:o,marking:pad};
+  pad = ('_' + pad).split('').map(a => a === '_' ? ' ' : '\u2588').join('')
+
+  return { padded: o, marking: pad }
 }
-
- 

@@ -1,4 +1,11 @@
-import { exportSVG, get, imageDataToPath, postfix, prefix, replacestr } from './lib'
+import {
+  exportSVG,
+  get,
+  imageDataToPath,
+  postfix,
+  prefix,
+  replacestr
+} from './lib'
 import { getEvenFrequencyPad } from './crypto'
 import { createImageData, drawQRSplit, drawqr, imageDataToBitArray } from './canvastools'
 import fetch from 'isomorphic-fetch'
@@ -19,336 +26,317 @@ const templates = {
 
 const svgPromises = Object.keys(templates).map(key => getSVG(templates[key]).then(text => ({key, url: templates[key], text})))
 const svgDatas = Promise.all(svgPromises).then(r => console.log('rs?', r)).catch(e => console.log('e?', e))
+
 console.log('svgs?', svgDatas)
 
 let sHeight = 500
 let sWidth = 800
 
-let svgtemplate_front_data = ''
-let svgtemplate_front_artwork = ''
-let svgtemplate_back_artwork = ''
-let svgtemplate_back_on_transparent_data = ''
+let svgTemplateFrontData = ''
+let svgTemplateFrontArtwork = ''
+let svgTemplateBackArtwork = ''
+let svgTemplateBackData = ''
 
-let donec = 0;
-function get_done() {
-  donec++;
-  if (donec === 4)
+let donec = 0
+function getDone () {
+  donec++
+  if (donec === 4) {
     console.log('svg templates loaded')
-    //generate();
   }
+}
 
-get(templates.frontData).then(function(data) {
-  svgtemplate_front_data = data;
-  console.log('svgtemplate_front_data done');
-  get_done();
-}).catch(function(e) {
-  console.log(e)
-});
-
-get(templates.backData).then(function(data) {
-  svgtemplate_back_on_transparent_data = data;
-  console.log('svgtemplate_back_on_transparent_data done');
-  get_done();
-}).catch(function(e) {
-  console.log(e)
-});
-
-get(templates.backArtwork).then(function(data) {
-  svgtemplate_back_artwork = data;
-  console.log('svgtemplate_back_artwork done');
-  get_done();
-}).catch(function(e) {
-  console.log(e)
-});
-
-get(templates.frontArtwork).then(function(data) {
-  svgtemplate_front_artwork = data;
-  console.log('svgtemplate_front_artwork done');
-  get_done();
-}).catch(function(e) {
-  console.log(e)
-});
+get(templates.frontData).then(data => {
+  svgTemplateFrontData = data
+  console.log('svgTemplateFrontData done')
+  getDone()
+})
+get(templates.backData).then(data => {
+  svgTemplateBackData = data
+  console.log('svgTemplateBackData done')
+  getDone()
+})
+get(templates.backArtwork).then(data => {
+  svgTemplateBackArtwork = data
+  console.log('svgTemplateBackArtwork done')
+  getDone()
+})
+get(templates.frontArtwork).then(data => {
+  svgTemplateFrontArtwork = data
+  console.log('svgTemplateFrontArtwork done')
+  getDone()
+})
 
 function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
-  let random_pad = []
+  let randomPad = []
   let imageData1
   let imageData2
   let imageData3
 
-  // const publicKey = '1ApT4jNxkrxXhEDiDMUQYA9cM99P6wvg6y'
-  // const privateKey = 'L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG'
-
   let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1)
-  //    console.log(private_str,privateKeySplit.marking,privateKeySplit.padded)
+
   let typeNumber = 0
   let errorCorrectionLevel = 'L'
   let qr = qrcode(typeNumber, errorCorrectionLevel)
   qr.addData(privateKey)
   qr.make()
-  // console.log(qr)
-  // let qrmodulecount = qr.getModuleCount()
-  // /
-  let splitter_QRCode = qrcodesplitter.QRCode
-  var splitter_ErrorCorrectLevel = qrcodesplitter.ErrorCorrectLevel
-  //    var s_QRNumber = com.d_project.qrcodesplitter.QRNumber;
-  //    var s_QRAlphaNum = com.d_project.qrcodesplitter.QRAlphaNum;
-  //    var s_QR8BitByte = com.d_project.qrcodesplitter.QR8BitByte;
-  //    var s_QRKanji = com.d_project.qrcodesplitter.QRKanji;
+
+  let SplitterQRCode = qrcodesplitter.QRCode
+  let SplitterErrorCorrectLevel = qrcodesplitter.ErrorCorrectLevel
 
   // uncomment if UTF-8 support is required.
-  //QRCode.stringToBytes = com.d_project.text.stringToBytes_UTF8;
-  var qr_pad = new splitter_QRCode(); // the private key qr code splitting pad
-  var qr_pad2 = new splitter_QRCode(); // only positioning dots for the other part of the qr code to make it beutiful
-  qr_pad.setErrorCorrectLevel(splitter_ErrorCorrectLevel.L);
-  qr_pad.addData(privateKey);
-  qr_pad2.setErrorCorrectLevel(splitter_ErrorCorrectLevel.L);
-  qr_pad2.addData(privateKey);
+  // QRCode.stringToBytes = com.d_project.text.stringToBytes_UTF8
+  let qrPad = new SplitterQRCode() // the private key qr code splitting pad
+  let qrPad2 = new SplitterQRCode() // only positioning dots for the other part of the qr code to make it beutiful
+  qrPad.setErrorCorrectLevel(SplitterErrorCorrectLevel.L)
+  qrPad.addData(privateKey)
+  qrPad2.setErrorCorrectLevel(SplitterErrorCorrectLevel.L)
+  qrPad2.addData(privateKey)
   for (typeNumber = 1; typeNumber <= 40; typeNumber++) {
     try {
-      qr_pad.setTypeNumber(typeNumber)
-      qr_pad.make()
-      qr_pad2.setTypeNumber(typeNumber)
-      qr_pad2.make(true)
-      break;
+      qrPad.setTypeNumber(typeNumber)
+      qrPad.make()
+      qrPad2.setTypeNumber(typeNumber)
+      qrPad2.make(true)
+      break
     } catch (e) {}
   }
   // img
 
-  ////////
-
-  //console.log(qrmodulecount)
   typeNumber = 0
   errorCorrectionLevel = 'M'
-  var pqr = qrcode(typeNumber, errorCorrectionLevel)
+  let pqr = qrcode(typeNumber, errorCorrectionLevel)
   pqr.addData(publicKey)
   pqr.make()
 
-  //<canvas id="c1" width="146" height="80" style="border:1px solid blue"></canvas>
-  //<canvas id="c2" width="146" height="80" style="border:1px solid blue"></canvas> <br>
-  //<canvas id="c3" width="146" height="80" style="border:1px solid blue"></canvas> <br>
+  let imageData = createImageData()
 
-  //var el = createcanvas(); //document.getElementById('c');
-  //el.setAttribute('height',qrmodulecount)
-  //el.setAttribute('width',qrmodulecount)
-  //var ctx = el.getContext('2d');
-  //ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  imageData1 = createImageData()
 
-  var imageData =  createImageData();//ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+  imageData2 = createImageData()
 
-  //var el1 = createcanvas(); //document.getElementById('c1');
-  //el1.setAttribute('height', el.getAttribute('height'))
-  //el1.setAttribute('width', el.getAttribute('width'))
-  //var ctx1 = el1.getContext('2d');
-  //ctx1.clearRect(0, 0, ctx1.canvas.width, ctx1.canvas.height);
-  imageData1 =  createImageData();// ctx1.getImageData(0, 0, ctx1.canvas.width, ctx1.canvas.height);
+  imageData3 = createImageData()
 
-  //var el2 = createcanvas(); //document.getElementById('c2');
-  //el2.setAttribute('height', el.getAttribute('height'))
-  //el2.setAttribute('width', el.getAttribute('width'))
-  //var ctx2 = el2.getContext('2d');
-  //ctx2.clearRect(0, 0, ctx2.canvas.width, ctx2.canvas.height);
-  imageData2 =  createImageData();//ctx2.getImageData(0, 0, ctx2.canvas.width, ctx2.canvas.height);
+  drawqr(imageData, 0, 0, qrPad, 1)
+  // ctx.putImageData(imageData, 0, 0);  at coords 0,0
+  var padOfQR = imageDataToBitArray(imageData)
+  padOfQR.unshift(0)
+  padOfQR.unshift(0)
+  randomPad.length = 0
+  Array.prototype.splice.apply(randomPad, padOfQR)
 
-  //var el3 = createcanvas(); //document.getElementById('c3');
-  //el3.setAttribute('height', el.getAttribute('height'))
-  //el3.setAttribute('width', el.getAttribute('width'))
-  //var ctx3 = el3.getContext('2d');
-  //ctx3.clearRect(0, 0, ctx3.canvas.width, ctx3.canvas.height);
-  imageData3 =  createImageData();//ctx3.getImageData(0, 0, ctx3.canvas.width, ctx3.canvas.height);
+  // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+  imageData = createImageData()
 
-  drawqr(imageData, 0, 0, qr_pad, 1)
-  //ctx.putImageData(imageData, 0, 0); // at coords 0,0
-  var pad_of_qr = imageDataToBitArray(imageData)
-  pad_of_qr.unshift(0)
-  pad_of_qr.unshift(0)
-  random_pad.length = 0;
-  Array.prototype.splice.apply(random_pad, pad_of_qr)
+  /* var y = 0
+  y = */
+  drawQRSplit(randomPad, imageData, imageData1, imageData2, 0, 0, qr, 1) // +(8*1.75|0)
 
-  //ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-  imageData = createImageData();//ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-
-  /*var y = 0;
-  y = */drawQRSplit(random_pad, imageData, imageData1, imageData2, 0, 0, qr, 1) //+(8*1.75|0)
-
-  // drawqr(imageData2, 0, 0, qr_pad2, 1)
-  drawqr(imageData2, 0, 0, qr_pad2, 1)
+  // drawqr(imageData2, 0, 0, qrPad2, 1)
+  drawqr(imageData2, 0, 0, qrPad2, 1)
   drawqr(imageData3, 0, 0, pqr, 1)
-  imageData = null;
+  imageData = null
 
-  // ctx_size=getsize(imageData);
-  //var ctx1_size = getsize(imageData1);
-  //var ctx2_size = getsize(imageData2);
-  //var ctx3_size = getsize(imageData3);
+  let span
+  let svg
 
-  // copy the image data back onto the canvas
+  //  svgTemplateFrontData="",
+  //  svgTemplateFrontArtwork="",
+  //  svgTemplateBackArtwork="",
+  //  svgTemplateBackData=""
+  span = document.createElement('span')
+  span.addEventListener('click', () => {
+    exportSVG(this, publicKey + '_back')
+  }, false)
 
-  //ctx .putImageData(imageData,  0, 0);  at coords 0,0
-  //ctx1.putImageData(imageData1, 0, 0); // at coords 0,0
-  //ctx2.putImageData(imageData2, 0, 0); // at coords 0,0
-  //ctx3.putImageData(imageData3, 0, 0); // at coords 0,0
+  let nodeID = 'T01-20170000000002'
+  let noteType = 'Single Private/Public Key'
+  let noteTypeSubtext = 'Copy 01 of 02'
+  let printerID = '2018 — Tel Aviv, Israel'
 
-  //console.log(ctx1_width,ctx2_width,ctx3_width,ctx4_width,ctx5_width,ctx6_width)
+  let artworkFrontDefs = svgTemplateFrontArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  let artworkFrontContent = svgTemplateFrontArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  var span,svg;
+  svg = svgTemplateFrontData
 
-  //  svgtemplate_front_data="",
-  //  svgtemplate_front_artwork="",
-  //  svgtemplate_back_artwork="",
-  //  svgtemplate_back_on_transparent_data="";
-  span = document.createElement('span');
-  span.addEventListener('click', function() {
-    exportSVG(this, publicKey + '_back');
-  }, false);
+  svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
+  svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
+  svg = replacestr(svg, /T01-20170000000001/g, nodeID)
+  svg = replacestr(svg, /2017 — Tel Aviv, Israel/g, printerID)
+  svg = replacestr(svg, /Single Private\/Public Key/g, noteType)
+  svg = replacestr(svg, /Copy 01\/03/g, noteTypeSubtext)
+  svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
+    x: 0,
+    y: 115,
+    data: imageData1,
+    margin: 0,
+    offset: 0,
+    cellsize: 12,
+    sizetype: '-2 centered',
+    fill: '#E43DB0'
+  }))
 
-
-  var bill_id = 'T01-20170000000002'
-  var bill_type = 'Single Private/Public Key'
-  var bill_type_subtext = 'Copy 01 of 02'
-  var printhouse_id = '2018 — Tel Aviv, Israel'
-
-  var artwork_front_defs = svgtemplate_front_artwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  var artwork_front_content = svgtemplate_front_artwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
-
-  //artwork_front_content = '<g transform="scale(-1, 1) translate(-1600, 0)" >' + artwork_front_content + '</g>'
-  //privateKeySplit.marking,privateKeySplit.padded
-      //if(svg=='')
-	//svg=createEmptySVGstr(imageData1.width,imageData1.height,
-	//                          imageData1.width,imageData1.height);
-
-	svg=svgtemplate_front_data;
-
-	svg=replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length-6) )
-	svg=replacestr(svg, /MMMMMM/, publicKey.substr(0,6) )
-	svg=replacestr(svg, /T01-20170000000001/g, bill_id )
-	svg=replacestr(svg, /2017 — Tel Aviv, Israel/g, printhouse_id )
-	svg=replacestr(svg, /Single Private\/Public Key/g, bill_type )
-	svg=replacestr(svg, /Copy 01\/03/g, bill_type_subtext )
-    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageDataToPath( {x: 0, y:115, data:imageData1, margin:0, offset:0, cellsize:12,sizetype:'-2 centered', fill:'#E43DB0'} )  )
-
-	svg=replacestr(svg, /<g id="Privkey-Texts"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g,
-      function(a){
-        var letter_i=0;
-        var order=[];
-		// search and replace just to collect x,y and order
-		a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?.+?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){
-          var x1=parseFloat(a2||0),y1=parseFloat(a3||0);
-           a.replace(/(<tspan.+?>).+?(<\/tspan>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){
-            var translate=a1.match(/<tspan.+?(x="(\S+)")?\s+(y="(\S+)")?.*?>/)
-            var x2=parseFloat(translate[2]||0),  y2=parseFloat(translate[4]||0)
-            order.push({c:privateKeySplit.padded[letter_i],i:letter_i,x:x1+x2,y:y1+y2});
-            letter_i++
-            //return a1+privateKeySplit.padded[letter_i++]+a2
-          })
+  svg = replacestr(svg, /<g id="Privkey-Texts"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, function (a) {
+    var letterI = 0
+    var order = []
+    // search and replace just to collect x,y and order
+    a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?.+?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g, function (a, a1, a2, a3, a4) {
+      let x1 = parseFloat(a2 || 0)
+      let y1 = parseFloat(a3 || 0)
+      a.replace(/(<tspan.+?>).+?(<\/tspan>)/g, function (a, a1, a2, a3, a4, a5, a6, a7) {
+        let translate = a1.match(/<tspan.+?(x="(\S+)")?\s+(y="(\S+)")?.*?>/)
+        let x2 = parseFloat(translate[2] || 0)
+        let y2 = parseFloat(translate[4] || 0)
+        order.push({
+          c: privateKeySplit.padded[letterI],
+          i: letterI,
+          x: x1 + x2,
+          y: y1 + y2
         })
+        letterI++
+          // return a1+privateKeySplit.padded[letterI++]+a2
+      })
+    })
 
-        // console.log(order)
-        order.sort(function(a,b){
-          if(a.y>b.y) return 1;
-          if(a.y<b.y) return -1;
-
-          if(a.x>b.x) return 1;
-          if(a.x<b.x) return -1;
-
-          return 0
-        })
-
-        //console.log(order)
-
-        // serch and replace again (same) but now replace in order
-        letter_i=0;
-        return a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?.+?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){
-          return a.replace(/(<tspan.+?>).+?(<\/tspan>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){
-            return a1+(order[letter_i++].c)+a2
-          })
-        });
+      // console.log(order)
+    order.sort(function (a, b) {
+      if (a.y > b.y) {
+        return 1
+      }
+      if (a.y < b.y) {
+        return -1
       }
 
-	)
-	svg=prefix(svg, /<\/defs>/, artwork_front_defs )
-	svg=postfix(svg, /<\/defs>/, artwork_front_content )
+      if (a.x > b.x) {
+        return 1
+      }
+      if (a.x < b.x) {
+        return -1
+      }
 
-	span.innerHTML = svg;
-	span.getElementsByTagName("svg")[0].setAttribute('height',sHeight)
-	span.getElementsByTagName("svg")[0].setAttribute('width',sWidth)
+      return 0
+    })
 
-	document.getElementById('page_front_data').prepend(span);
+      // console.log(order)
 
-    span = document.createElement('span');
-    span.addEventListener('click', function() {
-      exportSVG(this, publicKey + '_back');
-    }, false);
+      // serch and replace again (same) but now replace in order
+    letterI = 0
+    return a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?.+?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g, function (a, a1, a2, a3, a4) {
+      return a.replace(/(<tspan.+?>).+?(<\/tspan>)/g, function (a, a1, a2, a3, a4, a5, a6, a7) {
+        return a1 + (order[letterI++].c) + a2
+      })
+    })
+  })
+  svg = prefix(svg, /<\/defs>/, artworkFrontDefs)
+  svg = postfix(svg, /<\/defs>/, artworkFrontContent)
 
-    var artwork_back_defs=svgtemplate_back_artwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-    var artwork_back_content=svgtemplate_back_artwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+  span.innerHTML = svg
+  span.getElementsByTagName('svg')[0].setAttribute('height', sHeight)
+  span.getElementsByTagName('svg')[0].setAttribute('width', sWidth)
 
+  document.getElementById('page_front_data').prepend(span)
 
-    svg=svgtemplate_back_on_transparent_data;
+  span = document.createElement('span')
+  span.addEventListener('click', function () {
+    exportSVG(this, publicKey + '_back')
+  }, false)
 
-	svg=postfix(svg, /<g id="Print-Layouts" / , ' transform="scale(-1, 1) translate(-1600, 0)" ' )
+  var artworkBackDefs = svgTemplateBackArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  var artworkBackContent = svgTemplateBackArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
+  svg = svgTemplateBackData
 
-    svg=replacestr(svg, /MMMMMM/ , publicKey.substr(publicKey.length-6) )
-    svg=replacestr(svg, /MMMMMM/  ,  publicKey.substr(0,6) )
-    svg=replacestr(svg,  /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,  publicKey )
-    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageDataToPath( {x: 0, y:115, data:imageData2, margin:0, offset:0, cellsize:12, sizetype:'-2 centered', fill:'#E43DB0'} )  )
-    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageDataToPath( {x: 0, y:0, data:imageData3, margin:0, offset:0, cellsize:12, sizetype:'1', fill:'#E43DB0'}  ) )
-    svg=replacestr(svg,
+  svg = postfix(svg, /<g id="Print-Layouts" /, ' transform="scale(-1, 1) translate(-1600, 0)" ')
 
-		/<g id="Privkey-Texts-Copy"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g  ,  // find the group that contains  the svg
+  svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
+  svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
+  svg = replacestr(svg, /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g, publicKey)
+  svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
+    x: 0,
+    y: 115,
+    data: imageData2,
+    margin: 0,
+    offset: 0,
+    cellsize: 12,
+    sizetype: '-2 centered',
+    fill: '#E43DB0'
+  }))
+  svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
+    x: 0,
+    y: 0,
+    data: imageData3,
+    margin: 0,
+    offset: 0,
+    cellsize: 12,
+    sizetype: '1',
+    fill: '#E43DB0'
+  }))
+  svg = replacestr(svg, /<g id="Privkey-Texts-Copy"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, // find the group that contains  the svg
 
-		function(a) { // replace parts in it
-			var letter_i=0;
-			var order=[];
+        function (a) { // replace parts in it
+          var letterI = 0
+          var order = []
 
-			// search and replace just to collect x,y and order
+      // search and replace just to collect x,y and order
 
-			a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){
-			   //return "";
+          a.replace(/<g(.+?transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g, function (a, a1, a2, a3, a4) {
+        // return ""
 
-			   var x1=parseFloat(a2||0),y1=parseFloat(a3||0);
-				//console.log(x1,y1)
-				a.replace(/(<g.+?fill=")(.+?)(">\s+<rect.+?<\/rect>\s+<\/g>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){
-				 var translate=a1.match(/translate\(\s*(\S+)\s*,\s*(\S+)\s*\)/)
-				 var x2=parseFloat(translate[1]||0),  y2=parseFloat(translate[2]||0)
-				 order.push({c:privateKeySplit.marking[letter_i],i:letter_i,x:x1+x2,y:y1+y2});
-				 letter_i++
-				 // return a;//''a1+(privateKeySplit.marking[letter_i++]==' '?'transparent':a2)+a3
-			  })
-			   // return a;
-			})
+            let x1 = parseFloat(a2 || 0)
+            let y1 = parseFloat(a3 || 0)
+        // console.log(x1,y1)
+            a.replace(/(<g.+?fill=")(.+?)(">\s+<rect.+?<\/rect>\s+<\/g>)/g, function (a, a1, a2, a3, a4, a5, a6, a7) {
+              let translate = a1.match(/translate\(\s*(\S+)\s*,\s*(\S+)\s*\)/)
+              let x2 = parseFloat(translate[1] || 0)
+              let y2 = parseFloat(translate[2] || 0)
+              order.push({
+                c: privateKeySplit.marking[letterI],
+                i: letterI,
+                x: x1 + x2,
+                y: y1 + y2
+              })
+              letterI++
+            // return a;//''a1+(privateKeySplit.marking[letterI++]==' '?'transparent':a2)+a3
+            })
+          // return a
+          })
 
-			// sort by x, y
-			order.sort(function(a,b){
-			  if(a.y>b.y) return 1;
-			  if(a.y<b.y) return -1;
+        // sort by x, y
+          order.sort(function (a, b) {
+            if (a.y > b.y) { return 1 }
+            if (a.y < b.y) {
+              return -1
+            }
 
-			  if(a.x>b.x) return 1;
-			  if(a.x<b.x) return -1;
+            if (a.x > b.x) {
+              return 1
+            }
+            if (a.x < b.x) {
+              return -1
+            }
 
-			  return 0
-			})
+            return 0
+          })
 
-			// serch and replace again (same) but now replace in order
-			letter_i=0;
-			return a.replace(/<g id="parts\/privkey-text-blocks"( transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g,function(a,a1,a2,a3,a4){
-			   //return "";
-			   return a.replace(/(<g.+?fill=")(.+?)(">\s+<rect.+?<\/rect>\s+<\/g>)/g,function(a,a1,a2,a3,a4,a5,a6,a7 ){
-				  return a1+(order[letter_i++].c===' '?'transparent':a2)+a3
-			  })
-			});
-		  }
+        // serch and replace again (same) but now replace in order
+          letterI = 0
+          return a.replace(/<g id="parts\/privkey-text-blocks"( transform="translate\(\s*(\S+)\s*,\s*(\S+)\s*\)")?>[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>/g, function (a, a1, a2, a3, a4) {
+          // return ""
+            return a.replace(/(<g.+?fill=")(.+?)(">\s+<rect.+?<\/rect>\s+<\/g>)/g, function (a, a1, a2, a3, a4, a5, a6, a7) {
+              return a1 + (
+              order[letterI++].c === ' '
+              ? 'transparent'
+              : a2) + a3
+            })
+          })
+        })
 
-	)
+  svg = prefix(svg, /<\/defs>/, artworkBackDefs)
+  svg = postfix(svg, /<\/defs>/, artworkBackContent)
 
+  span.innerHTML = svg
+  span.getElementsByTagName('svg')[0].setAttribute('height', sHeight)
+  span.getElementsByTagName('svg')[0].setAttribute('width', sWidth)
+  document.getElementById('page_back_on_transparent_data').prepend(span)
+}
 
-    svg=prefix(svg,  /<\/defs>/  , artwork_back_defs  )
-    svg=postfix(svg, /<\/defs>/  , artwork_back_content  )
-
-	span.innerHTML = svg;
-	span.getElementsByTagName("svg")[0].setAttribute('height', sHeight)
-	span.getElementsByTagName("svg")[0].setAttribute('width', sWidth)
-      document.getElementById('page_back_on_transparent_data').prepend(span);
-
-    }
-
-    export default generate
+export default generate
