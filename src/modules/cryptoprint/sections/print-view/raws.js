@@ -1,6 +1,5 @@
 import {
   exportSVG,
-  get,
   imageDataToPath,
   postfix,
   prefix,
@@ -16,7 +15,7 @@ import qrcode from 'ext/qrcodesplitter-generator/js/qrcode.js' // eslint-disable
 // Localhost will not produce errors even when requested URL doesn't exists - issue with dev server?
 const getSVG = url => fetch(url).then(res => res.text()).catch(e => console.error('Unable to load', url, 'error produced:', e))
 
-const templates = {
+const svgTemplates = {
   frontData: '/notes/v0.2/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
   backArtwork: '/notes/v0.2/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
 
@@ -24,47 +23,21 @@ const templates = {
   frontArtwork: '/notes/v0.2/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg'
 }
 
-const svgPromises = Object.keys(templates).map(key => getSVG(templates[key]).then(text => ({key, url: templates[key], text})))
-const svgDatas = Promise.all(svgPromises).then(r => console.log('rs?', r)).catch(e => console.log('e?', e))
+const tpls = {}
+
+const svgPromises = Object.keys(svgTemplates).map(key => getSVG(svgTemplates[key]).then(text => ({key, url: svgTemplates[key], text})))
+const svgDatas = Promise.all(svgPromises)
+  .then(r => {
+    console.log('svgs:', r)
+    r.map(e => Object.assign(tpls, {[e.key]: e.text}))
+    tpls.ready = true
+    console.log('svg templates ready', tpls)
+  })
 
 console.log('svgs?', svgDatas)
 
 let sHeight = 500
 let sWidth = 800
-
-let svgTemplateFrontData = ''
-let svgTemplateFrontArtwork = ''
-let svgTemplateBackArtwork = ''
-let svgTemplateBackData = ''
-
-let donec = 0
-function getDone () {
-  donec++
-  if (donec === 4) {
-    console.log('svg templates loaded')
-  }
-}
-
-get(templates.frontData).then(data => {
-  svgTemplateFrontData = data
-  console.log('svgTemplateFrontData done')
-  getDone()
-})
-get(templates.backData).then(data => {
-  svgTemplateBackData = data
-  console.log('svgTemplateBackData done')
-  getDone()
-})
-get(templates.backArtwork).then(data => {
-  svgTemplateBackArtwork = data
-  console.log('svgTemplateBackArtwork done')
-  getDone()
-})
-get(templates.frontArtwork).then(data => {
-  svgTemplateFrontArtwork = data
-  console.log('svgTemplateFrontArtwork done')
-  getDone()
-})
 
 function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
   let randomPad = []
@@ -153,10 +126,10 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
   let noteTypeSubtext = 'Copy 01 of 02'
   let printerID = '2018 — Tel Aviv, Israel'
 
-  let artworkFrontDefs = svgTemplateFrontArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  let artworkFrontContent = svgTemplateFrontArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+  let artworkFrontDefs = tpls.frontArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  let artworkFrontContent = tpls.frontArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  svg = svgTemplateFrontData
+  svg = tpls.frontData
 
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
@@ -240,10 +213,10 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
     exportSVG(this, publicKey + '_back')
   }, false)
 
-  var artworkBackDefs = svgTemplateBackArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  var artworkBackContent = svgTemplateBackArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+  var artworkBackDefs = tpls.backArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  var artworkBackContent = tpls.backArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  svg = svgTemplateBackData
+  svg = tpls.backData
 
   svg = postfix(svg, /<g id="Print-Layouts" /, ' transform="scale(-1, 1) translate(-1600, 0)" ')
 
@@ -429,10 +402,10 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
   let noteTypeSubtext = 'Copy 01 of 02'
   let printerID = '2018 — Tel Aviv, Israel'
 
-  let artworkFrontDefs = svgTemplateFrontArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  let artworkFrontContent = svgTemplateFrontArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+  let artworkFrontDefs = tpls.frontArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  let artworkFrontContent = tpls.frontArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  svg = svgTemplateFrontData
+  svg = tpls.frontData
 
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
@@ -516,10 +489,10 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
     exportSVG(this, publicKey + '_back')
   }, false)
 
-  var artworkBackDefs = svgTemplateBackArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  var artworkBackContent = svgTemplateBackArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+  var artworkBackDefs = tpls.backArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  var artworkBackContent = tpls.backArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  svg = svgTemplateBackData
+  svg = tpls.backData
 
   svg = postfix(svg, /<g id="Print-Layouts" /, ' transform="scale(-1, 1) translate(-1600, 0)" ')
 
