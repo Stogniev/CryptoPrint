@@ -45,7 +45,7 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
   let randomPad = []
   let imageData1
   let imageData2
-  let imageData3
+  let frontPubkeyQRData
 
   let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1)
 
@@ -89,7 +89,7 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
 
   imageData2 = createImageData()
 
-  imageData3 = createImageData()
+  frontPubkeyQRData = createImageData()
 
   drawqr(imageData, 0, 0, qrPad, 1)
   // ctx.putImageData(imageData, 0, 0);  at coords 0,0
@@ -108,7 +108,7 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
 
   // drawqr(imageData2, 0, 0, qrPad2, 1)
   drawqr(imageData2, 0, 0, qrPad2, 1)
-  drawqr(imageData3, 0, 0, pqr, 1)
+  drawqr(frontPubkeyQRData, 0, 0, pqr, 1)
   imageData = null
 
   let span
@@ -238,7 +238,7 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
     x: 0,
     y: 0,
-    data: imageData3,
+    data: frontPubkeyQRData,
     margin: 0,
     offset: 0,
     cellsize: 12,
@@ -315,13 +315,11 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
 
 export default generate
 
-
-
 export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
   let randomPad = []
-  let imageData1
-  let imageData2
-  let imageData3
+  let backPrivkeyQRData
+  let frontPrivkeyQRData
+  let frontPubkeyQRData
 
   let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1)
 
@@ -361,11 +359,11 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
 
   let imageData = createImageData()
 
-  imageData1 = createImageData()
+  backPrivkeyQRData = createImageData()
 
-  imageData2 = createImageData()
+  frontPrivkeyQRData = createImageData()
 
-  imageData3 = createImageData()
+  frontPubkeyQRData = createImageData()
 
   drawqr(imageData, 0, 0, qrPad, 1)
   // ctx.putImageData(imageData, 0, 0);  at coords 0,0
@@ -380,11 +378,11 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
 
   /* var y = 0
   y = */
-  drawQRSplit(randomPad, imageData, imageData1, imageData2, 0, 0, qr, 1) // +(8*1.75|0)
+  drawQRSplit(randomPad, imageData, backPrivkeyQRData, frontPrivkeyQRData, 0, 0, qr, 1) // +(8*1.75|0)
 
   // drawqr(imageData2, 0, 0, qrPad2, 1)
-  drawqr(imageData2, 0, 0, qrPad2, 1)
-  drawqr(imageData3, 0, 0, pqr, 1)
+  drawqr(frontPrivkeyQRData, 0, 0, qrPad2, 1)
+  drawqr(frontPubkeyQRData, 0, 0, pqr, 1)
   imageData = null
 
   let span
@@ -401,10 +399,10 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
 
   svg = tpls.frontData
 
-  const backPrivKey = imageDataToPath({
+  const backPrivKeySVG = imageDataToPath({
     x: 0,
     y: 115,
-    data: imageData1,
+    data: backPrivkeyQRData,
     margin: 0,
     offset: 0,
     cellsize: 12,
@@ -412,7 +410,7 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
     fill: '#E43DB0'
   })
 
-  console.log('imageData1SVG', backPrivKey)
+  console.log('imageDataSVG', backPrivKeySVG)
 
   // svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageData1SVG)
 
@@ -492,11 +490,10 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
   svg = replacestr(svg, /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g, publicKey)
 
-
-  const frontPrivkeyQRPart = imageDataToPath({
+  const frontPrivkeyQRSVG = imageDataToPath({
     x: 0,
     y: 115,
-    data: imageData2,
+    data: frontPrivkeyQRData,
     margin: 0,
     offset: 0,
     cellsize: 12,
@@ -506,7 +503,7 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
   const frontPubkey = imageDataToPath({
     x: 0,
     y: 0,
-    data: imageData3,
+    data: frontPubkeyQRData,
     margin: 0,
     offset: 0,
     cellsize: 12,
@@ -514,16 +511,13 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
     fill: '#E43DB0'
   })
 
-
   const $svg = cheerio.load(svg, {xmlMode: true})
   console.log('$svg:', $svg)
 
   $svg('rect#qr_placeholder').replaceWith(frontPubkey)
-  $svg('rect#privkey_qr_placeholder').replaceWith(frontPrivkeyQRPart)
+  $svg('rect#privkey_qr_placeholder').replaceWith(frontPrivkeyQRSVG)
   svg = $svg.html()
 
-  // svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, frontPrivkeyQRPart)
-  // svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, )
   svg = replacestr(svg, /<g id="Privkey-Texts-Copy"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, // find the group that contains  the svg
     function (a) { // replace parts in it
       var letterI = 0
