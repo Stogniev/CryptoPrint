@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600px" height="820px" viewBox="0 0 1600 820" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Layer 1 - On Transparent Placeholders</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M855,720 L855,675 L845,675 L845,720 L21,720 C9.40202025,720 2.98420523e-14,710.59798 2.84217094e-14,699 L2.84217094e-14,21 L2.84217094e-14,21 C2.70013666e-14,9.40202025 9.40202025,2.13051432e-15 21,0 L21,0 L1079,0 C1090.59798,-2.13051432e-15 1100,9.40202025 1100,21 L1100,699 C1100,710.59798 1090.59798,720 1079,720 L855,720 Z M109,0 L109,720 L149,720 L149,0 L109,0 Z M845,0 L845,50 L855,50 L855,0 L845,0 Z M845,75 L845,125 L855,125 L855,75 L845,75 Z M845,150 L845,200 L855,200 L855,150 L845,150 Z M845,225 L845,275 L855,275 L855,225 L845,225 Z M845,300 L845,350 L855,350 L855,300 L845,300 Z M845,375 L845,425 L855,425 L855,375 L845,375 Z M845,450 L845,500 L855,500 L855,450 L845,450 Z M845,525 L845,575 L855,575 L855,525 L845,525 Z M845,600 L845,650 L855,650 L855,600 L845,600 Z" id="path-1"></path>
+    </defs>
+    <g id="Print-Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Layer-1---On-Transparent-Placeholders">
+            <g id="parts/qr-bars-front-placeholders" transform="translate(225.000000, 410.000000) scale(-1, 1) translate(-225.000000, -410.000000) translate(50.000000, 50.000000)">
+                <g id="Privkey-Texts-Copy" stroke-width="1" transform="translate(0.000000, 469.000000)">
+                    <g id="parts/privkey-text-blocks" transform="translate(0.000000, 96.000000)">
+                        <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 6.000000)"></g>
+                        <g id="Measuring-Stick-Copy-2" opacity="0.360620471" style="mix-blend-mode: multiply;" stroke-width="1" fill-rule="evenodd" transform="translate(6.034483, 12.000000) rotate(-90.000000) translate(-6.034483, -12.000000) translate(0.000000, 6.000000)"></g>
+                        <g id="parts/privkey-text-block-on" transform="translate(337.931034, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(325.862069, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(313.793103, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(301.724138, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(289.655172, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(277.586207, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(265.517241, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(253.448276, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(241.379310, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(229.310345, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(217.241379, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(205.172414, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(193.103448, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(181.034483, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(168.965517, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(156.896552, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(144.827586, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(132.758621, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(120.689655, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(108.620690, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(96.551724, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(84.482759, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(72.413793, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(60.344828, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(48.275862, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(36.206897, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(24.137931, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(12.068966, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(0.000000, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                    </g>
+                    <g id="parts/privkey-text-blocks" transform="translate(0.000000, 72.000000)">
+                        <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 6.000000)"></g>
+                        <g id="Measuring-Stick-Copy-2" opacity="0.360620471" style="mix-blend-mode: multiply;" stroke-width="1" fill-rule="evenodd" transform="translate(6.034483, 12.000000) rotate(-90.000000) translate(-6.034483, -12.000000) translate(0.000000, 6.000000)"></g>
+                        <g id="parts/privkey-text-block-on" transform="translate(337.931034, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(325.862069, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(313.793103, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(301.724138, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(289.655172, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(277.586207, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(265.517241, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(253.448276, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(241.379310, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(229.310345, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(217.241379, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(205.172414, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(193.103448, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(181.034483, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(168.965517, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(156.896552, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(144.827586, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(132.758621, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(120.689655, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(108.620690, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(96.551724, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(84.482759, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(72.413793, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(60.344828, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(48.275862, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(36.206897, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(24.137931, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(12.068966, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(0.000000, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                    </g>
+                    <g id="parts/privkey-text-blocks" transform="translate(0.000000, 48.000000)">
+                        <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 6.000000)"></g>
+                        <g id="Measuring-Stick-Copy-2" opacity="0.360620471" style="mix-blend-mode: multiply;" stroke-width="1" fill-rule="evenodd" transform="translate(6.034483, 12.000000) rotate(-90.000000) translate(-6.034483, -12.000000) translate(0.000000, 6.000000)"></g>
+                        <g id="parts/privkey-text-block-on" transform="translate(337.931034, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(325.862069, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(313.793103, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(301.724138, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(289.655172, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(277.586207, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(265.517241, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(253.448276, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(241.379310, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(229.310345, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(217.241379, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(205.172414, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(193.103448, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(181.034483, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(168.965517, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(156.896552, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(144.827586, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(132.758621, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(120.689655, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(108.620690, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(96.551724, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(84.482759, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(72.413793, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(60.344828, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(48.275862, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(36.206897, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(24.137931, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(12.068966, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(0.000000, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                    </g>
+                    <g id="parts/privkey-text-blocks" transform="translate(0.000000, 24.000000)">
+                        <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 6.000000)"></g>
+                        <g id="Measuring-Stick-Copy-2" opacity="0.360620471" style="mix-blend-mode: multiply;" stroke-width="1" fill-rule="evenodd" transform="translate(6.034483, 12.000000) rotate(-90.000000) translate(-6.034483, -12.000000) translate(0.000000, 6.000000)"></g>
+                        <g id="parts/privkey-text-block-on" transform="translate(337.931034, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(325.862069, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(313.793103, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(301.724138, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(289.655172, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(277.586207, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(265.517241, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(253.448276, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(241.379310, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(229.310345, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(217.241379, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(205.172414, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(193.103448, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(181.034483, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(168.965517, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(156.896552, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(144.827586, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(132.758621, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(120.689655, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(108.620690, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(96.551724, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(84.482759, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(72.413793, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(60.344828, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(48.275862, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(36.206897, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(24.137931, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(12.068966, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(0.000000, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                    </g>
+                    <g id="parts/privkey-text-blocks">
+                        <g id="Group" stroke-width="1" fill-rule="evenodd" transform="translate(0.000000, 6.000000)"></g>
+                        <g id="Measuring-Stick-Copy-2" opacity="0.360620471" style="mix-blend-mode: multiply;" stroke-width="1" fill-rule="evenodd" transform="translate(6.034483, 12.000000) rotate(-90.000000) translate(-6.034483, -12.000000) translate(0.000000, 6.000000)"></g>
+                        <g id="parts/privkey-text-block-on" transform="translate(337.931034, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(325.862069, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(313.793103, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(301.724138, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(289.655172, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(277.586207, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(265.517241, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(253.448276, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(241.379310, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(229.310345, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(217.241379, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(205.172414, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(193.103448, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(181.034483, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(168.965517, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(156.896552, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(144.827586, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(132.758621, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(120.689655, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(108.620690, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(96.551724, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(84.482759, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(72.413793, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(60.344828, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(48.275862, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(36.206897, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(24.137931, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(12.068966, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                        <g id="parts/privkey-text-block-on" transform="translate(0.000000, 6.000000)" fill-rule="nonzero" fill="#4A4A4A">
+                            <rect id="p-copy" x="0" y="1" width="12" height="10"></rect>
+                        </g>
+                    </g>
+                </g>
+                <rect id="privkey_qr_placeholder" fill="#E43DB0" x="0" y="115" width="350" height="348"></rect>
+            </g>
+            <g id="Card-Masked" transform="translate(1000.000000, 410.000000) scale(-1, 1) translate(-1000.000000, -410.000000) translate(450.000000, 50.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Combined-Shape"></g>
+                <g id="pubkey/strip-front" mask="url(#mask-2)">
+                    <g id="color/blueish" fill-rule="evenodd" fill="#59A1BA">
+                        <rect id="Rectangle-2" x="0" y="2.84217094e-14" width="70" height="720"></rect>
+                    </g>
+                    <g id="Group-7" stroke-width="1" fill-rule="evenodd" transform="translate(2.000000, 283.609756)" fill="#FFFFFF">
+                        <g id="Group-4" transform="translate(31.500000, 75.951220) rotate(-90.000000) translate(-31.500000, -75.951220) translate(-55.000000, 48.292683)">
+                            <g id="Group" transform="translate(0.000000, 0.000000)">
+                                <text id="Public-Key" font-family="Sarpanch-Bold, Sarpanch" font-size="29" font-weight="bold">
+                                    <tspan x="7.0545" y="27.5609756">Public Key</tspan>
+                                </text>
+                                <text id="DEPOSIT-HERE" font-family="Sarpanch-Regular, Sarpanch" font-size="24" font-weight="normal">
+                                    <tspan x="2.344" y="49.3292683">DEPOSIT HERE</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                    <text id="__PUBKEY__SUFFIX__" transform="translate(36.000000, 255.000000) rotate(-90.000000) translate(-36.000000, -255.000000) " font-family="Play-Bold, Play" font-size="40" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="48.64" y="257">MMMMMM</tspan>
+                    </text>
+                    <text id="__PUBKEY__PREFIX__" transform="translate(35.000000, 456.000000) rotate(-90.000000) translate(-35.000000, -456.000000) " font-family="Play-Bold, Play" font-size="40" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="-215" y="458">MMMMMM</tspan>
+                    </text>
+                </g>
+            </g>
+            <g id="parts/pubkey-text-w-barcode" transform="translate(1440.000000, 410.000000) scale(-1, 1) translate(-1440.000000, -410.000000) translate(1400.000000, 50.000000)" font-weight="normal" fill="#212121">
+                <text id="__PUBKEY__FULL__" transform="translate(20.500000, 360.500000) rotate(-90.000000) translate(-20.500000, -360.500000) " font-family="AndaleMono, Andale Mono" font-size="24" letter-spacing="2.81379318">
+                    <tspan x="-272.174328" y="369">1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR</tspan>
+                </text>
+                <text id="Public-Barcode" transform="translate(65.000000, 360.500000) rotate(-90.000000) translate(-65.000000, -360.500000) " font-family="LibreBarcode39Extended-Regular, Libre Barcode 39 Extended" font-size="23" font-style="expanded" letter-spacing="2.6965518">
+                    <tspan x="-245.801381" y="363">1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR</tspan>
+                </text>
+            </g>
+            <g id="parts/pubkey-qr-pixels-placeholder" transform="translate(1185.000000, 410.000000) scale(-1, 1) translate(-1185.000000, -410.000000) translate(1020.000000, 245.000000)" fill="#E43DB0">
+                <rect id="qr_placeholder" x="0" y="0" width="330" height="330"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

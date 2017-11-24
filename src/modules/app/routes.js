@@ -11,6 +11,7 @@ import SectionIndex from 'cryptoprint/sections/index'
 import SectionSignin from 'cryptoprint/sections/signin'
 import SectionLogin from 'cryptoprint/sections/signin/login'
 import SectioSignup from 'cryptoprint/sections/signin/signup'
+import PrintViewSection from 'cryptoprint/sections/print-view'
 
 const Route404 = props => <div className='404-not-found'>
   <h1>404 Not found</h1>
@@ -23,6 +24,7 @@ export default (
   <Route path='/' component={AppWrap}>
     <Route component={App}>
       <IndexRoute component={SectionIndex} />
+      <Route path='/printme' component={PrintViewSection} />
     </Route>
 
     <Route path='/soon' component={SectionSignin} onEnter={redirectIfAuth('/')}>
