@@ -1,4 +1,4 @@
-import {getPixel} from './canvastools'
+import { getPixel } from './canvastools'
 
 export function chunk(arr, len) {
   const chunks = []
@@ -17,7 +17,7 @@ export function get (url) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       var fn;
-		
+
 	  try {
         if (this.readyState === 4) {
          if (this.status === 200) {
@@ -56,7 +56,7 @@ export function get (url) {
   });
 }
 
-export function save_svg(svgelement, name) {
+export function exportSVG (svgelement, name) {
   var text = svgelement.innerHTML;
   var textToSaveAsBlob = new Blob([text], {type: "image/svg+xml"});
   var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
@@ -92,17 +92,17 @@ export function text(options)
 {
          var drawx=options.x||0;
          var drawy=options.y||0;
-         var fontSize=options.fontSize||14; 
-         var lineHeight=options.lineHeight||1.25; 
-         var style=options.style||""; 
-         var fontFamily=options.fontFamily||"Arial"; 
-         var transform=options.transform||""; 
+         var fontSize=options.fontSize||14;
+         var lineHeight=options.lineHeight||1.25;
+         var style=options.style||"";
+         var fontFamily=options.fontFamily||"Arial";
+         var transform=options.transform||"";
          var text=options.text.split('\n').map(function(a,i){ return '<tspan x="'+drawx+'" y="'+(drawy+fontSize*lineHeight+i*fontSize*lineHeight)+'">'+a+'</tspan>' }).join('\n');
 
          return '<text x="'+drawx+'" transform='+transform+' y="'+drawy+'" style="'+style+'" font-family="'+fontFamily+'" font-size="'+fontSize+'">'+text+'</text>'
 }
 
-export function imageData_to_path(options)
+export function imageDataToPath(options)
 {
          var tqrSvg = '<path d="';
 
@@ -129,17 +129,17 @@ export function imageData_to_path(options)
                     ' -' + cellSize_rect + ',0 0,-' + cellSize_rect + 'z ';
          }
          else if(options.sizetype==='-2 centered')
-         {     
+         {
               drawx-=1;
               rect = 'l' + (cellSize) + ',0 0,'  + (cellSize) +         // l is line
                     ' -' + (cellSize-2) + ',0 0,-' + (cellSize) + 'z ';
          }
          else
-         {     
+         {
               rect = 'l' + cellSize + ',0 0,'  + cellSize +       // l is line
                     ' -' + cellSize + ',0 0,-' + cellSize + 'z ';
          }
-  
+
          for (r = 0; r < imageData.height; r += 1) {
             mr = r * cellSize + margin+offset+drawy;
             for (c = 0; c < imageData.width; c += 1) {
@@ -165,13 +165,13 @@ export function prefix(qrSvg,search,value){
 export function replacestr(qrSvg,search,value){
   return  qrSvg=qrSvg.replace(search,value);
 }
- 
+
 export function createSvgTag(qrSvg,parts,height,width,iheight,iwidth) {
 
   if(!qrSvg){
      qrSvg +=createEmptySVGstr(iwidth,iheight,width,height);
-  } 
-  
+  }
+
   for(var i=0;i<parts.length; i++)
     {
        var partsvg=''
@@ -190,7 +190,7 @@ export function createSvgTag(qrSvg,parts,height,width,iheight,iwidth) {
        }
        if(part.do==='pixels')
        {
-         partsvg +=imageData_to_path(part);
+         partsvg +=imageDataToPath(part);
        }
       //if append
       if(part.action==='postfix')     qrSvg=postfix(qrSvg,part.search,partsvg);

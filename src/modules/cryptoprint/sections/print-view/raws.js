@@ -1,39 +1,41 @@
-import { save_svg, get,  imageData_to_path  ,postfix,prefix,replacestr   } from './lib'
+import { exportSVG, get, imageDataToPath, postfix, prefix, replacestr } from './lib'
 import { getEvenFrequencyPad } from './crypto'
-import { createImageData, drawqr_split, drawqr, imagedata_to_bitarr } from './canvastools'
+import { createImageData, drawQRSplit, drawqr, imageDataToBitArray } from './canvastools'
 import fetch from 'isomorphic-fetch'
 
 import qrcodesplitter from 'ext/qrcodesplitter-generator/ts/build/ts/QRCode' // eslint-disable-line
 import qrcode from 'ext/qrcodesplitter-generator/js/qrcode.js' // eslint-disable-line
 
-//setTimeout(()=>{throw new Error},0)
+// Localhost will not produce errors even when requested URL doesn't exists - issue with dev server?
+const getSVG = url => fetch(url).then(res => res.text()).catch(e => console.error('Unable to load', url, 'error produced:', e))
 
 const templates = {
   frontData: '/notes/v0.2/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
-  frontArtwork: '/notes/v0.2/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
+  backArtwork: '/notes/v0.2/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
 
   backData: '/notes/v0.2/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
-  backArtwork: '/notes/v0.2/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg'
+  frontArtwork: '/notes/v0.2/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg'
 }
 
-let sHeight = 300
-let sWidth = 400
+const svgPromises = Object.keys(templates).map(key => getSVG(templates[key]).then(text => ({key, url: templates[key], text})))
+const svgDatas = Promise.all(svgPromises).then(r => console.log('rs?', r)).catch(e => console.log('e?', e))
+console.log('svgs?', svgDatas)
 
-let svgtemplate_front_data = '',
-  svgtemplate_front_artwork = '',
-  svgtemplate_back_artwork = '',
-  svgtemplate_back_on_transparent_data = ''
+let sHeight = 500
+let sWidth = 800
 
-var donec = 0;
+let svgtemplate_front_data = ''
+let svgtemplate_front_artwork = ''
+let svgtemplate_back_artwork = ''
+let svgtemplate_back_on_transparent_data = ''
+
+let donec = 0;
 function get_done() {
   donec++;
   if (donec === 4)
     console.log('svg templates loaded')
     //generate();
   }
-
-//https://shimon.doodkin.com/files
-//http://localhost/cryptoprint/SVGs
 
 get(templates.frontData).then(function(data) {
   svgtemplate_front_data = data;
@@ -67,15 +69,14 @@ get(templates.frontArtwork).then(function(data) {
   console.log(e)
 });
 
-function generate() {
+function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
+  let random_pad = []
+  let imageData1
+  let imageData2
+  let imageData3
 
-  var random_pad = [];
-  var imageData1
-  var imageData2
-  var imageData3
-
-  const publicKey = '1ApT4jNxkrxXhEDiDMUQYA9cM99P6wvg6y'
-  const privateKey = 'L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG'
+  // const publicKey = '1ApT4jNxkrxXhEDiDMUQYA9cM99P6wvg6y'
+  // const privateKey = 'L5GsZnm9zguD92jeXxHJCqsojuQF45HM8N91A5JLkt5JpS6Hu9AG'
 
   let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1)
   //    console.log(private_str,privateKeySplit.marking,privateKeySplit.padded)
@@ -157,7 +158,7 @@ function generate() {
 
   drawqr(imageData, 0, 0, qr_pad, 1)
   //ctx.putImageData(imageData, 0, 0); // at coords 0,0
-  var pad_of_qr = imagedata_to_bitarr(imageData)
+  var pad_of_qr = imageDataToBitArray(imageData)
   pad_of_qr.unshift(0)
   pad_of_qr.unshift(0)
   random_pad.length = 0;
@@ -167,7 +168,7 @@ function generate() {
   imageData = createImageData();//ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
 
   /*var y = 0;
-  y = */drawqr_split(random_pad, imageData, imageData1, imageData2, 0, 0, qr, 1) //+(8*1.75|0)
+  y = */drawQRSplit(random_pad, imageData, imageData1, imageData2, 0, 0, qr, 1) //+(8*1.75|0)
 
   // drawqr(imageData2, 0, 0, qr_pad2, 1)
   drawqr(imageData2, 0, 0, qr_pad2, 1)
@@ -196,7 +197,7 @@ function generate() {
   //  svgtemplate_back_on_transparent_data="";
   span = document.createElement('span');
   span.addEventListener('click', function() {
-    save_svg(this, publicKey + '_back');
+    exportSVG(this, publicKey + '_back');
   }, false);
 
 
@@ -222,7 +223,7 @@ function generate() {
 	svg=replacestr(svg, /2017 — Tel Aviv, Israel/g, printhouse_id )
 	svg=replacestr(svg, /Single Private\/Public Key/g, bill_type )
 	svg=replacestr(svg, /Copy 01\/03/g, bill_type_subtext )
-    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageData_to_path( {x: 0, y:115, data:imageData1, margin:0, offset:0, cellsize:12,sizetype:'-2 centered', fill:'#E43DB0'} )  )
+    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageDataToPath( {x: 0, y:115, data:imageData1, margin:0, offset:0, cellsize:12,sizetype:'-2 centered', fill:'#E43DB0'} )  )
 
 	svg=replacestr(svg, /<g id="Privkey-Texts"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g,
       function(a){
@@ -270,11 +271,11 @@ function generate() {
 	span.getElementsByTagName("svg")[0].setAttribute('height',sHeight)
 	span.getElementsByTagName("svg")[0].setAttribute('width',sWidth)
 
-	document.getElementById('page_front_data').appendChild(span);
+	document.getElementById('page_front_data').prepend(span);
 
     span = document.createElement('span');
     span.addEventListener('click', function() {
-      save_svg(this, publicKey + '_back');
+      exportSVG(this, publicKey + '_back');
     }, false);
 
     var artwork_back_defs=svgtemplate_back_artwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
@@ -289,8 +290,8 @@ function generate() {
     svg=replacestr(svg, /MMMMMM/ , publicKey.substr(publicKey.length-6) )
     svg=replacestr(svg, /MMMMMM/  ,  publicKey.substr(0,6) )
     svg=replacestr(svg,  /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,  publicKey )
-    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageData_to_path( {x: 0, y:115, data:imageData2, margin:0, offset:0, cellsize:12, sizetype:'-2 centered', fill:'#E43DB0'} )  )
-    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageData_to_path( {x: 0, y:0, data:imageData3, margin:0, offset:0, cellsize:12, sizetype:'1', fill:'#E43DB0'}  ) )
+    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageDataToPath( {x: 0, y:115, data:imageData2, margin:0, offset:0, cellsize:12, sizetype:'-2 centered', fill:'#E43DB0'} )  )
+    svg=replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/  ,  imageDataToPath( {x: 0, y:0, data:imageData3, margin:0, offset:0, cellsize:12, sizetype:'1', fill:'#E43DB0'}  ) )
     svg=replacestr(svg,
 
 		/<g id="Privkey-Texts-Copy"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g  ,  // find the group that contains  the svg
@@ -346,7 +347,7 @@ function generate() {
 	span.innerHTML = svg;
 	span.getElementsByTagName("svg")[0].setAttribute('height', sHeight)
 	span.getElementsByTagName("svg")[0].setAttribute('width', sWidth)
-      document.getElementById('page_back_on_transparent_data').appendChild(span);
+      document.getElementById('page_back_on_transparent_data').prepend(span);
 
     }
 

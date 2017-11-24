@@ -5,7 +5,7 @@ export function createImageData(height, width) {
 	 return {data:new Uint8ClampedArray(height*width*4),height,width}
 }
 
-   
+
 export function createcanvas() {
      //width="136" height="70" style="border:1px solid blue"
      var c = document.createElement('canvas');
@@ -90,7 +90,7 @@ export function setPixel(imageData, x, y, r, g, b, a) {
 
 
 
-export function drawqr_split(random_pad,imageData,imageData1, imageData2,x,y,qr,dotzize) {
+export function drawQRSplit(random_pad,imageData,imageData1, imageData2,x,y,qr,dotzize) {
   var rr=0,gg=0,bb=0
   var m=qr.getModuleCount();
   var xx;
@@ -103,7 +103,7 @@ export function drawqr_split(random_pad,imageData,imageData1, imageData2,x,y,qr,
        has_left,has_right,has_above,has_below,
        has_above_left,has_below_left,has_above_right,has_below_right;
   */
-  
+
   for (var r = 0; r < m; r += 1) {
     xx=x;
     for (var c = 0; c < m; c += 1) {
@@ -248,7 +248,7 @@ export function bitarr_to_imagedata(a,data)
 }
 
 
-export function imagedata_to_bitarr(data )
+export function imageDataToBitArray(data )
 {
         var buffer = data.data,
         len = buffer.length,
