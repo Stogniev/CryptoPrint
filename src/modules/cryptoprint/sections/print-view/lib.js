@@ -72,12 +72,12 @@ export function imageDataToPath (options) {
 // var sizeheight = height * cellSize + margin * 2;
 // var sizewidth = width * cellSize + margin * 2;
 
-  var c, mc, r, mr, rect, cellSize_rect
+  var c, mc, r, mr, rect, cellSizeRect
   if (options.sizetype === '+1') {
     offset = -1
-    cellSize_rect = cellSize + 2
-    rect = 'l' + cellSize_rect + ',0 0,' + cellSize_rect +       // l is line
-  ' -' + cellSize_rect + ',0 0,-' + cellSize_rect + 'z '
+    cellSizeRect = cellSize + 2
+    rect = 'l' + cellSizeRect + ',0 0,' + cellSizeRect +       // l is line
+  ' -' + cellSizeRect + ',0 0,-' + cellSizeRect + 'z '
   } else if (options.sizetype === '-2 centered') {
     drawx -= 1
     rect = 'l' + (cellSize) + ',0 0,' + (cellSize) +         // l is line
@@ -109,7 +109,8 @@ export function prefix (qrSvg, search, value) {
 }
 
 export function replacestr (qrSvg, search, value) {
-  return qrSvg = qrSvg.replace(search, value)
+  qrSvg = qrSvg.replace(search, value)
+  return qrSvg
 }
 
 export function createSvgTag (qrSvg, parts, height, width, iheight, iwidth) {
