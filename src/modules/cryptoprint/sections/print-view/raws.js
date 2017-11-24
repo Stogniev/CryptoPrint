@@ -9,11 +9,11 @@ import qrcode from 'ext/qrcodesplitter-generator/js/qrcode.js' // eslint-disable
 //setTimeout(()=>{throw new Error},0)
 
 const templates = {
-  frontData: 'https://shimon.doodkin.com/files/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
-  frontArtwork: 'https://shimon.doodkin.com/files/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
+  frontData: '/notes/v0.2/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
+  frontArtwork: '/notes/v0.2/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
 
-  backData: 'https://shimon.doodkin.com/files/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
-  backArtwork: 'https://shimon.doodkin.com/files/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg'
+  backData: '/notes/v0.2/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
+  backArtwork: '/notes/v0.2/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg'
 }
 
 let sHeight = 300
@@ -35,7 +35,7 @@ function get_done() {
 //https://shimon.doodkin.com/files
 //http://localhost/cryptoprint/SVGs
 
-get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg').then(function(data) {
+get(templates.frontData).then(function(data) {
   svgtemplate_front_data = data;
   console.log('svgtemplate_front_data done');
   get_done();
@@ -43,7 +43,7 @@ get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%203%20-%20Front%20Da
   console.log(e)
 });
 
-get('https://shimon.doodkin.com/files/Layer%201%20-%20On%20Transparent%20Placeholders.svg').then(function(data) {
+get(templates.backData).then(function(data) {
   svgtemplate_back_on_transparent_data = data;
   console.log('svgtemplate_back_on_transparent_data done');
   get_done();
@@ -51,7 +51,7 @@ get('https://shimon.doodkin.com/files/Layer%201%20-%20On%20Transparent%20Placeho
   console.log(e)
 });
 
-get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg').then(function(data) {
+get(templates.backArtwork).then(function(data) {
   svgtemplate_back_artwork = data;
   console.log('svgtemplate_back_artwork done');
   get_done();
@@ -59,7 +59,7 @@ get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%201%20-%20Back%20Art
   console.log(e)
 });
 
-get('https://shimon.doodkin.com/files/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg').then(function(data) {
+get(templates.frontArtwork).then(function(data) {
   svgtemplate_front_artwork = data;
   console.log('svgtemplate_front_artwork done');
   get_done();
