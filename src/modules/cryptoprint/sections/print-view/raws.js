@@ -9,6 +9,8 @@ import { getEvenFrequencyPad } from './crypto'
 import { createImageData, drawQRSplit, drawqr, imageDataToBitArray } from './canvastools'
 import fetch from 'isomorphic-fetch'
 
+import cheerio from 'cheerio'
+
 import qrcodesplitter from 'ext/qrcodesplitter-generator/ts/build/ts/QRCode' // eslint-disable-line
 import qrcode from 'ext/qrcodesplitter-generator/js/qrcode.js' // eslint-disable-line
 
@@ -397,23 +399,9 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
     exportSVG(this, publicKey + '_back')
   }, false)
 
-  let nodeID = 'T01-20170000000002'
-  let noteType = 'Single Private/Public Key'
-  let noteTypeSubtext = 'Copy 01 of 02'
-  let printerID = '2018 — Tel Aviv, Israel'
-
-  let artworkFrontDefs = tpls.frontArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  let artworkFrontContent = tpls.frontArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
-
   svg = tpls.frontData
 
-  svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
-  svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
-  svg = replacestr(svg, /T01-20170000000001/g, nodeID)
-  svg = replacestr(svg, /2017 — Tel Aviv, Israel/g, printerID)
-  svg = replacestr(svg, /Single Private\/Public Key/g, noteType)
-  svg = replacestr(svg, /Copy 01\/03/g, noteTypeSubtext)
-  svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
+  const backPrivKey = imageDataToPath({
     x: 0,
     y: 115,
     data: imageData1,
@@ -422,7 +410,11 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
     cellsize: 12,
     sizetype: '-2 centered',
     fill: '#E43DB0'
-  }))
+  })
+
+  console.log('imageData1SVG', backPrivKey)
+
+  // svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageData1SVG)
 
   svg = replacestr(svg, /<g id="Privkey-Texts"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, function (a) {
     var letterI = 0
@@ -499,7 +491,9 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
   svg = replacestr(svg, /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g, publicKey)
-  svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
+
+
+  const frontPrivkeyQRPart = imageDataToPath({
     x: 0,
     y: 115,
     data: imageData2,
@@ -508,8 +502,8 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
     cellsize: 12,
     sizetype: '-2 centered',
     fill: '#E43DB0'
-  }))
-  svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
+  })
+  const frontPubkey = imageDataToPath({
     x: 0,
     y: 0,
     data: imageData3,
@@ -518,7 +512,18 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
     cellsize: 12,
     sizetype: '1',
     fill: '#E43DB0'
-  }))
+  })
+
+
+  const $svg = cheerio.load(svg, {xmlMode: true})
+  console.log('$svg:', $svg)
+
+  $svg('rect#qr_placeholder').replaceWith(frontPubkey)
+  $svg('rect#privkey_qr_placeholder').replaceWith(frontPrivkeyQRPart)
+  svg = $svg.html()
+
+  // svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, frontPrivkeyQRPart)
+  // svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, )
   svg = replacestr(svg, /<g id="Privkey-Texts-Copy"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, // find the group that contains  the svg
     function (a) { // replace parts in it
       var letterI = 0

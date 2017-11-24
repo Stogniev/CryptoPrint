@@ -4,8 +4,8 @@ import bitcoin from 'bitcoinjs-lib'
 import bigi from 'bigi'
 
 import { Button } from 'react-md'
-import generate from './raws'
-// import { generatePrivateQRA } from './raws'
+// import generate from './raws'
+import { generatePrivateQRA } from './raws'
 
 const tt = i => Math.floor(Math.random() * Math.pow(10, 10)) * i
 const s1 = x => (tt(tt(tt(42)))).toString(32).split('').sort((a, b) => Math.random() > 0.5 ? -1 : 1).join('')
@@ -22,7 +22,8 @@ export class PrintViewSection extends Component {
     const privKey = keyPair.toWIF()
     console.log('keyPair', keyPair)
     console.log(seed, hash, pubKey, 'running generate...')
-    generate(pubKey, privKey)
+    // generate(pubKey, privKey)
+    generatePrivateQRA(pubKey, privKey)
     console.log('done')
   }
   render () {

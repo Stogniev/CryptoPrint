@@ -466,7 +466,7 @@
                         </g>
                     </g>
                 </g>
-                <rect id="qr_placeholder" fill="#E43DB0" x="0" y="115" width="350" height="348"></rect>
+                <rect id="privkey_qr_placeholder" fill="#E43DB0" x="0" y="115" width="350" height="348"></rect>
             </g>
             <g id="Card-Masked" transform="translate(1000.000000, 410.000000) scale(-1, 1) translate(-1000.000000, -410.000000) translate(450.000000, 50.000000)">
                 <mask id="mask-2" fill="white">
