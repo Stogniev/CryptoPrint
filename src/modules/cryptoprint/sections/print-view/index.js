@@ -5,6 +5,7 @@ import bigi from 'bigi'
 
 import { Button } from 'react-md'
 import generate from './raws'
+import { generatePrivateQRA } from './raws'
 
 const tt = i => Math.floor(Math.random() * Math.pow(10, 10)) * i
 const s1 = x => (tt(tt(tt(42)))).toString(32).split('').sort((a, b) => Math.random() > 0.5 ? -1 : 1).join('')
