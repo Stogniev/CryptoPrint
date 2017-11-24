@@ -170,6 +170,7 @@ function generate() {
   y = */drawqr_split(random_pad, imageData, imageData1, imageData2, 0, 0, qr, 1) //+(8*1.75|0)
 
   // drawqr(imageData2, 0, 0, qr_pad2, 1)
+  drawqr(imageData2, 0, 0, qr_pad2, 1)
   drawqr(imageData3, 0, 0, pqr, 1)
   imageData = null;
 
@@ -207,7 +208,7 @@ function generate() {
   var artwork_front_defs = svgtemplate_front_artwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
   var artwork_front_content = svgtemplate_front_artwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  artwork_front_content = '<g transform="scale(-1, 1) translate(-1600, 0)" >' + artwork_front_content + '</g>'
+  //artwork_front_content = '<g transform="scale(-1, 1) translate(-1600, 0)" >' + artwork_front_content + '</g>'
   //privateKeySplit.marking,privateKeySplit.padded
       //if(svg=='')
 	//svg=createEmptySVGstr(imageData1.width,imageData1.height,
@@ -281,6 +282,10 @@ function generate() {
 
 
     svg=svgtemplate_back_on_transparent_data;
+
+	svg=postfix(svg, /<g id="Print-Layouts" / , ' transform="scale(-1, 1) translate(-1600, 0)" ' )
+
+
     svg=replacestr(svg, /MMMMMM/ , publicKey.substr(publicKey.length-6) )
     svg=replacestr(svg, /MMMMMM/  ,  publicKey.substr(0,6) )
     svg=replacestr(svg,  /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g ,  publicKey )
