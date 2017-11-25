@@ -1,17 +1,49 @@
 import React, { Component } from 'react'
 
+import Slider from 'react-slick'
+
+const heros = [
+  {
+    title: 'Paper Wallets Just Got Better',
+    sub: 'Applying visual cryptographic techniques to keep your private key safe'
+  },
+  {
+    title: 'Making The Digital, Tangible',
+    sub: 'The future of money - In a form you can touch'
+  },
+  {
+    title: 'Ultimate Security',
+    sub: 'Your private key never goes online'
+  },
+  {
+    title: 'Ultimate “Cold-Storage”',
+    sub: 'The best way to store cryptocurrency for the long run'
+  }
+]
+
 class Hero extends Component {
   render () {
-    return <section className='video-intro'>
-      {/* <div id='mask'></div> */}
-      <h1>Paper Wallets Just Got Better.</h1>
-      <h3>Applying visual cryptographic techniques to safeguard your private key in public</h3>
-      {/* {<div className="video-block video-wrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Vd8s4cXu4Zs" frameborder="0" allowfullscreen></iframe>
-      </div>} */}
-      <a href='#' className='btn'>Pre-Order Now!</a>
-    </section>
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+
+    return <Slider {...settings} className='video-intro'>
+      {heros.map((e, i) => (<div className={`hero hero-${i + 1}`}>
+        <div className='content'>
+          <h1>{e.title}</h1>
+          <h3>{e.sub}</h3>
+          <a href='#' className='btn'>Pre-Order Now!</a>
+        </div>
+      </div>))}
+    </Slider>
   }
 }
+
+const HeroSlide = ({num, children, ...props}) => <div>
+</div>
 
 export default Hero
