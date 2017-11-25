@@ -72,11 +72,11 @@ class AppHeader extends Component {
             <Button flat>Preorder</Button>
           </ToolbarGroup>
           <ToolbarGroup className='rights'>
-            {loggedIn ? <UserMenu
+            {false && loggedIn ? <UserMenu
               isAdmin={this.props.isAdmin}
               gmode={this.props.gmode}
               onSignout={this.onSignout.bind(this)}
-              user={this.props.user} /> : <AlertError />}
+              user={this.props.user} /> : null}
           </ToolbarGroup>
 
         </Toolbar>
