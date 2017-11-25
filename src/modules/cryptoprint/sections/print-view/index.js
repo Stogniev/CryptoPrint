@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import bitcoin from 'bitcoinjs-lib'
-import bigi from 'bigi'
+import bitcore from 'bitcore-lib'
+
 
 import { Button } from 'react-md'
 // import generate from './raws'
@@ -13,17 +13,13 @@ const getSeed = x => s1() + s1() + s1()
 
 export class PrintViewSection extends Component {
   doGenerate () {
-    const seed = getSeed()
-    var hash = bitcoin.crypto.sha256(seed)
-    var d = bigi.fromBuffer(hash)
-
-    var keyPair = new bitcoin.ECPair(d)
-    var pubKey = keyPair.getAddress()
-    const privKey = keyPair.toWIF()
-    console.log('keyPair', keyPair)
-    console.log(seed, hash, pubKey, 'running generate...')
+    // const seed = getSeed()
+    var privateKey = new bitcore.PrivateKey()
+    var publicKey = privateKey.publicKey
+    var address = publicKey.toAddress()
+    console.log(address.toString(), privateKey.toWIF(), 'running generate...')
     // generate(pubKey, privKey)
-    generatePrivateQRA(pubKey, privKey)
+    generatePrivateQRA(address.toString(), privateKey.toWIF())
     console.log('done')
   }
   render () {
