@@ -8,8 +8,8 @@ export class AttributesSection extends Component {
         <li>
           <img src='/images/Back.png' alt='tmp-img' />
           <div>
-            <h3>Revolutionary Paper wallet.</h3>
-            <p>Talk about the product.</p>
+            <h3>Why Paper Wallets?</h3>
+            <p>When you keep your cryptocurrency in an online exchange or wallet, your private key remains vulnerable to theft. Introducing paper wallets, the safest way to store cryptocurrency. With a paper wallet, your private key exists only on paper and has never been online. No one can hack it, steal or do anything else with it without your explicit cooperation.</p>
           </div>
         </li>
         <li>
