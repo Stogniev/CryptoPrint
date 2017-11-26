@@ -38,6 +38,9 @@ class Hero extends Component {
           <h3>{e.sub}</h3>
           <a href='#' className='btn'>Pre-Order Now!</a>
         </div>
+        <small className='prototype'>
+          The pictures are of an early prototype version - final product may vary.
+        </small>
       </div>))}
     </Slider>
   }
