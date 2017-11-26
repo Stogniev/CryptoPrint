@@ -7,8 +7,8 @@ const properties = [
     image: '/images/Back.png'
   },
   {
-    title: 'Ultimate Security',
-    text: 'Keeping your cryptocurrency in an online exchange or wallet leaves your private key online, and thus vulnerable to theft. With our wallets, your private key exists only on the physical wallet in your possesion and has never been online. No one can hack, steal or do anything with your funds without your explicit permission. We also take extreme measures to ensure no one has access to your private key before you receive the wallet, ensuring you are the only person to see it.',
+    title: 'The Safest Way to Store Crypto',
+    text: 'Keeping your cryptocurrency in an online exchange or wallet leaves your private key vulnerable to theft. With our wallets, your private key exists only on the physical wallet in your possesion and has never been online. No one can hack, steal or do anything with your funds without your explicit permission. We also take extreme measures so that no one has access to your private key before you receive the wallet, ensuring you are the only person to see it.',
     image: '/images/Back.png'
   },
    {
@@ -23,7 +23,7 @@ const properties = [
   },
   {
     title: 'Standard as a Standard',
-    text: 'By using standardized formatting (QR code, base58…), our wallets are universally compatible with any other wallets or hardware from day one.',
+    text: 'By using standardized formatting (QR code, base58…), our wallets are universally compatible with any other wallet or hardware from day one.',
     image: '/images/cristina-gottardi-177261 (1).png'
   },
   {
