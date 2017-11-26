@@ -251,9 +251,17 @@ h2 {
 	}
 
   .preorder {
-    article {
-      width: 320px;
-    }
+		.md-card {
+			padding: 1rem 2rem;
+	    article {
+	      width: 320px;
+				margin-bottom: 2rem;
+				.md-cell {
+					margin: 0;
+				}
+	    }
+
+		}
   }
 
   .footer {
