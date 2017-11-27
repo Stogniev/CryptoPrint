@@ -3,53 +3,52 @@ import React, { Component } from 'react'
 const properties = [
     {
     title: 'Paper Wallets, Evolved',
-    text: 'While looking for the best way to store cryptocurrencies we found that there is nothing out there that we can truly stand behind. Introducing the Cryptoprint paper wallets, the best way to store, carry and use cryptocurrencies today.',
-    image: '/images/Back.png'
+    text: 'Looking for the best way to store cryptocurrencies, we found that there is nothing out there that we can truly stand behind. \nIntroducing the Cryptoprint paper wallets, the best way to store, carry and use cryptocurrencies today.',
+    image: 'http://via.placeholder.com/600x600'
   },
   {
     title: 'The Safest Way to Store Crypto',
-    text: 'Keeping your cryptocurrency in an online exchange or wallet leaves your private key vulnerable to theft. With our wallets, your private key exists only on the physical wallet in your possesion and has never been online. No one can hack, steal or do anything with your funds without your explicit permission. We also take extreme measures so that no one has access to your private key before you receive the wallet, ensuring you are the only person to see it.',
-    image: '/images/Back.png'
+    text: 'Keeping your cryptocurrency in an online exchange or wallet leaves your private key vulnerable to theft. \nWith our wallets, your private key exists only on the physical wallet in your possesion and has never been online. \nNo one can hack, steal or do anything with your funds without your explicit permission.',
+    image: 'http://via.placeholder.com/600x600'
   },
    {
     title: 'Fold to See',
-    text: 'By employing visual cryptography techniques, your private key is hidden in plain sight and can only be revealed by folding the wallet a certain way. This way, you don\'t have to worry about using it in public.',
-    image: '/images/drmakete-lab-57353.png'
+    text: 'By employing visual cryptography techniques, your private key is hidden in plain sight and can only be revealed by folding the wallet a certain way. \nThis way, you don\'t have to worry about using it in public.',
+    image: 'http://via.placeholder.com/600x600'
   },
   {
     title: 'Making the Digital, Tangible',
     text: 'Designed to look like familiar currency bills, our wallets are easy to use and understand for anyone, bringing cryptocurrencies to the masses.',
-    image: '/images/drmakete-lab-57353.png'
+    image: 'http://via.placeholder.com/600x600'
   },
   {
     title: 'Standard as a Standard',
     text: 'By using standardized formatting (QR code, base58…), our wallets are universally compatible with any other wallet or hardware from day one.',
-    image: '/images/cristina-gottardi-177261 (1).png'
+    image: 'http://via.placeholder.com/600x600'
   },
   {
     title: 'Not Just Bitcoin',
     text: 'We offer wallets for each of the top 10 most popular cryptocurrencies today, and we\'re just getting started.',
-    image: '/images/Front.png'
+    image: 'http://via.placeholder.com/600x600'
   },
   {
     title: 'Something Special',
-    text: 'Need branded wallets for an ICO? A personalized wallet as a gift for a wedding? Whatever it is, we can do it. Contact us for options.',
-    image: '/images/cristina-gottardi-177261 (1).png'
+    text: 'Need branded wallets for an ICO? \nA personalized wallet as a gift for a wedding? \nWhatever it is, we can do it. Contact us for options.',
+    image: 'http://via.placeholder.com/600x600'
   },
 ]
 
 export class AttributesSection extends Component {
   render () {
     return <section className='attributes' id='attributes'>
-      <h2>The World's Safest Paper Wallet</h2>
       <ul>
-        {properties.map(({title, text, image}) => (
-          <li>
-            <img src={image} alt={title} />
+        {properties.map(({title, text, image}, index) => (
+          <li key={index}>
             <div>
               <h3>{title}</h3>
               {text.split('\n').map(e => <p>{e}</p>)}
             </div>
+            <img src={image} alt={title} />
           </li>
         ))}
       </ul>

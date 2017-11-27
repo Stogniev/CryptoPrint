@@ -50,7 +50,7 @@ class SectionIndex extends Component {
       <Team />
       {/*{<Signin />}*/}
       <Preorder />
-      <AlternativeCTA />
+      {/*<AlternativeCTA />*/}
       <Footer />
     </div>
   }

@@ -9,10 +9,10 @@ const heros = [
   },
   {
     title: 'Making The Digital, Tangible',
-    sub: 'The future of money - In a form you can touch'
+    sub: 'Bitcoin, in a form you can touch'
   },
   {
-    title: 'Ultimate Security',
+    title: 'The Safest Way to Store Crypto',
     sub: 'Your private key never goes online'
   },
   {
