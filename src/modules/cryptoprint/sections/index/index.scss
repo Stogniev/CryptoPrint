@@ -51,7 +51,6 @@ h2 {
         color: rgba(#FFF, 0.75);
       }
       .content {
-    		text-align: center;
         margin: 0 auto;
         z-index: 10;
         position: relative;
@@ -250,6 +249,14 @@ h2 {
 		}
 	}
 
+  .footer {
+		border: none;
+		background: #e6e4e2;
+		p {
+			width: 100%;
+			padding-left: 120px;
+		}
+	}
   .preorder {
 		.md-card {
 			padding: 1rem 2rem;
@@ -260,16 +267,7 @@ h2 {
 					margin: 0;
 				}
 	    }
-
 		}
   }
 
-  .footer {
-		border: none;
-		background: #e6e4e2;
-		p {
-			width: 100%;
-			padding-left: 120px;
-		}
-	}
 }
