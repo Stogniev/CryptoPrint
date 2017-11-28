@@ -138,7 +138,7 @@ export class PreorderSection extends Component {
         </Card>
       </section>
     }
-    return <section className='preorder'>
+    return <section className='preorder' id='preorder'>
       <Card>
         <h2>Preorder Form</h2>
         <form submit='#' onSubmit={this.submitPreorder.bind(this)}>
