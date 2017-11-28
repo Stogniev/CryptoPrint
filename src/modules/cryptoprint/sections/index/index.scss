@@ -101,45 +101,56 @@ h2 {
     }
 
 	}
-  .attributes {
+	.attributes {
 		ul {
 			margin-top: 20px;
 			padding: 0;
 			width: 50%;
+			list-style-type: none;
 			li {
+				margin-bottom: 60px;
 				display: flex;
 				align-items: center;
-				padding: 50px 0;
-        max-width: 550px;
-				border-bottom: 1px solid #bc5f87;
-				div {
-					padding: 0 20px;
-					width: 100%;
-				}
+				margin-right: 60px !important;
 				img {
-					width: 150px;
+					width: 350px;
+					height: 350px;
+				  border-radius: 30px;
+					box-shadow: -18px 11px 30px -4px rgba(112,112,112,0.67) !important;
+					z-index: 11;
+					margin-left: -20px;
+				}
+				div {
+					width: 80%;
+					background: #e6e4e2;
+					border-radius: 10px;
+					padding: 60px;
+					h3 {
+						font-size: 25px !important;
+					}
+					p {
+						font-size: 20px !important;
+					}
 				}
 			}
 			li:nth-child(2n) {
-				flex-direction: row-reverse;
-			}
-			li:last-child {
-				border: none;
-			}
+	 			flex-direction: row-reverse;
+				img {
+					box-shadow: 14px 11px 30px -4px rgba(112,112,112,0.67) !important;
+					margin-right: -20px;
+				}
+	 		}
 		}
 	}
 	.testimonials {
-		background: linear-gradient(to right, #073151 0, #1db6ad 100%);
-		>h2 {
-			color: #fff;
-		}
+		background: #e6e4e2;
 		ul {
 			width: 60%;
 			margin-bottom: 20px;
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-around;
-			li {
+			li {;
 				background-color: #fff;
 				width: 45%;
 				margin-top: 40px;
@@ -150,17 +161,6 @@ h2 {
 				justify-content: space-between;
 				border-radius: 5px;
 				box-shadow: 2px 2px 7px grey;
-				.social-btn {
-					position: absolute;
-					top: 15px;
-					right: 15px;
-					//border: 1px solid grey;
-					padding: 10px 20px;
-					border-radius: 5px;
-					box-shadow: 2px 2px 7px grey;
-					i {
-						margin-right: 5px;
-					}
 				}
 				div {
 					display: flex;
@@ -251,13 +251,22 @@ h2 {
 	}
 
   .preorder {
-    article {
-      width: 320px;
-    }
+		.md-card {
+			padding: 1rem 2rem;
+	    article {
+	      width: 320px;
+				margin-bottom: 2rem;
+				.md-cell {
+					margin: 0;
+				}
+	    }
+
+		}
   }
 
   .footer {
 		border: none;
+		background: #e6e4e2;
 		p {
 			width: 100%;
 			padding-left: 120px;

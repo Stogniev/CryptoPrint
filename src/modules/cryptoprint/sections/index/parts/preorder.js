@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 
 import TextField from 'react-md/lib/TextFields'
+import Card from 'react-md/lib/Cards'
 import { Autocomplete, SelectionControlGroup, SelectField, Button } from 'react-md'
 import currencies from 'services/currencies'
 
@@ -26,7 +27,9 @@ export class PreorderSection extends Component {
 
     this.state = {
       currency: '',
-      fields: {},
+      fields: {
+        amount: 3
+      },
       error: ''
     }
   }
@@ -47,9 +50,18 @@ export class PreorderSection extends Component {
       [id]: value
     }
 
-    const error = this.validate(id, value)
+    let error = this.validate(id, value)
+    let canSubmit = false
+    const requiredFields = 'amount, email, wallet_type, currency, name'
+    const missingFields = requiredFields.split(', ').filter(e => !fields[e])
 
-    this.setState({fields, error}, e => {
+    if (!error && missingFields.length > 0) {
+      error = `${missingFields[0]}:missing`
+    } else {
+      canSubmit = true
+    }
+
+    this.setState({fields, error, canSubmit}, e => {
       console.log('this state now:', this.state)
     })
   }
@@ -58,13 +70,45 @@ export class PreorderSection extends Component {
     if (id === 'email') {
       const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       return re.test(value) ? '' : 'email:format'
+    } else if (id === 'amount') {
+      const re = /^\d+$/
+      return re.test(value) && value > 0 ? '' : 'amount:number'
+    } else if (id === 'name') {
+      const re = /^[\w\s]+$/
+      return re.test(value) ? '' : 'name:must'
     } else return ''
   }
 
   submitPreorder (e) {
     e.preventDefault()
-    this.props.firebase.set('samples/' + Math.floor(Math.random() * 9000), { order: this.state.fields, userId: this.props.profile.uid })
-    console.log('submitted')
+    console.log('fb:', this.props.firebase)
+    const { canSubmit } = this.state
+
+    if (!canSubmit) {
+      return false
+    }
+    this.setState({submitting: true}, () => {
+      const data = {
+        order: this.state.fields,
+        timestamp: Date.now()
+      }
+      console.log('data to push:', data)
+      const push = this.props.firebase.push('orders/incoming', {})
+      push.then(ref => {
+        const { key } = ref
+        console.log('pushed?', ref)
+        this.props.firebase.set(`orders/incoming/${key}`, Object.assign(data, { orderId: key }))
+        .then(ref => {
+          console.log('ref of order:', ref)
+          this.setState({
+            submitting: false,
+            done: true
+          })
+        })
+      })
+      // this.props.firebase.set('order/incoming/' + Math.floor(Math.random() * 9000), )
+      console.log('submitted')
+    })
   }
 
   render () {
@@ -83,48 +127,64 @@ export class PreorderSection extends Component {
     }
 
     console.log('firebase:', this.props.firebase)
+    if (this.state.done) {
+      return <section className='preorder'>
+        <Card>
+          <h2>Preorder Form</h2>
+          <article>
+            <h3>Your order has been submitted</h3>
+            <p>Thank you for preordering Cryptoprint - we will get in touch with you soon to finalize your order.</p>
+          </article>
+        </Card>
+      </section>
+    }
     return <section className='preorder'>
-      <h2>Preorder Here</h2>
-      <Button raised label='load?' onClick={e => this.props.firebase.watchEvent('value', 'samples')} />
-      <form submit='#' onSubmit={this.submitPreorder.bind(this)}>
-        <article>
-          <legend>Your Details</legend>
-          <TextFieldWithFBError errorMessage='Email is badly formatted' errorCode={this.state.error} errorCheck={'email:'} id='email' label='Email Address' onChange={(id) => (v, e) => this.handleInputChange(id, v)} />
-          <TextFieldWithFBError id='name' label='Full Name' onChange={(id) => (v, e) => this.handleInputChange(id, v)} />
-        </article>
-        <article>
-          <legend>Your Order</legend>
-          <Autocomplete
-            id='currency'
-            label='Select Cryptocurrency'
-            placeholder={acCurrencies[0].name}
-            required
-            data={acCurrencies}
-            onChange={(v, e) => this.handleInputChange('currency', v)}
-            className='md-cell md-cell--6 md-cell--4-phone'
-            errorText='Currency is required!'
-          />
-          <SelectField
-            id='select-field-1'
-            label='Wallet Type'
-            className='md-cell'
-            defaultValue={walletTypes[0].value}
-            onChange={(v, e) => this.handleInputChange('wallet_type', v)}
-            menuItems={walletTypes}
-          />
-        </article>
-        <article className='actions'>
-          <Button type='submit' flat label='Submit' />
-        </article>
-      </form>
+      <Card>
+        <h2>Preorder Form</h2>
+        <form submit='#' onSubmit={this.submitPreorder.bind(this)}>
+          <article>
+            <legend>Your Details</legend>
+            <TextFieldWithFBError errorMessage='Email is badly formatted' errorCode={this.state.error} errorCheck={'email:'} id='email' label='Email Address'
+              onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} />
+            <TextFieldWithFBError id='name' label='Full Name' onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} errorMessage='Name is required' errorCode={this.state.error} errorCheck={'name:'} />
+          </article>
+          <article>
+            <legend>Your Order</legend>
+            <Autocomplete
+              id='currency'
+              label='Select Cryptocurrency'
+              ref='currency'
+              placeholder={acCurrencies[0].name}
+              required
+              data={acCurrencies}
+              onBlur={(v, e) => this.handleInputChange('currency', this.refs.currency.value)}
+              className='md-cell md-cell--6 md-cell--4-phone'
+              errorText='Currency is required!'
+            />
+            <SelectField
+              id='select-field-1'
+              label='Wallet Type'
+              className='md-cell'
+              defaultValue={walletTypes[0].value}
+              onChange={(v, e) => this.handleInputChange('wallet_type', v)}
+              menuItems={walletTypes}
+            />
+            <TextFieldWithFBError id='amount' errorMessage='Amount must be a number greater than 1' errorCode={this.state.error} errorCheck={'amount:'} label='Amount' defaultValue={3} onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} />
+          </article>
+          <article className='actions'>
+            <Button type='submit' flat label='Submit' disabled={!!this.state.error} />
+          </article>
+        </form>
+      </Card>
     </section>
   }
 }
 
-export const TextFieldWithFBError = ({id, label, onChange, onBlur = () => {}, type = 'text', errorCode, errorMessage, errorCheck, tabIndex, ...props}) =>
+export const TextFieldWithFBError = ({id, defaultValue, label, onChange = () => {}, onBlur = () => {}, type = 'text', errorCode, errorMessage, errorCheck, tabIndex, ...props}) =>
   <TextField id={id} label={label} onChange={onChange(id)} onBlur={onBlur(id)}
     error={(!!errorCode && !!errorCode.match(errorCheck)) || (console.log('errorCode, errorCheck:', errorCode, errorCheck))}
     errorText={errorMessage}
+    defaultValue={defaultValue}
     type={type}
     tabIndex={tabIndex}
   />
