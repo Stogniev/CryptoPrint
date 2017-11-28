@@ -111,32 +111,24 @@ h2 {
 				margin-bottom: 60px;
 				display: flex;
 				align-items: center;
-				margin-right: 60px !important;
 				img {
-					width: 350px;
-					height: 350px;
-				  border-radius: 30px;
-					box-shadow: -18px 11px 30px -4px rgba(112,112,112,0.67) !important;
 					z-index: 11;
-					margin-left: -20px;
+					max-width: 210px;
 				}
 				div {
 					width: 80%;
-					background: #e6e4e2;
-					border-radius: 10px;
 					padding: 60px;
 					h3 {
-						font-size: 25px !important;
+						// font-size: 25px !important;
 					}
 					p {
-						font-size: 20px !important;
+						// font-size: 20px !important;
 					}
 				}
 			}
 			li:nth-child(2n) {
 	 			flex-direction: row-reverse;
 				img {
-					box-shadow: 14px 11px 30px -4px rgba(112,112,112,0.67) !important;
 					margin-right: -20px;
 				}
 	 		}
@@ -161,7 +153,7 @@ h2 {
 				justify-content: space-between;
 				border-radius: 5px;
 				box-shadow: 2px 2px 7px grey;
-				> div {
+				div {
 					display: flex;
 					align-items: center;
 					margin-bottom: 20px;
