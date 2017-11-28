@@ -19,7 +19,7 @@ const properties = [
   {
     title: 'Making the Digital, Tangible',
     text: 'Designed to look like familiar currency bills, our wallets are easy to use and understand for anyone, bringing cryptocurrencies to the masses.',
-    image: 'http://via.placeholder.com/600x600'
+    image: '/images/product/comparison.png'
   },
   {
     title: 'Standard as a Standard',
