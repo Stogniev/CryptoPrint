@@ -1,6 +1,9 @@
 body {
   #root {
     .app-wrap {
+      .App {
+        position: relative;
+      }
     }
   }
 }
