@@ -15,10 +15,18 @@ import CryptoprintIcon from 'cryptoprint/bits/cryptoprint-icon'
 import GirlsHead from 'cryptoprint/bits/girls-head'
 
 import UserMenu from './user-menu'
+import Scroll from 'react-scroll' // Imports all Mixins
 
 import './header.css'
 
-// const headerBackground = 'rgba(52, 84, 209, 1)'
+const scroller = Scroll.scroller
+const scrollOptions = {
+  delay: 100,
+  smooth: true,
+  offset: 50 // Scrolls to element + 50 pixels down the page
+}
+const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
+const headerBackground = 'rgba(255, 255, 255, 0.987)'
 
 class AppHeader extends Component {
   onSignout (event) {
@@ -36,8 +44,9 @@ class AppHeader extends Component {
     return (
       <Paper zDepth={0} className='header'>
         <Toolbar
+          fixed
           style={{
-            // background: headerBackground,
+            background: headerBackground,
             minHeight: '60px',
             ...this.props.style
           }}
@@ -67,9 +76,9 @@ class AppHeader extends Component {
             </Button>
           </ToolbarGroup>
           <ToolbarGroup className='content'>
-            <Button flat secondary>About</Button>
-            <Button flat>Team</Button>
-            <Button flat>Preorder</Button>
+            <Button flat onClick={scrollTo('attributes')}>About</Button>
+            <Button flat onClick={scrollTo('team')}>Team</Button>
+            <Button raised secondary onClick={scrollTo('preorder')}>Preorder</Button>
           </ToolbarGroup>
           <ToolbarGroup className='rights'>
             {false && loggedIn ? <UserMenu
