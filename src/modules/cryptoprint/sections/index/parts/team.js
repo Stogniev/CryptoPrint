@@ -17,7 +17,7 @@ export class TeamSection extends Component {
                   name='Daniel Blank'
                   photo='/images/team/daniel.jpg'
                 >
-                  <p>Former IDF and FinTech coder with a deep passion for great products, cryptocurrency enthusiast since 2013</p>
+                  <p>Former IDF and FinTech coder with a deep passion for great products, into cryptocurrency since 2013</p>
                 </TeamMemeber>
         <TeamMemeber
           id='shimond'
@@ -35,13 +35,6 @@ const TeamMemeber = ({id, name, photo, children, ...props}) => <li className={`t
   <div className='avatar'><img src={photo} alt={`Photo of ${name}`} /></div>
   <div>
     <h3>{name}</h3>
-  </div>
-  <div>
-    <i className='fa fa-linkedin-square' aria-hidden='true' />
-    <i className='fa fa-twitter-square' aria-hidden='true' />
-    <i className='fa fa-medium' aria-hidden='true' />
-    <i className='fa fa-github' aria-hidden='true' />
-    <i className='fa fa-quora' aria-hidden='true' />
   </div>
   {children}
 </li>
