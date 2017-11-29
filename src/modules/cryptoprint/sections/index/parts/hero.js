@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 
 import Slider from 'react-slick'
 
+import Scroll from 'react-scroll' // Imports all Mixins
+const scroller = Scroll.scroller
+const scrollOptions = {
+  delay: 100,
+  smooth: true,
+  offset: 50 // Scrolls to element + 50 pixels down the page
+}
+const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
+
 const heros = [
   {
     title: 'Paper Wallets Just Got Better',
@@ -36,7 +45,7 @@ class Hero extends Component {
         <div className='content'>
           <h1>{e.title}</h1>
           <h3>{e.sub}</h3>
-          <a href='#' className='btn'>Pre-Order Now!</a>
+          <a href='#preorder' onClick={scrollTo('preorder')} className='btn'>Pre-Order Now!</a>
         </div>
         <small className='prototype'>
           The pictures are of an early prototype version - final product may vary.

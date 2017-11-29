@@ -26,7 +26,7 @@ const scrollOptions = {
   offset: 50 // Scrolls to element + 50 pixels down the page
 }
 const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
-const headerBackground = 'rgba(255, 255, 255, 0.987)'
+const headerBackground = 'rgba(22, 22, 22, 0.987)'
 
 class AppHeader extends Component {
   onSignout (event) {
@@ -45,6 +45,7 @@ class AppHeader extends Component {
       <Paper zDepth={0} className='header'>
         <Toolbar
           fixed
+          themed
           style={{
             background: headerBackground,
             minHeight: '60px',
