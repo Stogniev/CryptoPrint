@@ -22,6 +22,7 @@ import AlternativeCTA from './parts/alt-cta'
 import Footer from './parts/footer'
 import Signin from './parts/signin'
 import Preorder from './parts/preorder'
+import Social from './parts/social'
 
 import './index.css'
 
@@ -48,9 +49,10 @@ class SectionIndex extends Component {
       <Attributes />
       <Testimonials />
       <Team />
-      {/*{<Signin />}*/}
-      <Preorder />
       {/*<AlternativeCTA />*/}
+      <Preorder />
+            {/*{<Signin />}*/}
+      <Social />
       <Footer />
     </div>
   }
