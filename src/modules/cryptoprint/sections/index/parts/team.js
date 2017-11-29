@@ -12,20 +12,13 @@ export class TeamSection extends Component {
         >
           <p>Avid Bitcoin advocate since 2011</p>
         </TeamMemeber>
-        <li>
-          <img src='http://via.placeholder.com/60X60' alt='avatar' />
-          <div>
-            <h3>Daniel</h3>
-          </div>
-          <div>
-            <i className='fa fa-linkedin-square' aria-hidden='true' />
-            <i className='fa fa-twitter-square' aria-hidden='true' />
-            <i className='fa fa-medium' aria-hidden='true' />
-            <i className='fa fa-github' aria-hidden='true' />
-            <i className='fa fa-quora' aria-hidden='true' />
-          </div>
-          <p>Quisque ultricies tristique enim, quis pharetra dui tempor elementum. Praesent ultricies odio dui, ut elementum tellus placerat sit amet. Donec pulvinar pulvinar est vitae feugiat.</p>
-        </li>
+        <TeamMemeber
+                  id='danielb'
+                  name='Daniel Blank'
+                  photo='/images/team/daniel.jpg'
+                >
+                  <p>Former IDF and FinTech coder with a deep passion for great products, cryptocurrency enthusiast since 2013</p>
+                </TeamMemeber>
         <TeamMemeber
           id='shimond'
           name='Shimon Doodkin'
