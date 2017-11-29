@@ -21,7 +21,7 @@ const heros = [
     sub: 'Bitcoin, in a form you can touch'
   },
   {
-    title: 'The Safest Way to Store Crypto',
+    title: 'The Safest Wallet Around',
     sub: 'Your private key never goes online'
   },
   {

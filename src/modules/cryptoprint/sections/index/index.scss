@@ -175,25 +175,44 @@ h2 {
 		}
 	}
 	.social {
-		background:#e6e4e2;;
+		background:#e6e4e2;
+			align-items: center;
 			ul {
 			display: flex;
-			flex-wrap: wrap;
-			margin-top: 40px;
-			width: 60%;
-			li {
-				width: 30%;
-				margin-bottom: 20px;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-around;
-				align-items: center;
-				padding: 40px;
-				}				
+			margin-top: 0;
+			width: 20%;
+			justify-content: space-between;
+			list-style-type: none;
+			padding: 0;
+				li {
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					padding: 0;
+					padding: 10px;
+					background: #fff;
+					border-radius: 30px;
+					.fa {
+						font-size: 24px;
+						margin-right: 10px;
+					}
+					.fa-facebook {
+						color: #fff;
+					}
+					&:last-child {
+						background: #3b5998;
+						div {
+							color: #fff;
+						}
+					}
+					.fa-telegram {
+						color: #0088CC;
+					}
+				}
 			}
-	}
-	}
+	}	
 	.team {
+		background: #e6e4e2;
 		ul {
 			display: flex;
 			flex-wrap: wrap;
@@ -220,8 +239,8 @@ h2 {
 					img {
 						display: block;
 						margin: 0 auto;
-						max-width: 150px;
-						max-height: 150px;
+						width: 150px;
+						height: 150px;
 						position: relative;
 					}
 				}
@@ -244,21 +263,6 @@ h2 {
 				p {
 					text-align: center;
 					font-size: 14px;
-				}
-				&.tid {
-					&-shimond {
-						.avatar img {
-							transform: scale(1.7);
-							top: 15px;
-						}
-					}
-						&-elis {
-							.avatar img {
-								transform: scale(1.2);
-								top: 15px;
-							}
-						}
-
 				}
 			}
 		}
@@ -301,4 +305,97 @@ h2 {
 		}
   }
 
+}
+
+@media only screen and (max-width: 500px) {
+	.App {
+		.attributes {
+			ul {
+				width: 95%;
+				li {
+					flex-direction: column;
+					div {
+						padding: 20px;
+						h3, p {
+							text-align: center;
+						}
+					}
+				}
+				li:nth-child(2n) {
+					flex-direction: column;
+					img {
+						margin: 0;
+					}
+				}
+			}
+		}
+		.testimonials {
+			ul {
+				padding: 0;
+				width: 95%;
+				li {
+					width: 90%;
+				}
+			}
+		}
+		.team {
+			ul {
+				width: 95%;
+				padding: 0;
+				.team-member {
+					width: 90%;
+				}
+			}
+		}
+		.preorder {
+			.md-card {
+				padding: 0;
+				width: 95%;
+				padding: 40px;
+				h2 {
+					text-align: center;
+					margin-bottom: 40px;
+				}
+				.actions {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+				}
+			}
+		}
+		.social {
+			h3 {
+				text-align: center;
+				padding: 0 20px;
+				white-space: normal !important;
+			}
+			ul {
+				flex-direction: column;
+				padding: 0;
+				width: 60%;
+				align-items: center;
+				li {
+					padding: 0;
+					padding: 10px;
+					width: 80%;
+					margin-bottom: 20px;
+					background: #fff;
+					flex-direction: row;
+					border-radius: 30px;
+					.fa {
+						font-size: 24px;
+					}
+					.fa-telegram {
+						color: #0088CC;
+					}
+				}
+			}
+		}
+		.footer {
+			p {
+				padding: 0;
+				text-align: center;
+			}
+		}
+	}
 }
