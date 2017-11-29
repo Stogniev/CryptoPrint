@@ -10,6 +10,7 @@ import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar'
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import Button from 'react-md/lib/Buttons'
+import { SocialIcon } from 'react-social-icons';
 
 import CryptoprintIcon from 'cryptoprint/bits/cryptoprint-icon'
 import GirlsHead from 'cryptoprint/bits/girls-head'
@@ -70,6 +71,7 @@ class AppHeader extends Component {
             <Button flat secondary>About</Button>
             <Button flat>Team</Button>
             <Button flat>Preorder</Button>
+            <SocialIcon network="facebook" style={{ height: 25, width: 25, margin: 10}} />
           </ToolbarGroup>
           <ToolbarGroup className='rights'>
             {false && loggedIn ? <UserMenu

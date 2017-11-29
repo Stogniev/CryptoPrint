@@ -174,8 +174,26 @@ h2 {
 			}
 		}
 	}
+	.social {
+		background:#e6e4e2;;
+			ul {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 40px;
+			width: 60%;
+			li {
+				width: 30%;
+				margin-bottom: 20px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				padding: 40px;
+				}				
+			}
+	}
+	}
 	.team {
-
 		ul {
 			display: flex;
 			flex-wrap: wrap;
@@ -243,7 +261,7 @@ h2 {
 
   .footer {
 		border: none;
-		background: #e6e4e2;
+		background: #FFF;
 		p {
 			width: 100%;
 			padding-left: 120px;
