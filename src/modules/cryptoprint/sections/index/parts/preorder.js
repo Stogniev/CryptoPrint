@@ -28,7 +28,8 @@ export class PreorderSection extends Component {
     this.state = {
       currency: '',
       fields: {
-        amount: 3
+        amount: 3,
+        wallet_type: 'Normal'
       },
       error: ''
     }
@@ -45,6 +46,7 @@ export class PreorderSection extends Component {
   }
 
   handleInputChange (id, value) {
+    const { state } = this
     const fields = {
       ...this.state.fields,
       [id]: value
@@ -57,8 +59,16 @@ export class PreorderSection extends Component {
 
     if (!error && missingFields.length > 0) {
       error = `${missingFields[0]}:missing`
-    } else {
+    } else if (!error && !missingFields.length) {
       canSubmit = true
+    }
+
+    if (!error && state.error && state.error.split(':')[0] === id) {
+      error = false
+    } else if (!error && state.error && state.error.split(':')[0] !== id) {
+      error = state.error
+    } else if (error && !state.error) {
+        // noop
     }
 
     this.setState({fields, error, canSubmit}, e => {

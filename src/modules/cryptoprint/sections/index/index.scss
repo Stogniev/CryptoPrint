@@ -181,25 +181,31 @@ h2 {
 			flex-wrap: wrap;
 			justify-content: space-around;
 			margin-top: 40px;
-			width: 60%;
+			width: 80%;
 			li {
 				background-color: #fff;
 				width: 30%;
 				margin-bottom: 20px;
 				display: flex;
 				flex-direction: column;
-				padding: 15px;
+				padding: 4rem;
 				justify-content: space-around;
 				align-items: center;
 				border-radius: 5px;
-				border: 1px solid #bc5f87;
-				padding: 40px;
 				//box-shadow: 2px 2px 7px grey;
-				img {
+				.avatar {
 					height: 150px;
 					width: 150px;
 					border-radius: 50%;
 					margin-bottom: 20px;
+					overflow: hidden;
+					img {
+						display: block;
+						margin: 0 auto;
+						max-width: 150px;
+						max-height: 150px;
+						position: relative;
+					}
 				}
 				div {
 					display: flex;
@@ -220,6 +226,21 @@ h2 {
 				p {
 					text-align: center;
 					font-size: 14px;
+				}
+				&.tid {
+					&-shimond {
+						.avatar img {
+							transform: scale(1.7);
+							top: 15px;
+						}
+					}
+						&-elis {
+							.avatar img {
+								transform: scale(1.2);
+								top: 15px;
+							}
+						}
+
 				}
 			}
 		}
