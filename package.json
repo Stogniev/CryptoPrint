@@ -34,7 +34,6 @@
     "slick-carousel": "^1.8.1",
     "sync-exec": "^0.6.2",
     "webfontloader": "^1.6.28",
-	  "react-social-icons": "^2.7.0"
   },
   "scripts": {
     "build-css": "cross-env NODE_PATH=src/modules/ node-sass src/ -o src/",
