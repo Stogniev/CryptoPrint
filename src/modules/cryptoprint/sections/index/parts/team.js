@@ -17,7 +17,7 @@ export class TeamSection extends Component {
                   name='Daniel Blank'
                   photo='/images/team/daniel.jpg'
                 >
-                  <p>Former IDF and FinTech coder with a deep passion for great products, into cryptocurrency since 2013</p>
+                  <p>Passionate for great products, into cryptocurrencies since 2013</p>
                 </TeamMemeber>
         <TeamMemeber
           id='shimond'

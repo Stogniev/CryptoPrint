@@ -110,7 +110,7 @@ h2 {
 			li {
 				margin-bottom: 60px;
 				display: flex;
-				align-items: center;
+				align-items: center;			
 				img {
 					z-index: 11;
 					max-width: 210px;
@@ -119,10 +119,10 @@ h2 {
 					width: 80%;
 					padding: 60px;
 					h3 {
-						// font-size: 25px !important;
+						font-size: 25px !important;
 					}
 					p {
-						// font-size: 20px !important;
+						font-size: 20px !important;
 					}
 				}
 			}
@@ -248,7 +248,7 @@ h2 {
 					display: flex;
 					margin-bottom: 20px;
 					h3 {
-						font-size: 18px;
+						font-size: 20px;
 						font-weight: bold;
 					}
 					i {
@@ -368,6 +368,7 @@ h2 {
 				text-align: center;
 				padding: 0 20px;
 				white-space: normal !important;
+				font-size:
 			}
 			ul {
 				flex-direction: column;
