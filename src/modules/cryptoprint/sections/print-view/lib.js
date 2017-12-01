@@ -1,4 +1,8 @@
 import { getPixel } from './canvastools'
+import { createImageData, drawQRSplit, drawqr, imageDataToBitArray } from './canvastools'
+import qrcodesplitter from 'ext/qrcodesplitter-generator/ts/build/ts/QRCode' // eslint-disable-line
+import qrcode from 'ext/qrcodesplitter-generator/js/qrcode.js' // eslint-disable-line
+
 
 export function chunk (arr, len) {
   const chunks = []
@@ -31,14 +35,13 @@ export function exportSVG (svgelement, name) {
   downloadLink.click()
 }
 
-export function createEmptySVGstr (htmlwidth, htmlheight, viewboxwidth, videwboxheight) {
+export function createEmptySVGstr ( htmlheight, htmlwidth, viewboxwidth, videwboxheight) {
   var qrSvg = ''
   qrSvg += '<svg style="border:1px solid blue" version="1.1" xmlns="http://www.w3.org/2000/svg"'
   qrSvg += ' width="' + htmlwidth + '"'
   qrSvg += ' height="' + htmlheight + '"'
-  qrSvg += ' viewBox="0 0 ' + viewboxwidth + ' ' + videwboxheight + '" '
-  qrSvg += ' preserveAspectRatio="xMinYMin meet">'
-  qrSvg += '<rect width="100%" height="100%" fill="white" cx="0" cy="0"/>'
+  qrSvg += ' viewBox="0 0 ' + videwboxheight + ' ' + viewboxwidth + '" '
+  qrSvg += ' preserveAspectRatio="xMaxYMax meet"><defs></defs>'
   qrSvg += '</svg>'
   return qrSvg
 }
@@ -53,7 +56,7 @@ export function text (options) {
   var transform = options.transform || ''
   var text = options.text.split('\n').map(function (a, i) { return '<tspan x="' + drawx + '" y="' + (drawy + fontSize * lineHeight + i * fontSize * lineHeight) + '">' + a + '</tspan>' }).join('\n')
 
-  return '<text x="' + drawx + '" transform=' + transform + ' y="' + drawy + '" style="' + style + '" font-family="' + fontFamily + '" font-size="' + fontSize + '">' + text + '</text>'
+  return '<text x="' + drawx + '" transform="' + transform + '" y="' + drawy + '" style="' + style + '" font-family="' + fontFamily + '" font-size="' + fontSize + '">' + text + '</text>'
 }
 
 export function imageDataToPath (options) {
@@ -140,4 +143,69 @@ export function createSvgTag (qrSvg, parts, height, width, iheight, iwidth) {
   }
 
   return qrSvg
+}
+
+export function generatePublicKey_ImageData (publicKey) {
+  //input publicKey
+  let typeNumber = 0
+  let errorCorrectionLevel = 'M'
+  let qr_publicKey = qrcode(typeNumber, errorCorrectionLevel)
+  qr_publicKey.addData(publicKey)
+  qr_publicKey.make()
+  //let qrWidth = qr_publicKey.getModuleCount()
+  let imageData_QR_pubKey = createImageData( /* qrWidth,qrWidth */)
+  drawqr(imageData_QR_pubKey, 0, 0, qr_publicKey, 1)
+  //output imageData_QR_pubKey
+  return imageData_QR_pubKey;
+}
+
+
+export function generatePrivateKey_SplitImageData (privateKey) {
+
+  //input privateKey
+  let typeNumber = 0
+  let errorCorrectionLevel = 'L'
+  let qr_privateKey = qrcode(typeNumber, errorCorrectionLevel)
+  qr_privateKey.addData(privateKey)
+  qr_privateKey.make()
+
+  let SplitterQRCode = qrcodesplitter.QRCode
+  let SplitterErrorCorrectLevel = qrcodesplitter.ErrorCorrectLevel
+
+  // uncomment if UTF-8 support is required.
+  // QRCode.stringToBytes = com.d_project.text.stringToBytes_UTF8
+  let qrPad = new SplitterQRCode() // the private key qr code splitting pad
+  let qrPositionMarks = new SplitterQRCode() // only positioning dots for the other part of the qr code to make it beutiful
+  qrPad.setErrorCorrectLevel(SplitterErrorCorrectLevel.L)
+  qrPad.addData(privateKey)
+  qrPositionMarks.setErrorCorrectLevel(SplitterErrorCorrectLevel.L)
+  qrPositionMarks.addData(privateKey)
+  for (typeNumber = 1; typeNumber <= 40; typeNumber++) { // find minimum size data fits
+    try {
+      qrPad.setTypeNumber(typeNumber)
+      qrPad.make()  // if data not fits it throws an error, here
+      qrPositionMarks.setTypeNumber(typeNumber) // if data fits, then this also executed
+      qrPositionMarks.make(true)
+      break // if all executed well then break
+    } catch (e) {}
+  }
+  // output    qr_privateKey    qrPad    qrPositionMarks
+
+  //input qrPad
+  let imageDataTemp = createImageData()
+  drawqr(imageDataTemp, 0, 0, qrPad, 1)
+  var qrPad_bitArray = imageDataToBitArray(imageDataTemp)
+  imageDataTemp = null
+  // output qrPad_bitArray
+   
+  // input qr_privateKey qrPad_bitArray qrPositionMarks
+  //let qrWidth = qr_privateKey.getModuleCount()
+  let imageData_QR_privateKey       = createImageData( /* qrWidth,qrWidth */ )
+  let imageData_QR_privateKey_part1 = createImageData( /* qrWidth,qrWidth */)
+  let imageData_QR_privateKey_part2 = createImageData( /* qrWidth,qrWidth */)
+  drawQRSplit(qrPad_bitArray, imageData_QR_privateKey, imageData_QR_privateKey_part1, imageData_QR_privateKey_part2, 0, 0, qr_privateKey, 1)
+  drawqr(imageData_QR_privateKey_part2, 0, 0, qrPositionMarks, 1)
+  imageData_QR_privateKey = null
+  // output imageData_QR_privateKey_part1 imageData_QR_privateKey_part2
+  return {  imageData_QR_privateKey_part1, imageData_QR_privateKey_part2}
 }
