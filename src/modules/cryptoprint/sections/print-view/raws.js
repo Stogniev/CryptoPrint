@@ -3,135 +3,40 @@ import {
   imageDataToPath,
   postfix,
   prefix,
-  replacestr
+  replacestr,
+  generatePublicKey_ImageData,
+  generatePrivateKey_SplitImageData,
+  createEmptySVGstr,
+  text
 } from './lib'
-import { getEvenFrequencyPad } from './crypto'
-import { createImageData, drawQRSplit, drawqr, imageDataToBitArray } from './canvastools'
+import { getEvenFrequencyPad,getBitcoinKeypair } from './crypto'
+ 
+ 
 import fetch from 'isomorphic-fetch'
 
 import cheerio from 'cheerio'
 
-import qrcodesplitter from 'ext/qrcodesplitter-generator/ts/build/ts/QRCode' // eslint-disable-line
-import qrcode from 'ext/qrcodesplitter-generator/js/qrcode.js' // eslint-disable-line
 
-// Localhost will not produce errors even when requested URL doesn't exists - issue with dev server?
-const getSVG = url => fetch(url).then(res => res.text()).catch(e => console.error('Unable to load', url, 'error produced:', e))
 
-const svgTemplates = {
-  frontData: '/notes/v0.2/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
-  backArtwork: '/notes/v0.2/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
+function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
 
-  backData: '/notes/v0.2/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
-  frontArtwork: '/notes/v0.2/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg'
-}
 
-const tpls = {}
+  let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1);
+  let { imageData_QR_privateKey_part1, imageData_QR_privateKey_part2} = generatePrivateKey_SplitImageData (privateKey);
+  let imageData_QR_pubKey=generatePublicKey_ImageData(publicKey);
 
-const svgPromises = Object.keys(svgTemplates).map(key => getSVG(svgTemplates[key]).then(text => ({key, url: svgTemplates[key], text})))
-const svgDatas = Promise.all(svgPromises)
-  .then(r => {
-    console.log('svgs:', r)
-    r.map(e => Object.assign(tpls, {[e.key]: e.text}))
-    tpls.ready = true
-    console.log('svg templates ready', tpls)
-  })
 
-console.log('svgs?', svgDatas)
-
-let sHeight = 500
-let sWidth = 800
-
-function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
-  let randomPad = []
-  let imageData1
-  let imageData2
-  let frontPubkeyQRData
-
-  let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1)
-
-  let typeNumber = 0
-  let errorCorrectionLevel = 'L'
-  let qr = qrcode(typeNumber, errorCorrectionLevel)
-  qr.addData(privateKey)
-  qr.make()
-
-  let SplitterQRCode = qrcodesplitter.QRCode
-  let SplitterErrorCorrectLevel = qrcodesplitter.ErrorCorrectLevel
-
-  // uncomment if UTF-8 support is required.
-  // QRCode.stringToBytes = com.d_project.text.stringToBytes_UTF8
-  let qrPad = new SplitterQRCode() // the private key qr code splitting pad
-  let qrPad2 = new SplitterQRCode() // only positioning dots for the other part of the qr code to make it beutiful
-  qrPad.setErrorCorrectLevel(SplitterErrorCorrectLevel.L)
-  qrPad.addData(privateKey)
-  qrPad2.setErrorCorrectLevel(SplitterErrorCorrectLevel.L)
-  qrPad2.addData(privateKey)
-  for (typeNumber = 1; typeNumber <= 40; typeNumber++) {
-    try {
-      qrPad.setTypeNumber(typeNumber)
-      qrPad.make()
-      qrPad2.setTypeNumber(typeNumber)
-      qrPad2.make(true)
-      break
-    } catch (e) {}
-  }
-  // img
-
-  typeNumber = 0
-  errorCorrectionLevel = 'M'
-  let pqr = qrcode(typeNumber, errorCorrectionLevel)
-  pqr.addData(publicKey)
-  pqr.make()
-
-  let imageData = createImageData()
-
-  imageData1 = createImageData()
-
-  imageData2 = createImageData()
-
-  frontPubkeyQRData = createImageData()
-
-  drawqr(imageData, 0, 0, qrPad, 1)
-  // ctx.putImageData(imageData, 0, 0);  at coords 0,0
-  var padOfQR = imageDataToBitArray(imageData)
-  padOfQR.unshift(0)
-  padOfQR.unshift(0)
-  randomPad.length = 0
-  Array.prototype.splice.apply(randomPad, padOfQR)
-
-  // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-  imageData = createImageData()
-
-  /* var y = 0
-  y = */
-  drawQRSplit(randomPad, imageData, imageData1, imageData2, 0, 0, qr, 1) // +(8*1.75|0)
-
-  // drawqr(imageData2, 0, 0, qrPad2, 1)
-  drawqr(imageData2, 0, 0, qrPad2, 1)
-  drawqr(frontPubkeyQRData, 0, 0, pqr, 1)
-  imageData = null
-
-  let span
   let svg
-
-  //  svgTemplateFrontData="",
-  //  svgTemplateFrontArtwork="",
-  //  svgTemplateBackArtwork="",
-  //  svgTemplateBackData=""
-  span = document.createElement('span')
-  span.addEventListener('click', () => {
-    exportSVG(this, publicKey + '_back')
-  }, false)
 
   let nodeID = 'T01-20170000000002'
   let noteType = 'Single Private/Public Key'
   let noteTypeSubtext = 'Copy 01 of 02'
   let printerID = '2018 — Tel Aviv, Israel'
 
-  let artworkFrontDefs = tpls.frontArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  let artworkFrontContent = tpls.frontArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+  let artworkFrontDefs = svgDatas.frontArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  let artworkFrontContent = svgDatas.frontArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  svg = tpls.frontData
+  svg = svgDatas.frontData
 
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
@@ -142,7 +47,7 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
     x: 0,
     y: 115,
-    data: imageData1,
+    data: imageData_QR_privateKey_part1,
     margin: 0,
     offset: 0,
     cellsize: 12,
@@ -201,24 +106,20 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
       })
     })
   })
+  const fronta=svgDatas.frontArtwork;
+  const frontb=svg;
   svg = prefix(svg, /<\/defs>/, artworkFrontDefs)
   svg = postfix(svg, /<\/defs>/, artworkFrontContent)
 
-  span.innerHTML = svg
-  span.getElementsByTagName('svg')[0].setAttribute('height', sHeight)
-  span.getElementsByTagName('svg')[0].setAttribute('width', sWidth)
+  const front=svg;
+//
 
-  document.getElementById('page_front_data').prepend(span)
 
-  span = document.createElement('span')
-  span.addEventListener('click', function () {
-    exportSVG(this, publicKey + '_back')
-  }, false)
 
-  var artworkBackDefs = tpls.backArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  var artworkBackContent = tpls.backArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+  var artworkBackDefs = svgDatas.backArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  var artworkBackContent = svgDatas.backArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  svg = tpls.backData
+  svg = svgDatas.backData
 
   svg = postfix(svg, /<g id="Print-Layouts" /, ' transform="scale(-1, 1) translate(-1600, 0)" ')
 
@@ -228,7 +129,7 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
     x: 0,
     y: 115,
-    data: imageData2,
+    data: imageData_QR_privateKey_part2,
     margin: 0,
     offset: 0,
     cellsize: 12,
@@ -238,7 +139,7 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
     x: 0,
     y: 0,
-    data: frontPubkeyQRData,
+    data: imageData_QR_pubKey,
     margin: 0,
     offset: 0,
     cellsize: 12,
@@ -304,100 +205,33 @@ function generate (publicKey = 'UNSET', privateKey = 'UNSET') {
       })
     })
 
+  const backa=svgDatas.backArtwork;
+  const backb=svg;
   svg = prefix(svg, /<\/defs>/, artworkBackDefs)
   svg = postfix(svg, /<\/defs>/, artworkBackContent)
+  const back=svg;
 
-  span.innerHTML = svg
-  span.getElementsByTagName('svg')[0].setAttribute('height', sHeight)
-  span.getElementsByTagName('svg')[0].setAttribute('width', sWidth)
-  document.getElementById('page_back_on_transparent_data').prepend(span)
+  return {front, back,fronta, backa,frontb, backb}
 }
 
-export default generate
 
-export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
-  let randomPad = []
-  let backPrivkeyQRData
-  let frontPrivkeyQRData
-  let frontPubkeyQRData
 
-  let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1)
-
-  let typeNumber = 0
-  let errorCorrectionLevel = 'L'
-  let qr = qrcode(typeNumber, errorCorrectionLevel)
-  qr.addData(privateKey)
-  qr.make()
-
-  let SplitterQRCode = qrcodesplitter.QRCode
-  let SplitterErrorCorrectLevel = qrcodesplitter.ErrorCorrectLevel
-
-  // uncomment if UTF-8 support is required.
-  // QRCode.stringToBytes = com.d_project.text.stringToBytes_UTF8
-  let qrPad = new SplitterQRCode() // the private key qr code splitting pad
-  let qrPad2 = new SplitterQRCode() // only positioning dots for the other part of the qr code to make it beutiful
-  qrPad.setErrorCorrectLevel(SplitterErrorCorrectLevel.L)
-  qrPad.addData(privateKey)
-  qrPad2.setErrorCorrectLevel(SplitterErrorCorrectLevel.L)
-  qrPad2.addData(privateKey)
-  for (typeNumber = 1; typeNumber <= 40; typeNumber++) {
-    try {
-      qrPad.setTypeNumber(typeNumber)
-      qrPad.make()
-      qrPad2.setTypeNumber(typeNumber)
-      qrPad2.make(true)
-      break
-    } catch (e) {}
-  }
-  // img
-
-  typeNumber = 0
-  errorCorrectionLevel = 'M'
-  let pqr = qrcode(typeNumber, errorCorrectionLevel)
-  pqr.addData(publicKey)
-  pqr.make()
-
-  let imageData = createImageData()
-
-  backPrivkeyQRData = createImageData()
-
-  frontPrivkeyQRData = createImageData()
-
-  frontPubkeyQRData = createImageData()
-
-  drawqr(imageData, 0, 0, qrPad, 1)
-  // ctx.putImageData(imageData, 0, 0);  at coords 0,0
-  var padOfQR = imageDataToBitArray(imageData)
-  padOfQR.unshift(0)
-  padOfQR.unshift(0)
-  randomPad.length = 0
-  Array.prototype.splice.apply(randomPad, padOfQR)
-
-  // ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-  imageData = createImageData()
-
-  /* var y = 0
-  y = */
-  drawQRSplit(randomPad, imageData, backPrivkeyQRData, frontPrivkeyQRData, 0, 0, qr, 1) // +(8*1.75|0)
-
-  // drawqr(imageData2, 0, 0, qrPad2, 1)
-  drawqr(frontPrivkeyQRData, 0, 0, qrPad2, 1)
-  drawqr(frontPubkeyQRData, 0, 0, pqr, 1)
-  imageData = null
-
-  let span
+export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
+ 
+  let privateKeySplit = getEvenFrequencyPad(privateKey, 144, 1);
+  let { imageData_QR_privateKey_part1:backPrivkeyQRData, imageData_QR_privateKey_part2:frontPrivkeyQRData} = generatePrivateKey_SplitImageData (privateKey);
+  let frontPubkeyQRData=generatePublicKey_ImageData(publicKey);
+ 
+ 
   let svg
 
   //  svgTemplateFrontData="",
   //  svgTemplateFrontArtwork="",
   //  svgTemplateBackArtwork="",
   //  svgTemplateBackData=""
-  span = document.createElement('span')
-  span.addEventListener('click', () => {
-    exportSVG(this, publicKey + '_back')
-  }, false)
 
-  svg = tpls.frontData
+
+  svg = svgDatas.frontData
 
   const backPrivKeySVG = imageDataToPath({
     x: 0,
@@ -467,22 +301,20 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
   })
   // svg = prefix(svg, /<\/defs>/, artworkFrontDefs)
   // svg = postfix(svg, /<\/defs>/, artworkFrontContent)
-
+  const fronta=svgDatas.frontData;
+  const frontb=svg;
   // span.innerHTML = svg
   // span.getElementsByTagName('svg')[0].setAttribute('height', sHeight)
   // span.getElementsByTagName('svg')[0].setAttribute('width', sWidth)
 
   // document.getElementById('page_front_data').prepend(span)
 
-  span = document.createElement('span')
-  span.addEventListener('click', function () {
-    exportSVG(this, publicKey + '_back')
-  }, false)
+  const front=svg;
 
-  var artworkBackDefs = tpls.backArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-  var artworkBackContent = tpls.backArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+  var artworkBackDefs = svgDatas.backArtwork.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+  var artworkBackContent = svgDatas.backArtwork.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 
-  svg = tpls.backData
+  svg = svgDatas.backData
 
   svg = postfix(svg, /<g id="Print-Layouts" /, ' transform="scale(-1, 1) translate(-1600, 0)" ')
 
@@ -518,6 +350,18 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
   $svg('rect#privkey_qr_placeholder').replaceWith(frontPrivkeyQRSVG)
   svg = $svg.html()
 
+  
+  
+  // if you look at the svg generated code you see like:
+  // <g id="Privkey-Texts-Copy">
+  //  <g transform="translate(155,0)">
+  //    <g fill="#000" transform="translate(0,10)"><rect...><\/rect>
+  //  </g>
+  // </g>
+  //
+  // so i take the x and y taken from translate of outer group, and x and y taken from translate of inner group, add them together to get full x y
+  // also i note the letter and the order(the order is for debug only)
+  
   svg = replacestr(svg, /<g id="Privkey-Texts-Copy"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, // find the group that contains  the svg
     function (a) { // replace parts in it
       var letterI = 0
@@ -540,6 +384,9 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
             i: letterI,
             x: x1 + x2,
             y: y1 + y2
+			
+			// here the group can be saved
+			
           })
           letterI++
         // return a;//''a1+(privateKeySplit.marking[letterI++]==' '?'transparent':a2)+a3
@@ -547,6 +394,11 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
       // return a
       })
 
+	  
+      // the letter of objects are 
+	  // instead of figuring out the order and take the letter at the correct order
+	  // after sorting the in decending, the order should be exect match fro the correct placing
+	  
     // sort by x, y
       order.sort(function (a, b) {
         if (a.y > b.y) { return 1 }
@@ -576,12 +428,280 @@ export function generatePrivateQRA (publicKey = 'UNSET', privateKey = 'UNSET') {
         })
       })
     })
+	
+  const backa=svgDatas.backArtwork;
+  const backb=svg;
 
   svg = prefix(svg, /<\/defs>/, artworkBackDefs)
   svg = postfix(svg, /<\/defs>/, artworkBackContent)
 
-  span.innerHTML = svg
-  span.getElementsByTagName('svg')[0].setAttribute('height', sHeight)
-  span.getElementsByTagName('svg')[0].setAttribute('width', sWidth)
-  document.getElementById('page_back_on_transparent_data').prepend(span)
+  const back=svg;
+  return {front, back,fronta,frontb,backa,backb}
 }
+
+
+async function load_templates(svgTemplate_urls) {
+  svgDatas.ready=false;
+
+  let fontsForSvg="";
+  let fontMatch=false;
+  let fontReplace=[];
+  if(svgTemplate_urls.font)
+  {
+	  let fontUrl=svgTemplate_urls.font; delete svgTemplate_urls.font;
+	  fontMatch=new RegExp(svgTemplate_urls.fontMatch); delete svgTemplate_urls.fontMatch;
+	  fontReplace=svgTemplate_urls.fontReplace; delete svgTemplate_urls.fontReplace;
+	  fontsForSvg =  await fetch(fontUrl).then( res => res.text() ); 
+  }
+  const getSVG_promises= Object.keys(svgTemplate_urls).map(  key => fetch(svgTemplate_urls[key]).then(res => res.text()).then( text => ({key, text: text}) ) );
+  const getSVG_results = await Promise.all(getSVG_promises);
+
+  getSVG_results.forEach( (e)=> {
+	console.log(e);
+    let svg=e.text;
+    if(fontMatch&&svg.match(fontMatch)!==null)
+    {			
+	fontReplace.forEach( ([search,replace])=> { svg = replacestr(svg, search,replace);} )
+      svg = prefix(svg, /<\/defs>/, fontsForSvg);											 
+}
+    svgDatas[e.key]=svg;
+
+  });
+  svgDatas.ready=true;
+}
+
+
+const svgTemplates = {
+  frontData:    '/notes/v0.1/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
+  backArtwork:  '/notes/v0.1/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
+
+  backData:     '/notes/v0.1/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
+  frontArtwork: '/notes/v0.1/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg',
+
+  fontMatch:"Andale Mono|Sarpanch|Play|Sarpanch|Libre Barcode 39 Extended|Barcode",
+  fontReplace:[["LibreBarcode39Extended-Regular, Libre Barcode 39 Extended", "Barcode"] ],
+  font:'/notes/v0.2/fonts.svg-part.txt'
+}
+
+
+var svgDatas={ready:false};
+ 
+load_templates(svgTemplates).then( ()=> console.log('svgs?', svgDatas)  )
+.catch( e=> console.log('load templates error',e.stack) );
+
+
+
+export function generatePages() {
+	
+  //let sHeight = 500
+  //let sWidth = 800
+
+
+  const pages=[];
+  const notes=[];
+  
+  for(let i=0,notes_to_create=3;i<notes_to_create;i++)
+  {
+	  let {publicKey, privateKey}=getBitcoinKeypair();
+	  let note=generate_set(svgDatas, publicKey, privateKey);
+	  //let note=generate_set_cheerio(svgDatas, publicKey, privateKey);
+	  notes.push(note);
+  }
+
+  // selecting max height:
+  
+  // 21   * 100 dpi=2100
+  // 29.7 * 100 dpi=2970 // lets try this
+  
+  // 21   * 150 dpi=3150
+  // 29.7 * 150 dpi=4455
+
+
+  // example page height of images them selves
+  // 1  page_height_used  840 1600
+  // 2  page_height_used 1680 1600
+  // 3  page_height_used 2520 1600
+  
+  // 4  page_height_used 3360 1600
+  // 5  page_height_used 4200 1600
+  // 6  page_height_used 5040 1600
+  // 7  page_height_used 5880 1600
+  // 8  page_height_used 6720 1600
+  // 9  page_height_used 7560 1600
+  // 10 page_height_used 8400 1600
+
+  let page_width=2100; // max width = 2100
+  let page_width_used=0; // max width = 2100
+  let page_height=2970;
+  let page_height_used=0;
+  let margin=0;
+  
+  let front_defs,back_defs,fronta_defs,backa_defs,frontb_defs,backb_defs;
+  let front_content,back_content,fronta_content,backa_content,frontb_content,backb_content;
+  
+  for(let i=0;i<notes.length;i++)
+  {
+	  //let note=generate_set(svgDatas, publicKey, privateKey);
+	  let note=notes[i];
+	  let [fw,fh]=note.front.match(/viewBox\s*=\s*"([^"]+)"/)[1].trim().split(/\s+/).map(a=>parseFloat(a)).slice(2);
+	  
+	  if(page_width_used<fw)page_width_used=fw;
+	  page_height_used+=fh+margin;
+	  let done=false;
+	  if(page_height_used>page_height||i===0)
+	  {
+		done=true; if(i===0) done=false;
+		page_height_used=fh+(i===0?0:margin)
+		front_defs=[];
+		back_defs=[];
+		front_content=[];
+		back_content=[];
+		
+		fronta_defs=[];
+		backa_defs=[];
+		fronta_content=[];
+		backa_content=[];
+		
+		frontb_defs=[];
+		backb_defs=[];
+		frontb_content=[];
+		backb_content=[];
+	  }
+	  if(i===notes.length-1) done=true;
+	  
+      let fdefs = note.front.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let fcontent = note.front.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  
+	  if(!front_defs.includes(fdefs))front_defs.push(fdefs);
+	  front_content.push('<g transform="translate(0, '+(page_height_used-fh)+')" >'+fcontent+'</g>');
+	  
+	  
+	  let bdefs = note.back.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let bcontent = note.back.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  	  
+	  if(!back_defs.includes(bdefs))back_defs.push(bdefs);
+	  back_content.push('<g transform="translate('+(page_width-page_width_used)+', '+(page_height_used-fh)+')" >'+bcontent+'</g>');
+	  
+	  
+	  
+	  
+	  	  
+      let fadefs = note.fronta.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let facontent = note.fronta.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  
+	  if(!fronta_defs.includes(fadefs))fronta_defs.push(fadefs);
+	  fronta_content.push('<g transform="translate(0, '+(page_height_used-fh)+')" >'+facontent+'</g>');
+	  
+	  
+	  let badefs = note.backa.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let bacontent = note.backa.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  	  
+	  if(!backa_defs.includes(badefs))backa_defs.push(badefs);
+	  backa_content.push('<g transform="translate('+(page_width-page_width_used)+', '+(page_height_used-fh)+')" >'+bacontent+'</g>');
+	  
+	  
+	  
+	  
+	  
+	  
+	  	  
+      let fbdefs = note.frontb.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let fbcontent = note.frontb.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  
+	  if(!frontb_defs.includes(fbdefs))frontb_defs.push(fbdefs);
+	  frontb_content.push('<g transform="translate(0, '+(page_height_used-fh)+')" >'+fbcontent+'</g>');
+	  
+	  
+	  let bbdefs = note.backb.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let bbcontent = note.backb.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  	  
+	  if(!backb_defs.includes(bbdefs))backb_defs.push(bbdefs);
+	  backb_content.push('<g transform="translate('+(page_width-page_width_used)+', '+(page_height_used-fh)+')" >'+bbcontent+'</g>');
+	  
+	  
+	  
+	  if(done){
+		let front=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
+		let back=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
+		
+		let fronta=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
+		let backa=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
+		
+		let frontb=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
+		let backb=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
+		
+		front = prefix(front, /<\/defs>/, front_defs.join('\r\n\r\n\r\n'))
+		front = postfix(front, /<\/defs>/, front_content.join('\r\n\r\n\r\n')+text({x:1800,y:50,fontSize:70,text:"front"}) )
+		
+		back = prefix(back, /<\/defs>/, back_defs.join('\r\n\r\n\r\n'))
+		back = postfix(back, /<\/defs>/, back_content.join('\r\n\r\n\r\n')+text({x:50,y:50,fontSize:70,text:"back"}))
+		
+		
+		
+		fronta = prefix(fronta, /<\/defs>/, fronta_defs.join('\r\n\r\n\r\n'))
+		fronta = postfix(fronta, /<\/defs>/, fronta_content.join('\r\n\r\n\r\n')+text({x:1800,y:50,fontSize:70,text:"fronta"}))
+
+		backa = prefix(backa, /<\/defs>/, backa_defs.join('\r\n\r\n\r\n'))
+		backa = postfix(backa, /<\/defs>/, backa_content.join('\r\n\r\n\r\n')+text({x:50,y:50,fontSize:70,text:"backa"}))
+		
+		
+		
+		frontb = prefix(frontb, /<\/defs>/, frontb_defs.join('\r\n\r\n\r\n'))
+		frontb = postfix(frontb, /<\/defs>/, frontb_content.join('\r\n\r\n\r\n')+text({x:1800,y:50,fontSize:70,text:"frontb"}))
+
+		backb = prefix(backb, /<\/defs>/, backb_defs.join('\r\n\r\n\r\n'))
+		backb = postfix(backb, /<\/defs>/, backb_content.join('\r\n\r\n\r\n')+text({x:50,y:50,fontSize:70,text:"backb"}))
+		
+		
+		
+        pages.push({front,back ,fronta,backa  ,frontb,backb })
+	  }
+	  console.log("page_height_used",page_height_used,page_width_used,front_defs.length,front_content.length)
+  }
+  return pages;
+}
+
+export function generatePrivateQRA() {
+  let pages=generatePages();
+  for(let i=0;i<pages.length;i++)
+  {
+	  let page=pages[i]
+	  let span
+	  
+	  span = document.createElement('span')
+	  span.addEventListener('click', function () { exportSVG(this, i + '_front') }, false)
+	  span.innerHTML = page.front
+	  document.getElementById('page_front').prepend(span)
+	  
+	  span = document.createElement('span')
+	  span.addEventListener('click', function () { exportSVG(this, i + '_back') }, false)
+	  span.innerHTML = page.back
+	  document.getElementById('page_back').prepend(span)
+	  
+	  	  
+	  span = document.createElement('span')
+	  span.addEventListener('click', function () { exportSVG(this, i + '_fronta') }, false)
+	  span.innerHTML = page.fronta
+	  document.getElementById('page_fronta').prepend(span)
+	  
+	  span = document.createElement('span')
+	  span.addEventListener('click', function () { exportSVG(this, i + '_backa') }, false)
+	  span.innerHTML = page.backa
+	  document.getElementById('page_backa').prepend(span)
+	  
+	  
+	  	  
+	  span = document.createElement('span')
+	  span.addEventListener('click', function () { exportSVG(this, i + '_frontb') }, false)
+	  span.innerHTML = page.frontb
+	  document.getElementById('page_frontb').prepend(span)
+	  
+	  
+	  span = document.createElement('span')
+	  span.addEventListener('click', function () { exportSVG(this, i + '_backb') }, false)
+	  span.innerHTML = page.backb
+	  document.getElementById('page_backb').prepend(span)
+	  
+	}
+}
+export default generatePrivateQRA
