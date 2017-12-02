@@ -24,17 +24,17 @@ const properties = [
   {
     title: 'Standard as a Standard',
     text: 'By using standardized formatting (QR code, base58…), our wallets are universally compatible with any other wallet or hardware from day one.',
-    image: 'http://via.placeholder.com/600x600'
+    image: '/images/product/isomorphic-layers.png'
   },
   {
     title: 'Not Just Bitcoin',
     text: 'We offer wallets for each of the top 10 most popular cryptocurrencies today, and we\'re just getting started.',
-    image: 'http://via.placeholder.com/600x600'
+    image: '/images/product/alts.png'
   },
   {
     title: 'Something Special',
     text: 'Need branded wallets for an ICO? \nA personalized wallet as a gift for a wedding? \nWhatever it is, we can do it. Contact us for options.',
-    image: 'http://via.placeholder.com/600x600'
+    image: '/images/product/render-a.png'
   }
 ]
 
