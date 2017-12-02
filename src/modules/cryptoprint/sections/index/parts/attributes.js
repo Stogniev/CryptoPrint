@@ -19,7 +19,7 @@ const properties = [
   {
     title: 'Making the Digital, Tangible',
     text: 'Designed to look like familiar currency bills, our wallets are easy to use and understand for anyone, bringing cryptocurrencies to the masses.',
-    image: '/images/product/comparison.png'
+    image: '/images/product/comparison2.png'
   },
   {
     title: 'Standard as a Standard',
@@ -43,7 +43,7 @@ export class AttributesSection extends Component {
     return <section className='attributes' id='attributes'>
       <ul>
         {properties.map(({title, text, image}, index) => (
-          <li key={index}>
+          <li key={index} className={index % 2 ? 'darkd' : ''}>
             <div>
               <h3>{title}</h3>
               {text.split('\n').map(e => <p>{e}</p>)}
