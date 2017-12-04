@@ -23,7 +23,7 @@ import Footer from './parts/footer'
 import Signin from './parts/signin'
 import Preorder from './parts/preorder'
 import Social from './parts/social'
-
+import Newsletter from './parts/newsletter'
 import './index.css'
 
 class SectionIndex extends Component {
@@ -48,11 +48,12 @@ class SectionIndex extends Component {
       <Hero />
       <Attributes />
       {/*<Testimonials />*/}
-      <Team />
+      <Newsletter />
+      <Team />      
       {/*<AlternativeCTA />*/}
       <Preorder />
             {/*{<Signin />}*/}
-      <Social />
+      <Social />      
       <Footer />
     </div>
   }
