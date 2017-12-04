@@ -47,13 +47,13 @@ class SectionIndex extends Component {
     return <div className='index-section'>
       <Hero />
       <Attributes />
-      {/*<Testimonials />*/}
-      <Newsletter />
-      <Team />      
-      {/*<AlternativeCTA />*/}
+      {/* <Testimonials /> */}
+      <Team />
+      {/* <AlternativeCTA /> */}
       <Preorder />
-            {/*{<Signin />}*/}
-      <Social />      
+      {/* {<Signin />} */}
+      <Social />
+      <Newsletter />
       <Footer />
     </div>
   }

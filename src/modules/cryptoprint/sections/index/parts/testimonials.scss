@@ -1,0 +1,50 @@
+.testimonials {
+  background: #e6e4e2;
+  ul {
+    width: 60%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    li {
+      background-color: #fff;
+      width: 45%;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 15px;
+      justify-content: space-between;
+      border-radius: 5px;
+      box-shadow: 2px 2px 7px grey;
+      div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        h3 {
+          margin-left: 15px;
+          font-weight: 100;
+        }
+        img {
+          border-radius: 50%;
+        }
+      }
+      p:last-child {
+        margin-top: 20px;
+        font-weight: normal;
+        font-size: 16px;
+        font-style: italic;
+      }
+    }
+  }
+  @media only screen and (max-width: $breakpoint) {
+    ul {
+      padding: 0;
+      width: 95%;
+      li {
+        width: 90%;
+      }
+    }
+
+  }
+}
