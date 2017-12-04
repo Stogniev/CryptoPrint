@@ -1,0 +1,54 @@
+.social {
+  background:#e6e4e2;
+    align-items: center;
+    .buttons {
+      margin-bottom: 2rem;
+      .md-btn {
+        background: #FFF;
+        border-radius: 4px;
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+      }
+    }
+    @media only screen and (max-width: $breakpoint) {
+  			h3 {
+  				text-align: center;
+  				padding: 0 20px;
+  				white-space: normal !important;
+  				font-size: normal;
+  			}
+        p {
+          margin: 0 3rem;
+        }
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          .md-btn {
+            margin-right: 0;
+            width: 100%;
+          }
+        }
+  			ul {
+  				flex-direction: column;
+  				padding: 0;
+  				width: 60%;
+  				align-items: center;
+  				li {
+  					padding: 0;
+  					padding: 10px;
+  					width: 80%;
+  					margin-bottom: 20px;
+  					background: #fff;
+  					flex-direction: row;
+  					border-radius: 30px;
+  					.fa {
+  						font-size: 24px;
+  					}
+  					.fa-telegram {
+  						color: #0088CC;
+  					}
+  				}
+  			}
+      }
+}

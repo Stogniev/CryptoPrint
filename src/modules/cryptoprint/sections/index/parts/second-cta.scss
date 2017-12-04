@@ -1,0 +1,16 @@
+.second-cta {
+  border-width: 2px;
+  background: linear-gradient(to right, #073151 0, #1db6ad 100%);
+  h2, p, .btn {
+    width: 40%;
+    text-align: center;
+    color: #fff;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  .btn {
+    margin-top: 40px;
+    width: 20%;
+  }
+}
