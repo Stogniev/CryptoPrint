@@ -19,7 +19,7 @@ export function code128svg(text)
   height: 20,
   width: 2
 	}); 
-    let CODE128B = JsBarcode.getModule("CODE128B");
+    //let CODE128B = JsBarcode.getModule("CODE128B");
     let xml = xmlSerializer.serializeToString(svgNode);
    return xml;
 }

@@ -17,7 +17,8 @@ export function chunk (arr, len) {
 }
 
 export function exportSVG (svgelement, name) {
-  var text = svgelement.innerHTML
+  var text = svgelement.innerHTML.replace(/style="border:1px solid blue"/,'')
+  
   var textToSaveAsBlob = new Blob([text], {type: 'image/svg+xml'})
   var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob)
 
@@ -340,14 +341,16 @@ export function vline(x,y,h)
 
 export function barcode128(x,y,width,text)
 {
-	let svg=code128svg(text,2,30);
-	let [svgw,svgh]=svg.match(/viewBox\s*=\s*"([^"]+)"/)[1].trim().split(/\s+/).map(a=>parseFloat(a)).slice(2);
+	let svg=code128svg(text,2,40);
+	let [svgw/*,svgh*/]=svg.match(/viewBox\s*=\s*"([^"]+)"/)[1].trim().split(/\s+/).map(a=>parseFloat(a)).slice(2);
 
 	var svgbarcode=svg.match(/<svg [^>]+>([\s\S]+?)<\/svg>/)[1]
   //console.log(JsBarcode); 
-    return '<g transform="translate('+x+' '+y+')">'
-    +'<g transform="matrix(0,-1,1,0, '+'0'+','+(svgw)+') scale('+(width/svgw).toFixed(8)+')">'
+    return '<g transform="translate(0 '+width+') translate('+x+' '+y+')">'
+    +'<g transform="rotate(-90)">'
+    +'<g transform="scale('+(width/svgw).toFixed(8)+')">'
     +svgbarcode
+	+'</g>'
 	+'</g>'
 	+'</g>'
 }

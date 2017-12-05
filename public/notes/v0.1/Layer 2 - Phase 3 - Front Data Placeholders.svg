@@ -40,10 +40,10 @@
                                     </g>
                                 </g>
                             </g>
-                            <text id="__PUBKEY__SUFFIX__" transform="translate(36.000000, 255.000000) rotate(-90.000000) translate(190.000000, -255.000000) " style="text-anchor: end;" font-family="Play-Bold, Play" font-size="40" font-weight="bold" fill="#FFFFFF">
+                            <text id="__PUBKEY__SUFFIX__" transform="translate(46.000000, 255.000000) rotate(-90.000000) translate(190.000000, -255.000000) " style="text-anchor: end;" font-family="Play-Bold, Play" font-size="40" font-weight="bold" fill="#FFFFFF">
                                 <tspan x="48.64" y="257">MMMMMM</tspan>
                             </text>
-                            <text id="__PUBKEY__PREFIX__" transform="translate(35.000000, 456.000000) rotate(-90.000000) translate(-35.000000, -456.000000) " font-family="Play-Bold, Play" font-size="40" font-weight="bold" fill="#FFFFFF">
+                            <text id="__PUBKEY__PREFIX__" transform="translate(45.000000, 456.000000) rotate(-90.000000) translate(-35.000000, -456.000000) " font-family="Play-Bold, Play" font-size="40" font-weight="bold" fill="#FFFFFF">
                                 <tspan x="-215" y="458">MMMMMM</tspan>
                             </text>
                         </g>
@@ -84,9 +84,9 @@
                 <text id="T01-20170000000001" mask="url(#mask-2)" font-family="Sarpanch-Regular, Sarpanch" font-size="23" font-weight="normal" fill="#000000">
                     <tspan x="684.442" y="693">T01-20170000000001</tspan>
                 </text>
-                <text id="__THIS_ID__" mask="url(#mask-2)" font-family="Sarpanch-Regular, Sarpanch" font-size="23" font-weight="normal" fill="#4A4A4A">
-                    <tspan x="640.052" y="39">Single Private/Public Key</tspan>
-                    <tspan x="800.914" y="71">Copy 01/03</tspan>
+                <text id="__THIS_ID__" font-family="Sarpanch-Regular, Sarpanch" font-size="23" font-weight="normal" fill="#4A4A4A">
+                    <tspan  style="text-anchor: end;" x="940" y="39">Single Private/Public Key</tspan>
+                    <tspan  style="text-anchor: end;" x="934" y="71">Copy 01/03</tspan>
                 </text>
                 <text id="2017-—-Tel-Aviv,-Isr" mask="url(#mask-2)" font-family="Play-Regular, Play" font-size="29" font-weight="normal" fill="#000000">
                     <tspan x="72" y="695">2017 — Tel Aviv, Israel</tspan>

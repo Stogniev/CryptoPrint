@@ -154,7 +154,7 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
   svg = replacestr(svg, /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g, publicKey)
   
-  svg = replacestr(svg, /\<text id="Public-Barcode"[\s\S]+?\<\/text\>/g,   barcode128(40,-120,720,publicKey)  )
+  svg = replacestr(svg, /<text id="Public-Barcode"[\s\S]+?<\/text>/g,   barcode128(40,0,720,publicKey)  )
    
   
   svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
@@ -285,6 +285,8 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
 
   svg = svgDatas.backData
 
+  let [svgw/*,svgh*/]=svg.match(/viewBox\s*=\s*"([^"]+)"/)[1].trim().split(/\s+/).map(a=>parseFloat(a)).slice(2);
+
   const frontPrivKeySVG = imageDataToPath({
     x: 0,
     y: 115,
@@ -368,7 +370,7 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
 
   svg = svgDatas.frontData
 
-  svg = postfix(svg, /<g id="Print-Layouts" /, ' transform="scale(-1, 1) translate(-1600, 0)" ')
+  svg = postfix(svg, /<g id="Print-Layouts" /, ' transform="scale(-1, 1) translate(-'+svgw+', 0)" ')
 
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
@@ -598,14 +600,14 @@ export function generatePages() {
   let marginv=120;
   let marginh=150;
   
-  let back_defs,front_defs,backa_defs,fronta_defs,backb_defs,frontb_defs;
-  let back_content,front_content,backa_content,fronta_content,backb_content,frontb_content;
+  let front_defs,back_defs,fronta_defs,backa_defs,frontb_defs,backb_defs;
+  let front_content,back_content,fronta_content,backa_content,frontb_content,backb_content;
   
   for(let i=0;i<notes.length;i++)
   {
 	  //let note=generate_set(svgDatas, publicKey, privateKey);
 	  let note=notes[i];
-	  let [fw,fh]=note.back.match(/viewBox\s*=\s*"([^"]+)"/)[1].trim().split(/\s+/).map(a=>parseFloat(a)).slice(2);
+	  let [fw,fh]=note.front.match(/viewBox\s*=\s*"([^"]+)"/)[1].trim().split(/\s+/).map(a=>parseFloat(a)).slice(2);
 	  
 	  if(page_width_used<fw)page_width_used=fw;
 	  page_height_used+=fh+marginv;
@@ -614,114 +616,115 @@ export function generatePages() {
 	  {
 		done=true; if(i===0) done=false;
 		page_height_used=fh+marginv;//(i===0?0:marginv)
-		back_defs=[];
 		front_defs=[];
-		back_content=[];
+		back_defs=[];
 		front_content=[];
+		back_content=[];
 		
-		backa_defs=[];
 		fronta_defs=[];
-		backa_content=[];
+		backa_defs=[];
 		fronta_content=[];
+		backa_content=[];
 		
-		backb_defs=[];
 		frontb_defs=[];
-		backb_content=[];
+		backb_defs=[];
 		frontb_content=[];
+		backb_content=[];
 	  }
 	  if(i===notes.length-1) done=true;
 	  
-      let bdefs = note.back.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-      let bcontent = note.back.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+      let bdefs = note.front.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let bcontent = note.front.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 	  
-	  if(!back_defs.includes(bdefs))back_defs.push(bdefs);
-	  back_content.push('<g transform="translate('+marginh+', '+(page_height_used-fh)+')" >'+bcontent+'</g>');
+	  if(!front_defs.includes(bdefs))front_defs.push(bdefs);
+	  front_content.push('<g transform="translate('+marginh+', '+(page_height_used-fh)+')" >'+bcontent+'</g>');
 	  
 	  
-	  let fdefs = note.front.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-      let fcontent = note.front.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  let fdefs = note.back.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let fcontent = note.back.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 	  	  
-	  if(!front_defs.includes(fdefs))front_defs.push(fdefs);
-	  front_content.push('<g transform="translate('+(page_width-page_width_used-marginh)+', '+(page_height_used-fh)+')" >'+fcontent+'</g>');
-	  
-	  
-	  
-	  
-	  	  
-      let badefs = note.backa.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-      let bacontent = note.backa.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
-	  
-	  if(!backa_defs.includes(badefs))backa_defs.push(badefs);
-	  backa_content.push('<g transform="translate('+marginh+', '+(page_height_used-fh)+')" >'+bacontent+'</g>');
-	  
-	  
-	  let fadefs = note.fronta.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-      let facontent = note.fronta.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
-	  	  
-	  if(!fronta_defs.includes(fadefs))fronta_defs.push(fadefs);
-	  fronta_content.push('<g transform="translate('+(page_width-page_width_used-marginh)+', '+(page_height_used-fh)+')" >'+facontent+'</g>');
-	  
-	  
+	  if(!back_defs.includes(fdefs))back_defs.push(fdefs);
+	  back_content.push('<g transform="translate('+(page_width-page_width_used-marginh)+', '+(page_height_used-fh)+')" >'+fcontent+'</g>');
 	  
 	  
 	  
 	  
 	  	  
-      let bbdefs = note.backb.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-      let bbcontent = note.backb.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+      let badefs = note.fronta.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let bacontent = note.fronta.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 	  
-	  if(!backb_defs.includes(bbdefs))backb_defs.push(bbdefs);
-	  backb_content.push('<g transform="translate('+marginh+', '+(page_height_used-fh)+')" >'+bbcontent+'</g>');
+	  if(!fronta_defs.includes(badefs))fronta_defs.push(badefs);
+	  fronta_content.push('<g transform="translate('+marginh+', '+(page_height_used-fh)+')" >'+bacontent+'</g>');
 	  
 	  
-	  let fbdefs = note.frontb.match(/<defs>([\s\S]+?)<\/defs>/)[1]
-      let fbcontent = note.frontb.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  let fadefs = note.backa.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let facontent = note.backa.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
 	  	  
-	  if(!frontb_defs.includes(fbdefs))frontb_defs.push(fbdefs);
-	  frontb_content.push('<g transform="translate('+(page_width-page_width_used-marginh)+', '+(page_height_used-fh)+')" >'+fbcontent+'</g>');
+	  if(!backa_defs.includes(fadefs))backa_defs.push(fadefs);
+	  backa_content.push('<g transform="translate('+(page_width-page_width_used-marginh)+', '+(page_height_used-fh)+')" >'+facontent+'</g>');
+	  
+	  
+	  
+	  
+	  
+	  
+	  	  
+      let bbdefs = note.frontb.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let bbcontent = note.frontb.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  
+	  if(!frontb_defs.includes(bbdefs))frontb_defs.push(bbdefs);
+	  frontb_content.push('<g transform="translate('+marginh+', '+(page_height_used-fh)+')" >'+bbcontent+'</g>');
+	  
+	  
+	  let fbdefs = note.backb.match(/<defs>([\s\S]+?)<\/defs>/)[1]
+      let fbcontent = note.backb.match(/<\/defs>([\s\S]+?)<\/svg>/)[1]
+	  	  
+	  if(!backb_defs.includes(fbdefs))backb_defs.push(fbdefs);
+	  backb_content.push('<g transform="translate('+(page_width-page_width_used-marginh)+', '+(page_height_used-fh)+')" >'+fbcontent+'</g>');
 	  
 	  
 	  
 	  if(done){
-		let back=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
-		let front=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
+		let front=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
+		let back=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
 		
-		let backa=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
-		let fronta=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
+		let fronta=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
+		let backa=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
 		
-		let backb=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
-		let frontb=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
-		
-		back = prefix(back, /<\/defs>/, back_defs.join('\r\n\r\n\r\n'))
-		back = postfix(back, /<\/defs>/, back_content.join('\r\n\r\n\r\n')+text({x:page_width-50,y:marginv+50,fontSize:70,text:"back",align:'end'}) )
+		let frontb=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
+		let backb=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
 		
 		front = prefix(front, /<\/defs>/, front_defs.join('\r\n\r\n\r\n'))
-		front = postfix(front, /<\/defs>/, front_content.join('\r\n\r\n\r\n')+text({x:50,y:marginv+50,fontSize:70,text:"front"}))
+		front = postfix(front, /<\/defs>/, front_content.join('\r\n\r\n\r\n')+text({x:page_width-50,y:marginv+50,fontSize:70,text:"front",align:'end'}) )
+		
+		back = prefix(back, /<\/defs>/, back_defs.join('\r\n\r\n\r\n'))
+		back = postfix(back, /<\/defs>/, back_content.join('\r\n\r\n\r\n')+text({x:50,y:marginv+50,fontSize:70,text:"back"}))
 		
 		
 		
-		backa = prefix(backa, /<\/defs>/, backa_defs.join('\r\n\r\n\r\n'))
-		backa = postfix(backa, /<\/defs>/, backa_content.join('\r\n\r\n\r\n')+text({x:page_width-50,y:marginv+50,fontSize:70,text:"backa",align:'end'}))
-
 		fronta = prefix(fronta, /<\/defs>/, fronta_defs.join('\r\n\r\n\r\n'))
-		fronta = postfix(fronta, /<\/defs>/, fronta_content.join('\r\n\r\n\r\n')+text({x:50,y:marginv+50,fontSize:70,text:"fronta"}))
-		
-		
-		
-		backb = prefix(backb, /<\/defs>/, backb_defs.join('\r\n\r\n\r\n'))
-		backb = postfix(backb, /<\/defs>/, backb_content.join('\r\n\r\n\r\n')+text({x:page_width-50,y:marginv+50,fontSize:70,text:"backb",align:'end'}))
+		fronta = postfix(fronta, /<\/defs>/, fronta_content.join('\r\n\r\n\r\n')+text({x:page_width-50,y:marginv+50,fontSize:70,text:"fronta",align:'end'}))
 
+		backa = prefix(backa, /<\/defs>/, backa_defs.join('\r\n\r\n\r\n'))
+		backa = postfix(backa, /<\/defs>/, backa_content.join('\r\n\r\n\r\n')+text({x:50,y:marginv+50,fontSize:70,text:"backa"}))
+		
+		
+		
 		frontb = prefix(frontb, /<\/defs>/, frontb_defs.join('\r\n\r\n\r\n'))
-		frontb = postfix(frontb, /<\/defs>/, frontb_content.join('\r\n\r\n\r\n')+text({x:50,y:marginv+50,fontSize:70,text:"frontb"}))
+		frontb = postfix(frontb, /<\/defs>/, frontb_content.join('\r\n\r\n\r\n')+text({x:page_width-50,y:marginv+50,fontSize:70,text:"frontb",align:'end'}))
+
+		backb = prefix(backb, /<\/defs>/, backb_defs.join('\r\n\r\n\r\n'))
+		backb = postfix(backb, /<\/defs>/, backb_content.join('\r\n\r\n\r\n')+text({x:50,y:marginv+50,fontSize:70,text:"backb"}))
 		
   
 		
-        pages.push({back,front ,backa,fronta  ,backb,frontb })
+        pages.push({front,back ,fronta,backa  ,frontb,backb })
 	  }
-	  console.log("page_height_used",page_height_used,page_width_used,back_defs.length,back_content.length)
+	  console.log("page_height_used",page_height_used,page_width_used,front_defs.length,front_content.length)
   }
   return pages;
 }
+
 
 export function generatePrivateQRA() {
   let pages=generatePages();
