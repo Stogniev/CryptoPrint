@@ -497,6 +497,7 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
 
 
 async function load_templates(svgTemplate_urls) {
+	let svgDatas={};
   svgDatas.ready=false;
 
   let fontsForSvg="";
@@ -524,39 +525,93 @@ async function load_templates(svgTemplate_urls) {
 
   });
   svgDatas.ready=true;
+  return svgDatas;
 }
 
 
-const svgTemplates = {
 
+async function load_templates_nodejs(svgTemplate_urls) {
+  let svgDatas={};
+  svgDatas.ready=false;
 
-  //backData:    '/notes/v0.1/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
-  //frontArtwork:  '/notes/v0.1/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
-  //
-  //frontData:     '/notes/v0.1/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
-  //backArtwork: '/notes/v0.1/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg',
-
-
-  backData:    '/notes/v0.1/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
-  frontArtwork:  '/notes/v0.1/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
+  let fontsForSvg="";
+  let fontMatch=false;
+  let fontReplace=[];
+  let fs=require('fs');
+  let fetch=function(file){
+	  file=file.replace(/%20/g,' ')
+	  return new Promise((resolve,reject)=>{
+		  console.log(__dirname+'/../../../../../public/'+file)
+		fs.readFile(__dirname+'/../../../../../public/'+file,(err,data)=>{ if(err)reject(err); else resolve({text:async ()=>data.toString()}); })  
+	  });
+  };
   
-  frontData:     '/notes/v0.1/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
-  backArtwork: '/notes/v0.1/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg',
+  if(svgTemplate_urls.font)
+  {
+	  let fontUrl=svgTemplate_urls.font; delete svgTemplate_urls.font;
+	  fontMatch=new RegExp(svgTemplate_urls.fontMatch); delete svgTemplate_urls.fontMatch;
+	  fontReplace=svgTemplate_urls.fontReplace; delete svgTemplate_urls.fontReplace;
+	  fontsForSvg =  await fetch(fontUrl).then( res => res.text() ); 
+  }
+  const getSVG_promises= Object.keys(svgTemplate_urls).map(  key => fetch(svgTemplate_urls[key]).then(res => res.text()).then( text => ({key, text: text}) ) );
+  const getSVG_results = await Promise.all(getSVG_promises);
 
-  fontMatch:"Andale Mono|Sarpanch|Play|Sarpanch|Libre Barcode 39 Extended|Barcode",
-  fontReplace:[["LibreBarcode39Extended-Regular, Libre Barcode 39 Extended", "Barcode"] ],
-  font:'/notes/v0.2/fonts.svg-part.txt'
+  getSVG_results.forEach( (e)=> {
+	console.log(e);
+    let svg=e.text;
+    if(fontMatch&&svg.match(fontMatch)!==null)
+    {			
+	fontReplace.forEach( ([search,replace])=> { svg = replacestr(svg, search,replace);} )
+      svg = prefix(svg, /<\/defs>/, fontsForSvg);											 
+}
+    svgDatas[e.key]=svg;
+
+  });
+  svgDatas.ready=true;
+  return svgDatas;
 }
 
 
-var svgDatas={ready:false};
+export async function loadWeb()
+{
+		
+	const svgTemplates = {
+	  backData:    '/notes/v0.1/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
+	  frontArtwork:  '/notes/v0.1/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
+	  
+	  frontData:     '/notes/v0.1/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
+	  backArtwork: '/notes/v0.1/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg',
+
+	  fontMatch:"Andale Mono|Sarpanch|Play|Sarpanch|Libre Barcode 39 Extended|Barcode",
+	  fontReplace:[["LibreBarcode39Extended-Regular, Libre Barcode 39 Extended", "Barcode"] ],
+	  font:'/notes/v0.2/fonts.svg-part.txt'
+	}
  
-load_templates(svgTemplates).then( ()=> console.log('svgs?', svgDatas)  )
-.catch( e=> console.log('load templates error',e.stack) );
+	return await load_templates(svgTemplates);
+
+}
+
+export async function loadNodejs()
+{
+		
+	const svgTemplates = {
+	  backData:    '/notes/v0.1/Layer%202%20-%20Phase%203%20-%20Front%20Data%20Placeholders.svg',
+	  frontArtwork:  '/notes/v0.1/Layer%202%20-%20Phase%202%20-%20Front%20Artwork.svg',
+	  
+	  frontData:     '/notes/v0.1/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
+	  backArtwork: '/notes/v0.1/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg',
+
+	  fontMatch:"Andale Mono|Sarpanch|Play|Sarpanch|Libre Barcode 39 Extended|Barcode",
+	  fontReplace:[["LibreBarcode39Extended-Regular, Libre Barcode 39 Extended", "Barcode"] ],
+	  font:'/notes/v0.2/fonts.svg-part.txt'
+	}
+ 
+	return await load_templates_nodejs(svgTemplates);
+
+}
 
 
-
-export function generatePages() {
+export function generatePages(svgDatas) {
 	
   //let sHeight = 500
   //let sWidth = 800
@@ -727,47 +782,3 @@ export function generatePages() {
   return pages;
 }
 
-
-export function generatePrivateQRA() {
-  let pages=generatePages();
-  for(let i=0;i<pages.length;i++)
-  {
-	  let page=pages[i]
-	  let span 
-	  span = document.createElement('span')
-	  span.addEventListener('click', function () { exportSVG(this, i + '_back') }, false)
-	  span.innerHTML = page.back
-	  document.getElementById('page_back').prepend(span)
-	  
-	  span = document.createElement('span')
-	  span.addEventListener('click', function () { exportSVG(this, i + '_front') }, false)
-	  span.innerHTML = page.front
-	  document.getElementById('page_front').prepend(span)
-	  
-	  	  
-	  span = document.createElement('span')
-	  span.addEventListener('click', function () { exportSVG(this, i + '_backa') }, false)
-	  span.innerHTML = page.backa
-	  document.getElementById('page_backa').prepend(span)
-	  
-	  span = document.createElement('span')
-	  span.addEventListener('click', function () { exportSVG(this, i + '_fronta') }, false)
-	  span.innerHTML = page.fronta
-	  document.getElementById('page_fronta').prepend(span)
-	  
-	  
-	  	  
-	  span = document.createElement('span')
-	  span.addEventListener('click', function () { exportSVG(this, i + '_backb') }, false)
-	  span.innerHTML = page.backb
-	  document.getElementById('page_backb').prepend(span)
-	  
-	  
-	  span = document.createElement('span')
-	  span.addEventListener('click', function () { exportSVG(this, i + '_frontb') }, false)
-	  span.innerHTML = page.frontb
-	  document.getElementById('page_frontb').prepend(span)
-	  
-	}
-}
-export default generatePrivateQRA

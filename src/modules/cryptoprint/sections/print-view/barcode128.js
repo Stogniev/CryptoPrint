@@ -9,14 +9,14 @@ var document = new DOMImplementation().createDocument('http://www.w3.org/1999/xh
 
 
 
-export function code128svg(text)
+export function code128svg(text,width,height)
 {
     var svgNode = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
     JsBarcode(svgNode, text, { xmlDocument: document,
 	  format: "code128",
   displayValue: false,
-  height: 30,
+  height: height,
   width: 2
 	}); 
     //let CODE128B = JsBarcode.getModule("CODE128B");
