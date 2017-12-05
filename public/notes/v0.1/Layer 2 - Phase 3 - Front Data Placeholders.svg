@@ -120,7 +120,7 @@
             </g>
             <g id="parts/qr-bars-back-placeholders" transform="translate(1000.000000, 50.000000)">
                 <rect id="qr_placeholder" fill="#E43DB0" x="0" y="115" width="350" height="348"></rect>
-                <g id="Privkey-Texts" stroke-width="1" transform="translate(0.000000, 469.000000)" font-size="12" font-family="AndaleMono, Andale Mono" font-weight="normal">
+                <g id="Privkey-Texts" stroke-width="1" transform="translate(0.000000, 499.000000)" font-size="12" font-family="AndaleMono, Andale Mono" font-weight="normal">
                     <g id="parts/privkey-text-line" transform="translate(0.000000, 96.000000)" fill="#4A4A4A">
                         <g id="Group">
                             <text id="29">

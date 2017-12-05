@@ -60,7 +60,7 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
     offset: 0,
     cellsize: 12,
     sizetype: '-2 centered',
-    fill: '#E43DB0'
+    fill: '#000'
   }))
 
   svg = replacestr(svg, /<g id="Privkey-Texts"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, function (a) {
@@ -165,7 +165,7 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
     offset: 0,
     cellsize: 12,
     sizetype: '-2 centered',
-    fill: '#E43DB0'
+    fill: '#000'
   }))
   svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
     x: 0,
@@ -175,7 +175,7 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
     offset: 0,
     cellsize: 12,
     sizetype: '1',
-    fill: '#E43DB0'
+    fill: '#000'
   }))
   svg = replacestr(svg, /<g id="Privkey-Texts-Copy"[\s\S]+?(<g[\s\S]+?(<g[\s\S]+?<\/g>\s+)<\/g>\s+)<\/g>\s+/g, // find the group that contains  the svg
     function (a) { // replace parts in it
@@ -231,7 +231,7 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
           return a1 + (
           order[letterI++].c === ' '
           ? 'transparent'
-          : a2) + a3
+          : '#000') + a3
         })
       })
     })
@@ -295,7 +295,7 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
     offset: 0,
     cellsize: 12,
     sizetype: '-2 centered',
-    fill: '#E43DB0'
+    fill: '#000'
   })
 
   console.log('imageDataSVG', frontPrivKeySVG)
@@ -384,7 +384,7 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
     offset: 0,
     cellsize: 12,
     sizetype: '-2 centered',
-    fill: '#E43DB0'
+    fill: '#000'
   })
   const backPubkey = imageDataToPath({
     x: 0,
@@ -394,7 +394,7 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
     offset: 0,
     cellsize: 12,
     sizetype: '1',
-    fill: '#E43DB0'
+    fill: '#000'
   })
 
   const $svg = cheerio.load(svg, {xmlMode: true})
@@ -478,7 +478,7 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
           return a1 + (
           order[letterI++].c === ' '
           ? 'transparent'
-          : a2) + a3
+          : '#000') + a3
         })
       })
     })
