@@ -243,6 +243,8 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = postfix(svg, /<\/defs>/, artworkFrontContent)
   let front=svg;
   
+  frontb = postfix(frontb, /<\/defs>/, '<g transform="scale(-1, 1) translate(-'+svgw+', 0)">')
+  frontb = prefix(frontb, /<\/svg>/, '</g>')
   
 	
   let front_cropmarks= hline(svgw/2,-40,2300)
