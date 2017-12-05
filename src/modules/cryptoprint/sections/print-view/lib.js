@@ -2,8 +2,8 @@ import { getPixel,createBitArrayData,setBitXYArray } from './canvastools'
 import { createImageData, drawQRSplit, drawqr, imageDataToBitArray } from './canvastools'
 import qrcodesplitter from 'ext/qrcodesplitter-generator/ts/build/ts/QRCode' // eslint-disable-line
 import qrcode from 'ext/qrcodesplitter-generator/js/qrcode.js' // eslint-disable-line
-
-
+import { code128svg } from './barcode128' 
+ 
 export function chunk (arr, len) {
   const chunks = []
   const n = arr.length
@@ -336,5 +336,21 @@ export function vline(x,y,h)
     +'\r\n <g fill="none" stroke="#000"><path d="M2-'+(h/2)+'v'+h+'"/></g>'
 	+'</g>'
 }
+
+
+export function barcode128(x,y,width,text)
+{
+	let svg=code128svg(text,2,30);
+	let [svgw,svgh]=svg.match(/viewBox\s*=\s*"([^"]+)"/)[1].trim().split(/\s+/).map(a=>parseFloat(a)).slice(2);
+
+	var svgbarcode=svg.match(/<svg [^>]+>([\s\S]+?)<\/svg>/)[1]
+  //console.log(JsBarcode); 
+    return '<g transform="translate('+x+' '+y+')">'
+    +'<g transform="matrix(0,-1,1,0, '+'0'+','+(svgw)+') scale('+(width/svgw).toFixed(8)+')">'
+    +svgbarcode
+	+'</g>'
+	+'</g>'
+}
+
 
 

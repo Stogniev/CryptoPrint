@@ -12,7 +12,8 @@ import {
   cropmarkv,
   cropmarkh,
   hline,
-  vline
+  vline,
+  barcode128
 } from './lib'
 import { getEvenFrequencyPad,getBitcoinKeypair } from './crypto'
  
@@ -152,6 +153,10 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(publicKey.length - 6))
   svg = replacestr(svg, /MMMMMM/, publicKey.substr(0, 6))
   svg = replacestr(svg, /1JuNUKWC7FkyWEsnGRgR5pUtDTC6uQS2iR/g, publicKey)
+  
+  svg = replacestr(svg, /\<text id="Public-Barcode"[\s\S]+?\<\/text\>/g,   barcode128(40,-120,720,publicKey)  )
+   
+  
   svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
     x: 0,
     y: 115,
@@ -723,8 +728,7 @@ export function generatePrivateQRA() {
   for(let i=0;i<pages.length;i++)
   {
 	  let page=pages[i]
-	  let span
-	  
+	  let span 
 	  span = document.createElement('span')
 	  span.addEventListener('click', function () { exportSVG(this, i + '_back') }, false)
 	  span.innerHTML = page.back
