@@ -16,7 +16,7 @@ export function code128svg(text)
     JsBarcode(svgNode, text, { xmlDocument: document,
 	  format: "code128",
   displayValue: false,
-  height: 20,
+  height: 30,
   width: 2
 	}); 
     //let CODE128B = JsBarcode.getModule("CODE128B");
