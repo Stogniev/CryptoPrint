@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
+import { Button } from 'react-md'
 import Slider from 'react-slick'
-
 import Scroll from 'react-scroll' // Imports all Mixins
+
 const scroller = Scroll.scroller
 const scrollOptions = {
   delay: 100,
@@ -37,7 +38,8 @@ class Hero extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      arrows: false
     }
 
     return <Slider {...settings} className='video-intro'>
@@ -45,7 +47,9 @@ class Hero extends Component {
         <div className='content'>
           <h1>{e.title}</h1>
           <h3>{e.sub}</h3>
-          <a href='#preorder' onClick={scrollTo('preorder')} className='btn'>Pre-Order Now!</a>
+          <div className='action'>
+            <Button raised secondary onClick={scrollTo('preorder')} className='preorder-btn'>Pre-Order Now!</Button>
+          </div>
         </div>
         <small className='prototype'>
           The pictures are of an early prototype version - final product may vary.

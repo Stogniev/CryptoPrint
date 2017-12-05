@@ -44,7 +44,6 @@ class AppHeader extends Component {
     return (
       <Paper zDepth={0} className='header'>
         <Toolbar
-          fixed
           themed
           style={{
             background: headerBackground,
