@@ -38,7 +38,7 @@ export function exportSVG (svgelement, name) {
 
 export function createEmptySVGstr ( htmlheight, htmlwidth, viewboxwidth, videwboxheight) {
   var qrSvg = ''
-  qrSvg += '<svg style="border:1px solid blue" version="1.1" xmlns="http://www.w3.org/2000/svg"'
+  qrSvg += '<svg style="border:1px solid blue" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="w3.org/1999/xlink"'
   qrSvg += ' width="' + htmlwidth + '"'
   qrSvg += ' height="' + htmlheight + '"'
   qrSvg += ' viewBox="0 0 ' + videwboxheight + ' ' + viewboxwidth + '" '
@@ -58,7 +58,7 @@ export function text (options) {
   var align = options.align || 'start'
   var text = options.text.split('\n').map(function (a, i) { return '<tspan x="' + drawx + '" y="' + (drawy + fontSize * lineHeight + i * fontSize * lineHeight) + '">' + a + '</tspan>' }).join('\n')
  
-  return '<text x="' + drawx + '" style="text-anchor: '+align+';" transform="' + transform + '" y="' + drawy + '" style="' + style + '" font-family="' + fontFamily + '" font-size="' + fontSize + '">' + text + '</text>'
+  return '<text x="' + drawx + '"  transform="' + transform + '" y="' + drawy + '" style="text-anchor: '+align+';' + style + '" font-family="' + fontFamily + '" font-size="' + fontSize + '">' + text + '</text>'
 }
 
 export function imageDataToPath (options) {
