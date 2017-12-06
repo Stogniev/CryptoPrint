@@ -582,8 +582,8 @@ export async function loadWeb()
 	  frontData:     '/notes/v0.1/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
 	  backArtwork: '/notes/v0.1/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg',
 
-	  fontMatch:"Andale Mono|Sarpanch|Play|Sarpanch|Libre Barcode 39 Extended|Barcode",
-	  fontReplace:[["LibreBarcode39Extended-Regular, Libre Barcode 39 Extended", "Barcode"] ],
+	  fontMatch:"Andale Mono|Sarpanch|Play|Sarpanch",
+	  fontReplace:[ /*["LibreBarcode39Extended-Regular, Libre Barcode 39 Extended", "Barcode"]*/ ],
 	  font:'/notes/v0.2/fonts.svg-part.txt'
 	}
  
@@ -601,8 +601,8 @@ export async function loadNodejs()
 	  frontData:     '/notes/v0.1/Layer%201%20-%20On%20Transparent%20Placeholders.svg',
 	  backArtwork: '/notes/v0.1/Layer%202%20-%20Phase%201%20-%20Back%20Artwork.svg',
 
-	  fontMatch:"Andale Mono|Sarpanch|Play|Sarpanch|Libre Barcode 39 Extended|Barcode",
-	  fontReplace:[["LibreBarcode39Extended-Regular, Libre Barcode 39 Extended", "Barcode"] ],
+	  fontMatch:"Andale Mono|Sarpanch|Play|Sarpanch",
+	  fontReplace:[ /*["LibreBarcode39Extended-Regular, Libre Barcode 39 Extended", "Barcode"]*/ ],
 	  font:'/notes/v0.2/fonts.svg-part.txt'
 	}
  
