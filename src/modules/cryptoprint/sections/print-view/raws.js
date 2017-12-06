@@ -514,7 +514,7 @@ async function load_templates(svgTemplate_urls) {
   const getSVG_results = await Promise.all(getSVG_promises);
 
   getSVG_results.forEach( (e)=> {
-	console.log(e);
+	//console.log(e);
     let svg=e.text;
     if(fontMatch&&svg.match(fontMatch)!==null)
     {			
@@ -541,7 +541,6 @@ async function load_templates_nodejs(svgTemplate_urls) {
   let fetch=function(file){
 	  file=file.replace(/%20/g,' ')
 	  return new Promise((resolve,reject)=>{
-		  console.log(__dirname+'/../../../../../public/'+file)
 		fs.readFile(__dirname+'/../../../../../public/'+file,(err,data)=>{ if(err)reject(err); else resolve({text:async ()=>data.toString()}); })  
 	  });
   };
@@ -557,7 +556,7 @@ async function load_templates_nodejs(svgTemplate_urls) {
   const getSVG_results = await Promise.all(getSVG_promises);
 
   getSVG_results.forEach( (e)=> {
-	console.log(e);
+///console.log(e);
     let svg=e.text;
     if(fontMatch&&svg.match(fontMatch)!==null)
     {			
