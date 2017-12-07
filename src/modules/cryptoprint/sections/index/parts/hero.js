@@ -59,7 +59,4 @@ class Hero extends Component {
   }
 }
 
-const HeroSlide = ({num, children, ...props}) => <div>
-</div>
-
 export default Hero

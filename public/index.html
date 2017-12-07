@@ -30,13 +30,13 @@
     -->
     <title>Cryptoprint</title>
     <script type="text/javascript">
-      // var l = window.location
-      // if ((/\.cryptoprint\.io$/i).test(l.host) && l.protocol !== 'https:') {
-      //   window.location.href = l.href.replace('http://', 'https://')
-      // }
-      // window.readyToReload = setTimeout(function () {
-      //   // window.location.href = l.protocol + '//' + l.host + '/?reload-for-version'
-      // }, 2000)
+      var l = window.location
+      if ((/\.cryptoprint\.io$/i).test(l.host) && l.protocol !== 'https:') {
+        window.location.href = l.href.replace('http://', 'https://')
+      }
+      window.readyToReload = setTimeout(function () {
+        // window.location.href = l.protocol + '//' + l.host + '/?reload-for-version'
+      }, 2000)
     </script>
     <script type="text/javascript">
       (window.startLoad = Date.now())
