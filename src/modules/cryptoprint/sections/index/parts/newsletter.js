@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import { connect } from 'react-redux'
+import { firebaseConnect } from 'react-redux-firebase'
+
 import TextField from 'react-md/lib/TextFields'
 import { Button } from 'react-md'
 
@@ -26,8 +29,15 @@ export class Newsletter extends Component {
   handleSubmit (e) {
     e.preventDefault()
     if (this.state.emailValid === true) {
+      const { ref } = this.props.firebase
+      const { email } = this.state
       // send email
-      this.setState({ done: true, error: '' })
+      this.setState({ doing: true }, () => {
+        ref('newsletter').child('unverified').push({email})
+          .then(e => {
+            this.setState({ done: true, doing: false })
+          })
+      })
     } else {
       this.setState({ error: 'email:format' })
     }
@@ -60,4 +70,8 @@ export const TextFieldWithFBError = ({id, defaultValue, label, onChange = () => 
     tabIndex={tabIndex}
   />
 
-export default Newsletter
+const NewsletterFB = firebaseConnect([
+])(Newsletter)
+
+export default connect(
+)(NewsletterFB)

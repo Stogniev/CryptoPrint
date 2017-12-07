@@ -9,22 +9,8 @@
     justify-content: space-between;
     align-items: center;
     .sub-btn {
-      width: 120px;
+      min-width: 140px;
       margin-left: 20px;
-    }
-    .submit-btn {
-      width: 20%;
-      border: none;
-      font-size: 16px;
-      background: #fff;
-      padding: 15px;
-      border-radius: 12px;
-      &:focus {
-        outline: none;
-      }
-      &:hover {
-        cursor: pointer;
-      }
     }
 
   }

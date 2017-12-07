@@ -15,10 +15,12 @@ import CryptoprintIcon from 'cryptoprint/bits/cryptoprint-icon'
 import GirlsHead from 'cryptoprint/bits/girls-head'
 
 import UserMenu from './user-menu'
-import Scroll from 'react-scroll' // Imports all Mixins
+import * as Scroll from 'react-scroll' // Imports all Mixins
 
 import './header.css'
 
+
+console.log('scroller:', Scroll)
 const scroller = Scroll.scroller
 const scrollOptions = {
   delay: 100,
