@@ -8,7 +8,7 @@ const properties = [
   },
   {
     title: 'The Safest Way to Store Crypto',
-    text: 'Keeping your cryptocurrency in an online exchange or wallet leaves your private key vulnerable to theft. \nWith our wallets, your private key exists only on the physical wallet in your possesion and has never been online. \nNo one can hack, steal or do anything with your funds without your explicit permission.',
+    text: 'Keeping your cryptocurrency in an online exchange or wallet leaves your private key vulnerable to theft. \nWith our wallets, your private key exists only on the physical wallet in your possesion and has never been online. \nNo one can hack, steal, or do anything with your funds without your explicit permission.',
     image: '/images/product/render-both.png'
   },
   {
