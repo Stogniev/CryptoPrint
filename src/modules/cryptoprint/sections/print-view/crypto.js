@@ -1,7 +1,7 @@
 import bitcore from 'bitcore-lib'
 
-var crypto = window.crypto || window.msCrypto
-var random = crypto.getRandomValues.bind(crypto)
+var random = require('get-random-values');
+
 
 export function shuffle (arr) {
   arr = arr.slice(0) // dont modify source arr

@@ -10,7 +10,7 @@
     <g id="Print-Layouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Layer-2---Phase-2---Front-Artwork">
             <g id="notes/500s/tpl-front"></g>
-            <g id="Card-Masked" transform="translate(120.000000, 50.000000)">
+            <g id="Card-Masked" transform="translate(50.000000, 50.000000)">
                 <mask id="mask-2" fill="white">
                     <use xlink:href="#path-1"></use>
                 </mask>

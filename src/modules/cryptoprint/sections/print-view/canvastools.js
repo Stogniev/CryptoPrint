@@ -78,6 +78,16 @@ export function setPixel (imageData, x, y, r, g, b, a) {
   imageData.data[index + 3] = a
 }
 
+
+export function getBitXYArray (bitArray,width, x, y) {
+  var index = (x + y * width) 
+  return bitArray.data[index ]
+}
+export function setBitXYArray (bitArray, width, x, y, value) {
+  var index = (x + y * width) 
+  bitArray[index ] = value
+}
+
 export function drawQRSplit (randomPad, imageData, imageData1, imageData2, x, y, qr, dotzize) {
   let rr = 0
   let gg = 0
@@ -216,7 +226,7 @@ export function bitArrToCtx (a, ctx) {
   ctx.putImageData(data, 0, 0)
 }
 
-export function bbitArrToImageData (a, data) {
+export function bitArrToImageData (a, data) {
   let buffer = data.data
   let len = buffer.length
   let i = 0
@@ -227,6 +237,20 @@ export function bbitArrToImageData (a, data) {
     buffer[i] = buffer[i + 1] = buffer[i + 2] = b ? 0 : 255
     buffer[i + 3] = b ? 255 : 0
   }
+}
+
+export function createBitArrayData (height,width) {
+
+  width = width || 136
+  height = height || 70
+  
+  let a = new Array(height*width);
+  //a.width=;
+  //a.height=height;
+  for (var x=0; x < a.length; x++) {
+    a[x] =  0
+  }
+return {data:a,width,height}
 }
 
 export function imageDataToBitArray (data) {

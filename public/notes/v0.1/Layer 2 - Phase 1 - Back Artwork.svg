@@ -118,17 +118,11 @@
                         </g>
                     </g>
                 </g>
-                <text id="Public-Key" mask="url(#mask-2)" transform="translate(1076.597561, 360.439024) rotate(90.000000) translate(-1076.597561, -360.439024) " font-family="Sarpanch-Bold, Sarpanch" font-size="29" font-weight="bold" fill="#FFFFFF">
+                <text id="Public-Key"  transform="translate(1076.597561, 360.439024) rotate(90.000000) translate(-1076.597561, -360.439024) " font-family="Sarpanch-Bold, Sarpanch" font-size="29" font-weight="bold" fill="#FFFFFF">
                     <tspan x="990.076061" y="370.439024">Private Key</tspan>
                 </text>
-                <text id="DEPOSIT-HERE" mask="url(#mask-2)" transform="translate(1053.329268, 360.439024) rotate(90.000000) translate(-1053.329268, -360.439024) " font-family="Sarpanch-Regular, Sarpanch" font-size="24" font-weight="normal" fill="#FFFFFF">
+                <text id="DEPOSIT-HERE"   transform="translate(1053.329268, 360.439024) rotate(90.000000) translate(-1053.329268, -360.439024) " font-family="Sarpanch-Regular, Sarpanch" font-size="24" font-weight="normal" fill="#FFFFFF">
                     <tspan x="968.765268" y="368.939024">Fold to Reveal</tspan>
-                </text>
-                <text id="__PUBKEY__SUFFIX__" mask="url(#mask-2)" transform="translate(1064.000000, 465.000000) rotate(90.000000) translate(-1064.000000, -465.000000) " font-family="Play-Bold, Play" font-size="47" font-weight="bold" fill="#FFFFFF">
-                    <tspan x="1154.828" y="474">QS2iR</tspan>
-                </text>
-                <text id="__PUBKEY__PREFIX__" mask="url(#mask-2)" transform="translate(1065.000000, 272.000000) rotate(90.000000) translate(-1065.000000, -272.000000) " font-family="Play-Bold, Play" font-size="47" font-weight="bold" fill="#FFFFFF">
-                    <tspan x="815" y="281">1JuNUK</tspan>
                 </text>
                 <rect id="Rectangle" fill="#FFFFFF" opacity="0.623697917" style="mix-blend-mode: hard-light;" filter="url(#filter-3)" mask="url(#mask-2)" x="550" y="173" width="348" height="547"></rect>
                 <rect id="Rectangle-Copy-2" fill="#FFFFFF" opacity="0.623697917" style="mix-blend-mode: hard-light;" filter="url(#filter-4)" mask="url(#mask-2)" x="50" y="587" width="825" height="133"></rect>
