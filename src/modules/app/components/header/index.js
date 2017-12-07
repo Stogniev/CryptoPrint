@@ -12,12 +12,23 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import Button from 'react-md/lib/Buttons'
 
 import CryptoprintIcon from 'cryptoprint/bits/cryptoprint-icon'
+import GirlsHead from 'cryptoprint/bits/girls-head'
 
 import UserMenu from './user-menu'
+import * as Scroll from 'react-scroll' // Imports all Mixins
 
 import './header.css'
 
-// const headerBackground = 'rgba(52, 84, 209, 1)'
+
+console.log('scroller:', Scroll)
+const scroller = Scroll.scroller
+const scrollOptions = {
+  delay: 100,
+  smooth: true,
+  offset: 50 // Scrolls to element + 50 pixels down the page
+}
+const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
+const headerBackground = 'rgba(22, 22, 22, 0.987)'
 
 class AppHeader extends Component {
   onSignout (event) {
@@ -33,10 +44,11 @@ class AppHeader extends Component {
     const { user, ui: { showMenu = false } } = this.props
     const { loggedIn } = user || {}
     return (
-      <Paper zDepth={1} className='header'>
+      <Paper zDepth={0} className='header'>
         <Toolbar
+          themed
           style={{
-            // background: headerBackground,
+            background: headerBackground,
             minHeight: '60px',
             ...this.props.style
           }}
@@ -62,20 +74,20 @@ class AppHeader extends Component {
               }}
               className='cryptoprint'
             >
-              <CryptoprintIcon className='cryptoprint-icon' />
+              <GirlsHead className='cryptoprint-icon' />
             </Button>
           </ToolbarGroup>
           <ToolbarGroup className='content'>
-            <Button flat secondary>About</Button>
-            <Button flat>Team</Button>
-            <Button flat>Preorder</Button>
+            <Button flat onClick={scrollTo('attributes')}>About</Button>
+            <Button flat onClick={scrollTo('team')}>Team</Button>
+            <Button raised secondary onClick={scrollTo('preorder')}>Preorder</Button>
           </ToolbarGroup>
           <ToolbarGroup className='rights'>
-            {loggedIn ? <UserMenu
+            {false && loggedIn ? <UserMenu
               isAdmin={this.props.isAdmin}
               gmode={this.props.gmode}
               onSignout={this.onSignout.bind(this)}
-              user={this.props.user} /> : <AlertError />}
+              user={this.props.user} /> : null}
           </ToolbarGroup>
 
         </Toolbar>

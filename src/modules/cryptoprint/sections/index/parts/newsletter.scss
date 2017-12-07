@@ -1,0 +1,36 @@
+  @import '../config';
+
+.newsletter {
+  .form-container {
+    display: flex;
+    width: 560px;
+    background: #e6e4e2;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+    .sub-btn {
+      min-width: 140px;
+      margin-left: 20px;
+    }
+
+  }
+  @media only screen and (max-width: $breakpoint) {
+
+      h3 {
+        white-space: normal!important;
+        word-break: break-all;
+        width: 95%;
+        text-align: center;
+      }
+      .form-container {
+        flex-direction: column;
+        width: 95%;
+        align-items: center;
+        .submit-btn {
+          margin-top: 20px;
+          width: 50%;
+
+        }
+      }
+  }
+}

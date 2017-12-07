@@ -1,0 +1,31 @@
+  @import '../config';
+
+  .preorder {
+		.md-card {
+			padding: 3rem 6rem;
+	    article {
+	      width: 320px;
+				margin-bottom: 2rem;
+				.md-cell {
+					margin: 0;
+				}
+	    }
+    }
+    @media only screen and (max-width: $breakpoint) {
+
+  		.md-card {
+  			padding: 0;
+  			width: 95%;
+  			padding: 40px;
+  			h2 {
+  				text-align: center;
+  				margin-bottom: 40px;
+  			}
+  			.actions {
+  				width: 100%;
+  				display: flex;
+  				justify-content: center;
+  			}
+  		}
+  }
+}

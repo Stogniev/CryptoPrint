@@ -3,7 +3,7 @@
 
 $md-light-theme: true; // optional for light theme
 $md-primary-color: $md-green-500;
-$md-secondary-color: $md-deep-purple-a-100;
+$md-secondary-color: $md-blue-800;
 
 @include react-md-everything;
 //
@@ -15,7 +15,14 @@ $md-secondary-color: $md-deep-purple-a-100;
 body {
   #root {
     .app-wrap {
-      .App {}
+      .App {
+        .darkd {
+          $md-light-theme: false; // optional for light theme
+          $md-primary-color: $md-green-500;
+          $md-secondary-color: $md-blue-800;
+          @include react-md-theme-everything($md-green-500, $md-deep-purple-a-100, $md-light-theme, 'custom-theme');
+        }
+      }
     }
   }
 }

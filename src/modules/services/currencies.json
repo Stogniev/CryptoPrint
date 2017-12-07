@@ -1,0 +1,5186 @@
+[
+ {
+  "name": "Bitcoin",
+  "symbol": "BTC"
+ },
+ {
+  "name": "Ethereum",
+  "symbol": "ETH"
+ },
+ {
+  "name": "Bitcoin Cash",
+  "symbol": "BCH"
+ },
+ {
+  "name": "Ripple",
+  "symbol": "XRP"
+ },
+ {
+  "name": "Litecoin",
+  "symbol": "LTC"
+ },
+ {
+  "name": "Dash",
+  "symbol": "DASH"
+ },
+ {
+  "name": "NEO",
+  "symbol": "NEO"
+ },
+ {
+  "name": "IOTA",
+  "symbol": "MIOTA"
+ },
+ {
+  "name": "Monero",
+  "symbol": "XMR"
+ },
+ {
+  "name": "NEM",
+  "symbol": "XEM"
+ },
+ {
+  "name": "Ethereum Classic",
+  "symbol": "ETC"
+ },
+ {
+  "name": "Qtum",
+  "symbol": "QTUM"
+ },
+ {
+  "name": "Lisk",
+  "symbol": "LSK"
+ },
+ {
+  "name": "Hshare",
+  "symbol": "HSR"
+ },
+ {
+  "name": "EOS",
+  "symbol": "EOS"
+ },
+ {
+  "name": "OmiseGO",
+  "symbol": "OMG"
+ },
+ {
+  "name": "Zcash",
+  "symbol": "ZEC"
+ },
+ {
+  "name": "Cardano",
+  "symbol": "ADA"
+ },
+ {
+  "name": "Tether",
+  "symbol": "USDT"
+ },
+ {
+  "name": "Stellar Lumens",
+  "symbol": "XLM"
+ },
+ {
+  "name": "BitConnect",
+  "symbol": "BCC"
+ },
+ {
+  "name": "Waves",
+  "symbol": "WAVES"
+ },
+ {
+  "name": "Populous",
+  "symbol": "PPT"
+ },
+ {
+  "name": "Stratis",
+  "symbol": "STRAT"
+ },
+ {
+  "name": "Ark",
+  "symbol": "ARK"
+ },
+ {
+  "name": "BitShares",
+  "symbol": "BTS"
+ },
+ {
+  "name": "Gas",
+  "symbol": "GAS"
+ },
+ {
+  "name": "Ardor",
+  "symbol": "ARDR"
+ },
+ {
+  "name": "Komodo",
+  "symbol": "KMD"
+ },
+ {
+  "name": "Steem",
+  "symbol": "STEEM"
+ },
+ {
+  "name": "Bytecoin",
+  "symbol": "BCN"
+ },
+ {
+  "name": "Augur",
+  "symbol": "REP"
+ },
+ {
+  "name": "Veritaseum",
+  "symbol": "VERI"
+ },
+ {
+  "name": "Decred",
+  "symbol": "DCR"
+ },
+ {
+  "name": "MaidSafeCoin",
+  "symbol": "MAID"
+ },
+ {
+  "name": "Golem",
+  "symbol": "GNT"
+ },
+ {
+  "name": "TenX",
+  "symbol": "PAY"
+ },
+ {
+  "name": "SALT",
+  "symbol": "SALT"
+ },
+ {
+  "name": "Vertcoin",
+  "symbol": "VTC"
+ },
+ {
+  "name": "PIVX",
+  "symbol": "PIVX"
+ },
+ {
+  "name": "MonaCoin",
+  "symbol": "MONA"
+ },
+ {
+  "name": "Factom",
+  "symbol": "FCT"
+ },
+ {
+  "name": "Basic Attention Token",
+  "symbol": "BAT"
+ },
+ {
+  "name": "Binance Coin",
+  "symbol": "BNB"
+ },
+ {
+  "name": "Byteball Bytes",
+  "symbol": "GBYTE"
+ },
+ {
+  "name": "Kyber Network",
+  "symbol": "KNC"
+ },
+ {
+  "name": "Dogecoin",
+  "symbol": "DOGE"
+ },
+ {
+  "name": "DigixDAO",
+  "symbol": "DGD"
+ },
+ {
+  "name": "BitcoinDark",
+  "symbol": "BTCD"
+ },
+ {
+  "name": "TRON",
+  "symbol": "TRX"
+ },
+ {
+  "name": "Walton",
+  "symbol": "WTC"
+ },
+ {
+  "name": "Siacoin",
+  "symbol": "SC"
+ },
+ {
+  "name": "GameCredits",
+  "symbol": "GAME"
+ },
+ {
+  "name": "ATMChain",
+  "symbol": "ATM"
+ },
+ {
+  "name": "Aeternity",
+  "symbol": "AE"
+ },
+ {
+  "name": "Metaverse ETP",
+  "symbol": "ETP"
+ },
+ {
+  "name": "Bytom",
+  "symbol": "BTM"
+ },
+ {
+  "name": "Pura",
+  "symbol": "PURA"
+ },
+ {
+  "name": "Blocknet",
+  "symbol": "BLOCK"
+ },
+ {
+  "name": "Syscoin",
+  "symbol": "SYS"
+ },
+ {
+  "name": "Raiden Network Token",
+  "symbol": "RDN"
+ },
+ {
+  "name": "0x",
+  "symbol": "ZRX"
+ },
+ {
+  "name": "Status",
+  "symbol": "SNT"
+ },
+ {
+  "name": "Iconomi",
+  "symbol": "ICN"
+ },
+ {
+  "name": "Bitquence",
+  "symbol": "BQX"
+ },
+ {
+  "name": "Civic",
+  "symbol": "CVC"
+ },
+ {
+  "name": "Power Ledger",
+  "symbol": "POWR"
+ },
+ {
+  "name": "Lykke",
+  "symbol": "LKK"
+ },
+ {
+  "name": "GXShares",
+  "symbol": "GXS"
+ },
+ {
+  "name": "Verge",
+  "symbol": "XVG"
+ },
+ {
+  "name": "DigiByte",
+  "symbol": "DGB"
+ },
+ {
+  "name": "Metal",
+  "symbol": "MTL"
+ },
+ {
+  "name": "Bancor",
+  "symbol": "BNT"
+ },
+ {
+  "name": "ZCoin",
+  "symbol": "XZC"
+ },
+ {
+  "name": "SingularDTV",
+  "symbol": "SNGLS"
+ },
+ {
+  "name": "VeChain",
+  "symbol": "VEN"
+ },
+ {
+  "name": "Nxt",
+  "symbol": "NXT"
+ },
+ {
+  "name": "Gnosis",
+  "symbol": "GNO"
+ },
+ {
+  "name": "Particl",
+  "symbol": "PART"
+ },
+ {
+  "name": "FunFair",
+  "symbol": "FUN"
+ },
+ {
+  "name": "Storj",
+  "symbol": "STORJ"
+ },
+ {
+  "name": "Cryptonex",
+  "symbol": "CNX"
+ },
+ {
+  "name": "AdEx",
+  "symbol": "ADX"
+ },
+ {
+  "name": "ChainLink",
+  "symbol": "LINK"
+ },
+ {
+  "name": "Open Trading Network",
+  "symbol": "OTN"
+ },
+ {
+  "name": "B3Coin",
+  "symbol": "B3"
+ },
+ {
+  "name": "FairCoin",
+  "symbol": "FAIR"
+ },
+ {
+  "name": "KuCoin Shares",
+  "symbol": "KCS"
+ },
+ {
+  "name": "Nexus",
+  "symbol": "NXS"
+ },
+ {
+  "name": "ZenCash",
+  "symbol": "ZEN"
+ },
+ {
+  "name": "Edgeless",
+  "symbol": "EDG"
+ },
+ {
+  "name": "Monaco",
+  "symbol": "MCO"
+ },
+ {
+  "name": "NAV Coin",
+  "symbol": "NAV"
+ },
+ {
+  "name": "Zeusshield",
+  "symbol": "ZSC"
+ },
+ {
+  "name": "Ripio Credit Network",
+  "symbol": "RCN"
+ },
+ {
+  "name": "Ubiq",
+  "symbol": "UBQ"
+ },
+ {
+  "name": "Kin",
+  "symbol": "KIN"
+ },
+ {
+  "name": "Aragon",
+  "symbol": "ANT"
+ },
+ {
+  "name": "Streamr DATAcoin",
+  "symbol": "DATA"
+ },
+ {
+  "name": "MobileGo",
+  "symbol": "MGO"
+ },
+ {
+  "name": "BitBay",
+  "symbol": "BAY"
+ },
+ {
+  "name": "I/O Coin",
+  "symbol": "IOC"
+ },
+ {
+  "name": "Wings",
+  "symbol": "WINGS"
+ },
+ {
+  "name": "Pillar",
+  "symbol": "PLR"
+ },
+ {
+  "name": "Melon",
+  "symbol": "MLN"
+ },
+ {
+  "name": "Neblio",
+  "symbol": "NEBL"
+ },
+ {
+  "name": "Bitcore",
+  "symbol": "BTX"
+ },
+ {
+  "name": "iExec RLC",
+  "symbol": "RLC"
+ },
+ {
+  "name": "Counterparty",
+  "symbol": "XCP"
+ },
+ {
+  "name": "Peercoin",
+  "symbol": "PPC"
+ },
+ {
+  "name": "Loopring",
+  "symbol": "LRC"
+ },
+ {
+  "name": "NoLimitCoin",
+  "symbol": "NLC2"
+ },
+ {
+  "name": "Dentacoin",
+  "symbol": "DCN"
+ },
+ {
+  "name": "Centra",
+  "symbol": "CTR"
+ },
+ {
+  "name": "TaaS",
+  "symbol": "TAAS"
+ },
+ {
+  "name": "Grid+",
+  "symbol": "GRID"
+ },
+ {
+  "name": "Aeon",
+  "symbol": "AEON"
+ },
+ {
+  "name": "Achain",
+  "symbol": "ACT"
+ },
+ {
+  "name": "Modum",
+  "symbol": "MOD"
+ },
+ {
+  "name": "Bitdeal",
+  "symbol": "BDL"
+ },
+ {
+  "name": "Quantum Resistant Ledger",
+  "symbol": "QRL"
+ },
+ {
+  "name": "Viacoin",
+  "symbol": "VIA"
+ },
+ {
+  "name": "PayPie",
+  "symbol": "PPP"
+ },
+ {
+  "name": "Groestlcoin",
+  "symbol": "GRS"
+ },
+ {
+  "name": "CloakCoin",
+  "symbol": "CLOAK"
+ },
+ {
+  "name": "OKCash",
+  "symbol": "OK"
+ },
+ {
+  "name": "Substratum",
+  "symbol": "SUB"
+ },
+ {
+  "name": "ReddCoin",
+  "symbol": "RDD"
+ },
+ {
+  "name": "AirSwap",
+  "symbol": "AST"
+ },
+ {
+  "name": "SONM",
+  "symbol": "SNM"
+ },
+ {
+  "name": "ATBCoin",
+  "symbol": "ATB"
+ },
+ {
+  "name": "Request Network",
+  "symbol": "REQ"
+ },
+ {
+  "name": "Gulden",
+  "symbol": "NLG"
+ },
+ {
+  "name": "Emercoin",
+  "symbol": "EMC"
+ },
+ {
+  "name": "Revain",
+  "symbol": "R"
+ },
+ {
+  "name": "TokenCard",
+  "symbol": "TKN"
+ },
+ {
+  "name": "ICOS",
+  "symbol": "ICOS"
+ },
+ {
+  "name": "PotCoin",
+  "symbol": "POT"
+ },
+ {
+  "name": "Cofound.it",
+  "symbol": "CFI"
+ },
+ {
+  "name": "Rise",
+  "symbol": "RISE"
+ },
+ {
+  "name": "LEOcoin",
+  "symbol": "LEO"
+ },
+ {
+  "name": "Enigma",
+  "symbol": "ENG"
+ },
+ {
+  "name": "Decentraland",
+  "symbol": "MANA"
+ },
+ {
+  "name": "FirstBlood",
+  "symbol": "1ST"
+ },
+ {
+  "name": "Einsteinium",
+  "symbol": "EMC2"
+ },
+ {
+  "name": "Everex",
+  "symbol": "EVX"
+ },
+ {
+  "name": "Skycoin",
+  "symbol": "SKY"
+ },
+ {
+  "name": "Amber",
+  "symbol": "AMB"
+ },
+ {
+  "name": "MinexCoin",
+  "symbol": "MNX"
+ },
+ {
+  "name": "DECENT",
+  "symbol": "DCT"
+ },
+ {
+  "name": "Feathercoin",
+  "symbol": "FTC"
+ },
+ {
+  "name": "Moeda Loyalty Points",
+  "symbol": "MDA"
+ },
+ {
+  "name": "Red Pulse",
+  "symbol": "RPX"
+ },
+ {
+  "name": "RChain",
+  "symbol": "RHOC"
+ },
+ {
+  "name": "Xaurum",
+  "symbol": "XAUR"
+ },
+ {
+  "name": "Diamond",
+  "symbol": "DMD"
+ },
+ {
+  "name": "WeTrust",
+  "symbol": "TRST"
+ },
+ {
+  "name": "Elastic",
+  "symbol": "XEL"
+ },
+ {
+  "name": "Eidoo",
+  "symbol": "EDO"
+ },
+ {
+  "name": "Namecoin",
+  "symbol": "NMC"
+ },
+ {
+  "name": "Paragon",
+  "symbol": "PRG"
+ },
+ {
+  "name": "LBRY Credits",
+  "symbol": "LBC"
+ },
+ {
+  "name": "Stox",
+  "symbol": "STX"
+ },
+ {
+  "name": "Crown",
+  "symbol": "CRW"
+ },
+ {
+  "name": "ION",
+  "symbol": "ION"
+ },
+ {
+  "name": "DomRaider",
+  "symbol": "DRT"
+ },
+ {
+  "name": "Tierion",
+  "symbol": "TNT"
+ },
+ {
+  "name": "FedoraCoin",
+  "symbol": "TIPS"
+ },
+ {
+  "name": "district0x",
+  "symbol": "DNT"
+ },
+ {
+  "name": "ALIS",
+  "symbol": "ALIS"
+ },
+ {
+  "name": "Cindicator",
+  "symbol": "CND"
+ },
+ {
+  "name": "Viberate",
+  "symbol": "VIB"
+ },
+ {
+  "name": "SIBCoin",
+  "symbol": "SIB"
+ },
+ {
+  "name": "RaiBlocks",
+  "symbol": "XRB"
+ },
+ {
+  "name": "MCAP",
+  "symbol": "MCAP"
+ },
+ {
+  "name": "Santiment Network Token",
+  "symbol": "SAN"
+ },
+ {
+  "name": "BitDice",
+  "symbol": "CSNO"
+ },
+ {
+  "name": "SolarCoin",
+  "symbol": "SLR"
+ },
+ {
+  "name": "Swarm City",
+  "symbol": "SWT"
+ },
+ {
+  "name": "Safe Exchange Coin",
+  "symbol": "SAFEX"
+ },
+ {
+  "name": "Triggers",
+  "symbol": "TRIG"
+ },
+ {
+  "name": "Rubycoin",
+  "symbol": "RBY"
+ },
+ {
+  "name": "Peerplays",
+  "symbol": "PPY"
+ },
+ {
+  "name": "Pepe Cash",
+  "symbol": "PEPECASH"
+ },
+ {
+  "name": "BlackCoin",
+  "symbol": "BLK"
+ },
+ {
+  "name": "CoinDash",
+  "symbol": "CDT"
+ },
+ {
+  "name": "SmartCash",
+  "symbol": "SMART"
+ },
+ {
+  "name": "Etheroll",
+  "symbol": "DICE"
+ },
+ {
+  "name": "Matchpool",
+  "symbol": "GUP"
+ },
+ {
+  "name": "ToaCoin",
+  "symbol": "TOA"
+ },
+ {
+  "name": "Chronobank",
+  "symbol": "TIME"
+ },
+ {
+  "name": "Soarcoin",
+  "symbol": "SOAR"
+ },
+ {
+  "name": "Mothership",
+  "symbol": "MSP"
+ },
+ {
+  "name": "Blackmoon Crypto",
+  "symbol": "BMC"
+ },
+ {
+  "name": "Cobinhood",
+  "symbol": "COB"
+ },
+ {
+  "name": "Enjin Coin",
+  "symbol": "ENJ"
+ },
+ {
+  "name": "GridCoin",
+  "symbol": "GRC"
+ },
+ {
+  "name": "BitSend",
+  "symbol": "BSD"
+ },
+ {
+  "name": "DubaiCoin",
+  "symbol": "DBIX"
+ },
+ {
+  "name": "The ChampCoin",
+  "symbol": "TCC"
+ },
+ {
+  "name": "Agoras Tokens",
+  "symbol": "AGRS"
+ },
+ {
+  "name": "Humaniq",
+  "symbol": "HMQ"
+ },
+ {
+  "name": "DigitalNote",
+  "symbol": "XDN"
+ },
+ {
+  "name": "Monetha",
+  "symbol": "MTH"
+ },
+ {
+  "name": "Rialto",
+  "symbol": "XRL"
+ },
+ {
+  "name": "Aventus",
+  "symbol": "AVT"
+ },
+ {
+  "name": "WhiteCoin",
+  "symbol": "XWC"
+ },
+ {
+  "name": "Golos",
+  "symbol": "GOLOS"
+ },
+ {
+  "name": "Expanse",
+  "symbol": "EXP"
+ },
+ {
+  "name": "Clams",
+  "symbol": "CLAM"
+ },
+ {
+  "name": "Numeraire",
+  "symbol": "NMR"
+ },
+ {
+  "name": "VeriCoin",
+  "symbol": "VRC"
+ },
+ {
+  "name": "Shift",
+  "symbol": "SHIFT"
+ },
+ {
+  "name": "MonetaryUnit",
+  "symbol": "MUE"
+ },
+ {
+  "name": "Target Coin",
+  "symbol": "TGT"
+ },
+ {
+  "name": "SaluS",
+  "symbol": "SLS"
+ },
+ {
+  "name": "Agrello",
+  "symbol": "DLT"
+ },
+ {
+  "name": "Po.et",
+  "symbol": "POE"
+ },
+ {
+  "name": "Maecenas",
+  "symbol": "ART"
+ },
+ {
+  "name": "Energycoin",
+  "symbol": "ENRG"
+ },
+ {
+  "name": "Mercury",
+  "symbol": "MER"
+ },
+ {
+  "name": "InvestFeed",
+  "symbol": "IFT"
+ },
+ {
+  "name": "Radium",
+  "symbol": "RADS"
+ },
+ {
+  "name": "Omni",
+  "symbol": "OMNI"
+ },
+ {
+  "name": "Primas",
+  "symbol": "PST"
+ },
+ {
+  "name": "Synereo",
+  "symbol": "AMP"
+ },
+ {
+  "name": "Bitcloud",
+  "symbol": "BTDX"
+ },
+ {
+  "name": "Asch",
+  "symbol": "XAS"
+ },
+ {
+  "name": "E-coin",
+  "symbol": "ECN"
+ },
+ {
+  "name": "Burst",
+  "symbol": "BURST"
+ },
+ {
+  "name": "TransferCoin",
+  "symbol": "TX"
+ },
+ {
+  "name": "adToken",
+  "symbol": "ADT"
+ },
+ {
+  "name": "PRIZM",
+  "symbol": "PZM"
+ },
+ {
+  "name": "Nexium",
+  "symbol": "NXC"
+ },
+ {
+  "name": "Polybius",
+  "symbol": "PLBT"
+ },
+ {
+  "name": "Mysterium",
+  "symbol": "MYST"
+ },
+ {
+  "name": "Patientory",
+  "symbol": "PTOY"
+ },
+ {
+  "name": "Unobtanium",
+  "symbol": "UNO"
+ },
+ {
+  "name": "Waves Community Token",
+  "symbol": "WCT"
+ },
+ {
+  "name": "Nimiq",
+  "symbol": "NET"
+ },
+ {
+  "name": "Farad",
+  "symbol": "FRD"
+ },
+ {
+  "name": "OracleChain",
+  "symbol": "OCT"
+ },
+ {
+  "name": "Lunyr",
+  "symbol": "LUN"
+ },
+ {
+  "name": "Centurion",
+  "symbol": "CNT"
+ },
+ {
+  "name": "Change",
+  "symbol": "CAG"
+ },
+ {
+  "name": "Vcash",
+  "symbol": "XVC"
+ },
+ {
+  "name": "LoMoCoin",
+  "symbol": "LMC"
+ },
+ {
+  "name": "CasinoCoin",
+  "symbol": "CSC"
+ },
+ {
+  "name": "KickCoin",
+  "symbol": "KICK"
+ },
+ {
+  "name": "FlorinCoin",
+  "symbol": "FLO"
+ },
+ {
+  "name": "Wagerr",
+  "symbol": "WGR"
+ },
+ {
+  "name": "BlockMason Credit Protocol",
+  "symbol": "BCPT"
+ },
+ {
+  "name": "Credence Coin",
+  "symbol": "CRDNC"
+ },
+ {
+  "name": "DAO.Casino",
+  "symbol": "BET"
+ },
+ {
+  "name": "Mooncoin",
+  "symbol": "MOON"
+ },
+ {
+  "name": "NeosCoin",
+  "symbol": "NEOS"
+ },
+ {
+  "name": "OBITS",
+  "symbol": "OBITS"
+ },
+ {
+  "name": "HTMLCOIN",
+  "symbol": "HTML5"
+ },
+ {
+  "name": "Databits",
+  "symbol": "DTB"
+ },
+ {
+  "name": "Sphere",
+  "symbol": "SPHR"
+ },
+ {
+  "name": "Credo",
+  "symbol": "CREDO"
+ },
+ {
+  "name": "Gambit",
+  "symbol": "GAM"
+ },
+ {
+  "name": "iXledger",
+  "symbol": "IXT"
+ },
+ {
+  "name": "OAX",
+  "symbol": "OAX"
+ },
+ {
+  "name": "Novacoin",
+  "symbol": "NVC"
+ },
+ {
+  "name": "BlockCAT",
+  "symbol": "CAT"
+ },
+ {
+  "name": "Quantum",
+  "symbol": "QAU"
+ },
+ {
+  "name": "SuperCoin",
+  "symbol": "SUPER"
+ },
+ {
+  "name": "Voxels",
+  "symbol": "VOX"
+ },
+ {
+  "name": "Compcoin",
+  "symbol": "CMP"
+ },
+ {
+  "name": "PinkCoin",
+  "symbol": "PINK"
+ },
+ {
+  "name": "Rivetz",
+  "symbol": "RVT"
+ },
+ {
+  "name": "CVCoin",
+  "symbol": "CVCOIN"
+ },
+ {
+  "name": "Pascal Coin",
+  "symbol": "PASC"
+ },
+ {
+  "name": "XTRABYTES",
+  "symbol": "XBY"
+ },
+ {
+  "name": "Spectrecoin",
+  "symbol": "XSPEC"
+ },
+ {
+  "name": "Abjcoin",
+  "symbol": "ABJ"
+ },
+ {
+  "name": "Masternodecoin",
+  "symbol": "MTNC"
+ },
+ {
+  "name": "Hive",
+  "symbol": "HVN"
+ },
+ {
+  "name": "Bitcoin Plus",
+  "symbol": "XBC"
+ },
+ {
+  "name": "bitCNY",
+  "symbol": "BITCNY"
+ },
+ {
+  "name": "E-Dinar Coin",
+  "symbol": "EDR"
+ },
+ {
+  "name": "bitqy",
+  "symbol": "BQ"
+ },
+ {
+  "name": "Incent",
+  "symbol": "INCNT"
+ },
+ {
+  "name": "BitBean",
+  "symbol": "BITB"
+ },
+ {
+  "name": "Genesis Vision",
+  "symbol": "GVT"
+ },
+ {
+  "name": "HEAT",
+  "symbol": "HEAT"
+ },
+ {
+  "name": "Decision Token",
+  "symbol": "HST"
+ },
+ {
+  "name": "Stealthcoin",
+  "symbol": "XST"
+ },
+ {
+  "name": "Curecoin",
+  "symbol": "CURE"
+ },
+ {
+  "name": "Bitcrystals",
+  "symbol": "BCY"
+ },
+ {
+  "name": "Blocktix",
+  "symbol": "TIX"
+ },
+ {
+  "name": "NVO",
+  "symbol": "NVST"
+ },
+ {
+  "name": "Obsidian",
+  "symbol": "ODN"
+ },
+ {
+  "name": "Dynamic",
+  "symbol": "DYN"
+ },
+ {
+  "name": "XCurrency",
+  "symbol": "XC"
+ },
+ {
+  "name": "Sequence",
+  "symbol": "SEQ"
+ },
+ {
+  "name": "GoldCoin",
+  "symbol": "GLD"
+ },
+ {
+  "name": "DCORP",
+  "symbol": "DRP"
+ },
+ {
+  "name": "Confido",
+  "symbol": "CFD"
+ },
+ {
+  "name": "Kore",
+  "symbol": "KORE"
+ },
+ {
+  "name": "ExclusiveCoin",
+  "symbol": "EXCL"
+ },
+ {
+  "name": "BCAP",
+  "symbol": "BCAP"
+ },
+ {
+  "name": "Project Decorum",
+  "symbol": "PDC"
+ },
+ {
+  "name": "Musicoin",
+  "symbol": "MUSIC"
+ },
+ {
+  "name": "ChainCoin",
+  "symbol": "CHC"
+ },
+ {
+  "name": "COSS",
+  "symbol": "COSS"
+ },
+ {
+  "name": "Karbowanec",
+  "symbol": "KRB"
+ },
+ {
+  "name": "Qwark",
+  "symbol": "QWARK"
+ },
+ {
+  "name": "MyBit Token",
+  "symbol": "MYB"
+ },
+ {
+  "name": "Pluton",
+  "symbol": "PLU"
+ },
+ {
+  "name": "Auroracoin",
+  "symbol": "AUR"
+ },
+ {
+  "name": "ZrCoin",
+  "symbol": "ZRC"
+ },
+ {
+  "name": "PoSW Coin",
+  "symbol": "POSW"
+ },
+ {
+  "name": "Voise",
+  "symbol": "VOISE"
+ },
+ {
+  "name": "Lampix",
+  "symbol": "PIX"
+ },
+ {
+  "name": "AirToken",
+  "symbol": "AIR"
+ },
+ {
+  "name": "Global Currency Reserve",
+  "symbol": "GCR"
+ },
+ {
+  "name": "VIBE",
+  "symbol": "VIBE"
+ },
+ {
+  "name": "APX",
+  "symbol": "APX"
+ },
+ {
+  "name": "FoldingCoin",
+  "symbol": "FLDC"
+ },
+ {
+  "name": "Zeitcoin",
+  "symbol": "ZEIT"
+ },
+ {
+  "name": "LAToken",
+  "symbol": "LA"
+ },
+ {
+  "name": "Creditbit",
+  "symbol": "CRB"
+ },
+ {
+  "name": "Myriad",
+  "symbol": "XMY"
+ },
+ {
+  "name": "Rupee",
+  "symbol": "RUP"
+ },
+ {
+  "name": "SunContract",
+  "symbol": "SNC"
+ },
+ {
+  "name": "Synergy",
+  "symbol": "SNRG"
+ },
+ {
+  "name": "Pesetacoin",
+  "symbol": "PTC"
+ },
+ {
+  "name": "ArtByte",
+  "symbol": "ABY"
+ },
+ {
+  "name": "TheGCCcoin",
+  "symbol": "GCC"
+ },
+ {
+  "name": "Dimecoin",
+  "symbol": "DIME"
+ },
+ {
+  "name": "NuShares",
+  "symbol": "NSR"
+ },
+ {
+  "name": "Propy",
+  "symbol": "PRO"
+ },
+ {
+  "name": "bitUSD",
+  "symbol": "BITUSD"
+ },
+ {
+  "name": "Bitswift",
+  "symbol": "SWIFT"
+ },
+ {
+  "name": "Tao",
+  "symbol": "XTO"
+ },
+ {
+  "name": "EarthCoin",
+  "symbol": "EAC"
+ },
+ {
+  "name": "Circuits of Value",
+  "symbol": "COVAL"
+ },
+ {
+  "name": "XGOX",
+  "symbol": "XGOX"
+ },
+ {
+  "name": "EuropeCoin",
+  "symbol": "ERC"
+ },
+ {
+  "name": "Bankcoin",
+  "symbol": "B@"
+ },
+ {
+  "name": "Primalbase Token",
+  "symbol": "PBT"
+ },
+ {
+  "name": "Terracoin",
+  "symbol": "TRC"
+ },
+ {
+  "name": "Neutron",
+  "symbol": "NTRN"
+ },
+ {
+  "name": "Onix",
+  "symbol": "ONX"
+ },
+ {
+  "name": "Bela",
+  "symbol": "BELA"
+ },
+ {
+  "name": "EquiTrader",
+  "symbol": "EQT"
+ },
+ {
+  "name": "HempCoin",
+  "symbol": "THC"
+ },
+ {
+  "name": "Yocoin",
+  "symbol": "YOC"
+ },
+ {
+  "name": "Dovu",
+  "symbol": "DOVU"
+ },
+ {
+  "name": "Aeron",
+  "symbol": "ARN"
+ },
+ {
+  "name": "Blitzcash",
+  "symbol": "BLITZ"
+ },
+ {
+  "name": "Internet of People",
+  "symbol": "IOP"
+ },
+ {
+  "name": "Memetic",
+  "symbol": "MEME"
+ },
+ {
+  "name": "Syndicate",
+  "symbol": "SYNX"
+ },
+ {
+  "name": "Dent",
+  "symbol": "DENT"
+ },
+ {
+  "name": "Mintcoin",
+  "symbol": "MINT"
+ },
+ {
+  "name": "Hubii Network",
+  "symbol": "HBT"
+ },
+ {
+  "name": "TrueFlip",
+  "symbol": "TFL"
+ },
+ {
+  "name": "Bitmark",
+  "symbol": "BTM"
+ },
+ {
+  "name": "Royal Kingdom Coin",
+  "symbol": "RKC"
+ },
+ {
+  "name": "VeriumReserve",
+  "symbol": "VRM"
+ },
+ {
+  "name": "Hush",
+  "symbol": "HUSH"
+ },
+ {
+  "name": "GeoCoin",
+  "symbol": "GEO"
+ },
+ {
+  "name": "Hedge",
+  "symbol": "HDG"
+ },
+ {
+  "name": "Rustbits",
+  "symbol": "RUSTBITS"
+ },
+ {
+  "name": "BridgeCoin",
+  "symbol": "BCO"
+ },
+ {
+  "name": "TrustPlus",
+  "symbol": "TRUST"
+ },
+ {
+  "name": "CarTaxi Token",
+  "symbol": "CTX"
+ },
+ {
+  "name": "Breakout Stake",
+  "symbol": "BRX"
+ },
+ {
+  "name": "Autonio",
+  "symbol": "NIO"
+ },
+ {
+  "name": "EverGreenCoin",
+  "symbol": "EGC"
+ },
+ {
+  "name": "Steem Dollars",
+  "symbol": "SBD"
+ },
+ {
+  "name": "DeepOnion",
+  "symbol": "ONION"
+ },
+ {
+  "name": "Tracto",
+  "symbol": "TRCT"
+ },
+ {
+  "name": "2GIVE",
+  "symbol": "2GIVE"
+ },
+ {
+  "name": "ZClassic",
+  "symbol": "ZCL"
+ },
+ {
+  "name": "REAL",
+  "symbol": "REAL"
+ },
+ {
+  "name": "Primecoin",
+  "symbol": "XPM"
+ },
+ {
+  "name": "ProCurrency",
+  "symbol": "PROC"
+ },
+ {
+  "name": "Breakout",
+  "symbol": "BRK"
+ },
+ {
+  "name": "vSlice",
+  "symbol": "VSL"
+ },
+ {
+  "name": "FLiK",
+  "symbol": "FLIK"
+ },
+ {
+  "name": "VIVO",
+  "symbol": "VIVO"
+ },
+ {
+  "name": "BlueCoin",
+  "symbol": "BLU"
+ },
+ {
+  "name": "AudioCoin",
+  "symbol": "ADC"
+ },
+ {
+  "name": "Starta",
+  "symbol": "STA"
+ },
+ {
+  "name": "ParkByte",
+  "symbol": "PKB"
+ },
+ {
+  "name": "Social",
+  "symbol": "SCL"
+ },
+ {
+  "name": "DNotes",
+  "symbol": "NOTE"
+ },
+ {
+  "name": "Sexcoin",
+  "symbol": "SXC"
+ },
+ {
+  "name": "PiplCoin",
+  "symbol": "PIPL"
+ },
+ {
+  "name": "Innova",
+  "symbol": "INN"
+ },
+ {
+  "name": "Embers",
+  "symbol": "MBRS"
+ },
+ {
+  "name": "Creativecoin",
+  "symbol": "CREA"
+ },
+ {
+  "name": "Riecoin",
+  "symbol": "RIC"
+ },
+ {
+  "name": "SpreadCoin",
+  "symbol": "SPR"
+ },
+ {
+  "name": "Bismuth",
+  "symbol": "BIS"
+ },
+ {
+  "name": "DopeCoin",
+  "symbol": "DOPE"
+ },
+ {
+  "name": "Oceanlab",
+  "symbol": "OCL"
+ },
+ {
+  "name": "ICO OpenLedger",
+  "symbol": "ICOO"
+ },
+ {
+  "name": "ClearPoll",
+  "symbol": "POLL"
+ },
+ {
+  "name": "NEVERDIE",
+  "symbol": "NDC"
+ },
+ {
+  "name": "Crave",
+  "symbol": "CRAVE"
+ },
+ {
+  "name": "CHIPS",
+  "symbol": "CHIPS"
+ },
+ {
+  "name": "Condensate",
+  "symbol": "RAIN"
+ },
+ {
+  "name": "e-Gulden",
+  "symbol": "EFL"
+ },
+ {
+  "name": "PutinCoin",
+  "symbol": "PUT"
+ },
+ {
+  "name": "Kolion",
+  "symbol": "KLN"
+ },
+ {
+  "name": "Remicoin",
+  "symbol": "RMC"
+ },
+ {
+  "name": "Atmos",
+  "symbol": "ATMS"
+ },
+ {
+  "name": "vTorrent",
+  "symbol": "VTR"
+ },
+ {
+  "name": "eBitcoin",
+  "symbol": "EBTC"
+ },
+ {
+  "name": "MarteXcoin",
+  "symbol": "MXT"
+ },
+ {
+  "name": "Opus",
+  "symbol": "OPT"
+ },
+ {
+  "name": "Woodcoin",
+  "symbol": "LOG"
+ },
+ {
+  "name": "HunterCoin",
+  "symbol": "HUC"
+ },
+ {
+  "name": "Bowhead",
+  "symbol": "AHT"
+ },
+ {
+  "name": "Indorse Token",
+  "symbol": "IND"
+ },
+ {
+  "name": "Ethbits",
+  "symbol": "ETBS"
+ },
+ {
+  "name": "Startcoin",
+  "symbol": "START"
+ },
+ {
+  "name": "Quark",
+  "symbol": "QRK"
+ },
+ {
+  "name": "Magi",
+  "symbol": "XMG"
+ },
+ {
+  "name": "CannabisCoin",
+  "symbol": "CANN"
+ },
+ {
+  "name": "Megacoin",
+  "symbol": "MEC"
+ },
+ {
+  "name": "Dotcoin",
+  "symbol": "DOT"
+ },
+ {
+  "name": "Tokes",
+  "symbol": "TKS"
+ },
+ {
+  "name": "FundYourselfNow",
+  "symbol": "FYN"
+ },
+ {
+  "name": "Zennies",
+  "symbol": "ZENI"
+ },
+ {
+  "name": "LuckChain",
+  "symbol": "BASH"
+ },
+ {
+  "name": "ATLANT",
+  "symbol": "ATL"
+ },
+ {
+  "name": "Intelligent Trading Tech",
+  "symbol": "ITT"
+ },
+ {
+  "name": "ArcticCoin",
+  "symbol": "ARC"
+ },
+ {
+  "name": "IncaKoin",
+  "symbol": "NKA"
+ },
+ {
+  "name": "Emphy",
+  "symbol": "EPY"
+ },
+ {
+  "name": "Unity Ingot",
+  "symbol": "UNY"
+ },
+ {
+  "name": "DraftCoin",
+  "symbol": "DFT"
+ },
+ {
+  "name": "Greencoin",
+  "symbol": "GRE"
+ },
+ {
+  "name": "Legends Room",
+  "symbol": "LGD"
+ },
+ {
+  "name": "Elixir",
+  "symbol": "ELIX"
+ },
+ {
+  "name": "CryptoPing",
+  "symbol": "PING"
+ },
+ {
+  "name": "WorldCoin",
+  "symbol": "WDC"
+ },
+ {
+  "name": "Zephyr",
+  "symbol": "ZEPH"
+ },
+ {
+  "name": "BitcoinZ",
+  "symbol": "BTCZ"
+ },
+ {
+  "name": "Visio",
+  "symbol": "VISIO"
+ },
+ {
+  "name": "Pirl",
+  "symbol": "PIRL"
+ },
+ {
+  "name": "FIMKrypto",
+  "symbol": "FIMK"
+ },
+ {
+  "name": "Espers",
+  "symbol": "ESP"
+ },
+ {
+  "name": "HelloGold",
+  "symbol": "HGT"
+ },
+ {
+  "name": "Altcoin",
+  "symbol": "ALT"
+ },
+ {
+  "name": "Unitus",
+  "symbol": "UIS"
+ },
+ {
+  "name": "Upfiring",
+  "symbol": "UFR"
+ },
+ {
+  "name": "FlypMe",
+  "symbol": "FYP"
+ },
+ {
+  "name": "NewYorkCoin",
+  "symbol": "NYC"
+ },
+ {
+  "name": "XP",
+  "symbol": "XP"
+ },
+ {
+  "name": "Carboncoin",
+  "symbol": "CARBON"
+ },
+ {
+  "name": "Internxt",
+  "symbol": "INXT"
+ },
+ {
+  "name": "HyperStake",
+  "symbol": "HYP"
+ },
+ {
+  "name": "Adzcoin",
+  "symbol": "ADZ"
+ },
+ {
+  "name": "TrezarCoin",
+  "symbol": "TZC"
+ },
+ {
+  "name": "Zoin",
+  "symbol": "ZOI"
+ },
+ {
+  "name": "Signatum",
+  "symbol": "SIGT"
+ },
+ {
+  "name": "Growers International",
+  "symbol": "GRWI"
+ },
+ {
+  "name": "eBoost",
+  "symbol": "EBST"
+ },
+ {
+  "name": "CryptoInsight",
+  "symbol": "TKR"
+ },
+ {
+  "name": "Miners' Reward Token",
+  "symbol": "MRT"
+ },
+ {
+  "name": "Giga Watt Token",
+  "symbol": "WTT"
+ },
+ {
+  "name": "SHIELD",
+  "symbol": "XSH"
+ },
+ {
+  "name": "Pure",
+  "symbol": "PURE"
+ },
+ {
+  "name": "Bitpark Coin",
+  "symbol": "BPC"
+ },
+ {
+  "name": "Cryptonite",
+  "symbol": "XCN"
+ },
+ {
+  "name": "Influxcoin",
+  "symbol": "INFX"
+ },
+ {
+  "name": "Bytecent",
+  "symbol": "BYC"
+ },
+ {
+  "name": "Mao Zedong",
+  "symbol": "MAO"
+ },
+ {
+  "name": "Helleniccoin",
+  "symbol": "HNC"
+ },
+ {
+  "name": "Fastcoin",
+  "symbol": "FST"
+ },
+ {
+  "name": "Renos",
+  "symbol": "RNS"
+ },
+ {
+  "name": "SkinCoin",
+  "symbol": "SKIN"
+ },
+ {
+  "name": "Bitzeny",
+  "symbol": "ZNY"
+ },
+ {
+  "name": "LIFE",
+  "symbol": "LIFE"
+ },
+ {
+  "name": "FuckToken",
+  "symbol": "FUCK"
+ },
+ {
+  "name": "Pandacoin",
+  "symbol": "PND"
+ },
+ {
+  "name": "Unify",
+  "symbol": "UNIFY"
+ },
+ {
+  "name": "NuBits",
+  "symbol": "USNBT"
+ },
+ {
+  "name": "CryptoCarbon",
+  "symbol": "CCRB"
+ },
+ {
+  "name": "Moin",
+  "symbol": "MOIN"
+ },
+ {
+  "name": "HiCoin",
+  "symbol": "XHI"
+ },
+ {
+  "name": "KekCoin",
+  "symbol": "KEK"
+ },
+ {
+  "name": "Sumokoin",
+  "symbol": "SUMO"
+ },
+ {
+  "name": "Shorty",
+  "symbol": "SHORTY"
+ },
+ {
+  "name": "Bitradio",
+  "symbol": "BRO"
+ },
+ {
+  "name": "Fantomcoin",
+  "symbol": "FCN"
+ },
+ {
+  "name": "Sovereign Hero",
+  "symbol": "HERO"
+ },
+ {
+  "name": "Happycoin",
+  "symbol": "HPC"
+ },
+ {
+  "name": "MonacoCoin",
+  "symbol": "XMCC"
+ },
+ {
+  "name": "InsaneCoin",
+  "symbol": "INSN"
+ },
+ {
+  "name": "Ethereum Blue",
+  "symbol": "BLUE"
+ },
+ {
+  "name": "Linx",
+  "symbol": "LINX"
+ },
+ {
+  "name": "Monster Byte",
+  "symbol": "MBI"
+ },
+ {
+  "name": "Rasputin Online Coin",
+  "symbol": "ROC"
+ },
+ {
+  "name": "RouletteToken",
+  "symbol": "RLT"
+ },
+ {
+  "name": "Xios",
+  "symbol": "XIOS"
+ },
+ {
+  "name": "Billionaire Token",
+  "symbol": "XBL"
+ },
+ {
+  "name": "Footy Cash",
+  "symbol": "XFT"
+ },
+ {
+  "name": "UnbreakableCoin",
+  "symbol": "UNB"
+ },
+ {
+  "name": "Canada eCoin",
+  "symbol": "CDN"
+ },
+ {
+  "name": "Netko",
+  "symbol": "NETKO"
+ },
+ {
+  "name": "Capricoin",
+  "symbol": "CPC"
+ },
+ {
+  "name": "GCoin",
+  "symbol": "GCN"
+ },
+ {
+  "name": "StarCredits",
+  "symbol": "STRC"
+ },
+ {
+  "name": "LiteDoge",
+  "symbol": "LDOGE"
+ },
+ {
+  "name": "ColossusCoinXT",
+  "symbol": "COLX"
+ },
+ {
+  "name": "Bata",
+  "symbol": "BTA"
+ },
+ {
+  "name": "BitBar",
+  "symbol": "BTB"
+ },
+ {
+  "name": "BriaCoin",
+  "symbol": "BRIA"
+ },
+ {
+  "name": "Bitstar",
+  "symbol": "BITS"
+ },
+ {
+  "name": "Minereum",
+  "symbol": "MNE"
+ },
+ {
+  "name": "Zero",
+  "symbol": "ZER"
+ },
+ {
+  "name": "EthBet",
+  "symbol": "EBET"
+ },
+ {
+  "name": "GoldReserve",
+  "symbol": "XGR"
+ },
+ {
+  "name": "NobleCoin",
+  "symbol": "NOBL"
+ },
+ {
+  "name": "LUXCoin",
+  "symbol": "LUX"
+ },
+ {
+  "name": "42-coin",
+  "symbol": "42"
+ },
+ {
+  "name": "NautilusCoin",
+  "symbol": "NAUT"
+ },
+ {
+  "name": "Denarius",
+  "symbol": "DNR"
+ },
+ {
+  "name": "SmileyCoin",
+  "symbol": "SMLY"
+ },
+ {
+  "name": "Linda",
+  "symbol": "LINDA"
+ },
+ {
+  "name": "Solaris",
+  "symbol": "XLR"
+ },
+ {
+  "name": "Fujinto",
+  "symbol": "NTO"
+ },
+ {
+  "name": "DigitalDevelopersFund",
+  "symbol": "DDF"
+ },
+ {
+  "name": "Tychocoin",
+  "symbol": "TYCHO"
+ },
+ {
+  "name": "Sterlingcoin",
+  "symbol": "SLG"
+ },
+ {
+  "name": "WhaleCoin",
+  "symbol": "WHL"
+ },
+ {
+  "name": "FujiCoin",
+  "symbol": "FJC"
+ },
+ {
+  "name": "FuturXe",
+  "symbol": "FXE"
+ },
+ {
+  "name": "Pakcoin",
+  "symbol": "PAK"
+ },
+ {
+  "name": "Ethereum Gold",
+  "symbol": "ETG"
+ },
+ {
+  "name": "TagCoin",
+  "symbol": "TAG"
+ },
+ {
+  "name": "bitBTC",
+  "symbol": "BITBTC"
+ },
+ {
+  "name": "AltCommunity Coin",
+  "symbol": "ALTCOM"
+ },
+ {
+  "name": "Dalecoin",
+  "symbol": "DALC"
+ },
+ {
+  "name": "Deutsche eMark",
+  "symbol": "DEM"
+ },
+ {
+  "name": "Authorship",
+  "symbol": "ATS"
+ },
+ {
+  "name": "808Coin",
+  "symbol": "808"
+ },
+ {
+  "name": "PoSToken",
+  "symbol": "POS"
+ },
+ {
+  "name": "Octanox",
+  "symbol": "OTX"
+ },
+ {
+  "name": "Phoenixcoin",
+  "symbol": "PXC"
+ },
+ {
+  "name": "Ethereum Dark",
+  "symbol": "ETHD"
+ },
+ {
+  "name": "Torcoin",
+  "symbol": "TOR"
+ },
+ {
+  "name": "BlakeStar",
+  "symbol": "BLAS"
+ },
+ {
+  "name": "DigitalPrice",
+  "symbol": "DP"
+ },
+ {
+  "name": "TrumpCoin",
+  "symbol": "TRUMP"
+ },
+ {
+  "name": "Mincoin",
+  "symbol": "MNC"
+ },
+ {
+  "name": "PostCoin",
+  "symbol": "POST"
+ },
+ {
+  "name": "Vsync",
+  "symbol": "VSX"
+ },
+ {
+  "name": "Sprouts",
+  "symbol": "SPRTS"
+ },
+ {
+  "name": "Rubies",
+  "symbol": "RBIES"
+ },
+ {
+  "name": "Atomic Coin",
+  "symbol": "ATOM"
+ },
+ {
+  "name": "Joulecoin",
+  "symbol": "XJO"
+ },
+ {
+  "name": "FUNCoin",
+  "symbol": "FUNC"
+ },
+ {
+  "name": "Senderon",
+  "symbol": "SDRN"
+ },
+ {
+  "name": "Eternity",
+  "symbol": "ENT"
+ },
+ {
+  "name": "Bitcoin Red",
+  "symbol": "BTCRED"
+ },
+ {
+  "name": "Bitcoin Scrypt",
+  "symbol": "BTCS"
+ },
+ {
+  "name": "Bitgem",
+  "symbol": "BTG"
+ },
+ {
+  "name": "ChanCoin",
+  "symbol": "4CHN"
+ },
+ {
+  "name": "BitcoinFast",
+  "symbol": "BCF"
+ },
+ {
+  "name": "Digitalcoin",
+  "symbol": "DGC"
+ },
+ {
+  "name": "KiloCoin",
+  "symbol": "KLC"
+ },
+ {
+  "name": "GlobalCoin",
+  "symbol": "GLC"
+ },
+ {
+  "name": "EcoCoin",
+  "symbol": "ECO"
+ },
+ {
+  "name": "Elcoin",
+  "symbol": "EL"
+ },
+ {
+  "name": "Ripto Bux",
+  "symbol": "RBX"
+ },
+ {
+  "name": "Kayicoin",
+  "symbol": "KAYI"
+ },
+ {
+  "name": "EMoneyPower",
+  "symbol": "EMP"
+ },
+ {
+  "name": "Honey",
+  "symbol": "HONEY"
+ },
+ {
+  "name": "EOT Token",
+  "symbol": "EOT"
+ },
+ {
+  "name": "EmberCoin",
+  "symbol": "EMB"
+ },
+ {
+  "name": "Rupaya",
+  "symbol": "RUPX"
+ },
+ {
+  "name": "Acoin",
+  "symbol": "ACOIN"
+ },
+ {
+  "name": "Crypto",
+  "symbol": "CTO"
+ },
+ {
+  "name": "E4ROW",
+  "symbol": "E4ROW"
+ },
+ {
+  "name": "Ethereum Cash",
+  "symbol": "ECASH"
+ },
+ {
+  "name": "PRCoin",
+  "symbol": "PRC"
+ },
+ {
+  "name": "Philosopher Stones",
+  "symbol": "PHS"
+ },
+ {
+  "name": "BERNcash",
+  "symbol": "BERN"
+ },
+ {
+  "name": "BumbaCoin",
+  "symbol": "BUMBA"
+ },
+ {
+  "name": "CampusCoin",
+  "symbol": "CMPCO"
+ },
+ {
+  "name": "GoldBlocks",
+  "symbol": "GB"
+ },
+ {
+  "name": "MojoCoin",
+  "symbol": "MOJO"
+ },
+ {
+  "name": "WomenCoin",
+  "symbol": "WOMEN"
+ },
+ {
+  "name": "Theresa May Coin",
+  "symbol": "MAY"
+ },
+ {
+  "name": "CoinonatX",
+  "symbol": "XCXT"
+ },
+ {
+  "name": "bitGold",
+  "symbol": "BITGOLD"
+ },
+ {
+  "name": "Bitcoin Planet",
+  "symbol": "BTPL"
+ },
+ {
+  "name": "LeviarCoin",
+  "symbol": "XLC"
+ },
+ {
+  "name": "CacheCoin",
+  "symbol": "CACH"
+ },
+ {
+  "name": "iEthereum",
+  "symbol": "IETH"
+ },
+ {
+  "name": "bitEUR",
+  "symbol": "BITEUR"
+ },
+ {
+  "name": "USDe",
+  "symbol": "USDE"
+ },
+ {
+  "name": "Virta Unique Coin",
+  "symbol": "VUC"
+ },
+ {
+  "name": "VectorAI",
+  "symbol": "VEC2"
+ },
+ {
+  "name": "SecureCoin",
+  "symbol": "SRC"
+ },
+ {
+  "name": "ExchangeN",
+  "symbol": "EXN"
+ },
+ {
+  "name": "Interzone",
+  "symbol": "ITZ"
+ },
+ {
+  "name": "Asiadigicoin",
+  "symbol": "ADCN"
+ },
+ {
+  "name": "Roofs",
+  "symbol": "ROOFS"
+ },
+ {
+  "name": "Tristar Coin",
+  "symbol": "TSTR"
+ },
+ {
+  "name": "BoostCoin",
+  "symbol": "BOST"
+ },
+ {
+  "name": "Marscoin",
+  "symbol": "MARS"
+ },
+ {
+  "name": "Doubloon",
+  "symbol": "BOAT"
+ },
+ {
+  "name": "Kurrent",
+  "symbol": "KURT"
+ },
+ {
+  "name": "Litecoin Plus",
+  "symbol": "LCP"
+ },
+ {
+  "name": "Spots",
+  "symbol": "SPT"
+ },
+ {
+  "name": "ETHGAS",
+  "symbol": "EGAS"
+ },
+ {
+  "name": "Money",
+  "symbol": "$$$"
+ },
+ {
+  "name": "Solarflarecoin",
+  "symbol": "SFC"
+ },
+ {
+  "name": "TajCoin",
+  "symbol": "TAJ"
+ },
+ {
+  "name": "300 Token",
+  "symbol": "300"
+ },
+ {
+  "name": "ZetaMicron",
+  "symbol": "ZMC"
+ },
+ {
+  "name": "CybCSec",
+  "symbol": "XCS"
+ },
+ {
+  "name": "Rimbit",
+  "symbol": "RBT"
+ },
+ {
+  "name": "eBTC [OLD]",
+  "symbol": "EBTC"
+ },
+ {
+  "name": "Eryllium",
+  "symbol": "ERY"
+ },
+ {
+  "name": "CrevaCoin",
+  "symbol": "CREVA"
+ },
+ {
+  "name": "LiteBitcoin",
+  "symbol": "LBTC"
+ },
+ {
+  "name": "Project-X",
+  "symbol": "NANOX"
+ },
+ {
+  "name": "LiteCoin Ultra",
+  "symbol": "LTCU"
+ },
+ {
+  "name": "HarmonyCoin",
+  "symbol": "HMC"
+ },
+ {
+  "name": "1337",
+  "symbol": "1337"
+ },
+ {
+  "name": "Digital Credits",
+  "symbol": "DGCS"
+ },
+ {
+  "name": "Abncoin",
+  "symbol": "ABN"
+ },
+ {
+  "name": "Ebittree Coin",
+  "symbol": "EBT"
+ },
+ {
+  "name": "Falcoin",
+  "symbol": "FAL"
+ },
+ {
+  "name": "AppleCoin",
+  "symbol": "APW"
+ },
+ {
+  "name": "SuperNET",
+  "symbol": "UNITY"
+ },
+ {
+  "name": "XPlay",
+  "symbol": "XPA"
+ },
+ {
+  "name": "Nebulas Token",
+  "symbol": "NAS"
+ },
+ {
+  "name": "Jinn",
+  "symbol": "JINN"
+ },
+ {
+  "name": "Prospectors Gold",
+  "symbol": "PGL"
+ },
+ {
+  "name": "Ecobit",
+  "symbol": "ECOB"
+ },
+ {
+  "name": "YashCoin",
+  "symbol": "YASH"
+ },
+ {
+  "name": "Stakecoin",
+  "symbol": "STCN"
+ },
+ {
+  "name": "Bitland",
+  "symbol": "CADASTRAL"
+ },
+ {
+  "name": "EncryptoTel [WAVES]",
+  "symbol": "ETT"
+ },
+ {
+  "name": "Arcade Token",
+  "symbol": "ARC"
+ },
+ {
+  "name": "Ixcoin",
+  "symbol": "IXC"
+ },
+ {
+  "name": "ATC Coin",
+  "symbol": "ATCC"
+ },
+ {
+  "name": "Janus",
+  "symbol": "JNS"
+ },
+ {
+  "name": "Darcrus",
+  "symbol": "DAR"
+ },
+ {
+  "name": "Crypto Bullion",
+  "symbol": "CBX"
+ },
+ {
+  "name": "Ethereum Movie Venture",
+  "symbol": "EMV"
+ },
+ {
+  "name": "AdShares",
+  "symbol": "ADST"
+ },
+ {
+  "name": "Adelphoi",
+  "symbol": "ADL"
+ },
+ {
+  "name": "Infinitecoin",
+  "symbol": "IFC"
+ },
+ {
+  "name": "InPay",
+  "symbol": "INPAY"
+ },
+ {
+  "name": "AsiaCoin",
+  "symbol": "AC"
+ },
+ {
+  "name": "Colossuscoin V2",
+  "symbol": "CV2"
+ },
+ {
+  "name": "Etheriya",
+  "symbol": "RIYA"
+ },
+ {
+  "name": "Gimli",
+  "symbol": "GIM"
+ },
+ {
+  "name": "Coin(O)",
+  "symbol": "CNO"
+ },
+ {
+  "name": "UltraCoin",
+  "symbol": "UTC"
+ },
+ {
+  "name": "REX",
+  "symbol": "REX"
+ },
+ {
+  "name": "Machinecoin",
+  "symbol": "MAC"
+ },
+ {
+  "name": "HitCoin",
+  "symbol": "HTC"
+ },
+ {
+  "name": "CryptCoin",
+  "symbol": "CRYPT"
+ },
+ {
+  "name": "Casino",
+  "symbol": "CASINO"
+ },
+ {
+  "name": "Jetcoin",
+  "symbol": "JET"
+ },
+ {
+  "name": "Dinastycoin",
+  "symbol": "DCY"
+ },
+ {
+  "name": "Zetacoin",
+  "symbol": "ZET"
+ },
+ {
+  "name": "WavesGo",
+  "symbol": "WGO"
+ },
+ {
+  "name": "ShadowCash",
+  "symbol": "SDC"
+ },
+ {
+  "name": "MetalCoin",
+  "symbol": "METAL"
+ },
+ {
+  "name": "RussiaCoin",
+  "symbol": "RC"
+ },
+ {
+  "name": "Anoncoin",
+  "symbol": "ANC"
+ },
+ {
+  "name": "Orbitcoin",
+  "symbol": "ORB"
+ },
+ {
+  "name": "NetCoin",
+  "symbol": "NET"
+ },
+ {
+  "name": "BTSR",
+  "symbol": "BTSR"
+ },
+ {
+  "name": "TeslaCoin",
+  "symbol": "TES"
+ },
+ {
+  "name": "Cream",
+  "symbol": "CRM"
+ },
+ {
+  "name": "HoboNickels",
+  "symbol": "HBN"
+ },
+ {
+  "name": "BTCtalkcoin",
+  "symbol": "TALK"
+ },
+ {
+  "name": "MaxCoin",
+  "symbol": "MAX"
+ },
+ {
+  "name": "UFO Coin",
+  "symbol": "UFO"
+ },
+ {
+  "name": "Kobocoin",
+  "symbol": "KOBO"
+ },
+ {
+  "name": "Dashcoin",
+  "symbol": "DSH"
+ },
+ {
+  "name": "iTicoin",
+  "symbol": "ITI"
+ },
+ {
+  "name": "SACoin",
+  "symbol": "SAC"
+ },
+ {
+  "name": "Trollcoin",
+  "symbol": "TROLL"
+ },
+ {
+  "name": "Ultimate Secure Cash",
+  "symbol": "USC"
+ },
+ {
+  "name": "Link Platform",
+  "symbol": "LNK"
+ },
+ {
+  "name": "BlockPay",
+  "symbol": "BLOCKPAY"
+ },
+ {
+  "name": "Ellaism",
+  "symbol": "ELLA"
+ },
+ {
+  "name": "BritCoin",
+  "symbol": "BRIT"
+ },
+ {
+  "name": "FinCoin",
+  "symbol": "FNC"
+ },
+ {
+  "name": "Universal Currency",
+  "symbol": "UNIT"
+ },
+ {
+  "name": "Elementrem",
+  "symbol": "ELE"
+ },
+ {
+  "name": "Version",
+  "symbol": "V"
+ },
+ {
+  "name": "AmberCoin",
+  "symbol": "AMBER"
+ },
+ {
+  "name": "CryptoForecast",
+  "symbol": "CFT"
+ },
+ {
+  "name": "Veltor",
+  "symbol": "VLT"
+ },
+ {
+  "name": "CorgiCoin",
+  "symbol": "CORG"
+ },
+ {
+  "name": "SmartCoin",
+  "symbol": "SMC"
+ },
+ {
+  "name": "FuelCoin",
+  "symbol": "FC2"
+ },
+ {
+  "name": "Valorbit",
+  "symbol": "VAL"
+ },
+ {
+  "name": "DaxxCoin",
+  "symbol": "DAXX"
+ },
+ {
+  "name": "Goodomy",
+  "symbol": "GOOD"
+ },
+ {
+  "name": "CageCoin",
+  "symbol": "CAGE"
+ },
+ {
+  "name": "SwagBucks",
+  "symbol": "BUCKS"
+ },
+ {
+  "name": "OHM",
+  "symbol": "OHM"
+ },
+ {
+  "name": "I0Coin",
+  "symbol": "I0C"
+ },
+ {
+  "name": "MazaCoin",
+  "symbol": "MZC"
+ },
+ {
+  "name": "Bolenum",
+  "symbol": "BLN"
+ },
+ {
+  "name": "AurumCoin",
+  "symbol": "AU"
+ },
+ {
+  "name": "InflationCoin",
+  "symbol": "IFLT"
+ },
+ {
+  "name": "iCoin",
+  "symbol": "ICN"
+ },
+ {
+  "name": "Piggycoin",
+  "symbol": "PIGGY"
+ },
+ {
+  "name": "GAIA",
+  "symbol": "GAIA"
+ },
+ {
+  "name": "Bit20",
+  "symbol": "BTWTY"
+ },
+ {
+  "name": "Stress",
+  "symbol": "STS"
+ },
+ {
+  "name": "Triangles",
+  "symbol": "TRI"
+ },
+ {
+  "name": "Shadow Token",
+  "symbol": "SHDW"
+ },
+ {
+  "name": "Guncoin",
+  "symbol": "GUN"
+ },
+ {
+  "name": "Universe",
+  "symbol": "UNI"
+ },
+ {
+  "name": "Joincoin",
+  "symbol": "J"
+ },
+ {
+  "name": "Nyancoin",
+  "symbol": "NYAN"
+ },
+ {
+  "name": "The Cypherfunks",
+  "symbol": "FUNK"
+ },
+ {
+  "name": "HOdlcoin",
+  "symbol": "HODL"
+ },
+ {
+  "name": "PureVidz",
+  "symbol": "VIDZ"
+ },
+ {
+  "name": "Titcoin",
+  "symbol": "TIT"
+ },
+ {
+  "name": "Newbium",
+  "symbol": "NEWB"
+ },
+ {
+  "name": "Flycoin",
+  "symbol": "FLY"
+ },
+ {
+  "name": "LiteBar",
+  "symbol": "LTB"
+ },
+ {
+  "name": "FlutterCoin",
+  "symbol": "FLT"
+ },
+ {
+  "name": "SproutsExtreme",
+  "symbol": "SPEX"
+ },
+ {
+  "name": "TEKcoin",
+  "symbol": "TEK"
+ },
+ {
+  "name": "Opal",
+  "symbol": "OPAL"
+ },
+ {
+  "name": "PlatinumBAR",
+  "symbol": "XPTX"
+ },
+ {
+  "name": "BunnyCoin",
+  "symbol": "BUN"
+ },
+ {
+  "name": "Prototanium",
+  "symbol": "PR"
+ },
+ {
+  "name": "WayGuide",
+  "symbol": "WAY"
+ },
+ {
+  "name": "Scorecoin",
+  "symbol": "SCORE"
+ },
+ {
+  "name": "Electra",
+  "symbol": "ECA"
+ },
+ {
+  "name": "Ratecoin",
+  "symbol": "XRA"
+ },
+ {
+  "name": "ChessCoin",
+  "symbol": "CHESS"
+ },
+ {
+  "name": "LottoCoin",
+  "symbol": "LOT"
+ },
+ {
+  "name": "TittieCoin",
+  "symbol": "TTC"
+ },
+ {
+  "name": "Devcoin",
+  "symbol": "DVC"
+ },
+ {
+  "name": "QubitCoin",
+  "symbol": "Q2C"
+ },
+ {
+  "name": "DigiCube",
+  "symbol": "CUBE"
+ },
+ {
+  "name": "8Bit",
+  "symbol": "8BIT"
+ },
+ {
+  "name": "Truckcoin",
+  "symbol": "TRK"
+ },
+ {
+  "name": "Tigercoin",
+  "symbol": "TGC"
+ },
+ {
+  "name": "Cannacoin",
+  "symbol": "CCN"
+ },
+ {
+  "name": "KushCoin",
+  "symbol": "KUSH"
+ },
+ {
+  "name": "BiblePay",
+  "symbol": "BBP"
+ },
+ {
+  "name": "Cannation",
+  "symbol": "CNNC"
+ },
+ {
+  "name": "Freicoin",
+  "symbol": "FRC"
+ },
+ {
+  "name": "BitQuark",
+  "symbol": "BTQ"
+ },
+ {
+  "name": "UniCoin",
+  "symbol": "UNIC"
+ },
+ {
+  "name": "Bolivarcoin",
+  "symbol": "BOLI"
+ },
+ {
+  "name": "BigUp",
+  "symbol": "BIGUP"
+ },
+ {
+  "name": "SatoshiMadness",
+  "symbol": "MAD"
+ },
+ {
+  "name": "PetroDollar",
+  "symbol": "XPD"
+ },
+ {
+  "name": "VirtualCoin",
+  "symbol": "VC"
+ },
+ {
+  "name": "Darsek",
+  "symbol": "KED"
+ },
+ {
+  "name": "BitTokens",
+  "symbol": "BXT"
+ },
+ {
+  "name": "bitSilver",
+  "symbol": "BITSILVER"
+ },
+ {
+  "name": "WMCoin",
+  "symbol": "WMC"
+ },
+ {
+  "name": "Grantcoin",
+  "symbol": "GRT"
+ },
+ {
+  "name": "Yacoin",
+  "symbol": "YAC"
+ },
+ {
+  "name": "Emerald Crypto",
+  "symbol": "EMD"
+ },
+ {
+  "name": "Cryptojacks",
+  "symbol": "CJ"
+ },
+ {
+  "name": "Evotion",
+  "symbol": "EVO"
+ },
+ {
+  "name": "RevolverCoin",
+  "symbol": "XRE"
+ },
+ {
+  "name": "GlobalBoost-Y",
+  "symbol": "BSTY"
+ },
+ {
+  "name": "Swing",
+  "symbol": "SWING"
+ },
+ {
+  "name": "Zurcoin",
+  "symbol": "ZUR"
+ },
+ {
+  "name": "iDice",
+  "symbol": "ICE"
+ },
+ {
+  "name": "PayCoin",
+  "symbol": "XPY"
+ },
+ {
+  "name": "LanaCoin",
+  "symbol": "LANA"
+ },
+ {
+  "name": "Global Tour Coin",
+  "symbol": "GTC"
+ },
+ {
+  "name": "Wyvern",
+  "symbol": "WYV"
+ },
+ {
+  "name": "Gapcoin",
+  "symbol": "GAP"
+ },
+ {
+  "name": "Jin Coin",
+  "symbol": "JIN"
+ },
+ {
+  "name": "Smoke",
+  "symbol": "SMOKE"
+ },
+ {
+  "name": "DROXNE",
+  "symbol": "DRXNE"
+ },
+ {
+  "name": "Mineum",
+  "symbol": "MNM"
+ },
+ {
+  "name": "Evil Coin",
+  "symbol": "EVIL"
+ },
+ {
+  "name": "MACRON",
+  "symbol": "MCRN"
+ },
+ {
+  "name": "Francs",
+  "symbol": "FRN"
+ },
+ {
+  "name": "Unrealcoin",
+  "symbol": "URC"
+ },
+ {
+  "name": "HempCoin",
+  "symbol": "HMP"
+ },
+ {
+  "name": "020LondonCoin",
+  "symbol": "020"
+ },
+ {
+  "name": "Cypher",
+  "symbol": "CYP"
+ },
+ {
+  "name": "OctoCoin",
+  "symbol": "888"
+ },
+ {
+  "name": "LeaCoin",
+  "symbol": "LEA"
+ },
+ {
+  "name": "Bottlecaps",
+  "symbol": "CAP"
+ },
+ {
+  "name": "Sativacoin",
+  "symbol": "STV"
+ },
+ {
+  "name": "PIECoin",
+  "symbol": "PIE"
+ },
+ {
+  "name": "Pascal Lite",
+  "symbol": "PASL"
+ },
+ {
+  "name": "SpaceCoin",
+  "symbol": "SPACE"
+ },
+ {
+  "name": "PX",
+  "symbol": "PX"
+ },
+ {
+  "name": "C-Bit",
+  "symbol": "XCT"
+ },
+ {
+  "name": "Flaxscript",
+  "symbol": "FLAX"
+ },
+ {
+  "name": "QuazarCoin",
+  "symbol": "QCN"
+ },
+ {
+  "name": "Ammo Rewards",
+  "symbol": "AMMO"
+ },
+ {
+  "name": "Eurocoin",
+  "symbol": "EUC"
+ },
+ {
+  "name": "Catcoin",
+  "symbol": "CAT"
+ },
+ {
+  "name": "AntiBitcoin",
+  "symbol": "ANTI"
+ },
+ {
+  "name": "PayCon",
+  "symbol": "CON"
+ },
+ {
+  "name": "ReeCoin",
+  "symbol": "REE"
+ },
+ {
+  "name": "Halcyon",
+  "symbol": "HAL"
+ },
+ {
+  "name": "X-Coin",
+  "symbol": "XCO"
+ },
+ {
+  "name": "Quatloo",
+  "symbol": "QTL"
+ },
+ {
+  "name": "AquariusCoin",
+  "symbol": "ARCO"
+ },
+ {
+  "name": "Aricoin",
+  "symbol": "ARI"
+ },
+ {
+  "name": "Coin2.1",
+  "symbol": "C2"
+ },
+ {
+  "name": "GameUnits",
+  "symbol": "UNITS"
+ },
+ {
+  "name": "Firecoin",
+  "symbol": "FIRE"
+ },
+ {
+  "name": "GoldPieces",
+  "symbol": "GP"
+ },
+ {
+  "name": "Dollarcoin",
+  "symbol": "DLC"
+ },
+ {
+  "name": "BitAsean",
+  "symbol": "BAS"
+ },
+ {
+  "name": "Blakecoin",
+  "symbol": "BLC"
+ },
+ {
+  "name": "Shilling",
+  "symbol": "SH"
+ },
+ {
+  "name": "Sling",
+  "symbol": "SLING"
+ },
+ {
+  "name": "Californium",
+  "symbol": "CF"
+ },
+ {
+  "name": "Slimcoin",
+  "symbol": "SLM"
+ },
+ {
+  "name": "Prime-XI",
+  "symbol": "PXI"
+ },
+ {
+  "name": "ParallelCoin",
+  "symbol": "DUO"
+ },
+ {
+  "name": "Argentum",
+  "symbol": "ARG"
+ },
+ {
+  "name": "SixEleven",
+  "symbol": "611"
+ },
+ {
+  "name": "IslaCoin",
+  "symbol": "ISL"
+ },
+ {
+  "name": "Franko",
+  "symbol": "FRK"
+ },
+ {
+  "name": "Independent Money System",
+  "symbol": "IMS"
+ },
+ {
+  "name": "DIBCOIN",
+  "symbol": "DIBC"
+ },
+ {
+  "name": "RonPaulCoin",
+  "symbol": "RPC"
+ },
+ {
+  "name": "SoonCoin",
+  "symbol": "SOON"
+ },
+ {
+  "name": "NevaCoin",
+  "symbol": "NEVA"
+ },
+ {
+  "name": "GPU Coin",
+  "symbol": "GPU"
+ },
+ {
+  "name": "Kittehcoin",
+  "symbol": "MEOW"
+ },
+ {
+  "name": "Chronos",
+  "symbol": "CRX"
+ },
+ {
+  "name": "MustangCoin",
+  "symbol": "MST"
+ },
+ {
+  "name": "BillaryCoin",
+  "symbol": "BLRY"
+ },
+ {
+  "name": "Allion",
+  "symbol": "ALL"
+ },
+ {
+  "name": "RedCoin",
+  "symbol": "RED"
+ },
+ {
+  "name": "Dreamcoin",
+  "symbol": "DRM"
+ },
+ {
+  "name": "Bitcoin 21",
+  "symbol": "XBTC21"
+ },
+ {
+  "name": "Tattoocoin (Standard Edition)",
+  "symbol": "TSE"
+ },
+ {
+  "name": "Beatcoin",
+  "symbol": "XBTS"
+ },
+ {
+  "name": "Master Swiscoin",
+  "symbol": "MSCN"
+ },
+ {
+  "name": "Neuro",
+  "symbol": "NRO"
+ },
+ {
+  "name": "Marijuanacoin",
+  "symbol": "MAR"
+ },
+ {
+  "name": "PopularCoin",
+  "symbol": "POP"
+ },
+ {
+  "name": "CompuCoin",
+  "symbol": "CPN"
+ },
+ {
+  "name": "Photon",
+  "symbol": "PHO"
+ },
+ {
+  "name": "Artex Coin",
+  "symbol": "ATX"
+ },
+ {
+  "name": "SecretCoin",
+  "symbol": "SCRT"
+ },
+ {
+  "name": "CoExistCoin",
+  "symbol": "COXST"
+ },
+ {
+  "name": "Debitcoin",
+  "symbol": "DBTC"
+ },
+ {
+  "name": "Creatio",
+  "symbol": "XCRE"
+ },
+ {
+  "name": "Gold Pressed Latinum",
+  "symbol": "GPL"
+ },
+ {
+  "name": "BeaverCoin",
+  "symbol": "BVC"
+ },
+ {
+  "name": "Virtacoinplus",
+  "symbol": "XVP"
+ },
+ {
+  "name": "GlobalToken",
+  "symbol": "GLT"
+ },
+ {
+  "name": "BRAT",
+  "symbol": "BRAT"
+ },
+ {
+  "name": "PonziCoin",
+  "symbol": "PONZI"
+ },
+ {
+  "name": "JobsCoin",
+  "symbol": "JOBS"
+ },
+ {
+  "name": "Blackstar",
+  "symbol": "BSTAR"
+ },
+ {
+  "name": "Jewels",
+  "symbol": "JWL"
+ },
+ {
+  "name": "GuccioneCoin",
+  "symbol": "GCC"
+ },
+ {
+  "name": "Metal Music Coin",
+  "symbol": "MTLMC3"
+ },
+ {
+  "name": "Zayedcoin",
+  "symbol": "ZYD"
+ },
+ {
+  "name": "ICOBID",
+  "symbol": "ICOB"
+ },
+ {
+  "name": "HealthyWormCoin",
+  "symbol": "WORM"
+ },
+ {
+  "name": "Cashcoin",
+  "symbol": "CASH"
+ },
+ {
+  "name": "BipCoin",
+  "symbol": "BIP"
+ },
+ {
+  "name": "Uro",
+  "symbol": "URO"
+ },
+ {
+  "name": "ARbit",
+  "symbol": "ARB"
+ },
+ {
+  "name": "CryptoWorldX Token",
+  "symbol": "CWXT"
+ },
+ {
+  "name": "JIO Token",
+  "symbol": "JIO"
+ },
+ {
+  "name": "WARP",
+  "symbol": "WARP"
+ },
+ {
+  "name": "Braincoin",
+  "symbol": "BRAIN"
+ },
+ {
+  "name": "Digital Rupees",
+  "symbol": "DRS"
+ },
+ {
+  "name": "Bitz",
+  "symbol": "BITZ"
+ },
+ {
+  "name": "SOILcoin",
+  "symbol": "SOIL"
+ },
+ {
+  "name": "AllSafe",
+  "symbol": "ASAFE2"
+ },
+ {
+  "name": "Vault Coin",
+  "symbol": "VLTC"
+ },
+ {
+  "name": "Hexx",
+  "symbol": "HXX"
+ },
+ {
+  "name": "FlavorCoin",
+  "symbol": "FLVR"
+ },
+ {
+  "name": "BenjiRolls",
+  "symbol": "BENJI"
+ },
+ {
+  "name": "Comet",
+  "symbol": "CMT"
+ },
+ {
+  "name": "Printerium",
+  "symbol": "PRX"
+ },
+ {
+  "name": "Bitcurrency",
+  "symbol": "BTCR"
+ },
+ {
+  "name": "PLNcoin",
+  "symbol": "PLNC"
+ },
+ {
+  "name": "PlayerCoin",
+  "symbol": "PLACO"
+ },
+ {
+  "name": "KibiCoin",
+  "symbol": "KIC"
+ },
+ {
+  "name": "Slevin",
+  "symbol": "SLEVIN"
+ },
+ {
+  "name": "Coinonat",
+  "symbol": "CXT"
+ },
+ {
+  "name": "MindCoin",
+  "symbol": "MND"
+ },
+ {
+  "name": "Virtacoin",
+  "symbol": "VTA"
+ },
+ {
+  "name": "MiloCoin",
+  "symbol": "MILO"
+ },
+ {
+  "name": "BowsCoin",
+  "symbol": "BSC"
+ },
+ {
+  "name": "Cthulhu Offerings",
+  "symbol": "OFF"
+ },
+ {
+  "name": "Litecred",
+  "symbol": "LTCR"
+ },
+ {
+  "name": "Veros",
+  "symbol": "VRS"
+ },
+ {
+  "name": "BitCoal",
+  "symbol": "COAL"
+ },
+ {
+  "name": "FuzzBalls",
+  "symbol": "FUZZ"
+ },
+ {
+  "name": "CRTCoin",
+  "symbol": "CRT"
+ },
+ {
+  "name": "Orlycoin",
+  "symbol": "ORLY"
+ },
+ {
+  "name": "EGO",
+  "symbol": "EGO"
+ },
+ {
+  "name": "Pulse",
+  "symbol": "PULSE"
+ },
+ {
+  "name": "GBCGoldCoin",
+  "symbol": "GBC"
+ },
+ {
+  "name": "Pesobit",
+  "symbol": "PSB"
+ },
+ {
+  "name": "TAGRcoin",
+  "symbol": "TAGR"
+ },
+ {
+  "name": "Cabbage",
+  "symbol": "CAB"
+ },
+ {
+  "name": "Steps",
+  "symbol": "STEPS"
+ },
+ {
+  "name": "ImpulseCoin",
+  "symbol": "IMPS"
+ },
+ {
+  "name": "DT Token",
+  "symbol": "DRACO"
+ },
+ {
+  "name": "Luna Coin",
+  "symbol": "LUNA"
+ },
+ {
+  "name": "G3N",
+  "symbol": "G3N"
+ },
+ {
+  "name": "OsmiumCoin",
+  "symbol": "OS76"
+ },
+ {
+  "name": "AnarchistsPrime",
+  "symbol": "ACP"
+ },
+ {
+  "name": "Kronecoin",
+  "symbol": "KRONE"
+ },
+ {
+  "name": "Ride My Car",
+  "symbol": "RIDE"
+ },
+ {
+  "name": "GameBet Coin",
+  "symbol": "GBT"
+ },
+ {
+  "name": "Iconic",
+  "symbol": "ICON"
+ },
+ {
+  "name": "Coimatic 2.0",
+  "symbol": "CTIC2"
+ },
+ {
+  "name": "MTMGaming",
+  "symbol": "MTM"
+ },
+ {
+  "name": "CryptoEscudo",
+  "symbol": "CESC"
+ },
+ {
+  "name": "DAPPSTER",
+  "symbol": "DLISK"
+ },
+ {
+  "name": "BlazeCoin",
+  "symbol": "BLZ"
+ },
+ {
+  "name": "Useless Ethereum Token",
+  "symbol": "UET"
+ },
+ {
+  "name": "Wild Beast Block",
+  "symbol": "WBB"
+ },
+ {
+  "name": "NeuroDAO",
+  "symbol": "NDAO"
+ },
+ {
+  "name": "BiosCrypto",
+  "symbol": "BIOS"
+ },
+ {
+  "name": "VIP Tokens",
+  "symbol": "VIP"
+ },
+ {
+  "name": "BBQCoin",
+  "symbol": "BQC"
+ },
+ {
+  "name": "KingN Coin",
+  "symbol": "KNC"
+ },
+ {
+  "name": "LetItRide",
+  "symbol": "LIR"
+ },
+ {
+  "name": "PosEx",
+  "symbol": "PEX"
+ },
+ {
+  "name": "Zonecoin",
+  "symbol": "ZNE"
+ },
+ {
+  "name": "iBank",
+  "symbol": "IBANK"
+ },
+ {
+  "name": "Dollar Online",
+  "symbol": "DOLLAR"
+ },
+ {
+  "name": "CHNCoin",
+  "symbol": "CNC"
+ },
+ {
+  "name": "SongCoin",
+  "symbol": "SONG"
+ },
+ {
+  "name": "High Voltage",
+  "symbol": "HVCO"
+ },
+ {
+  "name": "MorningStar",
+  "symbol": "MRNG"
+ },
+ {
+  "name": "Magnum",
+  "symbol": "MGM"
+ },
+ {
+  "name": "Impact",
+  "symbol": "IMX"
+ },
+ {
+  "name": "Antilitecoin",
+  "symbol": "ALTC"
+ },
+ {
+  "name": "AgrolifeCoin",
+  "symbol": "AGLC"
+ },
+ {
+  "name": "Destiny",
+  "symbol": "DES"
+ },
+ {
+  "name": "BnrtxCoin",
+  "symbol": "BNX"
+ },
+ {
+  "name": "Speedcash",
+  "symbol": "SCS"
+ },
+ {
+  "name": "BioBar",
+  "symbol": "BIOB"
+ },
+ {
+  "name": "DAS",
+  "symbol": "DAS"
+ },
+ {
+  "name": "DPAY",
+  "symbol": "DPAY"
+ },
+ {
+  "name": "Wexcoin",
+  "symbol": "WEX"
+ },
+ {
+  "name": "SydPak",
+  "symbol": "SDP"
+ },
+ {
+  "name": "RSGPcoin",
+  "symbol": "RSGP"
+ },
+ {
+  "name": "Elysium",
+  "symbol": "ELS"
+ },
+ {
+  "name": "Tradecoin",
+  "symbol": "TRADE"
+ },
+ {
+  "name": "JavaScript Token",
+  "symbol": "JS"
+ },
+ {
+  "name": "Qibuck Asset",
+  "symbol": "QBK"
+ },
+ {
+  "name": "VapersCoin",
+  "symbol": "VPRC"
+ },
+ {
+  "name": "Revenu",
+  "symbol": "REV"
+ },
+ {
+  "name": "Grimcoin",
+  "symbol": "GRIM"
+ },
+ {
+  "name": "Selfiecoin",
+  "symbol": "SLFI"
+ },
+ {
+  "name": "P7Coin",
+  "symbol": "P7C"
+ },
+ {
+  "name": "GeertCoin",
+  "symbol": "GEERT"
+ },
+ {
+  "name": "Bitvolt",
+  "symbol": "VOLT"
+ },
+ {
+  "name": "NodeCoin",
+  "symbol": "NODC"
+ },
+ {
+  "name": "Concoin",
+  "symbol": "CONX"
+ },
+ {
+  "name": "Argus",
+  "symbol": "ARGUS"
+ },
+ {
+  "name": "LevoPlus",
+  "symbol": "LVPS"
+ },
+ {
+  "name": "Xonecoin",
+  "symbol": "XOC"
+ },
+ {
+  "name": "Frazcoin",
+  "symbol": "FRAZ"
+ },
+ {
+  "name": "Rawcoin",
+  "symbol": "XRC"
+ },
+ {
+  "name": "WalletBuildersCoin",
+  "symbol": "WBC"
+ },
+ {
+  "name": "BurstOcean",
+  "symbol": "OCEAN"
+ },
+ {
+  "name": "Save and Gain",
+  "symbol": "SANDG"
+ },
+ {
+  "name": "Dix Asset",
+  "symbol": "DIX"
+ },
+ {
+  "name": "Enigma",
+  "symbol": "XNG"
+ },
+ {
+  "name": "CCMiner",
+  "symbol": "CCM100"
+ },
+ {
+  "name": "Powercoin",
+  "symbol": "PWR"
+ },
+ {
+  "name": "BigBoobsCoin",
+  "symbol": "BBC"
+ },
+ {
+  "name": "SocialCoin",
+  "symbol": "SOCC"
+ },
+ {
+  "name": "SwapToken",
+  "symbol": "TOKEN"
+ },
+ {
+  "name": "PizzaCoin",
+  "symbol": "PIZZA"
+ },
+ {
+  "name": "Lex4All",
+  "symbol": "LEX"
+ },
+ {
+  "name": "MantraCoin",
+  "symbol": "MNC"
+ },
+ {
+  "name": "GeyserCoin",
+  "symbol": "GSR"
+ },
+ {
+  "name": "Ulatech",
+  "symbol": "ULA"
+ },
+ {
+  "name": "Sojourn",
+  "symbol": "SOJ"
+ },
+ {
+  "name": "Digital Money Bits",
+  "symbol": "DMB"
+ },
+ {
+  "name": "Future Digital Currency",
+  "symbol": "FDC"
+ },
+ {
+  "name": "CaliphCoin",
+  "symbol": "CALC"
+ },
+ {
+  "name": "Environ",
+  "symbol": "ENV"
+ },
+ {
+  "name": "Bitcoin Gold",
+  "symbol": "BTG"
+ },
+ {
+  "name": "Nuls",
+  "symbol": "NULS"
+ },
+ {
+  "name": "Ormeus Coin",
+  "symbol": "ORME"
+ },
+ {
+  "name": "YOYOW",
+  "symbol": "YOYOW"
+ },
+ {
+  "name": "Fargocoin",
+  "symbol": "FRGC"
+ },
+ {
+  "name": "Regalcoin",
+  "symbol": "REC"
+ },
+ {
+  "name": "BT2 [CST]",
+  "symbol": "BT2"
+ },
+ {
+  "name": "SegWit2x [Futures]",
+  "symbol": "B2X"
+ },
+ {
+  "name": "GOLD Reward Token",
+  "symbol": "GRX"
+ },
+ {
+  "name": "ClubCoin",
+  "symbol": "CLUB"
+ },
+ {
+  "name": "NEO GOLD",
+  "symbol": "NEOG"
+ },
+ {
+  "name": "FirstCoin",
+  "symbol": "FRST"
+ },
+ {
+  "name": "TechShares",
+  "symbol": "THS"
+ },
+ {
+  "name": "BT1 [CST]",
+  "symbol": "BT1"
+ },
+ {
+  "name": "Electroneum",
+  "symbol": "ETN"
+ },
+ {
+  "name": "Aidos Kuneen",
+  "symbol": "ADK"
+ },
+ {
+  "name": "ERC20",
+  "symbol": "ERC20"
+ },
+ {
+  "name": "Sharechain",
+  "symbol": "SSS"
+ },
+ {
+  "name": "Swisscoin",
+  "symbol": "SIC"
+ },
+ {
+  "name": "Suretly",
+  "symbol": "SUR"
+ },
+ {
+  "name": "Infinity Economics",
+  "symbol": "XIN"
+ },
+ {
+  "name": "Tezos (Pre-Launch)",
+  "symbol": "XTZ"
+ },
+ {
+  "name": "ATMCoin",
+  "symbol": "ATMC"
+ },
+ {
+  "name": "Interstellar Holdings",
+  "symbol": "HOLD"
+ },
+ {
+  "name": "NamoCoin",
+  "symbol": "NAMO"
+ },
+ {
+  "name": "Unikoin Gold",
+  "symbol": "UKG"
+ },
+ {
+  "name": "Exchange Union",
+  "symbol": "XUC"
+ },
+ {
+  "name": "LLToken",
+  "symbol": "LLT"
+ },
+ {
+  "name": "Sphre AIR ",
+  "symbol": "XID"
+ },
+ {
+  "name": "EA Coin",
+  "symbol": "EAG"
+ },
+ {
+  "name": "Astro",
+  "symbol": "ASTRO"
+ },
+ {
+  "name": "Akuya Coin",
+  "symbol": "AKY"
+ },
+ {
+  "name": "ELTCOIN",
+  "symbol": "ELTCOIN"
+ },
+ {
+  "name": "UG Token",
+  "symbol": "UGT"
+ },
+ {
+  "name": "Privatix",
+  "symbol": "PRIX"
+ },
+ {
+  "name": "BitSoar",
+  "symbol": "BSR"
+ },
+ {
+  "name": "Storjcoin X",
+  "symbol": "SJCX"
+ },
+ {
+  "name": "Everus",
+  "symbol": "EVR"
+ },
+ {
+  "name": "MSD",
+  "symbol": "MSD"
+ },
+ {
+  "name": "Oxycoin",
+  "symbol": "OXY"
+ },
+ {
+  "name": "Golos Gold",
+  "symbol": "GBG"
+ },
+ {
+  "name": "EagleCoin",
+  "symbol": "EAGLE"
+ },
+ {
+  "name": "Faceblock",
+  "symbol": "FBL"
+ },
+ {
+  "name": "SISA",
+  "symbol": "SISA"
+ },
+ {
+  "name": "Etherparty",
+  "symbol": "FUEL"
+ },
+ {
+  "name": "TerraNova",
+  "symbol": "TER"
+ },
+ {
+  "name": "BOScoin",
+  "symbol": "BOS"
+ },
+ {
+  "name": "Aerium",
+  "symbol": "AERM"
+ },
+ {
+  "name": "ICON",
+  "symbol": "ICX"
+ },
+ {
+  "name": "Natcoin",
+  "symbol": "NTC"
+ },
+ {
+  "name": "Aion",
+  "symbol": "AION"
+ },
+ {
+  "name": "Blockpool",
+  "symbol": "BPL"
+ },
+ {
+  "name": "DecentBet",
+  "symbol": "DBET"
+ },
+ {
+  "name": "bitJob",
+  "symbol": "STU"
+ },
+ {
+  "name": "PlusCoin",
+  "symbol": "PLC"
+ },
+ {
+  "name": "eBitcoin Cash",
+  "symbol": "EBCH"
+ },
+ {
+  "name": "AlpaCoin",
+  "symbol": "APC"
+ },
+ {
+  "name": "DeusCoin",
+  "symbol": "DEUS"
+ },
+ {
+  "name": "BuzzCoin",
+  "symbol": "BUZZ"
+ },
+ {
+  "name": "CORION",
+  "symbol": "COR"
+ },
+ {
+  "name": "Xenon",
+  "symbol": "XNN"
+ },
+ {
+  "name": "GulfCoin",
+  "symbol": "MGC"
+ },
+ {
+  "name": "Hawala.Today",
+  "symbol": "HAT"
+ },
+ {
+  "name": "DFSCoin",
+  "symbol": "DFS"
+ },
+ {
+  "name": "Paypex",
+  "symbol": "PAYX"
+ },
+ {
+  "name": "ZCash Gold",
+  "symbol": "ZCG"
+ },
+ {
+  "name": "SIGMAcoin",
+  "symbol": "SIGMA"
+ },
+ {
+  "name": "Russian Mining Coin",
+  "symbol": "RMC"
+ },
+ {
+  "name": "Qvolta",
+  "symbol": "QVT"
+ },
+ {
+  "name": "Desire",
+  "symbol": "DSR"
+ },
+ {
+  "name": "VPNCoin",
+  "symbol": "VASH"
+ },
+ {
+  "name": "Minex",
+  "symbol": "MINEX"
+ },
+ {
+  "name": "High Gain",
+  "symbol": "HIGH"
+ },
+ {
+  "name": "Delphy",
+  "symbol": "DPY"
+ },
+ {
+  "name": "LiteCoin Gold",
+  "symbol": "LTG"
+ },
+ {
+  "name": "iBTC",
+  "symbol": "IBTC"
+ },
+ {
+  "name": "Bitbase",
+  "symbol": "BTBc"
+ },
+ {
+  "name": "Wild Crypto",
+  "symbol": "WILD"
+ },
+ {
+  "name": "Crystal Clear ",
+  "symbol": "CCT"
+ },
+ {
+  "name": "Bitcoin Unlimited (Futures)",
+  "symbol": "BTU"
+ },
+ {
+  "name": "Bitcoin Silver",
+  "symbol": "BTCS"
+ },
+ {
+  "name": "OX Fina",
+  "symbol": "OX"
+ },
+ {
+  "name": "Smart Investment Fund Token",
+  "symbol": "SIFT"
+ },
+ {
+  "name": "Macro",
+  "symbol": "MCR"
+ },
+ {
+  "name": "Mercury Protocol",
+  "symbol": "GMT"
+ },
+ {
+  "name": "Flash",
+  "symbol": "FLASH"
+ },
+ {
+  "name": "Ethereum Lite",
+  "symbol": "ELITE"
+ },
+ {
+  "name": "Chronologic",
+  "symbol": "DAY"
+ },
+ {
+  "name": "Alphabit",
+  "symbol": "ABC"
+ },
+ {
+  "name": "TeslaCoilCoin",
+  "symbol": "TESLA"
+ },
+ {
+  "name": "Paccoin",
+  "symbol": "PAC"
+ },
+ {
+  "name": "President Johnson",
+  "symbol": "GARY"
+ },
+ {
+  "name": "Coupecoin",
+  "symbol": "COUPE"
+ },
+ {
+  "name": "iQuant",
+  "symbol": "IQT"
+ },
+ {
+  "name": "LandCoin",
+  "symbol": "LDCN"
+ },
+ {
+  "name": "STEX",
+  "symbol": "STEX"
+ },
+ {
+  "name": "First Bitcoin Capital",
+  "symbol": "BITCF"
+ },
+ {
+  "name": "EncryptoTel [ETH]",
+  "symbol": "ETT"
+ },
+ {
+  "name": "Sand Coin",
+  "symbol": "SND"
+ },
+ {
+  "name": "BatCoin",
+  "symbol": "BAT"
+ },
+ {
+  "name": "Cash Poker Pro",
+  "symbol": "CASH"
+ },
+ {
+  "name": "T-coin",
+  "symbol": "TCOIN"
+ },
+ {
+  "name": "WA Space",
+  "symbol": "WA"
+ },
+ {
+  "name": "IntenseCoin",
+  "symbol": "ITNS"
+ },
+ {
+  "name": "StarCash Network",
+  "symbol": "STARS"
+ },
+ {
+  "name": "Internet of Things",
+  "symbol": "XOT"
+ },
+ {
+  "name": "President Trump",
+  "symbol": "PRES"
+ },
+ {
+  "name": "India Coin",
+  "symbol": "INDIA"
+ },
+ {
+  "name": "FORCE",
+  "symbol": "FOR"
+ },
+ {
+  "name": "Halloween Coin",
+  "symbol": "HALLO"
+ },
+ {
+  "name": "StrongHands",
+  "symbol": "SHND"
+ },
+ {
+  "name": "Wi Coin",
+  "symbol": "WIC"
+ },
+ {
+  "name": "Regacoin",
+  "symbol": "REGA"
+ },
+ {
+  "name": "Zilbercoin",
+  "symbol": "ZBC"
+ },
+ {
+  "name": "Blockchain Index",
+  "symbol": "BLX"
+ },
+ {
+  "name": "Happy Creator Coin",
+  "symbol": "HCC"
+ },
+ {
+  "name": "Cheapcoin",
+  "symbol": "CHEAP"
+ },
+ {
+  "name": "Peacecoin",
+  "symbol": "PEC"
+ },
+ {
+  "name": "SHACoin",
+  "symbol": "SHA"
+ },
+ {
+  "name": "BTCMoon",
+  "symbol": "BTCM"
+ },
+ {
+  "name": "GanjaCoin",
+  "symbol": "MRJA"
+ },
+ {
+  "name": "Vulcano",
+  "symbol": "VULC"
+ },
+ {
+  "name": "Pirate Blocks",
+  "symbol": "SKULL"
+ },
+ {
+  "name": "GAY Money",
+  "symbol": "GAY"
+ },
+ {
+  "name": "Pabyosi Coin (Special)",
+  "symbol": "PCS"
+ },
+ {
+  "name": "9COIN",
+  "symbol": "9COIN"
+ },
+ {
+  "name": "Swapcoin",
+  "symbol": "SWP"
+ },
+ {
+  "name": "Bubble",
+  "symbol": "BUB"
+ },
+ {
+  "name": "eUSD",
+  "symbol": "EUSD"
+ },
+ {
+  "name": "netBit",
+  "symbol": "NBIT"
+ },
+ {
+  "name": "BetaCoin",
+  "symbol": "BET"
+ },
+ {
+  "name": "eREAL",
+  "symbol": "EREAL"
+ },
+ {
+  "name": "Musiconomi",
+  "symbol": "MCI"
+ },
+ {
+  "name": "Bastonet",
+  "symbol": "BSN"
+ },
+ {
+  "name": "MarxCoin",
+  "symbol": "MARX"
+ },
+ {
+  "name": "Runners",
+  "symbol": "RUNNERS"
+ },
+ {
+  "name": "RubleBit",
+  "symbol": "RUBIT"
+ },
+ {
+  "name": "TodayCoin",
+  "symbol": "TODAY"
+ },
+ {
+  "name": "Dutch Coin",
+  "symbol": "DUTCH"
+ },
+ {
+  "name": "Rcoin",
+  "symbol": "RCN"
+ },
+ {
+  "name": "Voyacoin",
+  "symbol": "VOYA"
+ },
+ {
+  "name": "ECC",
+  "symbol": "ECC"
+ },
+ {
+  "name": "BitcoinCashScrypt",
+  "symbol": "BCCS"
+ },
+ {
+  "name": "DynamicCoin",
+  "symbol": "DMC"
+ },
+ {
+  "name": "First Bitcoin",
+  "symbol": "BIT"
+ },
+ {
+  "name": "EXRNchain",
+  "symbol": "EXRN"
+ },
+ {
+  "name": "Donationcoin",
+  "symbol": "DON"
+ },
+ {
+  "name": "Animecoin",
+  "symbol": "ANI"
+ },
+ {
+  "name": "FireFlyCoin",
+  "symbol": "FFC"
+ },
+ {
+  "name": "AdCoin",
+  "symbol": "ACC"
+ },
+ {
+  "name": "TopCoin",
+  "symbol": "TOP"
+ },
+ {
+  "name": "BlazerCoin",
+  "symbol": "BLAZR"
+ },
+ {
+  "name": "Rupaya [OLD]",
+  "symbol": "RUPX"
+ },
+ {
+  "name": "UniversalRoyalCoin",
+  "symbol": "UNRC"
+ },
+ {
+  "name": "Huncoin",
+  "symbol": "HNC"
+ },
+ {
+  "name": "PeepCoin",
+  "symbol": "PCN"
+ },
+ {
+  "name": "Granite",
+  "symbol": "GRN"
+ },
+ {
+  "name": "Skeincoin",
+  "symbol": "SKC"
+ },
+ {
+  "name": "Avoncoin",
+  "symbol": "ACN"
+ },
+ {
+  "name": "BIXC",
+  "symbol": "BIXC"
+ },
+ {
+  "name": "Primulon",
+  "symbol": "PRIMU"
+ },
+ {
+  "name": "PrismChain",
+  "symbol": "PRM"
+ },
+ {
+  "name": "Yellow Token",
+  "symbol": "YEL"
+ },
+ {
+  "name": "Wowcoin",
+  "symbol": "WOW"
+ },
+ {
+  "name": "AmsterdamCoin",
+  "symbol": "AMS"
+ },
+ {
+  "name": "Quotient",
+  "symbol": "XQN"
+ },
+ {
+  "name": "Protean",
+  "symbol": "PRN"
+ },
+ {
+  "name": "Ergo",
+  "symbol": "EFYT"
+ },
+ {
+  "name": "eGold",
+  "symbol": "EGOLD"
+ },
+ {
+  "name": "10M Token",
+  "symbol": "10MT"
+ },
+ {
+  "name": "EtherDoge",
+  "symbol": "EDOGE"
+ },
+ {
+  "name": "Dashs",
+  "symbol": "DASHS"
+ },
+ {
+  "name": "HODL Bucks",
+  "symbol": "HDLB"
+ },
+ {
+  "name": "Magnetcoin",
+  "symbol": "MAGN"
+ },
+ {
+  "name": "ZSEcoin",
+  "symbol": "ZSE"
+ },
+ {
+  "name": "The Vegan Initiative",
+  "symbol": "XVE"
+ },
+ {
+  "name": "eBIT",
+  "symbol": "EBIT"
+ },
+ {
+  "name": "UGAIN",
+  "symbol": "GAIN"
+ },
+ {
+  "name": "TIES Network",
+  "symbol": "TIE"
+ },
+ {
+  "name": "Motocoin",
+  "symbol": "MOTO"
+ },
+ {
+  "name": "Sharkcoin",
+  "symbol": "SAK"
+ },
+ {
+  "name": "CBD Crystals",
+  "symbol": "CBD"
+ },
+ {
+  "name": "GoldUnionCoin",
+  "symbol": "GUC"
+ },
+ {
+  "name": "OCOW",
+  "symbol": "OCOW"
+ },
+ {
+  "name": "UR",
+  "symbol": "UR"
+ },
+ {
+  "name": "Cashme",
+  "symbol": "CME"
+ },
+ {
+  "name": "RHFCoin",
+  "symbol": "RHFC"
+ },
+ {
+  "name": "Aseancoin",
+  "symbol": "ASN"
+ },
+ {
+  "name": "ZenGold",
+  "symbol": "ZENGOLD"
+ },
+ {
+  "name": "Lazaruscoin",
+  "symbol": "LAZ"
+ },
+ {
+  "name": "Network Token",
+  "symbol": "NTWK"
+ },
+ {
+  "name": "XDE II",
+  "symbol": "XDE2"
+ },
+ {
+  "name": "RabbitCoin",
+  "symbol": "RBBT"
+ },
+ {
+  "name": "Antimatter",
+  "symbol": "ANTX"
+ },
+ {
+  "name": "Cyder",
+  "symbol": "CYDER"
+ },
+ {
+  "name": "AsicCoin",
+  "symbol": "ASC"
+ },
+ {
+  "name": "PiCoin",
+  "symbol": "PI"
+ },
+ {
+  "name": "Aces",
+  "symbol": "ACES"
+ },
+ {
+  "name": "Sakuracoin",
+  "symbol": "SKR"
+ },
+ {
+  "name": "Cubits",
+  "symbol": "QBT"
+ },
+ {
+  "name": "Yescoin",
+  "symbol": "YES"
+ },
+ {
+  "name": "Psilocybin",
+  "symbol": "PSY"
+ },
+ {
+  "name": "Clinton",
+  "symbol": "CLINT"
+ },
+ {
+  "name": "Birds",
+  "symbol": "BIRDS"
+ },
+ {
+  "name": "GoldMaxCoin",
+  "symbol": "GMX"
+ },
+ {
+  "name": "International Diamond",
+  "symbol": "XID"
+ },
+ {
+  "name": "EDRCoin",
+  "symbol": "EDRC"
+ },
+ {
+  "name": "X2",
+  "symbol": "X2"
+ },
+ {
+  "name": "Bitcedi",
+  "symbol": "BXC"
+ },
+ {
+  "name": "SafeCoin",
+  "symbol": "SFE"
+ },
+ {
+  "name": "Wink",
+  "symbol": "WINK"
+ },
+ {
+  "name": "BitCentavo",
+  "symbol": "NBE"
+ },
+ {
+  "name": "Safe Trade Coin",
+  "symbol": "XSTC"
+ },
+ {
+  "name": "WeAreSatoshi",
+  "symbol": "WSX"
+ },
+ {
+  "name": "DarkLisk",
+  "symbol": "DISK"
+ },
+ {
+  "name": "Hyper",
+  "symbol": "HYPER"
+ },
+ {
+  "name": "Opescoin",
+  "symbol": "OPES"
+ },
+ {
+  "name": "Elacoin",
+  "symbol": "ELC"
+ },
+ {
+  "name": "eLTC",
+  "symbol": "ELTC2"
+ },
+ {
+  "name": "LePen",
+  "symbol": "LEPEN"
+ },
+ {
+  "name": "Xaucoin",
+  "symbol": "XAU"
+ },
+ {
+  "name": "FutCoin",
+  "symbol": "FUTC"
+ },
+ {
+  "name": "BestChain",
+  "symbol": "BEST"
+ },
+ {
+  "name": "TrickyCoin",
+  "symbol": "TRICK"
+ },
+ {
+  "name": "Mavro",
+  "symbol": "MAVRO"
+ },
+ {
+  "name": "UNCoin",
+  "symbol": "UNC"
+ },
+ {
+  "name": "TurboCoin",
+  "symbol": "TURBO"
+ },
+ {
+  "name": "FAPcoin",
+  "symbol": "FAP"
+ },
+ {
+  "name": "MobileCash",
+  "symbol": "MBL"
+ },
+ {
+  "name": "SnakeEyes",
+  "symbol": "SNAKE"
+ },
+ {
+  "name": "VegasCoin",
+  "symbol": "VGC"
+ },
+ {
+  "name": "KexCoin",
+  "symbol": "KEXCOIN"
+ },
+ {
+  "name": "Etherx",
+  "symbol": "ETX"
+ },
+ {
+  "name": "Fonziecoin",
+  "symbol": "FONZ"
+ },
+ {
+  "name": "MoneyCoin",
+  "symbol": "MONEY"
+ },
+ {
+  "name": "Advanced Internet Blocks",
+  "symbol": "AIB"
+ },
+ {
+  "name": "FlappyCoin",
+  "symbol": "FLAP"
+ },
+ {
+  "name": "SportsCoin",
+  "symbol": "SPORT"
+ },
+ {
+  "name": "AvatarCoin",
+  "symbol": "AV"
+ },
+ {
+  "name": "TheCreed",
+  "symbol": "TCR"
+ },
+ {
+  "name": "Tellurion",
+  "symbol": "TELL"
+ },
+ {
+  "name": "Royalties",
+  "symbol": "XRY"
+ },
+ {
+  "name": "AMIS",
+  "symbol": "AMIS"
+ },
+ {
+  "name": "Facecoin",
+  "symbol": "FC"
+ },
+ {
+  "name": "RoyalCoin",
+  "symbol": "ROYAL"
+ },
+ {
+  "name": "PeopleCoin",
+  "symbol": "MEN"
+ },
+ {
+  "name": "SoulCoin",
+  "symbol": "SOUL"
+ },
+ {
+  "name": "LinkedCoin",
+  "symbol": "LKC"
+ },
+ {
+  "name": "Axiom",
+  "symbol": "AXIOM"
+ },
+ {
+  "name": "KashhCoin",
+  "symbol": "KASHH"
+ },
+ {
+  "name": "Omicron",
+  "symbol": "OMC"
+ },
+ {
+  "name": "Golfcoin",
+  "symbol": "GOLF"
+ },
+ {
+  "name": "Fazzcoin",
+  "symbol": "FAZZ"
+ },
+ {
+  "name": "Qora",
+  "symbol": "QORA"
+ },
+ {
+  "name": "Bongger",
+  "symbol": "BGR"
+ },
+ {
+  "name": "Wowecoin",
+  "symbol": "WEC"
+ },
+ {
+  "name": "Karmacoin",
+  "symbol": "KARMA"
+ },
+ {
+  "name": "Quebecoin",
+  "symbol": "QBC"
+ },
+ {
+  "name": "Sync",
+  "symbol": "SYNC"
+ },
+ {
+  "name": "GameLeagueCoin",
+  "symbol": "GML"
+ },
+ {
+  "name": "CyberCoin",
+  "symbol": "CC"
+ },
+ {
+  "name": "EggCoin",
+  "symbol": "EGG"
+ },
+ {
+  "name": "ShellCoin",
+  "symbol": "SHELL"
+ },
+ {
+  "name": "Dubstep",
+  "symbol": "DUB"
+ },
+ {
+  "name": "IrishCoin",
+  "symbol": "IRL"
+ },
+ {
+  "name": "Cycling Coin",
+  "symbol": "CYC"
+ },
+ {
+  "name": "DeltaCredits",
+  "symbol": "DCRE"
+ },
+ {
+  "name": "InvisibleCoin",
+  "symbol": "IVZ"
+ },
+ {
+  "name": "Moneta",
+  "symbol": "MONETA"
+ },
+ {
+  "name": "BitAlphaCoin",
+  "symbol": "BAC"
+ },
+ {
+  "name": "MMXVI",
+  "symbol": "MMXVI"
+ },
+ {
+  "name": "PayPeer",
+  "symbol": "PAYP"
+ },
+ {
+  "name": "Operand",
+  "symbol": "OP"
+ },
+ {
+  "name": "RichCoin",
+  "symbol": "RICHX"
+ },
+ {
+  "name": "Digital Bullion Gold",
+  "symbol": "DBG"
+ },
+ {
+  "name": "FrankyWillCoin",
+  "symbol": "FRWC"
+ },
+ {
+  "name": "PokeCoin",
+  "symbol": "POKE"
+ },
+ {
+  "name": "LAthaan",
+  "symbol": "LTH"
+ },
+ {
+  "name": "TeamUp",
+  "symbol": "TEAM"
+ },
+ {
+  "name": "Global Business Revolution",
+  "symbol": "GBRC"
+ },
+ {
+  "name": "AxFunds",
+  "symbol": "AXF"
+ },
+ {
+  "name": "PinkDog",
+  "symbol": "PDG"
+ },
+ {
+  "name": "TeraCoin",
+  "symbol": "TERA"
+ },
+ {
+  "name": "UtaCoin",
+  "symbol": "UTA"
+ },
+ {
+  "name": "Tattoocoin (Limited Edition)",
+  "symbol": "TLE"
+ },
+ {
+  "name": "Tyrocoin",
+  "symbol": "TYC"
+ },
+ {
+  "name": "Topaz Coin",
+  "symbol": "TOPAZ"
+ },
+ {
+  "name": "Bitok",
+  "symbol": "BITOK"
+ },
+ {
+  "name": "Excelcoin",
+  "symbol": "EXL"
+ },
+ {
+  "name": "XTD Coin",
+  "symbol": "XTD"
+ },
+ {
+  "name": "BITFID",
+  "symbol": "FID"
+ },
+ {
+  "name": "microCoin",
+  "symbol": "MRC"
+ },
+ {
+  "name": "MergeCoin",
+  "symbol": "MGC"
+ },
+ {
+  "name": "Aureus",
+  "symbol": "AURS"
+ },
+ {
+  "name": "Coimatic 3.0",
+  "symbol": "CTIC3"
+ },
+ {
+  "name": "Phore",
+  "symbol": "PHR"
+ }
+]

@@ -1,4 +1,7 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 101;
   .app-header {
     .brand {
       margin: 0;
@@ -14,8 +17,14 @@
         .cryptoprint-icon {
           width: 44px;
           height: 44px;
+          path {
+            fill: rgba(255,255,255,0.987);
+          }
         }
       }
+    }
+    .md-btn {
+      color: rgba(#fff, 0.987);
     }
   }
 }

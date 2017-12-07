@@ -4,52 +4,41 @@ export class TeamSection extends Component {
   render () {
     return <section className='team' id='team'>
       <h2>Team</h2>
+      <p>Cryptoprint is the brainchild of a passionate crypto- designers, developers and advocates.</p>
+      <p>Our vision is to make cryptocurrencies accessible, easy, and as secure as possible by combining the technical advances of the cryptographic currencies with the convenience of a 400+ year old technology: Paper notes.</p>
       <ul>
-        <li>
-          <img src='http://via.placeholder.com/150X150' alt='avatar' />
-          <div>
-            <h3>Person</h3>
-          </div>
-          <div>
-            <i className='fa fa-linkedin-square' aria-hidden='true' />
-            <i className='fa fa-twitter-square' aria-hidden='true' />
-            <i className='fa fa-medium' aria-hidden='true' />
-            <i className='fa fa-github' aria-hidden='true' />
-            <i className='fa fa-quora' aria-hidden='true' />
-          </div>
-          <p>Quisque ultricies tristique enim, quis pharetra dui tempor elementum. Praesent ultricies odio dui, ut elementum tellus placerat sit amet. Donec pulvinar pulvinar est vitae feugiat.</p>
-        </li>
-        <li>
-          <img src='http://via.placeholder.com/60X60' alt='avatar' />
-          <div>
-            <h3>Person</h3>
-          </div>
-          <div>
-            <i className='fa fa-linkedin-square' aria-hidden='true' />
-            <i className='fa fa-twitter-square' aria-hidden='true' />
-            <i className='fa fa-medium' aria-hidden='true' />
-            <i className='fa fa-github' aria-hidden='true' />
-            <i className='fa fa-quora' aria-hidden='true' />
-          </div>
-          <p>Quisque ultricies tristique enim, quis pharetra dui tempor elementum. Praesent ultricies odio dui, ut elementum tellus placerat sit amet. Donec pulvinar pulvinar est vitae feugiat.</p>
-        </li>
-        <li>
-          <img src='http://via.placeholder.com/60X60' alt='avatar' />
-          <div>
-            <h3>Person</h3>
-          </div>
-          <div>
-            <i className='fa fa-linkedin-square' aria-hidden='true' />
-            <i className='fa fa-twitter-square' aria-hidden='true' />
-            <i className='fa fa-medium' aria-hidden='true' />
-            <i className='fa fa-github' aria-hidden='true' />
-            <i className='fa fa-quora' aria-hidden='true' />
-          </div>
-          <p>Quisque ultricies tristique enim, quis pharetra dui tempor elementum. Praesent ultricies odio dui, ut elementum tellus placerat sit amet. Donec pulvinar pulvinar est vitae feugiat.</p>
-        </li>
+        <TeamMemeber
+          id='elis'
+          name='Eli Sklar'
+          photo='/images/team/elis.jpg'
+        >
+          <p>Avid Bitcoin advocate since 2011</p>
+        </TeamMemeber>
+        <TeamMemeber
+                  id='danielb'
+                  name='Daniel Blank'
+                  photo='/images/team/daniel.jpg'
+                >
+                  <p>Passionate for great products, into cryptocurrencies since 2013</p>
+                </TeamMemeber>
+        <TeamMemeber
+          id='shimond'
+          name='Shimon Doodkin'
+          photo='/images/team/shimon.jpg'
+        >
+          <p>Multidisciplinary software developer and problem solver</p>
+        </TeamMemeber>
       </ul>
     </section>
   }
 }
+
+const TeamMemeber = ({id, name, photo, children, ...props}) => <li className={`team-member tid-${id}`}>
+  <div className='avatar'><img src={photo} alt={`Photo of ${name}`} /></div>
+  <div>
+    <h3>{name}</h3>
+  </div>
+  {children}
+</li>
 
 export default TeamSection

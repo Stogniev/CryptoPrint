@@ -20,7 +20,10 @@ import Testimonials from './parts/testimonials'
 import Team from './parts/team'
 import AlternativeCTA from './parts/alt-cta'
 import Footer from './parts/footer'
-
+import Signin from './parts/signin'
+import Preorder from './parts/preorder'
+import Social from './parts/social'
+import Newsletter from './parts/newsletter'
 import './index.css'
 
 class SectionIndex extends Component {
@@ -44,9 +47,13 @@ class SectionIndex extends Component {
     return <div className='index-section'>
       <Hero />
       <Attributes />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Team />
-      <AlternativeCTA />
+      {/* <AlternativeCTA /> */}
+      <Preorder />
+      {/* {<Signin />} */}
+      <Social />
+      <Newsletter />
       <Footer />
     </div>
   }
