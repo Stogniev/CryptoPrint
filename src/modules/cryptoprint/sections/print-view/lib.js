@@ -38,7 +38,7 @@ export function exportSVG (svgelement, name) {
 
 export function createEmptySVGstr ( htmlheight, htmlwidth, viewboxwidth, videwboxheight) {
   var qrSvg = ''
-  qrSvg += '<svg style="border:1px solid blue" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"'
+  qrSvg += '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"'
   qrSvg += ' width="' + htmlwidth + '"'
   qrSvg += ' height="' + htmlheight + '"'
   qrSvg += ' viewBox="0 0 ' + videwboxheight + ' ' + viewboxwidth + '" '
