@@ -15,12 +15,12 @@ export class TeamSection extends Component {
           <p>Avid Bitcoin advocate since 2011</p>
         </TeamMemeber>
         <TeamMemeber
-                  id='danielb'
-                  name='Daniel Blank'
-                  photo='/images/team/daniel.jpg'
+          id='danielb'
+          name='Daniel Blank'
+          photo='/images/team/daniel.jpg'
                 >
-                  <p>Passionate for great products, into cryptocurrencies since 2013</p>
-                </TeamMemeber>
+          <p>Passionate for great products, into cryptocurrencies since 2013</p>
+        </TeamMemeber>
         <TeamMemeber
           id='shimond'
           name='Shimon Doodkin'
@@ -34,7 +34,7 @@ export class TeamSection extends Component {
 }
 
 const TeamMemeber = ({id, name, photo, children, ...props}) => <li className={`team-member tid-${id}`}>
-  <div className='avatar'><img src={photo} alt={`Photo of ${name}`} /></div>
+  <div className='avatar'><img src={photo} alt={`${name}`} /></div>
   <div>
     <h3>{name}</h3>
   </div>

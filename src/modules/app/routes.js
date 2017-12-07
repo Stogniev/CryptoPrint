@@ -1,17 +1,17 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
-import { requireAuth, redirectIfAuth } from 'app/auth'
+// import { requireAuth, redirectIfAuth } from 'app/auth'
 
 import App from './wrapper'
 import AppWrap from './wrapper/app-wrap'
 
 import SectionIndex from 'cryptoprint/sections/index'
 
-import SectionSignin from 'cryptoprint/sections/signin'
-import SectionLogin from 'cryptoprint/sections/signin/login'
-import SectioSignup from 'cryptoprint/sections/signin/signup'
-import PrintViewSection from 'cryptoprint/sections/print-view'
+// import SectionSignin from 'cryptoprint/sections/signin'
+// import SectionLogin from 'cryptoprint/sections/signin/login'
+// import SectioSignup from 'cryptoprint/sections/signin/signup'
+// import PrintViewSection from 'cryptoprint/sections/print-view'
 
 const Route404 = props => <div className='404-not-found'>
   <h1>404 Not found</h1>
@@ -24,13 +24,12 @@ export default (
   <Route path='/' component={AppWrap}>
     <Route component={App}>
       <IndexRoute component={SectionIndex} />
-      <Route path='/printme' component={PrintViewSection} />
     </Route>
 
-    <Route path='/soon' component={SectionSignin} onEnter={redirectIfAuth('/')}>
+    {/* <Route path='/soon' component={SectionSignin} onEnter={redirectIfAuth('/')}>
       <IndexRoute component={SectionLogin} />
       <Route path='signup' component={SectioSignup} />
-    </Route>
+    </Route> */}
     <Route path='*' component={Route404} />
   </Route>
 )

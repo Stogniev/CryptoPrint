@@ -5,13 +5,11 @@ import { browserHistory } from 'react-router'
 import { firebaseConnect } from 'react-redux-firebase'
 
 import Paper from 'react-md/lib/Papers'
-import AlertError from 'material-ui/svg-icons/alert/error'
 import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar'
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import Button from 'react-md/lib/Buttons'
 
-import CryptoprintIcon from 'cryptoprint/bits/cryptoprint-icon'
 import GirlsHead from 'cryptoprint/bits/girls-head'
 
 import UserMenu from './user-menu'
@@ -19,8 +17,6 @@ import * as Scroll from 'react-scroll' // Imports all Mixins
 
 import './header.css'
 
-
-console.log('scroller:', Scroll)
 const scroller = Scroll.scroller
 const scrollOptions = {
   delay: 100,

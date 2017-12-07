@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon@2x.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="%PUBLIC_URL%/favicon@3x.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/app-icon/app-icon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/app-icon/app-icon@2x.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="%PUBLIC_URL%/images/app-icon/app-icon@3x.png" sizes="48x48">
     <meta name="description" content="Cryptoprint" />
     <meta property="og:title" content="Cryptoprint" />
     <meta property="og:description" content="Cryptoprint" />
     <!-- <meta property="og:image" content="%PUBLIC_URL%/images" /> -->
-    <meta name="theme-color" content="#ACE">
+    <meta name="theme-color" content="#333">
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -30,13 +30,13 @@
     -->
     <title>Cryptoprint</title>
     <script type="text/javascript">
-      // var l = window.location
-      // if ((/\.cryptoprint\.io$/i).test(l.host) && l.protocol !== 'https:') {
-      //   window.location.href = l.href.replace('http://', 'https://')
-      // }
-      // window.readyToReload = setTimeout(function () {
-      //   // window.location.href = l.protocol + '//' + l.host + '/?reload-for-version'
-      // }, 2000)
+      var l = window.location
+      if ((/\.cryptoprint\.io$/i).test(l.host) && l.protocol !== 'https:') {
+        window.location.href = l.href.replace('http://', 'https://')
+      }
+      window.readyToReload = setTimeout(function () {
+        // window.location.href = l.protocol + '//' + l.host + '/?reload-for-version'
+      }, 2000)
     </script>
     <script type="text/javascript">
       (window.startLoad = Date.now())
