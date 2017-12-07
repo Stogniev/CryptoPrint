@@ -12,7 +12,7 @@ export class SocialSection extends Component {
       <h2>Contact Us</h2>
       <p>Come check out our growing Cryptoprint community of like-minded individuals.</p>
       <div className='buttons'>
-        <Button raised className='facebook' href='https://www.facebook.com/groups/322471981559829/' target='_blank' svg iconEl={<Facebook />} label='Join our Facebook' />
+        <Button raised className='facebook' href='https://www.facebook.com/cryptoprint/' target='_blank' svg iconEl={<Facebook />} label='Join our Facebook' />
         <Button raised className='telegram' href='https://t.me/cryptoprint' target='_blank' svg iconEl={<Telegram />} label='Join our Telegram' />
       </div>
       <h3>Join us today to stay updated on Cryptoprint!</h3>
