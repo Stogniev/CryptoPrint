@@ -38,7 +38,7 @@ export function exportSVG (svgelement, name) {
 
 export function createEmptySVGstr ( htmlheight, htmlwidth, viewboxwidth, videwboxheight) {
   var qrSvg = ''
-  qrSvg += '<svg style="border:1px solid blue" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="w3.org/1999/xlink"'
+  qrSvg += '<svg style="border:1px solid blue" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"'
   qrSvg += ' width="' + htmlwidth + '"'
   qrSvg += ' height="' + htmlheight + '"'
   qrSvg += ' viewBox="0 0 ' + videwboxheight + ' ' + viewboxwidth + '" '
@@ -85,8 +85,8 @@ export function imageDataToPath (options) {
   ' -' + cellSizeRect + ',0 0,-' + cellSizeRect + 'z '
   } else if (options.sizetype === '-2 centered') {
     drawx -= 1
-    rect = 'l' + (cellSize) + ',0 0,' + (cellSize) +         // l is line
-  ' -' + (cellSize - 2) + ',0 0,-' + (cellSize) + 'z '
+    rect = 'l' + (cellSize- 2) + ',0 0,' + (cellSize) +         // l is line
+         ' -' + (cellSize - 2) + ',0 0,-' + (cellSize) + 'z '
   } else {
     rect = 'l' + cellSize + ',0 0,' + cellSize +       // l is line
   ' -' + cellSize + ',0 0,-' + cellSize + 'z '
