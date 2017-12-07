@@ -1,5 +1,4 @@
 import {
-  exportSVG,
   imageDataToPath,
   postfix,
   prefix,

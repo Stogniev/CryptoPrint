@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-
+import {
+  exportSVG
+} from './lib'
 
 import { Button } from 'react-md'
 // import generate from './raws'
@@ -9,7 +11,7 @@ import { generatePages,loadWeb } from './raws'
 var svgDatas={ready:false};
 
 loadWeb()
-.then( (svgDatas1)=> svgDatas=svgDatas1;console.log('svgs?', svgDatas)  )
+.then( (svgDatas1)=> svgDatas=svgDatas1 )
 .catch( e=> console.log('load templates error',e.stack) );
 
 export class PrintViewSection extends Component {
@@ -64,7 +66,7 @@ export class PrintViewSection extends Component {
 	document.getElementById('page_fronta').innerHTML=""
 	document.getElementById('page_backb').innerHTML=""
 	document.getElementById('page_frontb').innerHTML=""
-    generatePrivateQRA()
+    this.generatePrivateQRA()
     console.log('done')
   }
   render () {
