@@ -5,6 +5,7 @@
   "dependencies": {
     "bitcore-lib": "^0.15.0",
     "cheerio": "^1.0.0-rc.2",
+    "chrome-headless-render-pdf": "github:shimondoodkin/chrome-headless-render-pdf#master",
     "firebase": "^4.2.0",
     "get-random-values": "^1.2.0",
     "jsbarcode": "^3.8.0",
