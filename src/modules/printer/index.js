@@ -115,6 +115,7 @@ const writeFilePromise = util.promisify(fs.writeFile);
 			  ,'paperWidth':(210000/25400).toFixed(2)
 			  ,noMargins:true
 			  ,printLogs:true
+			  //,chromeBinary:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
 		  });
 		  
 		console.log('chrome spawning')
