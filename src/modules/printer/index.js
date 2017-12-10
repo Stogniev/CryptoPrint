@@ -48,12 +48,24 @@ const writeFilePromise = util.promisify(fs.writeFile);
 //	});
 //}
 
-//function svg_to_dataUri(body) {
-//	const type = 'image/svg+xml';
-//	const prefix = "data:" + type + ";base64,";
-//	const base64 = new Buffer(body, 'binary').toString('base64');
-//	return prefix + base64;
-//}
+function svg_to_dataUri(body) {
+	const type = 'image/svg+xml';
+	const prefix = "data:" + type + ";base64,";
+	const base64 = new Buffer(body, 'binary').toString('base64');
+	return prefix + base64;
+}
+
+function addslashes(string) {
+    return string.replace(/\\/g, '\\\\').
+        replace(/\u0008/g, '\\b').
+        replace(/\t/g, '\\t').
+        replace(/\n/g, '\\n').
+        replace(/\f/g, '\\f').
+        replace(/\r/g, '\\r').
+        replace(/'/g, '\\\'').
+        replace(/"/g, '\\"');
+}
+
 //
 //async function chrome_to_pdfs(pairs,options) {
 //	try{
@@ -86,7 +98,7 @@ const writeFilePromise = util.promisify(fs.writeFile);
 
 	//console.log('svgs?', svgDatas)
 
-	let pages=await generatePages(svgDatas);
+	let pages=await generatePages(svgDatas,600);
 	let  renderer=null;
 		console.log('done generating')
 	try{
@@ -98,12 +110,12 @@ const writeFilePromise = util.promisify(fs.writeFile);
 		{
 
 			return Promise.all([ 
-								 writeFilePromise(__dirname+'/out/'+i+'front.svg', page.front )    .then( ()=>  toconvert.push({ url:'file://'+__dirname+'/out/'+i+'front.svg'  ,pdf: __dirname+'/out/'+i+'front.pdf'  }  ))
-							   , writeFilePromise(__dirname+'/out/'+i+'fronta.svg', page.fronta )  .then( ()=>  toconvert.push({ url:'file://'+__dirname+'/out/'+i+'fronta.svg' ,pdf: __dirname+'/out/'+i+'fronta.pdf' }  ))
-							   , writeFilePromise(__dirname+'/out/'+i+'frontb.svg', page.frontb )  .then( ()=>  toconvert.push({ url:'file://'+__dirname+'/out/'+i+'frontb.svg' ,pdf: __dirname+'/out/'+i+'frontb.pdf' }  ))
-							   , writeFilePromise(__dirname+'/out/'+i+'back.svg', page.back )      .then( ()=>  toconvert.push({ url:'file://'+__dirname+'/out/'+i+'back.svg'   ,pdf: __dirname+'/out/'+i+'back.pdf'   }  ))
-							   , writeFilePromise(__dirname+'/out/'+i+'backa.svg', page.backa )    .then( ()=>  toconvert.push({ url:'file://'+__dirname+'/out/'+i+'backa.svg'  ,pdf: __dirname+'/out/'+i+'backa.pdf'  }  ))
-							   , writeFilePromise(__dirname+'/out/'+i+'backb.svg', page.backb )    .then( ()=>  toconvert.push({ url:'file://'+__dirname+'/out/'+i+'backb.svg'  ,pdf: __dirname+'/out/'+i+'backb.pdf'  }  ))
+								 writeFilePromise(__dirname+'/out/'+i+'front.svg',  page.front  )  .then( ()=>  toconvert.push({ data:page.front  , url:'file://'+__dirname+'/out/'+i+'front.svg'  ,pdf: __dirname+'/out/'+i+'front.pdf'  ,png: __dirname+'/out/'+i+'front.png'  }  ))
+							   , writeFilePromise(__dirname+'/out/'+i+'fronta.svg', page.fronta )  .then( ()=>  toconvert.push({ data:page.fronta , url:'file://'+__dirname+'/out/'+i+'fronta.svg' ,pdf: __dirname+'/out/'+i+'fronta.pdf' ,png: __dirname+'/out/'+i+'fronta.png' }  ))
+							   , writeFilePromise(__dirname+'/out/'+i+'frontb.svg', page.frontb )  .then( ()=>  toconvert.push({ data:page.frontb , url:'file://'+__dirname+'/out/'+i+'frontb.svg' ,pdf: __dirname+'/out/'+i+'frontb.pdf' ,png: __dirname+'/out/'+i+'frontb.png' }  ))
+							   , writeFilePromise(__dirname+'/out/'+i+'back.svg',   page.back   )  .then( ()=>  toconvert.push({ data:page.back   , url:'file://'+__dirname+'/out/'+i+'back.svg'   ,pdf: __dirname+'/out/'+i+'back.pdf'   ,png: __dirname+'/out/'+i+'back.png'   }  ))
+							   , writeFilePromise(__dirname+'/out/'+i+'backa.svg',  page.backa  )  .then( ()=>  toconvert.push({ data:page.backa  , url:'file://'+__dirname+'/out/'+i+'backa.svg'  ,pdf: __dirname+'/out/'+i+'backa.pdf'  ,png: __dirname+'/out/'+i+'backa.png'  }  ))
+							   , writeFilePromise(__dirname+'/out/'+i+'backb.svg',  page.backb  )  .then( ()=>  toconvert.push({ data:page.backb  , url:'file://'+__dirname+'/out/'+i+'backb.svg'  ,pdf: __dirname+'/out/'+i+'backb.pdf'  ,png: __dirname+'/out/'+i+'backb.png'  }  ))
 							  ])
 		}));
 	 
@@ -111,28 +123,56 @@ const writeFilePromise = util.promisify(fs.writeFile);
 		
 		
 	      renderer = new RenderPDF({
-			   'paperHeight':(297000/25400).toFixed(2)
-			  ,'paperWidth':(210000/25400).toFixed(2)
-			  ,noMargins:true
-			  ,printLogs:true
-			  ,chromeBinary:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+			 'paperHeight': 11.693 // parseFloat((297000/25400).toFixed(3)) // = 11.693 // A4 page size
+			,'paperWidth':  8.268  // parseFloat((210000/25400).toFixed(3)) // = 8.268 
+			,noMargins:true
+			,printLogs:true
+
+			
+			,captureFormat:'jpg'
+			,captureQuality:100
+			,saveFormat:'jpgpdf' //can be pngpdf jpegpdf jpg png
+			,saveQuality:80
+			//,fromSurface:true // not sure what it does
+			,clip:{
+			 x:0 //number X offset in CSS pixels.
+			,y:0 //number Y offset in CSS pixels
+			,width: Math.round(pages[0].width) //number Rectangle width in CSS pixels
+			,height:Math.round(pages[0].height) //number Rectangle height in CSS pixels
+			,scale:1 //number Page scale factor.
+			}
+			,dpi:600
+			
+			
+			,timeout:60000
+			,captureStepHeight:2000
+			,windowSize :[Math.round(pages[0].width) //number Rectangle width in CSS pixels
+						 , pages[0].height>2000?2000:pages[0].height ] //number Rectangle height in CSS pixels
+						 
+			,chromeBinary:'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+			  
+
 		  });
-		  
+		
 		console.log('chrome spawning')
         await renderer.spawnChrome();
 		
 		console.log('chrome waitForDebugPort')
         await renderer.waitForDebugPort();
 		
-	    for (const job of toconvert) {
+	    for (const job of toconvert   ) {
 			console.log('converting '+job.url);
 
             //job.buff = (await renderer.renderPdf(svg_to_dataUri(filetext), renderer.generatePdfOptions())).buff;
 
-            const buff = await renderer.renderPdf(job.url, renderer.generatePdfOptions());
-            fs.writeFileSync(job.pdf, buff);
+            //const buff = await renderer.renderPdf(job.url, renderer.generatePdfOptions());
+			
+            const buff = await renderer.renderCapture('about:blank', renderer.generateCaptureOptions(), 'window.document.write(\''+addslashes(job.data)+'\');document.style.backgroundColor="blue";' );
+            //const buff = await renderer.renderCapture(job.url, renderer.generateCaptureOptions());
+
+			fs.writeFileSync(job.pdf, buff);
             renderer.log(`Saved ${job.pdf}`);
-        }	
+        }
 		
 	}
 	catch(e)
