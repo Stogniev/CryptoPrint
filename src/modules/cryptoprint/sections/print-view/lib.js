@@ -87,6 +87,10 @@ export function imageDataToPath (options) {
     drawx -= 1
     rect = 'l' + (cellSize- 2) + ',0 0,' + (cellSize) +         // l is line
          ' -' + (cellSize - 2) + ',0 0,-' + (cellSize) + 'z '
+  } else if (options.sizetype === '-4 centered') {
+    drawx -= 2
+    rect = 'l' + (cellSize- 4) + ',0 0,' + (cellSize) +         // l is line
+         ' -' + (cellSize - 4) + ',0 0,-' + (cellSize) + 'z '
   } else {
     rect = 'l' + cellSize + ',0 0,' + cellSize +       // l is line
   ' -' + cellSize + ',0 0,-' + cellSize + 'z '
