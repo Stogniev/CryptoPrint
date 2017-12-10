@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { Button } from 'react-md'
 import Slider from 'react-slick'
-import Scroll from 'react-scroll' // Imports all Mixins
+import * as Scroll from 'react-scroll' // Imports all Mixins
 
 const scroller = Scroll.scroller
 const scrollOptions = {
@@ -58,8 +58,5 @@ class Hero extends Component {
     </Slider>
   }
 }
-
-const HeroSlide = ({num, children, ...props}) => <div>
-</div>
 
 export default Hero

@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import { connect } from 'react-redux'
+import { firebaseConnect } from 'react-redux-firebase'
+
 import TextField from 'react-md/lib/TextFields'
 import { Button } from 'react-md'
 
@@ -15,7 +18,7 @@ export class Newsletter extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   validateEmail (e) {
-    let regxrTest = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    let regxrTest = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     let mailString = e.target.value
     if (regxrTest.test(mailString)) {
       this.setState({ emailValid: true, email: mailString })
@@ -26,8 +29,15 @@ export class Newsletter extends Component {
   handleSubmit (e) {
     e.preventDefault()
     if (this.state.emailValid === true) {
+      const { ref } = this.props.firebase
+      const { email } = this.state
       // send email
-      this.setState({ done: true, error: '' })
+      this.setState({ doing: true }, () => {
+        ref('newsletter').child('unverified').push({email})
+          .then(e => {
+            this.setState({ done: true, doing: false })
+          })
+      })
     } else {
       this.setState({ error: 'email:format' })
     }
@@ -53,11 +63,15 @@ export class Newsletter extends Component {
 
 export const TextFieldWithFBError = ({id, defaultValue, label, onChange = () => {}, onBlur = () => {}, type = 'text', errorCode, errorMessage, errorCheck, tabIndex, ...props}) =>
   <TextField id={id} label={label} onChange={onChange(id)} onBlur={onBlur(id)}
-    error={(!!errorCode && !!errorCode.match(errorCheck)) || (console.log('errorCode, errorCheck:', errorCode, errorCheck))}
+    error={(!!errorCode && !!errorCode.match(errorCheck))}
     errorText={errorMessage}
     defaultValue={defaultValue}
     type={type}
     tabIndex={tabIndex}
   />
 
-export default Newsletter
+const NewsletterFB = firebaseConnect([
+])(Newsletter)
+
+export default connect(
+)(NewsletterFB)

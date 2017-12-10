@@ -2,25 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { firebaseConnect } from 'react-redux-firebase'
 
-import { List, ListItem } from 'react-md/lib/Lists'
-import Subheader from 'react-md/lib/Subheaders'
-
-import Page from 'app/components/page'
-
-// SVG icon from material ui
-import ActionHome from 'material-ui/svg-icons/action/home'
-import ActionGrade from 'material-ui/svg-icons/action/grade'
-
-// Button
-import Button from 'react-md/lib/Buttons'
-
 import Hero from './parts/hero'
 import Attributes from './parts/attributes'
-import Testimonials from './parts/testimonials'
 import Team from './parts/team'
-import AlternativeCTA from './parts/alt-cta'
 import Footer from './parts/footer'
-import Signin from './parts/signin'
 import Preorder from './parts/preorder'
 import Social from './parts/social'
 import Newsletter from './parts/newsletter'

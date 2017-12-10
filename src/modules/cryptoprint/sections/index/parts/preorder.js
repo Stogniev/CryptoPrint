@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
-import { firebaseConnect, isLoaded, isEmpty } from 'react-redux-firebase'
+import { firebaseConnect } from 'react-redux-firebase'
 
-import { Link, browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 
 import TextField from 'react-md/lib/TextFields'
 import Card from 'react-md/lib/Cards'
-import { Autocomplete, SelectionControlGroup, SelectField, Button } from 'react-md'
+import { Autocomplete, SelectField, Button } from 'react-md'
 import currencies from 'services/currencies'
 
 const acCurrencies = currencies.map(({symbol, name}) => ({symbol, name, primaryText: name}))
-
-console.log('acCurrencies:', acCurrencies)
 
 const walletTypes = [
   {label: 'Normal', value: 'Norm'},
@@ -71,9 +68,7 @@ export class PreorderSection extends Component {
         // noop
     }
 
-    this.setState({fields, error, canSubmit}, e => {
-      console.log('this state now:', this.state)
-    })
+    this.setState({fields, error, canSubmit})
   }
 
   validate (id, value) {
@@ -91,7 +86,6 @@ export class PreorderSection extends Component {
 
   submitPreorder (e) {
     e.preventDefault()
-    console.log('fb:', this.props.firebase)
     const { canSubmit } = this.state
 
     if (!canSubmit) {
@@ -102,41 +96,21 @@ export class PreorderSection extends Component {
         order: this.state.fields,
         timestamp: Date.now()
       }
-      console.log('data to push:', data)
       const push = this.props.firebase.push('orders/incoming', {})
       push.then(ref => {
         const { key } = ref
-        console.log('pushed?', ref)
         this.props.firebase.set(`orders/incoming/${key}`, Object.assign(data, { orderId: key }))
         .then(ref => {
-          console.log('ref of order:', ref)
           this.setState({
             submitting: false,
             done: true
           })
         })
       })
-      // this.props.firebase.set('order/incoming/' + Math.floor(Math.random() * 9000), )
-      console.log('submitted')
     })
   }
 
   render () {
-    const { samples, profile } = this.props
-
-    if (isLoaded(samples)) {
-      console.log('samples loaded:', samples)
-    } else {
-      console.log('samples not loaded yet...', samples)
-    }
-
-    if (isLoaded(profile)) {
-      console.log('profile loaded:', profile)
-    } else {
-      console.log('profile not loaded yet...')
-    }
-
-    console.log('firebase:', this.props.firebase)
     if (this.state.done) {
       return <section className='preorder'>
         <Card>
@@ -192,16 +166,12 @@ export class PreorderSection extends Component {
 
 export const TextFieldWithFBError = ({id, defaultValue, label, onChange = () => {}, onBlur = () => {}, type = 'text', errorCode, errorMessage, errorCheck, tabIndex, ...props}) =>
   <TextField id={id} label={label} onChange={onChange(id)} onBlur={onBlur(id)}
-    error={(!!errorCode && !!errorCode.match(errorCheck)) || (console.log('errorCode, errorCheck:', errorCode, errorCheck))}
+    error={(!!errorCode && !!errorCode.match(errorCheck))}
     errorText={errorMessage}
     defaultValue={defaultValue}
     type={type}
     tabIndex={tabIndex}
   />
-
-// const fbConnectedPreorder = firebaseConnect([
-//   ['samples/']
-// ])(PreorderSection)
 
 export default compose(
   firebaseConnect([

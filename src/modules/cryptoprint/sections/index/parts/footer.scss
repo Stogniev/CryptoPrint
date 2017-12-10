@@ -34,6 +34,14 @@
         }
       }
     }
+    &.social {
+      background: none;
+      svg {
+        path {
+          fill: rgba(#FFF, 0.987);
+        }
+      }
+    }
   }
   @media only screen and (max-width: $breakpoint) {
     p {

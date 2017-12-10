@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { SVGIcon } from 'react-md'
 
 const FacebookIcon = props => (
