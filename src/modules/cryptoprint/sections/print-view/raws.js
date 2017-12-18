@@ -58,7 +58,7 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
     margin: 0,
     offset: 0,
     cellsize: 12,
-    sizetype: '-2 centered',
+    sizetype: '-4 centered',
     fill: '#000'
   }))
 
@@ -163,7 +163,7 @@ function generate_set(svgDatas, publicKey = 'UNSET', privateKey = 'UNSET') {
     margin: 0,
     offset: 0,
     cellsize: 12,
-    sizetype: '-2 centered',
+    sizetype: '-4 centered',
     fill: '#000'
   }))
   svg = replacestr(svg, /<rect.+?id="qr_placeholder".+?<\/rect>/, imageDataToPath({
@@ -295,7 +295,7 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
     margin: 0,
     offset: 0,
     cellsize: 12,
-    sizetype: '-2 centered',
+    sizetype: '-4 centered',
     fill: '#000'
   })
 
@@ -384,7 +384,7 @@ export function generate_set_cheerio(svgDatas, publicKey = 'UNSET', privateKey =
     margin: 0,
     offset: 0,
     cellsize: 12,
-    sizetype: '-2 centered',
+    sizetype: '-4 centered',
     fill: '#000'
   })
   const backPubkey = imageDataToPath({
@@ -609,12 +609,12 @@ export async function loadNodejs()
 }
 
 
-export function generatePages(svgDatas) {
+export function generatePages(svgDatas,DPI) {
 	
   //let sHeight = 500
   //let sWidth = 800
 
-
+  DPI=DPI||false;
   const pages=[];
   const notes=[];
   
@@ -740,14 +740,35 @@ export function generatePages(svgDatas) {
 	  
 	  
 	  if(done){
-		let front=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
-		let back=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
+		  
+		  // Vertical size   = (11.69in) x (300 pixels/in) = 3507
+		  // Horizontal size = (8.27in)  x (300 pixels/in) = 2481   
+		  // 
+		  // Vertical size   = ((297mm) / (25.4mm/in)) x (300 pixels/in) = 3507.8740 ≅ 3508
+		  // Horizontal size = ((210mm) / (25.4mm/in)) x (300 pixels/in) = 2480.3150 ≅ 2481
+		  
+
+		let svgheight;
+		let svgwidth;
+		if(DPI!==false)
+		{
+		    svgheight= Math.round(11.69*DPI);
+		    svgwidth = Math.round(8.27 *DPI);
+		}
+		else
+		{		
+			svgheight= (page_height/10)+'mm';
+			svgwidth= (page_width/10)+'mm';
+		}
 		
-		let fronta=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
-		let backa=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
+		let front =createEmptySVGstr( svgheight , svgwidth, page_height, page_width );
+		let back  =createEmptySVGstr( svgheight , svgwidth, page_height, page_width );
 		
-		let frontb=createEmptySVGstr( (page_height/10)+'mm', (page_width/10)+'mm', page_height, page_width );
-		let backb=createEmptySVGstr( (page_height/10)+'mm' , (page_width/10)+'mm', page_height, page_width );
+		let fronta=createEmptySVGstr( svgheight , svgwidth, page_height, page_width );
+		let backa =createEmptySVGstr( svgheight , svgwidth, page_height, page_width );
+		
+		let frontb=createEmptySVGstr( svgheight , svgwidth, page_height, page_width );
+		let backb =createEmptySVGstr( svgheight , svgwidth, page_height, page_width );
 		
 		front = prefix(front, /<\/defs>/, front_defs.join('\r\n\r\n\r\n'))
 		front = postfix(front, /<\/defs>/, front_content.join('\r\n\r\n\r\n')+text({x:page_width-50,y:marginv+50,fontSize:70,text:"front",align:'end'}) )
@@ -773,7 +794,7 @@ export function generatePages(svgDatas) {
 		
   
 		
-        pages.push({front,back ,fronta,backa  ,frontb,backb })
+        pages.push({front,back ,fronta,backa  ,frontb,backb,  width:svgwidth,height:svgheight })
 	  }
 	  console.log("page_height_used",page_height_used,page_width_used,front_defs.length,front_content.length)
   }
