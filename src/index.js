@@ -31,9 +31,7 @@ class RouterProvider extends Component {
 
   render () {
     return (
-      <Router history={browserHistory}>
-        {routes}
-      </Router>
+      <Router history={browserHistory}>{routes}</Router>
     )
   }
 
