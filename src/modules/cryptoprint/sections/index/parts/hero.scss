@@ -77,18 +77,18 @@
 			.btn {
 				font-size: 19px;
 			}
-      &-1 {
-        background-image: url('/images/product/a.jpg');
-      }
-      &-2 {
-        background-image: url('/images/product/b.jpg');
-      }
-      &-3 {
-        background-image: url('/images/product/c.jpg');
-      }
-      &-4 {
-        background-image: url('/images/product/d.jpg');
-      }
+      //&-1 {
+      //  background-image: url('/images/product/a.jpg');
+      //}
+      //&-2 {
+      //  background-image: url('/images/product/b.jpg');
+      //}
+      //&-3 {
+      //  background-image: url('/images/product/c.jpg');
+      //}
+      //&-4 {
+      //  background-image: url('/images/product/d.jpg');
+      //}
 			&:nth-child(odd) {
 				.content {
 					// text-align: left;
@@ -101,3 +101,9 @@
     }
 
 	}
+  .slider-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+

@@ -15,19 +15,23 @@ const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
 const heros = [
   {
     title: 'Paper Wallets Just Got Better',
-    sub: 'Applying visual cryptographic techniques to keep your private key safe'
+    sub: 'Applying visual cryptographic techniques to keep your private key safe',
+    src: './images/product/a.jpg'
   },
   {
     title: 'Making The Digital, Tangible',
-    sub: 'Bitcoin, in a form you can touch'
+    sub: 'Bitcoin, in a form you can touch',
+    src: './images/product/b.jpg'
   },
   {
     title: 'The Safest Wallet Around',
-    sub: 'Your private key never goes online'
+    sub: 'Your private key never goes online',
+    src: './images/product/c.jpg'
   },
   {
     title: 'Ultimate “Cold-Storage”',
-    sub: 'The best way to store cryptocurrency for the long run'
+    sub: 'The best way to store cryptocurrency for the long run',
+    src: './images/product/d.jpg'
   }
 ]
 
@@ -45,7 +49,8 @@ class Hero extends Component {
 
     return (
       <Slider {...settings} className='video-intro'>
-        {heros.map((e, i) => (<div data-wait className={`hero hero-${i + 1}`}>
+        {heros.map((e, i) => (<div className={`hero hero-${i + 1}`}>
+          <img className='slider-img' src={e.src} alt={`crypto-print-${i + 1}`} />
           <div className='content'>
             <h1>{e.title}</h1>
             <h3>{e.sub}</h3>

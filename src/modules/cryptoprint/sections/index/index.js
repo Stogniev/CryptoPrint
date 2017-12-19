@@ -11,7 +11,6 @@ import Social from './parts/social'
 import Newsletter from './parts/newsletter'
 import './index.css'
 
-import CircularProgress from 'material-ui/CircularProgress'
 
 class SectionIndex extends Component {
   constructor() {
@@ -31,32 +30,20 @@ class SectionIndex extends Component {
     })
   }
 
-  componentDidMount() {
-    setTimeout(() => this.setState({isLoading: true}), 1500)
-  }
-
   render() {
     // console.log('this.props:', this.props)
-    if (!this.state.isLoading) {
-      return (
-        <div className='preloader-wrap'>
-          <CircularProgress/>
-        </div>
-      )
-    } else {
-      return <div className='index-section'>
-        <Hero/>
-        <Attributes/>
-        {/* <Testimonials /> */}
-        <Team/>
-        {/* <AlternativeCTA /> */}
-        <Preorder/>
-        {/* {<Signin />} */}
-        <Social/>
-        <Newsletter/>
-        <Footer/>
-      </div>
-    }
+    return <div className='index-section'>
+      <Hero/>
+      <Attributes/>
+      {/* <Testimonials /> */}
+      <Team/>
+      {/* <AlternativeCTA /> */}
+      <Preorder/>
+      {/* {<Signin />} */}
+      <Social/>
+      <Newsletter/>
+      <Footer/>
+    </div>
   }
 }
 
