@@ -16,22 +16,22 @@ const heros = [
   {
     title: 'Paper Wallets Just Got Better',
     sub: 'Applying visual cryptographic techniques to keep your private key safe',
-    src: './images/product/a.jpg'
+    src: './images/product/img1.png'
   },
   {
     title: 'Making The Digital, Tangible',
     sub: 'Bitcoin, in a form you can touch',
-    src: './images/product/b.jpg'
+    src: './images/product/img2.png'
   },
   {
     title: 'The Safest Wallet Around',
     sub: 'Your private key never goes online',
-    src: './images/product/c.jpg'
+    src: './images/product/img3.png'
   },
   {
     title: 'Ultimate “Cold-Storage”',
     sub: 'The best way to store cryptocurrency for the long run',
-    src: './images/product/d.jpg'
+    src: './images/product/img4.png'
   }
 ]
 

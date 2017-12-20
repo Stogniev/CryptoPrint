@@ -18,8 +18,7 @@ class SectionIndex extends Component {
 
     this.state = {
       progress: 0,
-      seed: null,
-      isLoading: false
+      seed: null
     }
   }
 
@@ -31,7 +30,7 @@ class SectionIndex extends Component {
   }
 
   render() {
-    // console.log('this.props:', this.props)
+     console.log('this.props:', this.props)
     return <div className='index-section'>
       <Hero/>
       <Attributes/>

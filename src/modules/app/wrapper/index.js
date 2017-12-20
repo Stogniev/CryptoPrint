@@ -20,8 +20,6 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      isLoading: false,
-      imageStatus: 'loading',
       loading: true
     }
     this.handleImageChange = this.handleImageChange.bind(this)
@@ -37,7 +35,7 @@ class App extends Component {
 
   renderSpinner() {
     if (!this.state.loading) {
-      return null;
+      return null
     }
     return (
       <div className='preloader-wrap'>
@@ -51,7 +49,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header style={{position: 'sticky'}}/>
-        <div className='main-container'>
+        <div className='main-container' loading={this.state.loading}>
           {this.props.children}
         </div>
         {/* <VersionNotificationDialog /> */}
