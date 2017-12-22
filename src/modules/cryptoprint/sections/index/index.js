@@ -13,9 +13,9 @@ import './index.css'
 
 
 class SectionIndex extends Component {
-  constructor() {
-    super()
-
+  constructor(props) {
+    super(props)
+  console.log(props);
     this.state = {
       progress: 0,
       seed: null
