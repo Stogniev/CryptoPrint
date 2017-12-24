@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import CircularProgress from 'material-ui/CircularProgress'
-import Header from 'app/components/header'
+import Header from './components/header'
+import Main from './components/main'
+import Footer from './components/footer'
 
-import './app.css'
+import './onepager.css'
 
 function imagesLoaded(parentNode) {
   const imgElements = parentNode.querySelectorAll('img')
@@ -16,7 +17,7 @@ function imagesLoaded(parentNode) {
   return true
 }
 
-class App extends Component {
+class OnePager extends Component {
   constructor() {
     super()
     this.state = {
@@ -47,11 +48,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className='App'>
-        <Header style={{position: 'sticky'}}/>
-        <div className='main-container' loading={this.state.loading}>
-          {this.props.children}
-        </div>
+      <div className='onepager'>
+        <Header/>
+        <Main />
+        <Footer />
         {/* <VersionNotificationDialog /> */}
         <div className='gallery' ref='gallery'>
           {this.renderSpinner()}
@@ -77,4 +77,4 @@ function mapDispatchToProps (dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(OnePager)

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
-import { Button } from 'react-md'
+import {Button} from 'react-md'
 import Slider from 'react-slick'
 import * as Scroll from 'react-scroll' // Imports all Mixins
 
@@ -15,24 +15,29 @@ const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
 const heros = [
   {
     title: 'Paper Wallets Just Got Better',
-    sub: 'Applying visual cryptographic techniques to keep your private key safe'
+    sub: 'Applying visual cryptographic techniques to keep your private key safe',
+    src: './images/product/a.jpg'
   },
   {
     title: 'Making The Digital, Tangible',
-    sub: 'Bitcoin, in a form you can touch'
+    sub: 'Bitcoin, in a form you can touch',
+    src: './images/product/b.jpg'
   },
   {
     title: 'The Safest Wallet Around',
-    sub: 'Your private key never goes online'
+    sub: 'Your private key never goes online',
+    src: './images/product/c.jpg'
   },
   {
     title: 'Ultimate “Cold-Storage”',
-    sub: 'The best way to store cryptocurrency for the long run'
+    sub: 'The best way to store cryptocurrency for the long run',
+    src: './images/product/d.jpg'
   }
 ]
 
 class Hero extends Component {
-  render () {
+
+  render() {
     const settings = {
       dots: true,
       infinite: true,
@@ -42,20 +47,23 @@ class Hero extends Component {
       arrows: false
     }
 
-    return <Slider {...settings} className='video-intro'>
-      {heros.map((e, i) => (<div className={`hero hero-${i + 1}`}>
-        <div className='content'>
-          <h1>{e.title}</h1>
-          <h3>{e.sub}</h3>
-          <div className='action'>
-            <Button raised secondary onClick={scrollTo('preorder')} className='preorder-btn'>Pre-Order Now!</Button>
+    return (
+      <Slider {...settings} className='video-intro'>
+        {heros.map((e, i) => (<div className={`hero hero-${i + 1}`}>
+          <img className='slider-img' src={e.src} alt={`crypto-print-${i + 1}`} />
+          <div className='content'>
+            <h1>{e.title}</h1>
+            <h3>{e.sub}</h3>
+            <div className='action'>
+              <Button raised secondary onClick={scrollTo('preorder')} className='preorder-btn'>Pre-Order Now!</Button>
+            </div>
           </div>
-        </div>
-        <small className='prototype'>
-          The pictures are of an early prototype version - final product may vary.
-        </small>
-      </div>))}
-    </Slider>
+          <small className='prototype'>
+            The pictures are of an early prototype version - final product may vary.
+          </small>
+        </div>))}
+      </Slider>
+    )
   }
 }
 

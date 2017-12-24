@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { firebaseConnect } from 'react-redux-firebase'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {firebaseConnect} from 'react-redux-firebase'
 
 import Hero from './parts/hero'
 import Attributes from './parts/attributes'
@@ -11,38 +11,41 @@ import Social from './parts/social'
 import Newsletter from './parts/newsletter'
 import './index.css'
 
-class SectionIndex extends Component {
-  constructor () {
-    super()
 
+class SectionIndex extends Component {
+  constructor(props) {
+    super(props)
+  console.log(props);
     this.state = {
       progress: 0,
       seed: null
     }
   }
-  registerMe () {
+
+  registerMe() {
     this.props.firebase.login({
       provider: 'google',
       type: 'popup'
     })
   }
 
-  render () {
-    // console.log('this.props:', this.props)
+  render() {
+     console.log('this.props:', this.props)
     return <div className='index-section'>
-      <Hero />
-      <Attributes />
+      <Hero/>
+      <Attributes/>
       {/* <Testimonials /> */}
-      <Team />
+      <Team/>
       {/* <AlternativeCTA /> */}
-      <Preorder />
+      <Preorder/>
       {/* {<Signin />} */}
-      <Social />
-      <Newsletter />
-      <Footer />
+      <Social/>
+      <Newsletter/>
+      <Footer/>
     </div>
   }
 }
+
 
 const fbConnectedIndex = firebaseConnect([
   'authErrors',
@@ -50,7 +53,7 @@ const fbConnectedIndex = firebaseConnect([
 ])(SectionIndex)
 
 export default connect(
-  ({ firebase: { auth, authError, profile, data } }) => ({
+  ({firebase: {auth, authError, profile, data}}) => ({
     auth, authError, profile, myAddresses: data['test-addresses']
   })
 )(fbConnectedIndex)

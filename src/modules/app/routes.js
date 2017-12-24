@@ -8,6 +8,9 @@ import AppWrap from './wrapper/app-wrap'
 
 import SectionIndex from 'cryptoprint/sections/index'
 
+import OnePager from './onepager'
+import OnePagerWrap from './onepager/onepager-wrap'
+
 // import SectionSignin from 'cryptoprint/sections/signin'
 // import SectionLogin from 'cryptoprint/sections/signin/login'
 // import SectioSignup from 'cryptoprint/sections/signin/signup'
@@ -30,6 +33,12 @@ export default (
       <IndexRoute component={SectionLogin} />
       <Route path='signup' component={SectioSignup} />
     </Route> */}
+
+    <Route path='/onepager' component={OnePager}>
+      <Route component={OnePagerWrap}>
+        <IndexRoute component={SectionIndex} />
+      </Route>
+    </Route>
     <Route path='*' component={Route404} />
   </Route>
 )
