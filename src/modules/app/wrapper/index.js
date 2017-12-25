@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import CircularProgress from 'material-ui/CircularProgress'
 import Header from 'app/components/header'
 
 import './app.css'
@@ -39,8 +38,10 @@ class App extends Component {
     }
     return (
       <div className='preloader-wrap'>
-        {/* <CircularProgress/> */}
-        <img src="./images/preloader.svg" alt="crypto print"/>
+        <div className='loader'>
+          <div className='shadow'></div>
+          <div className='box'></div>
+        </div>
       </div>
     )
   }

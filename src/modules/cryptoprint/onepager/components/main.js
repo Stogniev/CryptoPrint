@@ -1,27 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
 
-import Paper from 'react-md/lib/Papers'
 import FacebookMonoIcon from '../../bits/custom-icons/facebook-mono'
 import TwitterIcon from '../../bits/custom-icons/twitter'
 import TelegramMonoIcon from '../../bits/custom-icons/telegram-mono'
 import SlackIcon from '../../bits/custom-icons/slack'
 
-
-
-import * as Scroll from 'react-scroll'
 import {firebaseConnect} from "react-redux-firebase"
-
-
-const scroller = Scroll.scroller
-const scrollOptions = {
-  delay: 100,
-  smooth: true,
-  offset: 50 // Scrolls to element + 50 pixels down the page
-}
-const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
-const headerBackground = 'rgba(22, 22, 22, 0.987)'
 
 class Main extends Component {
 

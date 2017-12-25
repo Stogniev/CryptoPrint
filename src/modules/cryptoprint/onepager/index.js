@@ -41,7 +41,11 @@ class OnePager extends Component {
     return (
       <div className='preloader-wrap'>
         {/* <CircularProgress/> */}
-        <img src="./images/preloader.svg" alt="crypto print"/>
+        {/* <img src="./images/preloader.svg" alt="crypto print"/> */}
+        <div className='loader'>
+          <div className='shadow'></div>
+          <div className='box'></div>
+        </div>
       </div>
     )
   }
@@ -59,6 +63,7 @@ class OnePager extends Component {
             <img
               src='./images/cristina-gottardi-177261%20(1).png'
               onLoad={this.handleImageChange}
+              alt=''
             />
           </div>
         </div>
