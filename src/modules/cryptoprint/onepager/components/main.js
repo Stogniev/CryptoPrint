@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
 import FacebookMonoIcon from '../../bits/custom-icons/facebook-mono'
@@ -8,9 +8,10 @@ import SlackIcon from '../../bits/custom-icons/slack'
 
 import {firebaseConnect} from "react-redux-firebase"
 
-class Main extends Component {
+const Main = props => {
 
-  render () {
+  const { loading } = props
+    console.log(loading)
     return (
       <main className="op-main">
         <div className="banner header-banner">
@@ -134,7 +135,6 @@ class Main extends Component {
       </main>
     )
   }
-}
 const fbConnectedAppHeader = firebaseConnect([
   'authErrors'
 ])(Main)

@@ -60,6 +60,7 @@ class App extends Component {
             <img
               src='./images/cristina-gottardi-177261%20(1).png'
               onLoad={this.handleImageChange}
+              alt=''
             />
           </div>
         </div>
