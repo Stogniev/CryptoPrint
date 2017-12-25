@@ -8,8 +8,8 @@ import AppWrap from './wrapper/app-wrap'
 
 import SectionIndex from 'cryptoprint/sections/index'
 
-import OnePager from './onepager'
-import OnePagerWrap from './onepager/onepager-wrap'
+import OnePager from '../cryptoprint/onepager'
+import OnePagerWrap from '../cryptoprint/onepager/onepager-wrap'
 
 // import SectionSignin from 'cryptoprint/sections/signin'
 // import SectionLogin from 'cryptoprint/sections/signin/login'

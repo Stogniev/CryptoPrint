@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 
 import Paper from 'react-md/lib/Papers'
+import LogoOnepager from '../../bits/onepager-logo'
 
 
 import * as Scroll from 'react-scroll'
@@ -26,7 +27,7 @@ class Header extends Component {
         <div className="container">
           <strong>
             <a href="#">
-              <img src="./images/onepager/logo.png" alt="Crypto Print logo"/>
+              <LogoOnepager />
             </a>
           </strong>
         </div>
