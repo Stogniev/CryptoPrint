@@ -21,6 +21,7 @@ $margin-b: 255px;
 .container {
   max-width: 1300px;
   margin: 0 auto;
+  overflow: hidden;
   @include tablet {
     padding: 0 5%;
   }

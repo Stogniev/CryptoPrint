@@ -11,7 +11,7 @@ import {firebaseConnect} from "react-redux-firebase"
 const Main = props => {
 
   const { loading } = props
-    console.log(loading)
+    // console.log(loading)
     return (
       <main className="op-main">
         <div className="banner header-banner">
