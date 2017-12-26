@@ -1,26 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
 
-import Paper from 'react-md/lib/Papers'
+import FacebookMonoIcon from '../../bits/custom-icons/facebook-mono'
+import TwitterIcon from '../../bits/custom-icons/twitter'
+import TelegramMonoIcon from '../../bits/custom-icons/telegram-mono'
+import SlackIcon from '../../bits/custom-icons/slack'
 
+import {firebaseConnect} from "react-redux-firebase"
 
-import * as Scroll from 'react-scroll'
-import {firebaseConnect} from "react-redux-firebase" // Imports all Mixins
+const Main = props => {
 
-
-const scroller = Scroll.scroller
-const scrollOptions = {
-  delay: 100,
-  smooth: true,
-  offset: 50 // Scrolls to element + 50 pixels down the page
-}
-const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
-const headerBackground = 'rgba(22, 22, 22, 0.987)'
-
-class Main extends Component {
-
-  render () {
+  const { loading } = props
+    console.log(loading)
     return (
       <main className="op-main">
         <div className="banner header-banner">
@@ -133,10 +124,10 @@ class Main extends Component {
               <h3>Community</h3>
               <p>Follow us over on any of our community channels, over here, on telegram and on slack.</p>
               <ul className="social-links">
-                <li><a href="https://www.facebook.com/"><img src="./images/onepager/facebook.svg" aria-hidden="true" /></a></li>
-                <li><a href="https://twitter.com/"><img src="./images/onepager/twitter.svg" aria-hidden="true" /></a></li>
-                <li><a href="https://telegram.org"><img src="./images/onepager/telegram.svg" aria-hidden="true" /></a></li>
-                <li><a href="www.slack.com/"><img src="./images/onepager/slack.svg" aria-hidden="true" /></a></li>
+                <li><a href="https://www.facebook.com/"><FacebookMonoIcon /></a></li>
+                <li><a href="https://twitter.com/"><TwitterIcon /></a></li>
+                <li><a href="https://telegram.org"><TelegramMonoIcon /></a></li>
+                <li><a href="www.slack.com/"><SlackIcon /></a></li>
               </ul>
             </div>
           </div>
@@ -144,7 +135,6 @@ class Main extends Component {
       </main>
     )
   }
-}
 const fbConnectedAppHeader = firebaseConnect([
   'authErrors'
 ])(Main)
