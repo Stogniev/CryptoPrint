@@ -22,6 +22,7 @@ $margin-b: 255px;
   max-width: 1300px;
   margin: 0 auto;
   overflow: hidden;
+  padding: 0 10px;
   @include tablet {
     padding: 0 5%;
   }
@@ -169,10 +170,10 @@ $margin-b: 255px;
       }
     }
     &-right {
-      max-width: 330px;
-      margin-right: 6%;
+      width: 330px;
+      padding-left: 20px;
       margin-top: -20px;
-      flex-shrink: 0;
+      margin-left: 0;
       @include tablet {
         max-width: 100%;
         margin-top: 0;
@@ -209,7 +210,6 @@ $margin-b: 255px;
     }
   }
   .options {
-    max-width: 330px;
     flex-shrink: 0;
     @include tablet {
       max-width: 100%;
@@ -331,10 +331,13 @@ $margin-b: 255px;
       &:hover {
         background: rgba(0, 0, 0, .4);
       }
+      &:first-child {
+        margin-left: 0;
+      }
       @include tablet {
         width: 40px;
         height: 40px;
-        flex: 0 0 40px
+        flex: 0 0 40px;
       }
       a {
         display: block;
@@ -370,5 +373,12 @@ $margin-b: 255px;
         border: none;
       }
     }
+  }
+
+}
+.img-wrap {
+  img {
+    max-width: 100%;
+    display: block;
   }
 }
