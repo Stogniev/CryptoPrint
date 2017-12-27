@@ -50,7 +50,6 @@ class Hero extends Component {
     return (
       <Slider {...settings} className='video-intro'>
         {heros.map((e, i) => (<div className={`hero hero-${i + 1}`}>
-          <img className='slider-img' src={e.src} alt={`crypto-print-${i + 1}`} />
           <div className='content'>
             <h1>{e.title}</h1>
             <h3>{e.sub}</h3>

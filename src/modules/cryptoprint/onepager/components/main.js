@@ -10,7 +10,7 @@ import {firebaseConnect} from "react-redux-firebase"
 
 const Main = props => {
 
-  const {loading} = props
+  // const {loading} = props
   // console.log(loading)
   return (
     <main className="op-main">
@@ -87,8 +87,10 @@ const Main = props => {
         </div>
       </div>
       <div className="banner center-banner">
-        <div className="flex-vertical text-aligned">
-          <img src="./images/onepager/logo-large@svg.svg" alt="logo"/>
+        <div className="text-aligned container">
+          <div className="img-wrap">
+            <img src="./images/onepager/logo-large@svg.svg" alt="logo"/>
+          </div>
           <p className="text-large">So far, everyone who has seen our prototypes has been more than enthusiastic to get
             their hands on one. If you are interested in pre-ordering our wallets or just following our progress, visit
             us here.</p>
