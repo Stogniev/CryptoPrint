@@ -1,6 +1,8 @@
 .header {
-  position: sticky;
-  top: 0;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
   z-index: 101;
   .app-header {
     .brand {
@@ -23,8 +25,35 @@
         }
       }
     }
+    .nav-btn {
+      margin: 0 50px 10px 0;
+      text-transform: none;
+      &:last-child {
+        margin-right: 0;
+      }
+      div:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: width .3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      &:hover {
+        background: transparent;
+        font-weight: bold;
+        div:after {
+          width: 100%;
+        }
+      }
+    }
     .md-btn {
       color: rgba(#fff, 0.987);
     }
   }
 }
+
+

@@ -39,8 +39,8 @@ class SectionIndex extends Component {
       <Features />
       {/* <Testimonials /> */}
       <Team/>
-      {/* <AlternativeCTA /> */}
       <Preorder/>
+      {/* <AlternativeCTA /> */}
       {/* {<Signin />} */}
       <Community />
       <Social />

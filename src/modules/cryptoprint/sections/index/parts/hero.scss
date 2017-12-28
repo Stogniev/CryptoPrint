@@ -15,43 +15,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    > small {
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
-      // color: rgba(#FFF, 0.75);
-    }
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
     .content {
       text-align: center;
       margin: 0 auto;
       z-index: 10;
       height: 100%;
       position: relative;
-      display: flex;
-      flex-direction: column;
-      // justify-content: space-around;
       max-width: 640px;
-      > * {
-        position: relative;
-        z-index: 11;
+      color: #fff;
+      svg {
+        width: 300px;
       }
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 9;
-        background: rgba(#000, 0.75);
-        filter: blur(80px);
-        margin: -80px;
+      .action {
+        margin-top: 50px;
       }
     }
-    position: relative;
-    background-size: cover;
-    background-position: 50% 50%;
+
     h1, h3, .btn {
       z-index: 10;
       // color: #fff;
@@ -60,27 +42,20 @@
     .action {
       margin-top: auto;
     }
-    h1 {
-      margin-top: auto;
-      font-size: 50px;
-      font-weight: 900;
-      color: rgba(#FFF, 0.987);
-      text-shadow: 1px 1px 24px rgba(#000, 0.543), -1px -1px 14px rgba(#000, 0.543), 0px 0px 7px rgba(#000, 0.543);
-      font-family: 'Play', sans-serif;
-      line-height: 5rem;
+    h2 {
+      font-size: 35px;
+      color: #fff;
+      margin-top: 50px;
     }
-    h3 {
-      font-size: 30px;
-      font-weight: 300;
-      line-height: 4rem;
-      color: rgba(#FFF, 0.987);
-      text-shadow: 1px 1px 24px rgba(#000, 0.543), -1px -1px 14px rgba(#000, 0.543), 0px 0px 7px rgba(#000, 0.543);
+    p {
+      color: #fff
     }
     .btn {
       font-size: 19px;
     }
     &-1 {
-      background-image: url('/images/product/a.jpg');
+      // background-image: url('/images/product/a.jpg');
+      background: #f68687;
     }
     &-2 {
       background-image: url('/images/product/b.jpg');

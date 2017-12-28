@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 import {Button} from 'react-md'
 import Slider from 'react-slick'
 import * as Scroll from 'react-scroll' // Imports all Mixins
+import LogoOnepager from '../../../bits/onepager-logo'
+
 
 const scroller = Scroll.scroller
 const scrollOptions = {
@@ -51,15 +53,13 @@ class Hero extends Component {
       <Slider {...settings} className='video-intro'>
         {heros.map((e, i) => (<div className={`hero hero-${i + 1}`}>
           <div className='content'>
-            <h1>{e.title}</h1>
-            <h3>{e.sub}</h3>
+            <LogoOnepager />
+            <h2>{e.title}</h2>
+            <p>{e.sub}</p>
             <div className='action'>
-              <Button raised secondary onClick={scrollTo('preorder')} className='preorder-btn'>Pre-Order Now!</Button>
+              <Button onClick={scrollTo('preorder')} className='circle-btn preorder-btn'>Join the pre-sale!</Button>
             </div>
           </div>
-          <small className='prototype'>
-            The pictures are of an early prototype version - final product may vary.
-          </small>
         </div>))}
       </Slider>
     )

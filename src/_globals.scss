@@ -5,6 +5,12 @@ $md-light-theme: true; // optional for light theme
 $md-primary-color: $md-green-500;
 $md-secondary-color: $md-blue-800;
 
+$light-black: #1e1e1e;
+$light-grey: #f7f7f7;
+$medium-grey: #5e616a;
+$white: #fff;
+$margin-b: 255px;
+
 @include react-md-everything;
 //
 // Or for a subsection
@@ -16,6 +22,7 @@ body {
   #root {
     .app-wrap {
       .App {
+        color: $medium-grey;
         .darkd {
           $md-light-theme: false; // optional for light theme
           $md-primary-color: $md-green-500;
@@ -88,4 +95,26 @@ body {
   50% {
     transform: scale(1.2,1);
   }
+}
+
+.title {
+  font-size: 30px;
+  padding-bottom: 22px;
+  display: inline-block;
+  text-align: center;
+  border-bottom: 2px solid #f68687;
+  color: $medium-grey;
+  &.invert {
+    color: #fff;
+    border-color: #fff;
+  }
+}
+.circle-btn {
+  border: 2px solid #fff;
+  border-radius: 100px;
+  text-transform: uppercase;
+  line-height: 30px;
+  color: #fff;
+  min-width: 150px;
+  font-size: 12px;
 }

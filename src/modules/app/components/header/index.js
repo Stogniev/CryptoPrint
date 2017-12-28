@@ -10,7 +10,7 @@ import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import Button from 'react-md/lib/Buttons'
 
-import GirlsHead from 'cryptoprint/bits/girls-head'
+// import GirlsHead from 'cryptoprint/bits/girls-head'
 
 import UserMenu from './user-menu'
 import * as Scroll from 'react-scroll' // Imports all Mixins
@@ -24,7 +24,7 @@ const scrollOptions = {
   offset: 50 // Scrolls to element + 50 pixels down the page
 }
 const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
-const headerBackground = 'rgba(22, 22, 22, 0.987)'
+const headerBackground = 'transparent'
 
 class AppHeader extends Component {
   onSignout (event) {
@@ -74,11 +74,11 @@ class AppHeader extends Component {
             </Button>
           </ToolbarGroup>
           <ToolbarGroup className='content'>
-            <Button flat onClick={scrollTo('attributes')}>About</Button>
-            <Button flat onClick={scrollTo('features')}>Features</Button>
-            <Button flat onClick={scrollTo('team')}>Team</Button>
-            <Button flat onClick={scrollTo('preorder')}>Preorder</Button>
-            <Button flat onClick={scrollTo('community')}>Community</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('attributes')}>About</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('features')}>Features</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('team')}>Team</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('preorder')}>Pre-Order</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('community')}>Community</Button>
           </ToolbarGroup>
           <ToolbarGroup className='rights'>
             {false && loggedIn ? <UserMenu
