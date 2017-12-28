@@ -4,7 +4,9 @@ import { firebaseConnect } from 'react-redux-firebase'
 
 import Hero from './parts/hero'
 import Attributes from './parts/attributes'
+import Features from './parts/features'
 import Team from './parts/team'
+import Community from './parts/community'
 import Footer from './parts/footer'
 import Preorder from './parts/preorder'
 import Social from './parts/social'
@@ -32,11 +34,13 @@ class SectionIndex extends Component {
     return <div className='index-section'>
       <Hero />
       <Attributes />
+      <Features />
       {/* <Testimonials /> */}
       <Team />
       {/* <AlternativeCTA /> */}
       <Preorder />
       {/* {<Signin />} */}
+      <Community />
       <Social />
       <Newsletter />
       <Footer />

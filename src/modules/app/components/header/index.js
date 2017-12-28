@@ -75,8 +75,10 @@ class AppHeader extends Component {
           </ToolbarGroup>
           <ToolbarGroup className='content'>
             <Button flat onClick={scrollTo('attributes')}>About</Button>
+            <Button flat onClick={scrollTo('features')}>Features</Button>
             <Button flat onClick={scrollTo('team')}>Team</Button>
             <Button raised secondary onClick={scrollTo('preorder')}>Preorder</Button>
+            <Button flat onClick={scrollTo('community')}>Community</Button>
           </ToolbarGroup>
           <ToolbarGroup className='rights'>
             {false && loggedIn ? <UserMenu
