@@ -102,7 +102,7 @@ class SideNavigation extends Component {
     const adminItems = [
       { title: 'Users', icon: <ActionSupervisorAccount style={iconStyle} />, route: '/admin/users' },
       { title: 'Portfolios', icon: <FileFolderShared style={iconStyle} />, route: '/admin/portfolios' },
-      { title: 'Assets', icon: <FileFolderShared style={iconStyle} />, route: '/admin/assets' }
+      { title: 'Assets', icon: <FileFolderShared style={iconStyle} />, route: '/admin/onepager' }
     ]
 
     const close = <Button className='dismiss' icon onClick={e => this.visibilityToggle()}>close</Button>

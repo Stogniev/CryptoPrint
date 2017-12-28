@@ -2,11 +2,14 @@ import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
 // import { requireAuth, redirectIfAuth } from 'app/auth'
+// import 'babel-polyfill'
 
 import App from './wrapper'
 import AppWrap from './wrapper/app-wrap'
 
 import SectionIndex from 'cryptoprint/sections/index'
+
+import OnePager from '../cryptoprint/onepager'
 
 // import SectionSignin from 'cryptoprint/sections/signin'
 // import SectionLogin from 'cryptoprint/sections/signin/login'
@@ -30,6 +33,8 @@ export default (
       <IndexRoute component={SectionLogin} />
       <Route path='signup' component={SectioSignup} />
     </Route> */}
+
+    <Route path='/onepager' component={OnePager} />
     <Route path='*' component={Route404} />
   </Route>
 )
