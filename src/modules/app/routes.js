@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 
 // import { requireAuth, redirectIfAuth } from 'app/auth'
+// import 'babel-polyfill'
 
 import App from './wrapper'
 import AppWrap from './wrapper/app-wrap'
