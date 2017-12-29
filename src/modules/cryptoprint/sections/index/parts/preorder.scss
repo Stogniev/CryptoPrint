@@ -1,7 +1,7 @@
   @import '../config';
 
   .preorder {
-    background: #5E616A;
+    background: url('/images/product/form-bg.jpg') no-repeat center center;
     background-size: cover;
     position: relative;
     color: #fff;
@@ -33,5 +33,37 @@
           justify-content: center;
         }
       }
+  }
+}
+.preorder-form {
+  width: 473px;
+  text-align: center;
+  hr {
+    display: none;
+  }
+  label {
+    font-size: 16px !important;
+    line-height: 50px;
+    color: $dark-grey;
+    margin-left: 28px;
+    transform: translate3d(0, 21px, 0);
+    &.md-floating-label--floating {
+      transform: translate3d(0, -12px, 0);
+      color: #fff;
+    }
+  }
+  input {
+    background: #fff;
+    line-height: 50px;
+    border-radius: 100px;
+    padding: 0 10px 0 28px;
+    margin-top: 20px;
+  }
+  .md-text-field-message-container {
+    padding-left: 28px;
+  }
+  button {
+    margin-top: 40px;
+    margin-bottom: 10px;
   }
 }

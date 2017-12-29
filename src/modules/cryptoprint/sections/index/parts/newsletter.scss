@@ -3,14 +3,34 @@
 .newsletter {
   .form-container {
     display: flex;
-    width: 560px;
-    background: #e6e4e2;
     padding: 30px;
     justify-content: space-between;
     align-items: center;
+    hr {
+      display: none;
+    }
+    label {
+      font-size: 16px !important;
+      line-height: 50px;
+      color: $dark-grey;
+      margin-left: 28px;
+      transform: translate3d(0, 21px, 0);
+      &.md-floating-label--floating {
+        transform: translate3d(0, -12px, 0);
+      }
+    }
+    input {
+      background: #f7f7f7;
+      line-height: 50px;
+      border-radius: 100px;
+      padding: 0 10px 0 28px;
+      margin-top: 20px;
+      width: 480px;
+    }
     .sub-btn {
-      min-width: 140px;
+      background: $main-color;
       margin-left: 20px;
+      border: none;
     }
 
   }
@@ -18,13 +38,10 @@
 
       h3 {
         white-space: normal!important;
-        word-break: break-all;
-        width: 95%;
         text-align: center;
       }
       .form-container {
         flex-direction: column;
-        width: 95%;
         align-items: center;
         .submit-btn {
           margin-top: 20px;

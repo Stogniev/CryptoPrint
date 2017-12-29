@@ -9,7 +9,7 @@ const properties = [
   {
     title: 'The Safest Way to Store Crypto',
     text: 'Keeping your cryptocurrency in an online exchange or wallet leaves your private key vulnerable to theft. \nWith our wallets, your private key exists only on the physical wallet in your possesion and has never been online. \nNo one can hack, steal, or do anything with your funds without your explicit permission.',
-    image: '/images/product/render-both.png'
+    image: '/images/product/about2.png'
   },
   // {
   //   title: 'Fold to See',
@@ -46,10 +46,14 @@ export class AttributesSection extends Component {
         {properties.map(({title, text, image}, index) => (
           <li key={index} className={index % 2 ? 'darkd' : ''}>
             <div>
-              <h3>{title}</h3>
-              {text.split('\n').map(e => <p>{e}</p>)}
+              <div className='text-block'>
+                <h3>{title}</h3>
+                {text.split('\n').map(e => <p>{e}</p>)}
+              </div>
             </div>
-            <img src={image} alt={title} />
+            <div className="img-wrap">
+              <img src={image} alt={title} />
+            </div>
           </li>
         ))}
       </ul>

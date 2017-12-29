@@ -38,12 +38,12 @@ class SectionIndex extends Component {
       <Attributes />
       <Features />
       {/* <Testimonials /> */}
-      <Team/>
       <Preorder/>
+      <Team/>
       {/* <AlternativeCTA /> */}
       {/* {<Signin />} */}
       <Community />
-      <Social />
+      {/* <Social /> */}
       <Newsletter />
       <Footer />
     </div>

@@ -54,7 +54,7 @@ export class Newsletter extends Component {
         <div className='form-container'>
           <TextFieldWithFBError id='email' label='Email' onBlur={(id) => (v, e) => this.validateEmail(v)} errorMessage='Email is Required' errorCode={this.state.error} errorCheck={'email:'} />
 
-          <Button raised secondary onClick={this.handleSubmit} label='Subscribe' className='sub-btn' />
+          <Button raised secondary onClick={this.handleSubmit} label='Subscribe' className='sub-btn circle-btn' />
         </div>
       </section>
     )

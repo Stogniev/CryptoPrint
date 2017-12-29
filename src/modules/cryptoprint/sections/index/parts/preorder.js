@@ -125,37 +125,16 @@ export class PreorderSection extends Component {
     return <section className='preorder' id='preorder'>
       <h3 className='title invert'>Preorder Form</h3>
       <p>Only 1,000 Left!</p>
-      <form submit='#' onSubmit={this.submitPreorder.bind(this)}>
+      <form submit='#' className='preorder-form' onSubmit={this.submitPreorder.bind(this)}>
         <article>
           <TextFieldWithFBError id='name' label='Full Name' onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} errorMessage='Name is required' errorCode={this.state.error} errorCheck={'name:'} />
           <TextFieldWithFBError errorMessage='Email is badly formatted' errorCode={this.state.error} errorCheck={'email:'} id='email' label='Email Address'
             onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} />
-        </article>
-        <article>
-          <legend>Your Order</legend>
-          <Autocomplete
-            id='currency'
-            label='Select Cryptocurrency'
-            ref='currency'
-            placeholder={acCurrencies[0].name}
-            required
-            data={acCurrencies}
-            onBlur={(v, e) => this.handleInputChange('currency', this.refs.currency.value)}
-            className='md-cell md-cell--6 md-cell--4-phone'
-            errorText='Currency is required!'
-          />
-          <SelectField
-            id='select-field-1'
-            label='Wallet Type'
-            className='md-cell'
-            defaultValue={walletTypes[0].value}
-            onChange={(v, e) => this.handleInputChange('wallet_type', v)}
-            menuItems={walletTypes}
-          />
-          <TextFieldWithFBError id='amount' errorMessage='Amount must be a number greater than 1' errorCode={this.state.error} errorCheck={'amount:'} label='Amount' defaultValue={3} onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} />
+          <TextFieldWithFBError id='amount' errorMessage='Amount must be a number greater than 1' errorCode={this.state.error} errorCheck={'amount:'} label='Amount of Bills' onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} />
         </article>
         <article className='actions'>
-          <Button type='submit' flat label='Submit' disabled={!!this.state.error} />
+          <Button type='submit' flat label='Join the pre-sale!' className='circle-btn' disabled={!!this.state.error} />
+          <p>Shipping to begin in March 2018</p>
         </article>
       </form>
     </section>

@@ -23,6 +23,10 @@ body {
     .app-wrap {
       .App {
         color: $medium-grey;
+        font: 18px/21px 'freight_medium';
+        p {
+          font-size: 18px;
+        }
         .darkd {
           $md-light-theme: false; // optional for light theme
           $md-primary-color: $md-green-500;
@@ -32,6 +36,9 @@ body {
       }
     }
   }
+}
+.flex-container {
+  display: flex;
 }
 
 .preloader-wrap {
@@ -98,12 +105,13 @@ body {
 }
 
 .title {
-  font-size: 30px;
+  font-size: 40px;
   padding-bottom: 22px;
   display: inline-block;
   text-align: center;
   border-bottom: 2px solid #f68687;
   color: $medium-grey;
+  font-family: 'freight_medium';
   &.invert {
     color: #fff;
     border-color: #fff;
@@ -113,8 +121,16 @@ body {
   border: 2px solid #fff;
   border-radius: 100px;
   text-transform: uppercase;
-  line-height: 30px;
   color: #fff;
-  min-width: 150px;
-  font-size: 12px;
+  min-width: 220px;
+  font-size: 16px;
+  line-height: 33px;
+  height: 50px;
+}
+
+.img-wrap {
+  img {
+    display: block;
+    width: 100%;
+  }
 }
