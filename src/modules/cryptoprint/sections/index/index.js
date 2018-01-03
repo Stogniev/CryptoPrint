@@ -9,7 +9,7 @@ import Team from './parts/team'
 import Community from './parts/community'
 import Footer from './parts/footer'
 import Preorder from './parts/preorder'
-import Social from './parts/social'
+// import Social from './parts/social'
 import Newsletter from './parts/newsletter'
 import './index.css'
 
@@ -38,8 +38,8 @@ class SectionIndex extends Component {
       <Attributes />
       <Features />
       {/* <Testimonials /> */}
-      <Preorder/>
-      <Team/>
+      <Preorder />
+      <Team />
       {/* <AlternativeCTA /> */}
       {/* {<Signin />} */}
       <Community />

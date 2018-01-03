@@ -14,6 +14,7 @@ import Button from 'react-md/lib/Buttons'
 
 import UserMenu from './user-menu'
 import * as Scroll from 'react-scroll' // Imports all Mixins
+import LogoOnepager from './../../../cryptoprint/bits/onepager-logo'
 
 import './header.css'
 
@@ -44,50 +45,49 @@ class AppHeader extends Component {
         <Toolbar
           themed
           style={{
-            background: headerBackground,
-            minHeight: '60px',
             ...this.props.style
           }}
 
           className='app-header'
         >
-          <ToolbarGroup firstChild className='brand' style={{marginLeft: -18}}>
-            <Button icon
-              onClick={e => this.toggleMenu()}
-              className='menu'
-              style={{padding: 3, margin: '10px'}}>
-              {showMenu
-                ? <NavigationClose color='#FFF' />
-                : <NavigationMenu color='#FFF' />
-              }
-            </Button>
-            <Button
-              flat
-              href='/'
-              onClick={e => {
-                e.preventDefault()
-                browserHistory.push('/')
-              }}
-              className='cryptoprint'
-            >
-              {/* <GirlsHead className='cryptoprint-icon' /> */}
-            </Button>
-          </ToolbarGroup>
-          <ToolbarGroup className='content'>
-            <Button flat className='nav-btn' onClick={scrollTo('attributes')}>About</Button>
-            <Button flat className='nav-btn' onClick={scrollTo('features')}>Features</Button>
-            <Button flat className='nav-btn' onClick={scrollTo('team')}>Team</Button>
-            <Button flat className='nav-btn' onClick={scrollTo('preorder')}>Pre-Order</Button>
-            <Button flat className='nav-btn' onClick={scrollTo('community')}>Community</Button>
-          </ToolbarGroup>
-          <ToolbarGroup className='rights'>
-            {false && loggedIn ? <UserMenu
-              isAdmin={this.props.isAdmin}
-              gmode={this.props.gmode}
-              onSignout={this.onSignout.bind(this)}
-              user={this.props.user} /> : null}
-          </ToolbarGroup>
-
+          <div className="container">
+            <ToolbarGroup firstChild className='brand' style={{marginLeft: -18}}>
+              <Button icon
+                      onClick={e => this.toggleMenu()}
+                      className='menu'
+                      style={{padding: 3, margin: '10px'}}>
+                {showMenu
+                  ? <NavigationClose color='#FFF' />
+                  : <NavigationMenu color='#FFF' />
+                }
+              </Button>
+              <Button
+                flat
+                href='/'
+                onClick={e => {
+                  e.preventDefault()
+                  browserHistory.push('/')
+                }}
+                className='cryptoprint'
+              >
+                <LogoOnepager />
+              </Button>
+            </ToolbarGroup>
+            <ToolbarGroup className='content'>
+              <Button flat className='nav-btn' onClick={scrollTo('attributes')}>About</Button>
+              <Button flat className='nav-btn' onClick={scrollTo('features')}>Features</Button>
+              <Button flat className='nav-btn' onClick={scrollTo('team')}>Team</Button>
+              <Button flat className='nav-btn' onClick={scrollTo('preorder')}>Pre-Order</Button>
+              <Button flat className='nav-btn' onClick={scrollTo('community')}>Community</Button>
+            </ToolbarGroup>
+            <ToolbarGroup className='rights'>
+              {false && loggedIn ? <UserMenu
+                isAdmin={this.props.isAdmin}
+                gmode={this.props.gmode}
+                onSignout={this.onSignout.bind(this)}
+                user={this.props.user} /> : null}
+            </ToolbarGroup>
+          </div>
         </Toolbar>
       </Paper>
     )

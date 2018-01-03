@@ -2,6 +2,8 @@ $breakpoint: 500px;
 $dark-grey: #555864;
 $main-color: #f68687;
 
+$blue-gradient: linear-gradient(69deg, #8794f6, #0022ab);
+
 @mixin mobile {
   @media (max-width: 640px) {
     @content

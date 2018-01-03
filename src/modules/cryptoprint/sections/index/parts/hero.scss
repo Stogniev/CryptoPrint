@@ -1,82 +1,71 @@
 @import '../config';
 
-.video-intro {
-  .slick-next {
-    right: 50px;
-    z-index: 12;
-  }
-  .slick-prev {
-    left: 50px;
-    z-index: 12;
-  }
-  .hero {
-    padding: 120px 0;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-content {
+  padding: 120px 0;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: $blue-gradient;
+  .content {
+    text-align: center;
+    margin: 0 auto;
+    z-index: 10;
+    height: 100%;
     position: relative;
-    background-size: cover;
-    background-position: 50% 50%;
-    .content {
-      text-align: center;
-      margin: 0 auto;
-      z-index: 10;
-      height: 100%;
-      position: relative;
-      max-width: 640px;
-      color: #fff;
-      svg {
-        width: 300px;
-      }
-      .action {
-        margin-top: 50px;
-      }
-    }
-
-    h1, h3, .btn {
-      z-index: 10;
-      // color: #fff;
-      white-space: normal;
+    max-width: 640px;
+    color: #fff;
+    svg {
+      width: 300px;
     }
     .action {
-      margin-top: auto;
-    }
-    h2 {
-      font-size: 35px;
-      color: #fff;
       margin-top: 50px;
-    }
-    p {
-      color: #fff
-    }
-    .btn {
-      font-size: 19px;
-    }
-    &-1 {
-      // background-image: url('/images/product/a.jpg');
-      background: #f68687;
-    }
-    &-2 {
-      background-image: url('/images/product/b.jpg');
-    }
-    &-3 {
-      background-image: url('/images/product/c.jpg');
-    }
-    &-4 {
-      background-image: url('/images/product/d.jpg');
-    }
-    &:nth-child(odd) {
-      .content {
-        // text-align: left;
-      }
-    }
-    &.slick-active {
-      z-index: 100;
-
     }
   }
 
+  h1, h3, .btn {
+    z-index: 10;
+    // color: #fff;
+    white-space: normal;
+  }
+  .action {
+    margin-top: auto;
+  }
+  h2 {
+    font-size: 35px;
+    color: #fff;
+    margin-top: 50px;
+  }
+  p {
+    color: #fff
+  }
+  .btn {
+    font-size: 19px;
+  }
+  &-1 {
+    // background-image: url('/images/product/a.jpg');
+    background: #f68687;
+  }
+  &-2 {
+    background-image: url('/images/product/b.jpg');
+  }
+  &-3 {
+    background-image: url('/images/product/c.jpg');
+  }
+  &-4 {
+    background-image: url('/images/product/d.jpg');
+  }
+  &:nth-child(odd) {
+    .content {
+      // text-align: left;
+    }
+  }
+  &.slick-active {
+    z-index: 100;
+
+  }
 }
+
 
 
