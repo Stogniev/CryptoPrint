@@ -17,16 +17,15 @@ $margin-b: 255px;
 @include react-md-theme-everything($md-green-500, $md-deep-purple-a-100, $md-light-theme, 'custom-theme');
 
 // @import '../node_modules/react-md/src/scss/react-md';
-
+a {
+  color: #fff;
+}
 body {
   #root {
     .app-wrap {
       .App {
         color: $medium-grey;
         font: 18px/21px 'freight_medium';
-        p {
-          font-size: 18px;
-        }
         .darkd {
           $md-light-theme: false; // optional for light theme
           $md-primary-color: $md-green-500;
@@ -40,6 +39,7 @@ body {
 .container {
   max-width: 1920px;
   margin: 0 auto;
+  position: relative;
 }
 .flex-container {
   display: flex;
@@ -110,11 +110,11 @@ body {
 
 .title {
   font-size: 40px;
-  padding-bottom: 22px;
+  padding-bottom: 30px;
   display: inline-block;
   text-align: center;
-  border-bottom: 2px solid #f68687;
-  color: $medium-grey;
+  border-bottom: 3px solid #314cc6;
+  color: #000;
   font-family: 'freight_medium';
   &.invert {
     color: #fff;
@@ -127,9 +127,9 @@ body {
   text-transform: uppercase;
   color: #fff;
   min-width: 220px;
-  font-size: 16px;
-  line-height: 33px;
+  font: 16px/33px 'freight_bold';
   height: 50px;
+  transition: .2s;
 }
 
 .img-wrap {

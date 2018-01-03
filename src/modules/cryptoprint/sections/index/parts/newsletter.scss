@@ -1,17 +1,20 @@
   @import '../config';
 
 .newsletter {
+  p {
+    font: 18px/32px 'freight_medium';
+    margin: 0;
+  }
   .form-container {
     display: flex;
-    padding: 30px;
+    padding: 0 30px 30px;
     justify-content: space-between;
     align-items: center;
     hr {
       display: none;
     }
     label {
-      font-size: 16px !important;
-      line-height: 50px;
+      font: 16px/50px 'freight_light' !important;
       color: $dark-grey;
       margin-left: 28px;
       transform: translate3d(0, 21px, 0);
@@ -28,9 +31,13 @@
       width: 480px;
     }
     .sub-btn {
-      background: $main-color;
+      background: $blue-gradient;
       margin-left: 20px;
       border: none;
+      &:hover {
+        background: #fff;
+        color: $main-color;
+      }
     }
 
   }

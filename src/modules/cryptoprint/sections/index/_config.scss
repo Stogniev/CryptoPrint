@@ -1,8 +1,9 @@
 $breakpoint: 500px;
 $dark-grey: #555864;
-$main-color: #f68687;
+$main-color: #314cc6;
 
 $blue-gradient: linear-gradient(69deg, #8794f6, #0022ab);
+$main-font: 'freight_medium';
 
 @mixin mobile {
   @media (max-width: 640px) {

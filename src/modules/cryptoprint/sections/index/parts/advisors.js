@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-export class TeamSection extends Component {
+export class Advisors extends Component {
   render () {
     return <section className='team' id='team'>
-      <h3 className='title'>Team</h3>
+      <h3 className='title'>Advisors</h3>
       <ul>
         <TeamMemeber
           id='elis'
@@ -51,4 +51,4 @@ const TeamMemeber = ({id, name, photo, children, ...props}) => <li className={`t
     {children}
 </li>
 
-export default TeamSection
+export default Advisors

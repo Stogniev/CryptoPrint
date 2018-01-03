@@ -1,10 +1,12 @@
   @import '../config';
 
   .preorder {
-    background: url('/images/product/form-bg.jpg') no-repeat center center;
+    background: url('/images/product/form-bg.png') no-repeat center center;
     background-size: cover;
     position: relative;
     color: #fff;
+    margin-top: 200px;
+    padding: 102px 0 133px;
     p {
       color: #fff;
     }
@@ -38,12 +40,12 @@
 .preorder-form {
   width: 473px;
   text-align: center;
+  margin-top: 103px;
   hr {
     display: none;
   }
   label {
-    font-size: 16px !important;
-    line-height: 50px;
+    font: 16px/50px 'freight_light' !important;
     color: $dark-grey;
     margin-left: 28px;
     transform: translate3d(0, 21px, 0);
@@ -65,5 +67,9 @@
   button {
     margin-top: 40px;
     margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+    font-variant: small-caps;
   }
 }

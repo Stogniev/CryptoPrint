@@ -1,27 +1,29 @@
   @import '../config';
 .attributes {
   ul {
-    margin-top: 20px;
+    margin-top: 120px;
     padding: 0;
     max-width: 1920px;
     list-style-type: none;
     li {
-      margin-bottom: 60px;
+      margin-bottom: 160px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      &:last-child {
+        margin-bottom: 0;
+      }
       >div {
         flex: 1 0 50%;
         .text-block {
           max-width: 380px;
           margin: 0 auto;
           h3 {
-            font-size: 25px;
-            font-weight: 300;
+            font: 300 32px/36px $main-font;
             margin-bottom: 3rem;
           }
           p {
-            font-size: 16px;
+            font: 18px/28px 'freight_light';
             margin-bottom: 2rem;
           }
         }

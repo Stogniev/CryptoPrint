@@ -1,14 +1,63 @@
   @import '../config';
 
 .footer {
+  margin-top: 200px;
   background: $dark-grey;
-  .flex-container {
-    align-items: center;
-    justify-content: space-between;
-    height: 149px;
-    padding: 0 100px;
-  }
+  color: #fff;
   svg {
     width: 300px;
+  }
+  .footer-top {
+    border-bottom: 1px solid #fff;
+    .flex-container {
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 90px 100px 70px;
+      h4 {
+        font: 18px/32px 'freight_bold';
+        color: #fff;
+        margin-bottom: 0;
+      }
+      nav {
+        li {
+          list-style-type: none;
+        }
+      }
+      .circle-btn {
+        background: transparent;
+        border: 2px solid #fff;
+      }
+      .contact {
+        a {
+          font-variant: small-caps;
+          font-size: 18px;
+        }
+        .social-links {
+          margin-top: 23px;
+          li {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+            svg {
+              fill: #fff;
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom {
+    padding: 0 96px 0 100px;
+    .flex-container {
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      span {
+        color: #fff;
+        font-variant: small-caps;
+      }
+    }
   }
 }

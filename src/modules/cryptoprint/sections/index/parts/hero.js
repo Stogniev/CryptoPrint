@@ -25,12 +25,12 @@ class Hero extends Component {
   render() {
     return (
       <div className='hero-content'>
-        <div className='container'>
+        <div className='hero-container'>
           <LogoOnepager />
           <h2>{heros[0].title}</h2>
           <p>{heros[0].sub}</p>
           <div className='action'>
-            <Button onClick={scrollTo('preorder')} className='circle-btn preorder-btn'>Join the pre-sale!</Button>
+            <Button onClick={scrollTo('preorder')} className='circle-btn preorder-btn'>buy now</Button>
           </div>
         </div>
       </div>

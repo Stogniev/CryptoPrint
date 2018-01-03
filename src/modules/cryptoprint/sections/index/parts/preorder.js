@@ -123,8 +123,7 @@ export class PreorderSection extends Component {
       </section>
     }
     return <section className='preorder' id='preorder'>
-      <h3 className='title invert'>Preorder Form</h3>
-      <p>Only 1,000 Left!</p>
+      <h3 className='title invert'>Buy now</h3>
       <form submit='#' className='preorder-form' onSubmit={this.submitPreorder.bind(this)}>
         <article>
           <TextFieldWithFBError id='name' label='Full Name' onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} errorMessage='Name is required' errorCode={this.state.error} errorCheck={'name:'} />
@@ -133,7 +132,7 @@ export class PreorderSection extends Component {
           <TextFieldWithFBError id='amount' errorMessage='Amount must be a number greater than 1' errorCode={this.state.error} errorCheck={'amount:'} label='Amount of Bills' onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} />
         </article>
         <article className='actions'>
-          <Button type='submit' flat label='Join the pre-sale!' className='circle-btn' disabled={!!this.state.error} />
+          <Button type='submit' flat label='Buy now' className='circle-btn' disabled={!!this.state.error} />
           <p>Shipping to begin in March 2018</p>
         </article>
       </form>

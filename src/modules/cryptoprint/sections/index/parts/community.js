@@ -16,10 +16,10 @@ export class CommunitySection extends Component {
         <div className="text text-right">
           <p>Follow us over on any of our community channels, over here, on telegram and on slack.</p>
           <ul className="social-links">
-            <li><a href="https://www.facebook.com/"><FacebookMonoIcon/></a></li>
-            <li><a href="https://twitter.com/"><TwitterIcon/></a></li>
-            <li><a href="https://telegram.org"><TelegramMonoIcon/></a></li>
-            <li><a href="www.slack.com/"><SlackIcon/></a></li>
+            <li><a href="https://www.facebook.com/cryptoprint"><FacebookMonoIcon/></a></li>
+            {/*<li><a href="https://twitter.com/"><TwitterIcon/></a></li>*/}
+            <li><a href="https://t.me/cryptoprint"><TelegramMonoIcon/></a></li>
+            {/*<li><a href="www.slack.com/"><SlackIcon/></a></li>*/}
           </ul>
         </div>
       </div>

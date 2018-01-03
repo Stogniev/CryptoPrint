@@ -42,53 +42,47 @@ class AppHeader extends Component {
     const { loggedIn } = user || {}
     return (
       <Paper zDepth={0} className='header'>
-        <Toolbar
-          themed
-          style={{
-            ...this.props.style
-          }}
-
-          className='app-header'
-        >
-          <div className="container">
-            <ToolbarGroup firstChild className='brand' style={{marginLeft: -18}}>
-              <Button icon
-                      onClick={e => this.toggleMenu()}
-                      className='menu'
-                      style={{padding: 3, margin: '10px'}}>
-                {showMenu
-                  ? <NavigationClose color='#FFF' />
-                  : <NavigationMenu color='#FFF' />
-                }
-              </Button>
-              <Button
-                flat
-                href='/'
-                onClick={e => {
-                  e.preventDefault()
-                  browserHistory.push('/')
-                }}
-                className='cryptoprint'
-              >
+        <div className='app-header container'>
+          <div className='brand'>
+            {/* <Button icon
+                    onClick={e => this.toggleMenu()}
+                    className='menu'
+                    style={{padding: 3, margin: '10px'}}>
+              {showMenu
+                ? <NavigationClose color='#FFF' />
+                : <NavigationMenu color='#FFF' />
+              }
+            </Button>
+            <Button
+              flat
+              href='/'
+              onClick={e => {
+                e.preventDefault()
+                browserHistory.push('/')
+              }}
+              className='cryptoprint'
+            /> */}
+            <strong className='logo'>
+              <a href='/'>
                 <LogoOnepager />
-              </Button>
-            </ToolbarGroup>
-            <ToolbarGroup className='content'>
-              <Button flat className='nav-btn' onClick={scrollTo('attributes')}>About</Button>
-              <Button flat className='nav-btn' onClick={scrollTo('features')}>Features</Button>
-              <Button flat className='nav-btn' onClick={scrollTo('team')}>Team</Button>
-              <Button flat className='nav-btn' onClick={scrollTo('preorder')}>Pre-Order</Button>
-              <Button flat className='nav-btn' onClick={scrollTo('community')}>Community</Button>
-            </ToolbarGroup>
-            <ToolbarGroup className='rights'>
-              {false && loggedIn ? <UserMenu
-                isAdmin={this.props.isAdmin}
-                gmode={this.props.gmode}
-                onSignout={this.onSignout.bind(this)}
-                user={this.props.user} /> : null}
-            </ToolbarGroup>
+              </a>
+            </strong>
           </div>
-        </Toolbar>
+          <div className='content'>
+            <Button flat className='nav-btn' onClick={scrollTo('attributes')}>About</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('features')}>Features</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('team')}>Team</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('preorder')}>Pre-Order</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('community')}>Community</Button>
+          </div>
+          <ToolbarGroup className='rights'>
+            {false && loggedIn ? <UserMenu
+              isAdmin={this.props.isAdmin}
+              gmode={this.props.gmode}
+              onSignout={this.onSignout.bind(this)}
+              user={this.props.user} /> : null}
+          </ToolbarGroup>
+        </div>
       </Paper>
     )
   }
