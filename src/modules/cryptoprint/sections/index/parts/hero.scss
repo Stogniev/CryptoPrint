@@ -1,57 +1,26 @@
 @import '../config';
 
-.video-intro {
-  .slick-next {
-    right: 50px;
-    z-index: 12;
-  }
-  .slick-prev {
-    left: 50px;
-    z-index: 12;
-  }
-  .hero {
-    padding: 120px 0;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    > small {
-      position: absolute;
-      right: 20px;
-      bottom: 20px;
-      // color: rgba(#FFF, 0.75);
+.hero-content {
+  padding: 120px 0;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: $blue-gradient;
+  text-align: center;
+  font-family: $main-font;
+  .hero-container {
+    margin: 0 auto;
+    max-width: 640px;
+    color: #fff;
+    svg {
+      width: 300px;
     }
-    .content {
-      text-align: center;
-      margin: 0 auto;
-      z-index: 10;
-      height: 100%;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      // justify-content: space-around;
-      max-width: 640px;
-      > * {
-        position: relative;
-        z-index: 11;
-      }
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 9;
-        background: rgba(#000, 0.75);
-        filter: blur(80px);
-        margin: -80px;
-      }
+    .action {
+      margin-top: 50px;
     }
-    position: relative;
-    background-size: cover;
-    background-position: 50% 50%;
+
     h1, h3, .btn {
       z-index: 10;
       // color: #fff;
@@ -60,48 +29,28 @@
     .action {
       margin-top: auto;
     }
-    h1 {
-      margin-top: auto;
-      font-size: 50px;
-      font-weight: 900;
-      color: rgba(#FFF, 0.987);
-      text-shadow: 1px 1px 24px rgba(#000, 0.543), -1px -1px 14px rgba(#000, 0.543), 0px 0px 7px rgba(#000, 0.543);
-      font-family: 'Play', sans-serif;
-      line-height: 5rem;
+    h2 {
+      font: 500 50px/55px $main-font;
+      color: #fff;
+      margin-top: 76px;
+      margin-bottom: 24px;
     }
-    h3 {
-      font-size: 30px;
-      font-weight: 300;
-      line-height: 4rem;
-      color: rgba(#FFF, 0.987);
-      text-shadow: 1px 1px 24px rgba(#000, 0.543), -1px -1px 14px rgba(#000, 0.543), 0px 0px 7px rgba(#000, 0.543);
+    p {
+      color: #fff;
+      font: 20px/23px 'freight_light';
+      margin-bottom: 97px;
     }
-    .btn {
-      font-size: 19px;
-    }
-    &-1 {
-      background-image: url('/images/product/a.jpg');
-    }
-    &-2 {
-      background-image: url('/images/product/b.jpg');
-    }
-    &-3 {
-      background-image: url('/images/product/c.jpg');
-    }
-    &-4 {
-      background-image: url('/images/product/d.jpg');
-    }
-    &:nth-child(odd) {
-      .content {
-        // text-align: left;
+    .circle-btn {
+      background: #fff;
+      color: $main-color;
+      &:hover {
+        background: $blue-gradient;
+        color: #fff;
+        border: $main-color;
       }
     }
-    &.slick-active {
-      z-index: 100;
-
-    }
   }
-
 }
+
 
 

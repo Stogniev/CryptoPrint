@@ -1,29 +1,31 @@
   @import '../config';
 .attributes {
   ul {
-    margin-top: 20px;
+    margin-top: 120px;
     padding: 0;
-    max-width: 780px;
+    max-width: 1920px;
     list-style-type: none;
     li {
-      margin-bottom: 60px;
+      margin-bottom: 160px;
       display: flex;
       align-items: center;
-      img {
-        z-index: 11;
-        max-width: 310px;
+      justify-content: flex-end;
+      &:last-child {
+        margin-bottom: 0;
       }
-      div {
-        width: 80%;
-        padding: 60px;
-        h3 {
-          font-size: 25px !important;
-          font-weight: 300;
-          margin-bottom: 3rem;
-        }
-        p {
-          font-size: 16px !important;
-          margin-bottom: 2rem;
+      >div {
+        flex: 1 0 50%;
+        .text-block {
+          max-width: 380px;
+          margin: 0 auto;
+          h3 {
+            font: 300 32px/36px $main-font;
+            margin-bottom: 3rem;
+          }
+          p {
+            font: 18px/28px 'freight_light';
+            margin-bottom: 2rem;
+          }
         }
       }
     }

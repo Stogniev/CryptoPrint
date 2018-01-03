@@ -1,10 +1,22 @@
+@import '../../../cryptoprint/sections/index/config';
+
 .header {
-  position: sticky;
-  top: 0;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
   z-index: 101;
   .app-header {
+    text-align: center;
     .brand {
       margin: 0;
+      position: absolute;
+      left: 60px;
+      top: 0;
+      .logo {
+        display: block;
+        width: 176px;
+      }
       .menu {
         display: none;
       }
@@ -18,13 +30,48 @@
           width: 44px;
           height: 44px;
           path {
-            fill: rgba(255,255,255,0.987);
+            fill: rgba(255, 255, 255, 0.987);
           }
         }
       }
+    }
+    .content {
+      max-width: 750px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    .nav-btn {
+      text-transform: none;
+      font: 500 14px/32px $main-font;
+      padding: 0 5px;
+      min-width: auto;
+      &:last-child {
+        margin-right: 0;
+      }
+      div:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #fff;
+        transition: width .3s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      &:hover {
+        background: transparent;
+        font-weight: bold;
+        div:after {
+          width: 100%;
+        }
+      }
+    }
     }
     .md-btn {
       color: rgba(#fff, 0.987);
     }
   }
 }
+
+

@@ -16,3 +16,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'freight_light';
+    src:  url(./freight_sans_light-webfont.svg#freight_medium) format('svg'),
+    url(./freight_sans_light-webfont.ttf) format('truetype'),
+    url(./freight_sans_light-webfont.woff) format('woff'),
+    url(./freight_sans_light-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 
 import {Button} from 'react-md'
-import Slider from 'react-slick'
 import * as Scroll from 'react-scroll' // Imports all Mixins
+import LogoOnepager from '../../../bits/onepager-logo'
+
 
 const scroller = Scroll.scroller
 const scrollOptions = {
@@ -15,53 +16,24 @@ const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
 const heros = [
   {
     title: 'Paper Wallets Just Got Better',
-    sub: 'Applying visual cryptographic techniques to keep your private key safe',
-    src: './images/product/a.jpg'
-  },
-  {
-    title: 'Making The Digital, Tangible',
-    sub: 'Bitcoin, in a form you can touch',
-    src: './images/product/b.jpg'
-  },
-  {
-    title: 'The Safest Wallet Around',
-    sub: 'Your private key never goes online',
-    src: './images/product/c.jpg'
-  },
-  {
-    title: 'Ultimate “Cold-Storage”',
-    sub: 'The best way to store cryptocurrency for the long run',
-    src: './images/product/d.jpg'
+    sub: 'Applying visual cryptographic techniques to keep your private key safe'
   }
 ]
 
 class Hero extends Component {
 
   render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false
-    }
-
     return (
-      <Slider {...settings} className='video-intro'>
-        {heros.map((e, i) => (<div className={`hero hero-${i + 1}`}>
-          <div className='content'>
-            <h1>{e.title}</h1>
-            <h3>{e.sub}</h3>
-            <div className='action'>
-              <Button raised secondary onClick={scrollTo('preorder')} className='preorder-btn'>Pre-Order Now!</Button>
-            </div>
+      <div className='hero-content'>
+        <div className='hero-container'>
+          <LogoOnepager />
+          <h2>{heros[0].title}</h2>
+          <p>{heros[0].sub}</p>
+          <div className='action'>
+            <Button onClick={scrollTo('preorder')} className='circle-btn preorder-btn'>buy now</Button>
           </div>
-          <small className='prototype'>
-            The pictures are of an early prototype version - final product may vary.
-          </small>
-        </div>))}
-      </Slider>
+        </div>
+      </div>
     )
   }
 }

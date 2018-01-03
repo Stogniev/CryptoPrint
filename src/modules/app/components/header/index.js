@@ -10,10 +10,11 @@ import NavigationMenu from 'material-ui/svg-icons/navigation/menu'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import Button from 'react-md/lib/Buttons'
 
-import GirlsHead from 'cryptoprint/bits/girls-head'
+// import GirlsHead from 'cryptoprint/bits/girls-head'
 
 import UserMenu from './user-menu'
 import * as Scroll from 'react-scroll' // Imports all Mixins
+import LogoOnepager from './../../../cryptoprint/bits/onepager-logo'
 
 import './header.css'
 
@@ -24,7 +25,7 @@ const scrollOptions = {
   offset: 50 // Scrolls to element + 50 pixels down the page
 }
 const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
-const headerBackground = 'rgba(22, 22, 22, 0.987)'
+const headerBackground = 'transparent'
 
 class AppHeader extends Component {
   onSignout (event) {
@@ -41,21 +42,12 @@ class AppHeader extends Component {
     const { loggedIn } = user || {}
     return (
       <Paper zDepth={0} className='header'>
-        <Toolbar
-          themed
-          style={{
-            background: headerBackground,
-            minHeight: '60px',
-            ...this.props.style
-          }}
-
-          className='app-header'
-        >
-          <ToolbarGroup firstChild className='brand' style={{marginLeft: -18}}>
-            <Button icon
-              onClick={e => this.toggleMenu()}
-              className='menu'
-              style={{padding: 3, margin: '10px'}}>
+        <div className='app-header container'>
+          <div className='brand'>
+            {/* <Button icon
+                    onClick={e => this.toggleMenu()}
+                    className='menu'
+                    style={{padding: 3, margin: '10px'}}>
               {showMenu
                 ? <NavigationClose color='#FFF' />
                 : <NavigationMenu color='#FFF' />
@@ -69,15 +61,20 @@ class AppHeader extends Component {
                 browserHistory.push('/')
               }}
               className='cryptoprint'
-            >
-              <GirlsHead className='cryptoprint-icon' />
-            </Button>
-          </ToolbarGroup>
-          <ToolbarGroup className='content'>
-            <Button flat onClick={scrollTo('attributes')}>About</Button>
-            <Button flat onClick={scrollTo('team')}>Team</Button>
-            <Button raised secondary onClick={scrollTo('preorder')}>Preorder</Button>
-          </ToolbarGroup>
+            /> */}
+            <strong className='logo'>
+              <a href='/'>
+                <LogoOnepager />
+              </a>
+            </strong>
+          </div>
+          <div className='content'>
+            <Button flat className='nav-btn' onClick={scrollTo('attributes')}>About</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('features')}>Features</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('team')}>Team</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('preorder')}>Pre-Order</Button>
+            <Button flat className='nav-btn' onClick={scrollTo('community')}>Community</Button>
+          </div>
           <ToolbarGroup className='rights'>
             {false && loggedIn ? <UserMenu
               isAdmin={this.props.isAdmin}
@@ -85,8 +82,7 @@ class AppHeader extends Component {
               onSignout={this.onSignout.bind(this)}
               user={this.props.user} /> : null}
           </ToolbarGroup>
-
-        </Toolbar>
+        </div>
       </Paper>
     )
   }

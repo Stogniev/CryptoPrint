@@ -1,52 +1,63 @@
   @import '../config';
 
 .footer {
-  border: none;
-  background: rgba(22, 22, 33, 0.98);
-  color: rgba(254, 253, 240, 0.98);
-  padding-top: 120px;
-  p {
-    width: 100%;
-    padding-left: 120px;
-    color: rgba(254, 253, 240, 0.98);
+  margin-top: 200px;
+  background: $dark-grey;
+  color: #fff;
+  svg {
+    width: 300px;
   }
-  article {
-    margin-bottom: 4rem;
-    &.year {
-      color: rgba(140, 150, 156, 0.9);
-    }
-    &.with-love {
-      font-size: 13px;
-      opacity: 0.7;
-      &, * {
-        transition: all 120ms ease-in-out;
-        &:hover {
-          opacity: 0.98;
+  .footer-top {
+    border-bottom: 1px solid #fff;
+    .flex-container {
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 90px 100px 70px;
+      h4 {
+        font: 18px/32px 'freight_bold';
+        color: #fff;
+        margin-bottom: 0;
+      }
+      nav {
+        li {
+          list-style-type: none;
         }
       }
-      svg {
-        width: 12px !important;
-        height: 12px !important;
-        position: relative;
-        top: 2px;
-        path {
-          fill: rgba(250,30,10, 0.98);
-        }
+      .circle-btn {
+        background: transparent;
+        border: 2px solid #fff;
       }
-    }
-    &.social {
-      background: none;
-      svg {
-        path {
-          fill: rgba(#FFF, 0.987);
+      .contact {
+        a {
+          font-variant: small-caps;
+          font-size: 18px;
+        }
+        .social-links {
+          margin-top: 23px;
+          li {
+            width: 40px;
+            height: 40px;
+            flex: 0 0 40px;
+            svg {
+              fill: #fff;
+              width: 20px;
+              height: 20px;
+            }
+          }
         }
       }
     }
   }
-  @media only screen and (max-width: $breakpoint) {
-    p {
-      padding: 0;
-      text-align: center;
+  .footer-bottom {
+    padding: 0 96px 0 100px;
+    .flex-container {
+      align-items: center;
+      justify-content: space-between;
+      height: 66px;
+      span {
+        color: #fff;
+        font-variant: small-caps;
+      }
     }
   }
 }

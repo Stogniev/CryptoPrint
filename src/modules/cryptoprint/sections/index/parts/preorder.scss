@@ -1,31 +1,75 @@
   @import '../config';
 
   .preorder {
-		.md-card {
-			padding: 3rem 6rem;
-	    article {
-	      width: 320px;
-				margin-bottom: 2rem;
-				.md-cell {
-					margin: 0;
-				}
-	    }
+    background: url('/images/product/form-bg.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    margin-top: 200px;
+    padding: 102px 0 133px;
+    p {
+      color: #fff;
+    }
+      .md-card {
+          padding: 3rem 6rem;
+      article {
+        width: 320px;
+        margin-bottom: 2rem;
+        .md-cell {
+            margin: 0;
+        }
+      }
     }
     @media only screen and (max-width: $breakpoint) {
 
-  		.md-card {
-  			padding: 0;
-  			width: 95%;
-  			padding: 40px;
-  			h2 {
-  				text-align: center;
-  				margin-bottom: 40px;
-  			}
-  			.actions {
-  				width: 100%;
-  				display: flex;
-  				justify-content: center;
-  			}
-  		}
+      .md-card {
+        width: 95%;
+        padding: 40px;
+        h2 {
+          text-align: center;
+          margin-bottom: 40px;
+        }
+        .actions {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+      }
+  }
+}
+.preorder-form {
+  width: 473px;
+  text-align: center;
+  margin-top: 103px;
+  hr {
+    display: none;
+  }
+  label {
+    font: 16px/50px 'freight_light' !important;
+    color: $dark-grey;
+    margin-left: 28px;
+    transform: translate3d(0, 21px, 0);
+    &.md-floating-label--floating {
+      transform: translate3d(0, -12px, 0);
+      color: #fff;
+    }
+  }
+  input {
+    background: #fff;
+    line-height: 50px;
+    border-radius: 100px;
+    padding: 0 10px 0 28px;
+    margin-top: 20px;
+  }
+  .md-text-field-message-container {
+    padding-left: 28px;
+  }
+  button {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+    font-variant: small-caps;
   }
 }

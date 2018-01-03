@@ -1,8 +1,6 @@
   @import '../config';
 
 .team {
-  background: #e6e4e2;
-  padding: 11rem 0;
   p {
     max-width: 540px;
     font-size: 16px;
@@ -11,28 +9,29 @@
   ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 40px;
-    width: 80%;
+    justify-content: center;
+    margin-top: 220px;
+    max-width: 1200px;
     padding: 0;
     li {
-      background-color: #fff;
+      background-color: #f7f7f7;
       width: 30%;
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      padding: 4rem 2rem;
-      justify-content: flex-start;
-      align-items: center;
-      border-radius: 5px;
-
-      //box-shadow: 2px 2px 7px grey;
+      padding: 122px 75px 4rem 35px;
+      position: relative;
+      height: 404px;
+      text-align: left;
+      list-style-type: none;
+      margin: 0 10px 145px;
       .avatar {
         height: 150px;
         width: 150px;
         border-radius: 50%;
-        margin-bottom: 20px;
         overflow: hidden;
+        position: absolute;
+        top: -70px;
+        left: 0;
+        right: 0;
+        margin: 0 auto 20px;
         img {
           display: block;
           margin: 0 auto;
@@ -41,35 +40,14 @@
           position: relative;
         }
       }
-      &.tid-shimond .avatar img {
-        transform: scale(1.8);
-        top: 16px;
-      }
-      &.tid-danielb .avatar img {
-        transform: scale(1.3);
-      }
-      &.tid-elis .avatar img {
-        transform: scale(1.2);
-      }
-      div {
-        display: flex;
-        margin-bottom: 20px;
-        h3 {
-          font-size: 20px;
-          font-weight: bold;
-        }
-        i {
-          font-size: 24px;
-          margin: 0 7px;
-          &:hover {
-            color: #bc5f87;
-            cursor: pointer;
-          }
-        }
+      h3 {
+        font: 16px/32px 'freight_bold';
+        text-align: left;
+        margin-bottom: 0;
       }
       p {
-        text-align: center;
-        font-size: 14px;
+        font-size: 18px;
+        line-height: 28px;
       }
     }
   }

@@ -20,15 +20,15 @@ $margin-b: 255px;
 a {
   text-decoration: none;
 }
-.container {
-  max-width: 1300px;
-  margin: 0 auto;
-  overflow: hidden;
-  padding: 0 10px;
-  @include tablet {
-    padding: 0 5%;
-  }
-}
+//.container {
+//  max-width: 1300px;
+//  margin: 0 auto;
+//  overflow: hidden;
+//  padding: 0 10px;
+//  @include tablet {
+//    padding: 0 5%;
+//  }
+//}
 
 .flex-container {
   display: flex;

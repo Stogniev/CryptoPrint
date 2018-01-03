@@ -3,15 +3,15 @@ import { connect } from 'react-redux'
 
 import LogoOnepager from '../../bits/onepager-logo'
 
-import {firebaseConnect} from "react-redux-firebase" // Imports all Mixins
+import {firebaseConnect} from 'react-redux-firebase' // Imports all Mixins
 
 class Header extends Component {
   render () {
     return (
       <header className='op-header'>
-        <div className="container">
+        <div className='container'>
           <strong>
-            <a href="/">
+            <a href='/'>
               <LogoOnepager />
             </a>
           </strong>
