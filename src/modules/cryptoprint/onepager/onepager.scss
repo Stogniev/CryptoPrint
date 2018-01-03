@@ -336,19 +336,19 @@ a {
       &:first-child {
         margin-left: 0;
       }
-      @include tablet {
-        width: 40px;
-        height: 40px;
-        flex: 0 0 40px;
-      }
+      //@include tablet {
+      //  width: 40px;
+      //  height: 40px;
+      //  flex: 0 0 40px;
+      //}
       a {
         display: block;
         line-height: 1;
-        svg {
-          fill: #ccc;
-          width: 30px;
-          height: 30px;
-        }
+        //svg {
+        //  fill: #ccc;
+        //  width: 30px;
+        //  height: 30px;
+        //}
       }
     }
   }

@@ -5,11 +5,17 @@
     padding: 0;
     max-width: 1920px;
     list-style-type: none;
+    @include mobile {
+      margin-top: 0;
+    }
     li {
       margin-bottom: 160px;
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      @include tablet {
+        margin-bottom: 80px;
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -18,13 +24,22 @@
         .text-block {
           max-width: 380px;
           margin: 0 auto;
+          @include tablet {
+            padding: 0 10px;
+          }
           h3 {
             font: 300 32px/36px $main-font;
             margin-bottom: 3rem;
+            @include tablet {
+              margin-bottom: 5px;
+            }
           }
           p {
             font: 18px/28px 'freight_light';
             margin-bottom: 2rem;
+            @include tablet {
+              margin-bottom: 0;
+            }
           }
         }
       }

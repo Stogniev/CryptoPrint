@@ -4,6 +4,9 @@
   margin-top: 200px;
   background: $dark-grey;
   color: #fff;
+  @include tablet {
+    margin-top: 100px;
+  }
   svg {
     width: 300px;
   }
@@ -13,6 +16,14 @@
       align-items: flex-start;
       justify-content: space-between;
       padding: 90px 100px 70px;
+      @include tablet {
+        padding: 20px 10px;
+      }
+      >* {
+        @include tablet {
+          margin-bottom: 20px;
+        }
+      }
       h4 {
         font: 18px/32px 'freight_bold';
         color: #fff;
@@ -50,10 +61,17 @@
   }
   .footer-bottom {
     padding: 0 96px 0 100px;
+    @include tablet {
+      padding: 10px;
+    }
     .flex-container {
       align-items: center;
       justify-content: space-between;
       height: 66px;
+      @include tablet {
+        justify-content: center;
+        height: auto;
+      }
       span {
         color: #fff;
         font-variant: small-caps;
