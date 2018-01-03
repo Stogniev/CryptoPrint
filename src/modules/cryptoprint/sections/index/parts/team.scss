@@ -13,6 +13,12 @@
     margin-top: 220px;
     max-width: 1200px;
     padding: 0;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      margin-top: 120px;
+    }
     li {
       background-color: #f7f7f7;
       width: 30%;
@@ -22,6 +28,15 @@
       text-align: left;
       list-style-type: none;
       margin: 0 10px 145px;
+      @include tablet {
+        width: 100%;
+        height: auto;
+        padding: 122px 10px 4rem 10px;
+        margin: 0 0 145px;
+        &:last-child {
+          margin-bottom: 40px;
+        }
+      }
       .avatar {
         height: 150px;
         width: 150px;
@@ -50,20 +65,5 @@
         line-height: 28px;
       }
     }
-  }
-    @media only screen and (max-width: $breakpoint) {
-
-      padding: 1.2rem 0;
-      >p {
-        width: 95%;
-        text-align: center;
-      }
-      ul {
-        width: 95%;
-        padding: 0;
-        .team-member {
-          width: 90%;
-        }
-      }
   }
 }

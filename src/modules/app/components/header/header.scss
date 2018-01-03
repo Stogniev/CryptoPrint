@@ -8,11 +8,20 @@
   z-index: 101;
   .app-header {
     text-align: center;
+    @include tablet {
+      display: flex;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
     .brand {
       margin: 0;
       position: absolute;
       left: 60px;
       top: 0;
+      @include tablet {
+        position: static;
+      }
       .logo {
         display: block;
         width: 176px;
@@ -40,6 +49,11 @@
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
+      @include tablet {
+        margin-right: 10px;
+        margin-left: auto;
+        max-width: 300px;
+      }
     .nav-btn {
       text-transform: none;
       font: 500 14px/32px $main-font;
