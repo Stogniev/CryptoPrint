@@ -39,8 +39,8 @@ class App extends Component {
     return (
       <div className='preloader-wrap'>
         <div className='loader'>
-          <div className='shadow'></div>
-          <div className='box'></div>
+          <div className='shadow' />
+          <div className='box' />
         </div>
       </div>
     )

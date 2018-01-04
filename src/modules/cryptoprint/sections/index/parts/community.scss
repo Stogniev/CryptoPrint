@@ -8,6 +8,9 @@
   }
   .community {
     padding-top: 66px;
+    .title {
+      margin-bottom: 70px;
+    }
     .text {
       align-self: center;
       flex: 1 1 50%;
@@ -42,11 +45,6 @@
       &:first-child {
         margin-left: 0;
       }
-      //@include tablet {
-      //  width: 40px;
-      //  height: 40px;
-      //  flex: 0 0 40px;
-      //}
       a {
         display: block;
         line-height: 1;

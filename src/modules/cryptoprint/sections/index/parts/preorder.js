@@ -6,17 +6,7 @@ import { compose } from 'redux'
 
 import TextField from 'react-md/lib/TextFields'
 import Card from 'react-md/lib/Cards'
-import { Autocomplete, SelectField, Button } from 'react-md'
-import currencies from 'services/currencies'
-
-const acCurrencies = currencies.map(({symbol, name}) => ({symbol, name, primaryText: name}))
-
-const walletTypes = [
-  {label: 'Normal', value: 'Norm'},
-  {label: 'Multisig', value: 'Multi'},
-  {label: 'Shares', value: 'Shares'},
-  {label: 'Segwit', value: 'Segwit'}
-]
+import { Button } from 'react-md'
 
 export class PreorderSection extends Component {
   constructor () {
@@ -132,7 +122,7 @@ export class PreorderSection extends Component {
           <TextFieldWithFBError id='amount' errorMessage='Amount must be a number greater than 1' errorCode={this.state.error} errorCheck={'amount:'} label='Amount of Bills' onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} />
         </article>
         <article className='actions'>
-          <Button type='submit' flat label='Buy now' className='circle-btn' disabled={!!this.state.error} />
+          <Button flat type='submit' className='circle-btn' disabled={!!this.state.error}>Buy now</Button>
           <p>Shipping to begin in March 2018</p>
         </article>
       </form>
