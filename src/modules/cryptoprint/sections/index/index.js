@@ -6,11 +6,11 @@ import Hero from './parts/hero'
 import Attributes from './parts/attributes'
 import Features from './parts/features'
 import Team from './parts/team'
-import Advisors from './parts/advisors'
+// import Advisors from './parts/advisors'
 import Community from './parts/community'
 import Footer from './parts/footer'
 import Preorder from './parts/preorder'
-import Grafic from './parts/grafic'
+// import Grafic from './parts/grafic'
 // import Social from './parts/social'
 import Newsletter from './parts/newsletter'
 import './index.css'
@@ -34,7 +34,7 @@ class SectionIndex extends Component {
   }
 
   render() {
-     console.log('this.props:', this.props)
+     // console.log('this.props:', this.props)
     return <div className='index-section'>
       <Hero />
       <Attributes />

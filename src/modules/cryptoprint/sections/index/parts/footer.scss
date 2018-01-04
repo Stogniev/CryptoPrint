@@ -49,10 +49,11 @@
             width: 40px;
             height: 40px;
             flex: 0 0 40px;
+            background: #fff;
             svg {
-              fill: #fff;
-              width: 20px;
-              height: 20px;
+              fill: $dark-grey;
+              width: 18px;
+              height: 18px;
             }
           }
         }

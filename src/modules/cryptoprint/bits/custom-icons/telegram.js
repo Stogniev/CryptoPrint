@@ -1,7 +1,7 @@
 import React from 'react'
 import { SVGIcon } from 'react-md'
 
-const FacebookIcon = props => (
+const TelegramIcon = props => (
   <SVGIcon {...props} viewBox='0 0 240 240'>
     <linearGradient id='path2995-1-0_1_' gradientUnits='userSpaceOnUse' x1='-683.305' y1='534.845' x2='-693.305' y2='511.512' gradientTransform='matrix(6 0 0 -6 4255 3247)'>
       <stop offset='0' stopColor='#37aee2' />
@@ -18,4 +18,4 @@ const FacebookIcon = props => (
   </SVGIcon>
 )
 
-export default FacebookIcon
+export default TelegramIcon

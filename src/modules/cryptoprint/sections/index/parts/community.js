@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 import FacebookMonoIcon from '../../../bits/custom-icons/facebook-mono'
-import TwitterIcon from '../../../bits/custom-icons/twitter'
+// import TwitterIcon from '../../../bits/custom-icons/twitter'
 import TelegramMonoIcon from '../../../bits/custom-icons/telegram-mono'
-import SlackIcon from '../../../bits/custom-icons/slack'
+// import SlackIcon from '../../../bits/custom-icons/slack'
 
 export class CommunitySection extends Component {
   render () {
