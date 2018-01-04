@@ -62,6 +62,9 @@
       }
       p {
         font: 18px/28px 'freight_medium';
+        @include mobile {
+          font-size: 20px;
+        }
       }
     }
   }

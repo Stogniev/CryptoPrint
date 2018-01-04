@@ -14,8 +14,14 @@
     margin: 0 auto;
     max-width: 640px;
     color: #fff;
+    @include mobile {
+      padding: 0 5px;
+    }
     svg {
       width: 300px;
+      @include mobile {
+        display: none;
+      }
     }
     .action {
       margin-top: 50px;
@@ -34,6 +40,9 @@
       color: #fff;
       margin-top: 76px;
       margin-bottom: 24px;
+      @include mobile {
+        font-size: 48px;
+      }
     }
     p {
       color: #fff;
