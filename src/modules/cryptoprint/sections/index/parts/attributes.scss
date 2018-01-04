@@ -40,6 +40,9 @@
             @include tablet {
               margin-bottom: 0;
             }
+            @include mobile {
+              font-size: 20px;
+            }
           }
         }
       }
@@ -60,7 +63,7 @@
         li {
           flex-direction: column;
           div {
-            padding: 20px;
+            padding: 20px 0;
             h3, p {
               text-align: center;
             }

@@ -11,6 +11,7 @@ import Button from 'react-md/lib/Buttons'
 // import UserMenu from './user-menu'
 import * as Scroll from 'react-scroll' // Imports all Mixins
 import LogoOnepager from './../../../cryptoprint/bits/onepager-logo'
+import Icon from './../../../cryptoprint/bits/girls-head'
 
 import './header.css'
 
@@ -60,6 +61,11 @@ class AppHeader extends Component {
             <strong className='logo'>
               <a href='/'>
                 <LogoOnepager />
+              </a>
+            </strong>
+            <strong className='logo-mobile'>
+              <a href='/'>
+                <Icon />
               </a>
             </strong>
           </div>
