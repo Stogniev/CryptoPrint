@@ -123,7 +123,6 @@ export class PreorderSection extends Component {
         </article>
         <article className='actions'>
           <Button flat type='submit' className='circle-btn' disabled={!!this.state.error}>Buy now</Button>
-          <p>Shipping to begin in March 2018</p>
         </article>
       </form>
     </section>
