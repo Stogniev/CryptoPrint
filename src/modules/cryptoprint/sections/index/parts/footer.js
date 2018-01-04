@@ -5,7 +5,7 @@ import FacebookIcon from '../../../bits/custom-icons/facebook-mono'
 // import TwitterIcon from '../../../bits/custom-icons/twitter'
 import TelegramIcon from '../../../bits/custom-icons/telegram-mono'
 // import SlackIcon from '../../../bits/custom-icons/slack'
-import { Button } from 'react-md'
+// import { Button } from 'react-md'
 
 export class FooterSection extends Component {
   render () {
@@ -16,20 +16,20 @@ export class FooterSection extends Component {
             <div>
               <LogoOnepager />
             </div>
-            <nav>
+            {/* <nav>
               <h4>Sitemap</h4>
-              {/* <ul>
+               <ul>
                 <li><a href='/'></a></li>
                 <li><a href='/'></a></li>
                 <li><a href='/'></a></li>
                 <li><a href='/'></a></li>
                 <li><a href='/'></a></li>
-              </ul> */}
+              </ul>
             </nav>
             <div className='resources'>
               <h4>Resources</h4>
               <Button flat className='circle-btn'>White Paper</Button>
-            </div>
+            </div> */}
             <div className='contact'>
               <h4>Contact us</h4>
               <a href='email:contact@cryptoprint.io'>contact@cryptoprint.io</a>
