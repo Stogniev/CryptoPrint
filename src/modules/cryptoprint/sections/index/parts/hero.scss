@@ -18,8 +18,8 @@
     margin: 0 auto;
     max-width: 640px;
     color: #fff;
-    @include mobile {
-      padding: 0;
+    @include tablet {
+      padding: 0 12px;
     }
     svg {
       width: 300px;

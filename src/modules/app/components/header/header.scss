@@ -12,7 +12,7 @@
       display: flex;
     }
     @include mobile {
-      padding: 10px 10px 0 5px;
+      padding: 10px 12px 0 12px;
       position: fixed;
       background: $blue-gradient;
       width: 100%;
@@ -37,7 +37,7 @@
         display: none;
         @include mobile {
           display: block;
-          width: 45px;
+          width: 35px;
           svg * {
             fill: #fff;
           }
