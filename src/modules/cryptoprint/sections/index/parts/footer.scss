@@ -7,6 +7,9 @@
   @include tablet {
     margin-top: 100px;
   }
+  @include mobile {
+    margin-top: 50px;
+  }
   svg {
     width: 300px;
   }
@@ -22,7 +25,11 @@
       >* {
         @include tablet {
           margin-bottom: 20px;
+          text-align: center;
         }
+      }
+      @include mobile {
+        align-items: center;
       }
       h4 {
         font: 18px/32px 'freight_bold';

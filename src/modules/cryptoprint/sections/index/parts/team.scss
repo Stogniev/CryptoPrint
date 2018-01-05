@@ -17,7 +17,7 @@
       flex-direction: column;
     }
     @include mobile {
-      margin-top: 120px;
+      margin-top: 90px;
     }
     li {
       background-color: #f7f7f7;
@@ -35,7 +35,13 @@
         margin: 0 0 145px;
         &:last-child {
           margin-bottom: 40px;
+          @include mobile {
+            margin-bottom: 0;
+          }
         }
+      }
+      @include mobile {
+        margin-bottom: 90px;
       }
       .avatar {
         height: 150px;
@@ -59,11 +65,15 @@
         font: 16px/32px 'freight_bold';
         text-align: left;
         margin-bottom: 0;
+        @include mobile {
+          text-align: center;
+        }
       }
       p {
         font: 18px/28px 'freight_medium';
         @include mobile {
           font-size: 20px;
+          text-align: center;
         }
       }
     }

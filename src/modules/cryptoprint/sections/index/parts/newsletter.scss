@@ -7,6 +7,9 @@
   p {
     font: 18px/32px 'freight_medium';
     margin: 0;
+    @include mobile {
+      text-align: center;
+    }
   }
   .form-container {
     display: flex;
@@ -41,6 +44,7 @@
       }
       @include mobile {
         width: 100%;
+        background: #dedada;
       }
     }
     .sub-btn {
