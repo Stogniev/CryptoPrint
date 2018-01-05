@@ -9,7 +9,7 @@
   .community {
     padding-top: 66px;
     @include mobile {
-      padding-top: 0;
+      padding: 0 12px;
     }
     .title {
       margin-bottom: 70px;
