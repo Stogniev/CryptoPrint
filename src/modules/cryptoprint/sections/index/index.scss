@@ -28,7 +28,7 @@ h2 {
 		flex-direction: column;
 		align-items: center;
 		@media (max-width: 640px) {
-			padding-top: 100px;
+			padding-top: 50px;
 		}
 	}
 	@import './parts/hero.scss';
