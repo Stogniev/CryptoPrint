@@ -50,7 +50,7 @@ export class Newsletter extends Component {
     }
     return (
       <section className='newsletter'>
-        <p>Sing up for our newsletter to stay up to date on Cryptoprint!</p>
+        <p>Sing up for our newsletter</p>
         <div className='form-container'>
           <TextFieldWithFBError id='email' label='Email' onBlur={(id) => (v, e) => this.validateEmail(v)} errorMessage='Email is Required' errorCode={this.state.error} errorCheck={'email:'} />
 
