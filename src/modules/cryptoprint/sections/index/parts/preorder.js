@@ -13,22 +13,10 @@ export class PreorderSection extends Component {
     super()
 
     this.state = {
-      currency: '',
       fields: {
-        amount: 3,
-        wallet_type: 'Normal'
+        amount: 3
       },
       error: ''
-    }
-  }
-
-  handleSearchCurrency (value) {
-    if (value) {
-      if (this.state.username) {
-        this.setState({ username: '' })
-      }
-    } else {
-      // this.props.clearSearchResults()
     }
   }
 
@@ -38,10 +26,9 @@ export class PreorderSection extends Component {
       ...this.state.fields,
       [id]: value
     }
-
     let error = this.validate(id, value)
     let canSubmit = false
-    const requiredFields = 'amount, email, wallet_type, currency, name'
+    const requiredFields = 'amount, email, name'
     const missingFields = requiredFields.split(', ').filter(e => !fields[e])
 
     if (!error && missingFields.length > 0) {
@@ -87,7 +74,9 @@ export class PreorderSection extends Component {
         timestamp: Date.now()
       }
       const push = this.props.firebase.push('orders/incoming', {})
+      console.log(push)
       push.then(ref => {
+        console.log(1)
         const { key } = ref
         this.props.firebase.set(`orders/incoming/${key}`, Object.assign(data, { orderId: key }))
         .then(ref => {
