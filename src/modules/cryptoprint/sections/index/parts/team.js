@@ -26,7 +26,7 @@ export class TeamSection extends Component {
         >
           <p>With security being our top priority, we have created a special manufacturing process that is designed to ensure that the private keys printed on the wallets are never seen by anyone but the future owners.</p>
         </TeamMemeber>
-        <TeamMemeber
+        {/* <TeamMemeber
           id='travis'
           name='Travis Purrington'
           photo='/images/team/shimon.png'
@@ -39,7 +39,7 @@ export class TeamSection extends Component {
           photo='/images/team/shimon.png'
         >
           <p>With security being our top priority, we have created a special manufacturing process that is designed to ensure that the private keys printed on the wallets are never seen by anyone but the future owners.</p>
-        </TeamMemeber>
+        </TeamMemeber> */}
       </ul>
     </section>
   }

@@ -11,7 +11,7 @@
     margin-top: 50px;
   }
   svg {
-    width: 300px;
+    width: 176px;
   }
   .footer-top {
     border-bottom: 1px solid #fff;
@@ -21,15 +21,13 @@
       padding: 90px 100px 70px;
       @include tablet {
         padding: 20px 12px;
+        align-items: center;
       }
       >* {
         @include tablet {
           margin-bottom: 20px;
           text-align: center;
         }
-      }
-      @include mobile {
-        align-items: center;
       }
       h4 {
         font: 18px/32px 'freight_bold';
@@ -49,6 +47,7 @@
         a {
           font-variant: small-caps;
           font-size: 18px;
+          margin-top: 5px;
         }
         .social-links {
           margin-top: 23px;
@@ -59,8 +58,8 @@
             background: #fff;
             svg {
               fill: $dark-grey;
-              width: 18px;
-              height: 18px;
+              width: 22px;
+              height: 22px;
             }
           }
         }
@@ -82,7 +81,8 @@
       }
       span {
         color: #fff;
-        font-variant: small-caps;
+        font-variant: petite-caps;
+        letter-spacing: .03em;
       }
     }
   }

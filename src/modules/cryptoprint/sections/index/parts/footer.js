@@ -31,7 +31,7 @@ export class FooterSection extends Component {
               <Button flat className='circle-btn'>White Paper</Button>
             </div> */}
             <div className='contact'>
-              <h4>Contact us</h4>
+              <h4>Contact Us</h4>
               <a href='email:contact@cryptoprint.io'>contact@cryptoprint.io</a>
               <ul className='social-links'>
                 <li><a href='https://www.facebook.com/cryptoprint'><FacebookIcon/></a></li>

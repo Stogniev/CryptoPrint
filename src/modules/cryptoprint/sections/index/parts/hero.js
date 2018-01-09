@@ -30,7 +30,7 @@ class Hero extends Component {
           <h2>{heros[0].title}</h2>
           <p>{heros[0].sub}</p>
           <div className='action'>
-            <Button onClick={scrollTo('preorder')} className='circle-btn preorder-btn'>buy now</Button>
+            <Button onClick={scrollTo('preorder')} className='circle-btn preorder-btn'><span>buy now</span></Button>
           </div>
         </div>
       </div>

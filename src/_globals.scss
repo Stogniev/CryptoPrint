@@ -1,5 +1,6 @@
 // Can't use the nice '~react-md/src/scss/react-md' since this isn't being bundled with webpack
 @import '../node_modules/react-md/src/scss/react-md';
+@import '../src/modules/cryptoprint/sections/index/config';
 
 $md-light-theme: true; // optional for light theme
 $md-primary-color: $md-green-500;
@@ -17,6 +18,7 @@ $margin-b: 255px;
 @include react-md-theme-everything($md-green-500, $md-deep-purple-a-100, $md-light-theme, 'custom-theme');
 
 // @import '../node_modules/react-md/src/scss/react-md';
+
 a {
   color: #fff;
 }
@@ -125,57 +127,184 @@ body {
   }
 }
 
+//.circle-btn {
+//  background: transparent;
+//  position: relative;
+//  min-height: 50px!important;
+//  border: 0;
+//  min-width: 220px;
+//  display: inline-block;
+//  font: 16px/33px 'freight_bold';
+//  color: #fff;
+//  text-transform: capitalize;
+//  -webkit-font-smoothing: antialiased;
+//  border-radius: 24px;
+//  &:before,
+//  &:after {
+//    background: #fff;
+//    will-change: transform;
+//    transition: all .2s;
+//    border-radius: 24px;
+//    display: block;
+//    content: "";
+//    position: absolute;
+//    top: 2px;
+//    left: 2px;
+//  }
+//  &:before {
+//    z-index: 1;
+//  }
+//  &:after {
+//    transition: all .2s;
+//    z-index: 0;
+//    height: calc(100% - 30px);
+//    width: 60%;
+//    top: 6px;
+//    left: 6px;
+//    box-shadow: none;
+//    opacity: 0;
+//  }
+//  &:hover {
+//    background-color: transparent;
+//    border-color: #0062cc;
+//    &:before {
+//      box-shadow: none;
+//    }
+//    &:after {
+//      box-shadow: 0 0 10px 1px rgba(0,0,0,.3);
+//      transition: all .4s;
+//      transition-delay: .1s;
+//      top: 0;
+//      left: 0;
+//      width: 100%;
+//      height: 100%;
+//      opacity: 1;
+//    }
+//  }
+//
+//  span {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    z-index: 1;
+//    position: absolute;
+//    left: 0;
+//    top: 0;
+//    width: 100%;
+//    height: 100%;
+//    &:before {
+//      transition: all .5s;
+//      border-radius: 24px;
+//      content: "";
+//      height: calc(100% - 4px);
+//      width: calc(100% - 4px);
+//      position: absolute;
+//      top: 2px;
+//      left: 2px;
+//      z-index: -1;
+//    }
+//    &:hover:before {
+//      background: $blue-gradient;
+//      transition: all .3s;
+//    }
+//  }
+//}
+
 .circle-btn {
   background-color: transparent;
-  border: 2px solid #fff;
-  color: #ffffff;
-  text-transform: uppercase;
-  width: 220px;
+  position: relative;
+  min-height: 50px!important;
+  border: 0;
+  min-width: 220px;
+  display: inline-block;
   font: 16px/33px 'freight_bold';
-  border-radius: 100px;
-  height: 50px;
-
-    &:before,
-    &:after {
-      content: '';
-      border-style: solid;
-      border-color: #fff;
-      position: absolute;
-      z-index: 5;
-      border-radius: 100px;
-      box-sizing: content-box;
-      transition: all 0.3s;
-    }
-
-    &:before {
-      width: 0;
-      height: 100%;
-      border-width: 2px 0 2px 0;
-      top: -2px;
-      right: 0;
-      transition-delay: 0.05s;
-    }
-
-    &:after {
-      width: 100%;
-      height: 0;
-      border-width: 0 2px 0 2px;
-      bottom: 0;
-      left: -2px;
-    }
-
-    &:hover {
-      color: #fff;
-      &:before {
-        width: 100%;
-      }
-
-      &:after {
-        height: 100%;
-      }
-    }
-
+  color: #314cc6;
+  text-transform: capitalize;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 24px;
+  &:before,
+  &:after {
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8781f4",endColorstr="#09f4e6",GradientType=1);
+    background: #fff;
+    will-change: transform;
+    transition: all .5s;
+    border-radius: 24px;
+    display: block;
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
+  &:before {
+    z-index: 1;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.3);
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+  }
+  &:after {
+    transition: all .2s;
+    z-index: 0;
+    height: calc(100% - 30px);
+    width: 60%;
+    top: 6px;
+    left: 6px;
+    box-shadow: none;
+  }
+  &:hover {
+    background-color: transparent;
+    color: #fff;
+    &:before {
+      box-shadow: none;
+    }
+    &:after {
+      box-shadow: 0 0 10px 1px rgba(0,0,0,.3);
+      transition: all .4s;
+      transition-delay: .1s;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    span:before {
+      background: $blue-gradient;
+      transition: all .3s;
+    }
+  }
+  span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    &:before {
+      transition: all .5s;
+      border-radius: 24px;
+      content: "";
+      height: calc(100% - 4px);
+      width: calc(100% - 4px);
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      z-index: -1;
+    }
+  }
+}
+
+
 @media screen and (min-width: 1025px) {
   .md-btn--text::before, .md-btn--text::after {
     display: block;

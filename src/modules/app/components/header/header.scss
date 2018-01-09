@@ -79,7 +79,8 @@
       font: 500 14px/32px $main-font;
       padding: 0 5px;
       min-width: auto;
-      font-variant: small-caps;
+      font-variant: petite-caps;
+      letter-spacing: .03em;
       &:last-child {
         margin-right: 0;
       }

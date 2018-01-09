@@ -122,7 +122,7 @@ export class PreorderSection extends Component {
           <TextFieldWithFBError id='amount' errorMessage='Amount must be a number greater than 1' errorCode={this.state.error} errorCheck={'amount:'} label='Amount of Bills' onBlur={(id) => (v, e) => this.handleInputChange(id, v.target.value)} />
         </article>
         <article className='actions'>
-          <Button flat type='submit' className='circle-btn' disabled={!!this.state.error}>Buy now</Button>
+          <Button type='submit' className='circle-btn' disabled={!!this.state.error}><span>Buy now</span></Button>
         </article>
       </form>
     </section>
