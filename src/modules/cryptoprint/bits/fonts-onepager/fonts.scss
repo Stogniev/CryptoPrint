@@ -8,6 +8,15 @@
     font-style: normal;
 }
 @font-face {
+    font-family: 'freight_book';
+    src:  url(./freight_sans_book-webfont.svg#freight_medium) format('svg'),
+    url(./freight_sans_book-webfont.ttf) format('truetype'),
+    url(./freight_sans_book-webfont.woff) format('woff'),
+    url(./freight_sans_book-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: 'freight_bold';
     src:  url(./freight_sans_bold-webfont.svg#freight_medium) format('svg'),
     url(./freight_sans_bold-webfont.ttf) format('truetype'),
