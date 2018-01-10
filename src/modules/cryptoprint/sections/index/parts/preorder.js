@@ -88,6 +88,14 @@ export class PreorderSection extends Component {
           })
         })
       })
+      // const { ref } = this.props.firebase
+      // ref('orders').child('incoming').push({data})
+      //   .then(e => {
+      //     this.setState({
+      //       submitting: false,
+      //       done: true
+      //     })
+      //   })
     })
   }
 
