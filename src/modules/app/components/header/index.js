@@ -21,7 +21,17 @@ const scrollOptions = {
   smooth: true,
   offset: 50 // Scrolls to element + 50 pixels down the page
 }
-const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
+// const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
+
+const scrollTo = function scrollTo(name) {
+  return function (e) {
+    let a = document.querySelector('.active-item')
+    a ? a.classList.remove('active-item') : null
+    e.target.classList.add('active-item')
+
+    return scroller.scrollTo(name, scrollOptions)
+  }
+}
 
 class AppHeader extends Component {
   onSignout (event) {
@@ -33,6 +43,7 @@ class AppHeader extends Component {
     // uiActions.toggleMenu()
     console.log('toggle!')
   }
+
   render () {
     // const { user, ui: { showMenu = false } } = this.props
     // const { loggedIn } = user || {}
@@ -70,11 +81,11 @@ class AppHeader extends Component {
             </strong>
           </div>
           <div className='content'>
-            <Button flat className='nav-btn' onClick={scrollTo('attributes')}>About</Button>
-            <Button flat className='nav-btn' onClick={scrollTo('features')}>Features</Button>
-            <Button flat className='nav-btn' onClick={scrollTo('team')}>Team</Button>
-            <Button flat className='nav-btn' onClick={scrollTo('preorder')}>Buy now</Button>
-            <Button flat className='nav-btn' onClick={scrollTo('community')}>Community</Button>
+            <div className='nav-btn' onClick={scrollTo('attributes')}>About</div>
+            <div className='nav-btn' onClick={scrollTo('features')}>Features</div>
+            <div className='nav-btn' onClick={scrollTo('team')}>Team</div>
+            <div className='nav-btn' onClick={scrollTo('preorder')}>Buy now</div>
+            <div className='nav-btn' onClick={scrollTo('community')}>Community</div>
           </div>
           {/* <ToolbarGroup className='rights'>
             {false && loggedIn ? <UserMenu
