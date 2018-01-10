@@ -1,22 +1,19 @@
 @import '../../../cryptoprint/sections/index/config';
 
 .header {
-  position: absolute;
-  top: 20px;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  z-index: 101;
+  background: $blue-gradient;
+  padding: 10px 12px 12px;
+  z-index: 2;
   .app-header {
     text-align: center;
     @include tablet {
       display: flex;
     }
     @include mobile {
-      padding: 10px 12px 0 12px;
-      position: fixed;
-      background: $blue-gradient;
-      width: 100%;
-      top: 0;
     }
     .brand {
       margin: 0;
