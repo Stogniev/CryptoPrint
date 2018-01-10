@@ -6,7 +6,7 @@ import { firebaseConnect } from 'react-redux-firebase'
 
 import Paper from 'react-md/lib/Papers'
 // import { ToolbarGroup } from 'material-ui/Toolbar'
-import Button from 'react-md/lib/Buttons'
+// import Button from 'react-md/lib/Buttons'
 
 // import UserMenu from './user-menu'
 import * as Scroll from 'react-scroll' // Imports all Mixins
@@ -21,22 +21,29 @@ const scrollOptions = {
   smooth: true,
   offset: 50 // Scrolls to element + 50 pixels down the page
 }
-// const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
 
-const scrollTo = function scrollTo(name) {
-  return function (e) {
+const scrollTo = name => e => {
     let a = document.querySelector('.active-item')
     a ? a.classList.remove('active-item') : null
     e.target.classList.add('active-item')
 
     return scroller.scrollTo(name, scrollOptions)
   }
-}
 
 class AppHeader extends Component {
+  componentDidMount () {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll () {
+    let header = document.querySelector('.header');
+    (window.pageYOffset > 300) ? header.classList.add('gradient') : header.classList.remove('gradient')
+  }
+
   onSignout (event) {
     event.preventDefault()
   }
+
   toggleMenu () {
     // const { uiActions } = this.props
     //

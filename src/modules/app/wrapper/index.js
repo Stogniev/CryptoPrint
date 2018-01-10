@@ -22,7 +22,35 @@ class App extends Component {
       loading: true
     }
     this.handleImageChange = this.handleImageChange.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
+  }
 
+  componentDidMount () {
+    this.getOffset()
+    window.addEventListener('scroll', this.handleScroll)
+
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll() {
+    // console.log(window.scrollY)
+    // if ((window.scrollY >= offsetsArr[0]) && (window.scrollY < offsetsArr[1])) {
+    //   let d = document.querySelector('.nav-btn')
+    //   d.classList.add('active-item')
+    // }
+
+  }
+  getOffset () {
+    let section = document.querySelectorAll('section')
+    let offsetsArr = []
+    for (let i = 0; i < section.length; i++) {
+
+      offsetsArr.push(section[i].offsetTop)
+    }
+    return offsetsArr
   }
 
   handleImageChange() {
@@ -49,7 +77,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Header style={{position: 'sticky'}}/>
+        <Header />
         <div className='main-container' loading={this.state.loading}>
           {this.props.children}
         </div>
