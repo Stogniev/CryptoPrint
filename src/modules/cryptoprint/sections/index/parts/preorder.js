@@ -14,7 +14,9 @@ export class PreorderSection extends Component {
 
     this.state = {
       fields: {
-        amount: 3
+        amount: 3,
+        currency: '',
+        wallet_type: ''
       },
       error: ''
     }
@@ -73,10 +75,10 @@ export class PreorderSection extends Component {
         order: this.state.fields,
         timestamp: Date.now()
       }
+      console.log(data)
       const push = this.props.firebase.push('orders/incoming', {})
-      console.log(push)
       push.then(ref => {
-        console.log(1)
+        console.log(data)
         const { key } = ref
         this.props.firebase.set(`orders/incoming/${key}`, Object.assign(data, { orderId: key }))
         .then(ref => {
