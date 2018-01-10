@@ -5,15 +5,22 @@
   top: 0;
   left: 0;
   right: 0;
-  background: $blue-gradient;
+  background: transparent;
   padding: 10px 12px 12px;
   z-index: 2;
+  &.gradient {
+    background: $blue-gradient;
+  }
+  @include mobile {
+    padding: 10px 8px 10px;
+  }
   .app-header {
     text-align: center;
     @include tablet {
       display: flex;
     }
     @include mobile {
+      padding: 0;
     }
     .brand {
       margin: 0;
@@ -114,6 +121,9 @@
         div:after {
           width: 100%;
         }
+      }
+      @include mobile {
+        padding-right: 0;
       }
     }
     }
