@@ -88,11 +88,11 @@ class AppHeader extends Component {
             </strong>
           </div>
           <div className='content'>
-            <div className='nav-btn attributes' onClick={scrollTo('attributes')} ref='attributes' data-name='attributes'>About</div>
-            <div className='nav-btn features' onClick={scrollTo('features')} ref='features' data-name='features'>Features</div>
-            <div className='nav-btn team' onClick={scrollTo('team')} ref='team' data-name='team'>Team</div>
-            <div className='nav-btn preorder' onClick={scrollTo('preorder')} ref='preorder' data-name='preorder'>Buy now</div>
-            <div className='nav-btn community' onClick={scrollTo('community')} ref='community' data-name='community'>Community</div>
+            <div className='nav-btn' onClick={scrollTo('attributes')} ref='attributes' data-name='attributes'>About</div>
+            <div className='nav-btn' onClick={scrollTo('features')} ref='features' data-name='features'>Features</div>
+            <div className='nav-btn' onClick={scrollTo('team')} ref='team' data-name='team'>Team</div>
+            <div className='nav-btn' onClick={scrollTo('preorder')} ref='preorder' data-name='preorder'>Buy now</div>
+            <div className='nav-btn' onClick={scrollTo('community')} ref='community' data-name='community'>Community</div>
           </div>
           {/* <ToolbarGroup className='rights'>
             {false && loggedIn ? <UserMenu
