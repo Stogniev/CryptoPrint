@@ -88,7 +88,6 @@ export class PreorderSection extends Component {
       return <section className='preorder'>
         <h3 className='title invert'>Preorder Form</h3>
         <h4>Your order has been submitted</h4>
-        Add a comment to this line
         <p className='form-send'>Thank you for preordering Cryptoprint - we will get in touch with you soon to finalize your order.</p>
       </section>
     }
