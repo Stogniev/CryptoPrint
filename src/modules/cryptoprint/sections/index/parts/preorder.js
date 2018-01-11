@@ -14,7 +14,9 @@ export class PreorderSection extends Component {
 
     this.state = {
       fields: {
-        amount: 3
+        amount: 3,
+        currency: '',
+        wallet_type: ''
       },
       error: ''
     }
@@ -68,6 +70,24 @@ export class PreorderSection extends Component {
     if (!canSubmit) {
       return false
     }
+    // this.setState({submitting: true}, () => {
+    //   const data = {
+    //     order: this.state.fields,
+    //     timestamp: Date.now()
+    //   }
+    //   console.log(data)
+    //   const push = this.props.firebase.push('orders/incoming', {})
+    //   push.then(ref => {
+    //     const { key } = ref
+    //     this.props.firebase.set(`orders/incoming/${key}`, Object.assign(data, { orderId: key }))
+    //     .then(ref => {
+    //       this.setState({
+    //         submitting: false,
+    //         done: true
+    //       })
+    //     })
+    //   })
+    // })
 
     const { ref } = this.props.firebase
     const data = {
@@ -78,7 +98,6 @@ export class PreorderSection extends Component {
     this.setState({ doing: true }, () => {
       ref('orders/incoming').push({data})
         .then(e => {
-          console.log('111')
           this.setState({ done: true, doing: false })
         })
     })
