@@ -14,9 +14,7 @@ export class PreorderSection extends Component {
 
     this.state = {
       fields: {
-        amount: 3,
-        currency: '',
-        wallet_type: ''
+        amount: 3
       },
       error: ''
     }
@@ -70,24 +68,6 @@ export class PreorderSection extends Component {
     if (!canSubmit) {
       return false
     }
-    // this.setState({submitting: true}, () => {
-    //   const data = {
-    //     order: this.state.fields,
-    //     timestamp: Date.now()
-    //   }
-    //   console.log(data)
-    //   const push = this.props.firebase.push('orders/incoming', {})
-    //   push.then(ref => {
-    //     const { key } = ref
-    //     this.props.firebase.set(`orders/incoming/${key}`, Object.assign(data, { orderId: key }))
-    //     .then(ref => {
-    //       this.setState({
-    //         submitting: false,
-    //         done: true
-    //       })
-    //     })
-    //   })
-    // })
 
     const { ref } = this.props.firebase
     const data = {
@@ -106,13 +86,10 @@ export class PreorderSection extends Component {
   render () {
     if (this.state.done) {
       return <section className='preorder'>
-        <Card>
-          <h2>Preorder Form</h2>
-          <article>
-            <h3>Your order has been submitted</h3>
-            <p>Thank you for preordering Cryptoprint - we will get in touch with you soon to finalize your order.</p>
-          </article>
-        </Card>
+        <h3 className='title invert'>Preorder Form</h3>
+        <h4>Your order has been submitted</h4>
+        Add a comment to this line
+        <p className='form-send'>Thank you for preordering Cryptoprint - we will get in touch with you soon to finalize your order.</p>
       </section>
     }
     return <section className='preorder' id='preorder'>
