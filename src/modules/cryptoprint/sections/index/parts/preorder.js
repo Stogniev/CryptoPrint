@@ -78,7 +78,6 @@ export class PreorderSection extends Component {
       console.log(data)
       const push = this.props.firebase.push('orders/incoming', {})
       push.then(ref => {
-        console.log(data)
         const { key } = ref
         this.props.firebase.set(`orders/incoming/${key}`, Object.assign(data, { orderId: key }))
         .then(ref => {
@@ -88,14 +87,6 @@ export class PreorderSection extends Component {
           })
         })
       })
-      // const { ref } = this.props.firebase
-      // ref('orders').child('incoming').push({data})
-      //   .then(e => {
-      //     this.setState({
-      //       submitting: false,
-      //       done: true
-      //     })
-      //   })
     })
   }
 

@@ -26,7 +26,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-    this.getOffset()
     window.addEventListener('scroll', this.handleScroll)
 
   }
@@ -36,21 +35,15 @@ class App extends Component {
   }
 
   handleScroll() {
-    // console.log(window.scrollY)
-    // if ((window.scrollY >= offsetsArr[0]) && (window.scrollY < offsetsArr[1])) {
-    //   let d = document.querySelector('.nav-btn')
-    //   d.classList.add('active-item')
-    // }
-
-  }
-  getOffset () {
+    let headerAncors = document.querySelectorAll('.nav-btn')
     let section = document.querySelectorAll('section')
-    let offsetsArr = []
     for (let i = 0; i < section.length; i++) {
-
-      offsetsArr.push(section[i].offsetTop)
+      if( window.scrollY >= section[i].offsetTop ) {
+        for (let j = 0; j < headerAncors.length; j++) {
+          headerAncors[j].dataset.name === section[i].id ? headerAncors[j].classList.add('active-item') : headerAncors[j].classList.remove('active-item')
+        }
+      }
     }
-    return offsetsArr
   }
 
   handleImageChange() {
