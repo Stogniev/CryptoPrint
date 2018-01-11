@@ -35,7 +35,6 @@ export class Newsletter extends Component {
       this.setState({ doing: true }, () => {
         ref('newsletter').child('unverified').push({email})
           .then(e => {
-            console.log('222')
             this.setState({ done: true, doing: false })
           })
       })

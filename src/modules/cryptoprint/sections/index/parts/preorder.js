@@ -96,7 +96,7 @@ export class PreorderSection extends Component {
     }
     // send email
     this.setState({ doing: true }, () => {
-      ref('orders/incoming').push({data})
+      ref('orders').child('incoming').push({data})
         .then(e => {
           this.setState({ done: true, doing: false })
         })
@@ -106,9 +106,13 @@ export class PreorderSection extends Component {
   render () {
     if (this.state.done) {
       return <section className='preorder'>
-        <h3 className='title invert'>Preorder Form</h3>
-        <h4>Your order has been submitted</h4>
-        <p className='form-send'>Thank you for preordering Cryptoprint - we will get in touch with you soon to finalize your order.</p>
+        <Card>
+          <h2>Preorder Form</h2>
+          <article>
+            <h3>Your order has been submitted</h3>
+            <p>Thank you for preordering Cryptoprint - we will get in touch with you soon to finalize your order.</p>
+          </article>
+        </Card>
       </section>
     }
     return <section className='preorder' id='preorder'>
