@@ -2,7 +2,7 @@
 
 .hero-content {
   padding: 120px 0;
-  height: 750px;
+  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,6 @@
   }
   .hero-container {
     margin: 0 auto;
-    max-width: 640px;
     color: #fff;
     @include tablet {
       padding: 0 12px;
@@ -43,15 +42,17 @@
       font: 500 50px/55px $main-font;
       color: #fff;
       margin-top: 76px;
-      margin-bottom: 24px;
+      margin-bottom: 70px;
       @include mobile {
         font-size: 48px;
+        margin-top: 0;
       }
     }
     p {
       color: #fff;
       font: 20px/23px 'freight_light';
       margin-bottom: 97px;
+      margin-top: 30px;
       @include mobile {
         margin-bottom: 2vh;
       }

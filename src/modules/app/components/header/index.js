@@ -90,8 +90,8 @@ class AppHeader extends Component {
           <div className='content'>
             <div className='nav-btn' onClick={scrollTo('attributes')} ref='attributes' data-name='attributes'>About</div>
             <div className='nav-btn' onClick={scrollTo('features')} ref='features' data-name='features'>Features</div>
-            <div className='nav-btn' onClick={scrollTo('team')} ref='team' data-name='team'>Team</div>
             <div className='nav-btn' onClick={scrollTo('preorder')} ref='preorder' data-name='preorder'>Buy now</div>
+            <div className='nav-btn' onClick={scrollTo('team')} ref='team' data-name='team'>Team</div>
             <div className='nav-btn' onClick={scrollTo('community')} ref='community' data-name='community'>Community</div>
           </div>
           {/* <ToolbarGroup className='rights'>

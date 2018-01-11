@@ -70,7 +70,6 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Header />
         <div className='main-container' loading={this.state.loading}>
           {this.props.children}
         </div>
