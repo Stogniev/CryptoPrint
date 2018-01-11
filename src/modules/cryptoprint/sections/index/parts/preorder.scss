@@ -12,6 +12,15 @@
     }
     p {
       color: #fff;
+      &.form-send {
+        font-size: 18px;
+        margin-top: 40px;
+      }
+    }
+    h4 {
+      color: #fff;
+      font-family: 'freight_medium';
+      font-size: 22px;
     }
       .md-card {
           padding: 3rem 6rem;
