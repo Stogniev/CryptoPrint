@@ -1,14 +1,15 @@
   @import '../config';
 
 .footer {
-  margin-top: 200px;
   background: $dark-grey;
   color: #fff;
+  height: 15vh;
   @include tablet {
     margin-top: 100px;
+    height: auto;
   }
   @include mobile {
-    margin-top: 50px;
+    margin-top: 0;
   }
   svg {
     width: 176px;
@@ -16,12 +17,14 @@
   .footer-top {
     border-bottom: 1px solid #fff;
     .flex-container {
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
-      padding: 90px 100px 70px;
+      padding: 0 100px 0;
+      height: 10vh;
       @include tablet {
         padding: 20px 12px;
         align-items: center;
+        height: auto;
       }
       >* {
         @include tablet {
@@ -44,12 +47,21 @@
         border: 2px solid #fff;
       }
       .contact {
+        display: flex;
+        align-items: center;
+        @include tablet {
+          flex-direction: column;
+        }
         a {
           font-size: 18px;
           margin-top: 5px;
         }
         .social-links {
           margin-top: 23px;
+          margin-left: 20px;
+          @include tablet {
+            margin-left: 0;
+          }
           li {
             width: 40px;
             height: 40px;
@@ -73,7 +85,7 @@
     .flex-container {
       align-items: center;
       justify-content: space-between;
-      height: 66px;
+      height: 5vh;
       @include tablet {
         justify-content: center;
         height: auto;

@@ -14,7 +14,7 @@ export class CommunitySection extends Component {
           <img src="./images/onepager/community.png" alt="community"/>
         </div>
         <div className="text text-right">
-          {/*<p>Follow us over on any of our community channels, over here, on telegram and on slack.</p>*/}
+          <p>Follow us over on any of our community channels, over here, on telegram and on slack.</p>
           <ul className="social-links">
             <li><a href="https://www.facebook.com/cryptoprint"><FacebookMonoIcon/></a></li>
             {/* <li><a href="https://twitter.com/"><TwitterIcon/></a></li> */}

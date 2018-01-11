@@ -3,6 +3,8 @@ import React, {Component} from 'react'
 import {Button} from 'react-md'
 import * as Scroll from 'react-scroll' // Imports all Mixins
 import LogoOnepager from '../../../bits/onepager-logo'
+import Newsletter from './newsletter'
+
 
 
 const scroller = Scroll.scroller
@@ -16,7 +18,7 @@ const scrollTo = name => e => scroller.scrollTo(name, scrollOptions)
 const heros = [
   {
     title: 'Paper Wallets Just Got Better',
-    sub: 'Applying visual cryptographic techniques to keep your private key safe'
+    sub: 'Bringing Crypto to the Next Billion People'
   }
 ]
 
@@ -27,11 +29,12 @@ class Hero extends Component {
       <div className='hero-content'>
         <div className='hero-container'>
           <LogoOnepager />
-          <h2>{heros[0].title}</h2>
-          <p>{heros[0].sub}</p>
+          {/*<h2>{heros[0].title}</h2>*/}
+          <h2>{heros[0].sub}</h2>
           <div className='action'>
-            <Button onClick={scrollTo('preorder')} className='circle-btn preorder-btn'><span>buy now</span></Button>
-          </div>
+            {/*<Button onClick={scrollTo('preorder')} className='circle-btn preorder-btn'><span>buy now</span></Button>*/}
+          <Newsletter />
+            </div>
         </div>
       </div>
     )

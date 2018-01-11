@@ -12,7 +12,7 @@
     background: $blue-gradient;
   }
   @include mobile {
-    padding: 10px 8px 10px;
+    padding: 10px 8px 0;
   }
   .app-header {
     text-align: center;
@@ -103,6 +103,11 @@
           bottom: 0;
           left: 0;
         }
+        @include mobile {
+          &:after {
+            bottom: 8px;
+          }
+        }
       }
       &:after {
         content: '';
@@ -123,7 +128,8 @@
         }
       }
       @include mobile {
-        padding-right: 0;
+        padding-right: 2px;
+        padding-left: 2px;
       }
     }
     }
