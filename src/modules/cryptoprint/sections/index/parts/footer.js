@@ -46,14 +46,6 @@ export class FooterSection extends Component {
           </div>
         </div>
       </div>
-      <div className='footer-bottom'>
-        <div className='container'>
-          <div className='flex-container'>
-            <span className='copyright'>Copyright 2017 - Cryptoprint.io</span>
-            <span className='designed'>Designed by Porat Shalev &amp; Co.</span>
-          </div>
-        </div>
-      </div>
     </footer>
   }
 }

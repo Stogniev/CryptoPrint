@@ -3,7 +3,6 @@
 .footer {
   background: $dark-grey;
   color: #fff;
-  height: 15vh;
   @include tablet {
     margin-top: 100px;
     height: auto;
@@ -15,12 +14,11 @@
     width: 176px;
   }
   .footer-top {
-    border-bottom: 1px solid #fff;
     .flex-container {
+      height: 10vh;
       align-items: center;
       justify-content: space-between;
       padding: 0 100px 0;
-      height: 10vh;
       @include tablet {
         padding: 20px 12px;
         align-items: center;
