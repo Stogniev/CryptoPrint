@@ -17,25 +17,22 @@ export class FooterSection extends Component {
               <LogoOnepager />
             </div>
             {/* <nav>
-              <h4>Sitemap</h4>
-               <ul>
-                <li><a href='/'></a></li>
-                <li><a href='/'></a></li>
-                <li><a href='/'></a></li>
-                <li><a href='/'></a></li>
-                <li><a href='/'></a></li>
-              </ul>
-            </nav>
-            <div className='resources'>
-              <h4>Resources</h4>
-              <Button flat className='circle-btn'>White Paper</Button>
-            </div> */}
+             <h4>Sitemap</h4>
+             <ul>
+             <li><a href='/'></a></li>
+             <li><a href='/'></a></li>
+             <li><a href='/'></a></li>
+             <li><a href='/'></a></li>
+             <li><a href='/'></a></li>
+             </ul>
+             </nav>
+             <div className='resources'>
+             <h4>Resources</h4>
+             <Button flat className='circle-btn'>White Paper</Button>
+             </div> */}
             <div className='contact'>
-              <div>
-                <h4>Contact Us</h4>
-                <a href='email:contact@cryptoprint.io'>contact@cryptoprint.io</a>
-              </div>
-
+              <h4>Contact Us</h4>
+              <a href='email:contact@cryptoprint.io'>contact@cryptoprint.io</a>
               <ul className='social-links'>
                 <li><a href='https://www.facebook.com/cryptoprint'><FacebookIcon/></a></li>
                 {/*<li><a href='https://twitter.com/'><TwitterIcon/></a></li>*/}
@@ -43,6 +40,14 @@ export class FooterSection extends Component {
                 {/*<li><a href='www.slack.com/'><SlackIcon/></a></li>*/}
               </ul>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className='footer-bottom'>
+        <div className='container'>
+          <div className='flex-container'>
+            <span className='copyright'>Copyright 2017 - Cryptoprint.io</span>
+            <span className='designed'>Designed by Porat Shalev &amp; Co.</span>
           </div>
         </div>
       </div>

@@ -36,18 +36,18 @@ class SectionIndex extends Component {
      // console.log('this.props:', this.props)
     return <div className='index-section'>
       <Hero />
-      {/*<Attributes />*/}
-      {/*<Features />*/}
+      <Attributes />
+      <Features />
       {/* <Testimonials /> */}
       {/* <Grafic /> */}
-      {/*<Preorder />*/}
-      {/*<Team />*/}
+      <Preorder />
+      <Team />
       {/* <AlternativeCTA /> */}
       {/* {<Signin />} */}
       {/* <Advisors /> */}
-      {/*<Community />*/}
+      <Community />
       {/* <Social /> */}
-      {/*<Newsletter />*/}
+      <Newsletter />
       <Footer />
     </div>
   }
