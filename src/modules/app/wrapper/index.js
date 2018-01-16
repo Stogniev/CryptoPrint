@@ -42,6 +42,8 @@ class App extends Component {
         for (let j = 0; j < headerAncors.length; j++) {
           headerAncors[j].dataset.name === section[i].id ? headerAncors[j].classList.add('active-item') : headerAncors[j].classList.remove('active-item')
         }
+      } else if( window.scrollY < 100 ) {
+        headerAncors[0].classList.remove('active-item')
       }
     }
   }
