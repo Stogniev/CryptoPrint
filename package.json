@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "bitcore-lib": "^0.15.0",
     "cheerio": "^1.0.0-rc.2",
     "chrome-headless-render-pdf": "github:shimondoodkin/chrome-headless-render-pdf#master",

@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 
 import TextField from 'react-md/lib/TextFields'
-import Card from 'react-md/lib/Cards'
+// import Card from 'react-md/lib/Cards'
 import { Button } from 'react-md'
 
 export class PreorderSection extends Component {

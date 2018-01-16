@@ -23,12 +23,12 @@ const scrollOptions = {
 }
 
 const scrollTo = name => e => {
-    let a = document.querySelector('.active-item')
-    a ? a.classList.remove('active-item') : null
-    e.target.classList.add('active-item')
+  // let a = document.querySelector('.active-item')
+  // a ? a.classList.remove('active-item') : null
+  e.target.classList.add('active-item')
 
-    return scroller.scrollTo(name, scrollOptions)
-  }
+  return scroller.scrollTo(name, scrollOptions)
+}
 
 class AppHeader extends Component {
   componentDidMount () {

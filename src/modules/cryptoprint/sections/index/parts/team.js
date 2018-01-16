@@ -17,14 +17,14 @@ export class TeamSection extends Component {
           name='Daniel Blank'
           photo='/images/team/daniel.png'
                 >
-          <p>Daniel is an IDF Intelligence unit alum (81) coder and an experienced project and product manager. Active in the crypto-community since 2013.</p>
+          <p>Daniel is an IDF Intelligence unit alum (81) and an experienced project and product manager. Active in the crypto-community since 2013, Daniel has taken a part in large scale projects within the space.</p>
         </TeamMemeber>
         <TeamMemeber
           id='shimond'
           name='Shimon Doodkin'
           photo='/images/team/shimon.png'
         >
-          <p>Shimon is an interdisciplinary coder involved in the crypto space since 2013, contributing to a variety of community projects. He has an array of impressive software projects behind him for a variety of industries, and is adept at solving complex problems quickly and efficiently.</p>
+          <p>Shimon is an interdisciplinary coder involved in the crypto space since 2013, contributing to a variety of community projects. He has an array of impressive software projects behind him for a variety of industries.</p>
         </TeamMemeber>
         {/* <TeamMemeber
           id='travis'
